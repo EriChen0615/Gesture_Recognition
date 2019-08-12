@@ -16,8 +16,10 @@ def pause():
     while cv2.waitKey(1)!=ord('n'):
         continue
 
-def get_next_gs_bbox(gs_bbox_dict,_window):
-    _gest, (w,h) = random.choice(list(gs_bbox_dict.items()))
+def get_next_gs_bbox(gs_bbox_dict,_window,collect_label):
+    _gest = None
+    while not (_gest in collect_label) or _gest is None:
+        _gest, (w,h) = random.choice(list(gs_bbox_dict.items()))
     _x_ratio = np.random.normal(loc=0.5,scale=0.15)
     _y_ratio = np.random.normal(loc=0.5,scale=0.15)
     w_r = np.random.normal(loc=1,scale=0.05)
@@ -86,8 +88,9 @@ if __name__ == '__main__':
     LONG_FAC = 0.6
     SHORT_FAC = 0.4
     GS_BBOX_DICT = {'one':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*LONG_FAC),\
-                    'fist':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*SHORT_FAC)}
-
+                    'fist':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*SHORT_FAC),\
+                    'two':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*LONG_FAC)}
+    COLLECT_LABEL = ['two'] # the label to collect
 
     # DATA PATH
     DIR_NAME = os.path.join('Dataset','Training')
@@ -148,7 +151,7 @@ if __name__ == '__main__':
             y2 = min(y2,VIDEO_HEIGHT)
             window = [x1,y1,x2,y2]
             # update the next gesture and bbox size
-            gest, bounding_box = get_next_gs_bbox(GS_BBOX_DICT,window)
+            gest, bounding_box = get_next_gs_bbox(GS_BBOX_DICT,window,COLLECT_LABEL)
 
             shot_counter = 0
             #print('Window: {0}\nBoundingbox: {1}'.format(window,bounding_box))
