@@ -1,0 +1,5 @@
+@ 0
+! 0 one
+! 0 fist
+- Dataset\Testing\one/ one
+- Dataset\Testing\ fist

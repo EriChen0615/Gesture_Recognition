@@ -1,0 +1,6 @@
+@ 105
+! 70 one
+! 80 fist
+! 0 <your_gesture>
+- Dataset\Training\one\ one
+- Dataset\Training\fist\ fist

@@ -41,7 +41,7 @@ def get_next_gs_bbox(gs_bbox_dict,_window):
     bbox = [_x1,_y1,_x2,_y2]
     return _gest, bbox
 
-def read_config(filename):
+def load_config(filename):
     t_count = 0
     dir_count = {}
     dir_p = {}
@@ -101,7 +101,7 @@ if __name__ == '__main__':
     # --------- CONFIGURATION ENDS ---------- #
 
     # --------- FILE I/O READING -------- #
-    total_counter, gest_counter, gest_path = read_config('config.txt')
+    total_counter, gest_counter, gest_path = load_config('config.txt')
     gest_anno = {k:open(os.path.join(v,'annotation.txt'),'a+') for (k,v) in gest_path.items()} # a dict of files
 
     # print(total_counter)
