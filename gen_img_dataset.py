@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 from time import sleep
 import random
 import os
@@ -91,7 +90,7 @@ if __name__ == '__main__':
 
 
     # DATA PATH
-    DIR_NAME = 'Dataset'
+    DIR_NAME = os.path.join('Dataset','Training')
 
     # COLLECTION SETTING
     SHOTS_PER_BOX = 5
@@ -103,7 +102,7 @@ if __name__ == '__main__':
 
     # --------- FILE I/O READING -------- #
     total_counter, gest_counter, gest_path = read_config('config.txt')
-    gest_anno = {k:os.path.join(v,'annotation.txt') for (k,v) in gest_path.items()}
+    gest_anno = {k:open(os.path.join(v,'annotation.txt'),'a+') for (k,v) in gest_path.items()} # a dict of files
 
     print(total_counter)
     print(gest_counter)
@@ -163,18 +162,21 @@ if __name__ == '__main__':
 
             print('----------------------------------')
             print('image captured and annotated as {0}'.format(gest.upper()))
+            shot_counter += 1
             print('shot: {0}/{1}'.format(shot_counter,SHOTS_PER_BOX))
             # annotate image and save
             gt_bbox = [int(bounding_box[0]-window[0]),int(bounding_box[1]-window[1]),int(bounding_box[2]-window[0]),int(bounding_box[3]-window[1])]
             im_save = img[int(window[1]):int(window[3]),int(window[0]):int(window[2])]
             im_show = im_save.copy()
             im_show = drawBoxes(im_show,gt_bbox)
+            img_name = '{0}_{1}.jpg'.format(gest,gest_counter[gest])
+
             cv2.imshow('saved_image',im_show)
-            cv2.imwrite(os.path.join(gest_path[gest],'{0}_{1}.jpg'.format(gest,gest_counter[gest])),im_save)
-            #cv2.imwrite(os.path.join(gest_path[gest],'{0}_{1}.jpg'.format(gest,gest_counter[gest])),im_save)
+
+            cv2.imwrite(os.path.join(gest_path[gest],img_name),im_save) # saves image
+            gest_anno[gest].write(img_name+' '+str(gt_bbox[0])+' '+str(gt_bbox[1])+' '+str(gt_bbox[2])+' '+str(gt_bbox[3])+'\n')  # append to annotation
 
             gest_counter[gest] += 1
-            shot_counter += 1
             total_counter += 1
 
         # if bounding box is restricted, press b to abandon this set
@@ -191,4 +193,6 @@ if __name__ == '__main__':
     # --------- FILE I/O WRITING  -------- #
     export_config('config.txt',total_counter,gest_counter,gest_path)
 
+    for f in gest_anno.values():
+        f.close()
 
