@@ -16,6 +16,7 @@
 - modify the ```DIR_NAME``` variable in gen_img_data.py to generate different datasets
 - modify ```VIDEO_WIDTH VIDEO_HEIGH TWINDOW_WIDTH WINDOW_HEIGHT``` in gen_img_data.py to adjust resolution 
 - modify ```SHOTS_PER_BOX``` to modify number of shots before bounding box changes
+- add gesture name in ```COLLECT_LABEL``` to enable collection
 
 ## Data format
 - gestures are stored by their category in format <gesture>_<number>.jpg
