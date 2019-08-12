@@ -55,7 +55,7 @@ def load_config(filename):
     path = os.path.join(DIR_NAME,filename)
     with open(path) as f:
         contents = f.read().splitlines()
-        #print(contents)
+        print(contents)
         for line in contents:
             words = line.split()
             #print(words)
@@ -87,10 +87,10 @@ if __name__ == '__main__':
     # BOUNDING BOX SETTING
     LONG_FAC = 0.6
     SHORT_FAC = 0.4
-    GS_BBOX_DICT = {'one':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*LONG_FAC),\
-                    'fist':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*SHORT_FAC),\
+    GS_BBOX_DICT = {'one':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*LONG_FAC),
+                    'fist':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*SHORT_FAC),
                     'two':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*LONG_FAC)}
-    COLLECT_LABEL = ['two'] # the label to collect
+    COLLECT_LABEL = ['one','fist','two'] # the label to collect
 
     # DATA PATH
     DIR_NAME = os.path.join('Dataset','Training')
@@ -105,6 +105,7 @@ if __name__ == '__main__':
 
     # --------- FILE I/O READING -------- #
     total_counter, gest_counter, gest_path = load_config('config.txt')
+
     gest_anno = {k:open(os.path.join(v,'annotation.txt'),'a+') for (k,v) in gest_path.items()} # a dict of files
 
     # print(total_counter)

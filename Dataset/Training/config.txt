@@ -1,7 +1,7 @@
-@ 40
-! 70 one
-! 80 fist
-! 40 two
-- Dataset\Training\one\ one
-- Dataset\Training\fist\ fist
-- Dataset\Training\two\ two
+@ 16
+! 75 one
+! 85 fist
+! 46 two
+- Dataset/Training/one/ one
+- Dataset/Training/fist/ fist
+- Dataset/Training/two/ two
