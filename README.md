@@ -17,7 +17,7 @@ numpy
 
 ## Configure the dataset
 - To reinitialize the dataset, make sure the config.txt file is as follows:
-'''
+```
 @ 0
 ! 0 one
 ! 0 fist
@@ -25,6 +25,6 @@ numpy
 - Dataset\one/ one
 - Dataset\fist/ fist
 - <gesture_dir> <gesture>
-'''
+```
 - To add/delete a new gesture, simply add an item to the GS_BBOX_DICT. The value being the size of the bounding box .
 - To build a separate dataset, change the DIR_NAME variable in gen_image_dataset.py and create an initial config.txt and respective directories with annotation.txt.
