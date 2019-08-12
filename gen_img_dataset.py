@@ -75,8 +75,8 @@ if __name__ == '__main__':
     # --------- CONFIGURATION STARTS --------- #
 
     # WINDOW SETTING
-    VIDEO_WIDTH = 720
-    VIDEO_HEIGHT = 560
+    VIDEO_WIDTH = 960
+    VIDEO_HEIGHT = 540
 
     # WINDOW SETTING
     WINDOW_WIDTH = 240
@@ -104,10 +104,10 @@ if __name__ == '__main__':
     total_counter, gest_counter, gest_path = read_config('config.txt')
     gest_anno = {k:open(os.path.join(v,'annotation.txt'),'a+') for (k,v) in gest_path.items()} # a dict of files
 
-    print(total_counter)
-    print(gest_counter)
-    print(gest_path)
-    print(gest_anno)
+    # print(total_counter)
+    # print(gest_counter)
+    # print(gest_path)
+    # print(gest_anno)
 
     
     
@@ -151,33 +151,37 @@ if __name__ == '__main__':
             gest, bounding_box = get_next_gs_bbox(GS_BBOX_DICT,window)
 
             shot_counter = 0
-            print('Window: {0}\nBoundingbox: {1}'.format(window,bounding_box))
-            print('Recording gesture {0}'.format(gest.upper()))
-
+            #print('Window: {0}\nBoundingbox: {1}'.format(window,bounding_box))
+            print('>>>>>>>>Recording gesture {0}<<<<<<<<'.format(gest.upper()))
+            print('Please gesture in the red bounding box')
         drawBoxes(frame,window)
         drawBoxes(frame,bounding_box,(0,0,255))
         cv2.imshow('camera',frame)
 
         if cv2.waitKey(1)== 0x20: # press space to take shot
 
-            print('----------------------------------')
-            print('image captured and annotated as {0}'.format(gest.upper()))
-            shot_counter += 1
-            print('shot: {0}/{1}'.format(shot_counter,SHOTS_PER_BOX))
+            img_name = '{0}_{1}.jpg'.format(gest,gest_counter[gest])
             # annotate image and save
             gt_bbox = [int(bounding_box[0]-window[0]),int(bounding_box[1]-window[1]),int(bounding_box[2]-window[0]),int(bounding_box[3]-window[1])]
             im_save = img[int(window[1]):int(window[3]),int(window[0]):int(window[2])]
-            im_show = im_save.copy()
-            im_show = drawBoxes(im_show,gt_bbox)
-            img_name = '{0}_{1}.jpg'.format(gest,gest_counter[gest])
 
-            cv2.imshow('saved_image',im_show)
-
-            cv2.imwrite(os.path.join(gest_path[gest],img_name),im_save) # saves image
+            cv2.imwrite(os.path.join(gest_path[gest],img_name),im_save)
             gest_anno[gest].write(img_name+' '+str(gt_bbox[0])+' '+str(gt_bbox[1])+' '+str(gt_bbox[2])+' '+str(gt_bbox[3])+'\n')  # append to annotation
 
+            # display saved image
+            im_show = im_save.copy()
+            im_show = drawBoxes(im_show,gt_bbox)
+            cv2.imshow('saved_image',im_show)
+
+            # increment counters
             gest_counter[gest] += 1
             total_counter += 1
+            shot_counter += 1
+
+            # display
+            print('-------------------------------------')
+            print('{0} is saved with bbox {1}'.format(img_name,gt_bbox))
+            print('SHOT: {0} / {1}'.format(shot_counter,SHOTS_PER_BOX))
 
         # if bounding box is restricted, press b to abandon this set
         elif cv2.waitKey(2)== ord('b'):

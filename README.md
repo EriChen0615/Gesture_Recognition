@@ -1,11 +1,12 @@
 # Guide to generate the dataset
 ## Prerequistes:
-opencv-python
-numpy
+- opencv-python
+- numpy
 
 ## How to sample data
 - run gen_img_dataset.py
 - the program will prompt which gesture to adopt, place your hand inside the red bounding box and press 'space' to save the image.
+- if the bounding box position is not desirable, press 'b' to regenerate bounding box
 - after certain number of shots, another the bounding box will change and so may the gesture. Follow instruction on the console.
 - press 'q' to exit. 
 - the program will automatically append to the image dataset. So there is no need for a one-off sampling.
@@ -27,5 +28,5 @@ numpy
 - Dataset\fist/ fist
 - <gesture_dir> <gesture>
 ```
-- To add/delete a new gesture, simply add an item to the GS_BBOX_DICT. The value being the size of the bounding box .
-- To build a separate dataset, change the DIR_NAME variable in gen_image_dataset.py and create an initial config.txt and respective directories with annotation.txt.
+- To add/delete a new gesture, simply add an item to the ```GS_BBOX_DICT```. The value being the size of the bounding box .
+- To build a separate dataset, change the ```DIR_NAME``` variable in gen_image_dataset.py and create an initial config.txt and respective directories with annotation.txt.
