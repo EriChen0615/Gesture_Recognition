@@ -7,7 +7,7 @@
 - run gen_img_dataset.py
 - the program will prompt which gesture to adopt, place your hand inside the red bounding box and press 'space' to save the image.
 - if the bounding box position is not desirable, press 'b' to regenerate bounding box
-- after certain number of shots, another the bounding box will change and so may the gesture. Follow instruction on the console.
+- after certain number of shots, another bounding box will change and so may the gesture. Follow instruction on the console.
 - press 'q' to exit. 
 - the program will automatically append to the image dataset. So there is no need for a one-off sampling.
 
