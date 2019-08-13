@@ -129,7 +129,6 @@ if __name__ == '__main__':
 
     shot_counter = -1 # indicates that bbox needs to be refreshed
     bounding_box = [0,0,0,0]
-    total_counter = 0
     while True:
         __, frame = cam.read()
         frame = cv2.flip(frame,1)

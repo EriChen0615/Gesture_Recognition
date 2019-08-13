@@ -11,12 +11,12 @@ import numpy.random as npr
 
 from utils import IoU
 
-anno_file = "annotation.txt"
-im_dir = "../../Dataset/training"
-pos_save_dir = "../../Dataset/training/positive"
-part_save_dir = "../../Dataset/training/part"
-neg_save_dir = '../../Dataset/training/negative'
-save_dir = "../Gesture_Recognition/Dataset/training"
+_anno_file = "annotation.txt"
+im_dir = "../Dataset/Training"
+pos_save_dir = "../Dataset/Training/positive"
+part_save_dir = "../Dataset/Training/part"
+neg_save_dir = '../Dataset/Training/negative'
+save_dir = "../Dataset/Training"
 
 if not os.path.exists(save_dir):
     os.mkdir(save_dir)
@@ -27,19 +27,19 @@ if not os.path.exists(part_save_dir):
 if not os.path.exists(neg_save_dir):
     os.mkdir(neg_save_dir)
 
-f1 = open(os.path.join(save_dir, 'pos_12.txt'), 'w')
-f2 = open(os.path.join(save_dir, 'neg_12.txt'), 'w')
-f3 = open(os.path.join(save_dir, 'part_12.txt'), 'w')
+f1 = open(os.path.join(save_dir, 'pos_12.txt'), 'w+')
+f2 = open(os.path.join(save_dir, 'neg_12.txt'), 'w+')
+f3 = open(os.path.join(save_dir, 'part_12.txt'), 'w+')
 
 data_class = ['one','fist','two']
 
 # to access the data in three distinct files
 
 for data_class_name in data_class:
-    anno_file = save_dir + '/' + data_class_name + '/' + anno_file
+    anno_file = save_dir + '/' + data_class_name + '/' + _anno_file
 
     with open(anno_file, 'r') as f:
-        annotations = f.readlines()
+        annotations = f.read().splitlines()
 
     num = len(annotations)
     print("%d pics in total" % num)
@@ -58,7 +58,7 @@ for data_class_name in data_class:
         #gt
         boxes = np.array(bbox, dtype=np.float32).reshape(-1, 4)
         #load image
-        img = cv2.imread(os.path.join(im_dir, im_path))
+        img = cv2.imread(os.path.join(im_dir, data_class_name,im_path))
         idx += 1
         #if idx % 100 == 0:
             #print(idx, "images done")
