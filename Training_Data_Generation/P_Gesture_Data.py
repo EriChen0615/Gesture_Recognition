@@ -12,9 +12,9 @@ import cv2
 import numpy as np
 import numpy.random as npr
 
-from Training_Data_Generation.bbox_utils import getDataFromTxt, BBox
-from Training_Data_Generation.gesture_utils import rotate, flip
-from Training_Data_Generation.utils import IoU
+from bbox_utils import getDataFromTxt, BBox
+from gesture_utils import rotate, flip
+from utils import IoU
 
 
 
@@ -193,8 +193,9 @@ if __name__ == '__main__':
     assert (exists(dstdir) and exists(OUTPUT))
     # train data
     net = "PNet"
-    #the file contains the names of all the landmark training data
+    #the file contains the names of all the gesture training data
+    #need to preduce the gesture training data name list first
     train_txt = "trainImageList.txt"
-    imgs,gestures = GenerateData(train_txt,data_path,net,argument=True )
+    imgs,gestures = GenerateData(train_txt,data_path,net,augment=True )
     
    
