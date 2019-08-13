@@ -5,6 +5,10 @@ from datetime import datetime
 
 import numpy as np
 import tensorflow as tf
+import logging
+logger = tf.get_logger()
+logger.setLevel(logging.ERROR)
+
 from tensorboard.plugins import projector
 
 from mtcnn_config import config
@@ -59,7 +63,7 @@ def random_flip_images(image_batch,label_batch,gesture_batch):
         gesture_batch[i] = gesture_.ravel()
     return image_batch,gesture_batch
 '''
-"""
+
 # all mini-batch mirror
 def random_flip_images(image_batch,label_batch, gesture_batch):
     #mirror
@@ -73,17 +77,19 @@ def random_flip_images(image_batch,label_batch, gesture_batch):
         for i in flipindexes:
             cv2.flip(image_batch[i],1,image_batch[i])        
         
-        #pay attention: flip gesture    
-        for i in flipgestureindexes:
-            gesture_ = gesture_batch[i].reshape((-1,2))
-            gesture_ = np.asarray([(1-x, y) for (x, y) in gesture_])
-            gesture_[[0, 1]] = gesture_[[1, 0]]#left eye<->right eye
-            gesture_[[3, 4]] = gesture_[[4, 3]]#left mouth<->right mouth        
-            gesture_batch[i] = gesture_.ravel()
+        #pay attention: flip gesture   
+        #print('gesture batch:',gesture_batch)
+         
+        # for i in flipgestureindexes:
+        #     gesture_ = gesture_batch[i].reshape((-1,2))
+        #     gesture_ = np.asarray([(1-x, y) for (x, y) in gesture_])
+        #     gesture_[[0, 1]] = gesture_[[1, 0]]#left eye<->right eye
+        #     gesture_[[3, 4]] = gesture_[[4, 3]]#left mouth<->right mouth        
+        #     gesture_batch[i] = gesture_.ravel()
         
     return image_batch, gesture_batch
 
-    """
+    
 
 def image_color_distort(inputs):
     inputs = tf.image.random_contrast(inputs, lower=0.5, upper=1.5)
@@ -93,7 +99,7 @@ def image_color_distort(inputs):
 
     return inputs
 
-    
+
 def train(net_factory, prefix, end_epoch, base_dir,
           display=200, base_lr=0.01):
     """
@@ -122,7 +128,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
         #dataset_dir = os.path.join(base_dir,'train_%s_ALL.tfrecord_shuffle' % net)
         dataset_dir = os.path.join(base_dir,'train_%s_gesture.tfrecord_shuffle' % net)
         print('dataset dir is:',dataset_dir)
-        image_batch, label_batch, bbox_batch,gesture_batch = read_single_tfrecord(dataset_dir, config.BATCH_SIZE, net)
+        image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, config.BATCH_SIZE, net)
         
     #RNet use 3 tfrecords to get data    
     else:
@@ -160,7 +166,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     input_image = tf.placeholder(tf.float32, shape=[config.BATCH_SIZE, image_size, image_size, 3], name='input_image')
     label = tf.placeholder(tf.float32, shape=[config.BATCH_SIZE], name='label')
     bbox_target = tf.placeholder(tf.float32, shape=[config.BATCH_SIZE, 4], name='bbox_target')
-    gesture_target = tf.placeholder(tf.float32,shape=[config.BATCH_SIZE,10],name='gesture_target')
+    gesture_target = tf.placeholder(tf.float32,shape=[config.BATCH_SIZE,3],name='gesture_target')
     #get loss and accuracy
     input_image = image_color_distort(input_image)
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True)
@@ -187,7 +193,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     summary_op = tf.summary.merge_all()
     logs_dir = "../logs/%s" %(net)
     if os.path.exists(logs_dir) == False:
-        os.mkdir(logs_dir)
+        os.makedirs(logs_dir)
     writer = tf.summary.FileWriter(logs_dir,sess.graph)
     projector_config = projector.ProjectorConfig()
     projector.visualize_embeddings(writer,projector_config)
