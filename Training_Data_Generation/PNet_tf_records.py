@@ -59,7 +59,7 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
         random.shuffle(dataset)
     # Process dataset files.
     # write the data to tfrecord
-    print('lala')
+    print('lalala')
     with tf.python_io.TFRecordWriter(tf_filename) as tfrecord_writer:
         for i, image_example in enumerate(dataset):
             if (i+1) % 100 == 0:
@@ -77,7 +77,7 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
 def get_dataset(dir, net='PNet'):
     #get file name , label and anotation
     #item = 'imglists/PNet/train_%s_raw.txt' % net
-    item = 'imglists/PNet/train_%s_landmark.txt' % net
+    item = 'imglists/PNet/train_%s_gesture.txt' % net
     
     dataset_dir = os.path.join(dir, item)
     #print(dataset_dir)
@@ -87,41 +87,33 @@ def get_dataset(dir, net='PNet'):
     for line in imagelist.readlines():
         info = line.strip().split(' ')
         data_example = dict()
-        bbox = dict()
+        bbox = None # neg(0) & aug(-2) 
         data_example['filename'] = info[0]
         #print(data_example['filename'])
         data_example['label'] = int(info[1])
-        bbox['xmin'] = 0
-        bbox['ymin'] = 0
-        bbox['xmax'] = 0
-        bbox['ymax'] = 0
-        bbox['xlefteye'] = 0
-        bbox['ylefteye'] = 0
-        bbox['xrighteye'] = 0
-        bbox['yrighteye'] = 0
-        bbox['xnose'] = 0
-        bbox['ynose'] = 0
-        bbox['xleftmouth'] = 0
-        bbox['yleftmouth'] = 0
-        bbox['xrightmouth'] = 0
-        bbox['yrightmouth'] = 0        
+
+        if len(info)==6: # pos(1) & part(-1)
+
+            bbox = dict()
+
+            bbox['xmin'] = info[2]
+            bbox['ymin'] = info[3]
+            bbox['xmax'] = info[4]
+            bbox['ymax'] = info[5]
+
+        """
         if len(info) == 6:
             bbox['xmin'] = float(info[2])
             bbox['ymin'] = float(info[3])
             bbox['xmax'] = float(info[4])
             bbox['ymax'] = float(info[5])
-        if len(info) == 12:
-            bbox['xlefteye'] = float(info[2])
-            bbox['ylefteye'] = float(info[3])
-            bbox['xrighteye'] = float(info[4])
-            bbox['yrighteye'] = float(info[5])
-            bbox['xnose'] = float(info[6])
-            bbox['ynose'] = float(info[7])
-            bbox['xleftmouth'] = float(info[8])
-            bbox['yleftmouth'] = float(info[9])
-            bbox['xrightmouth'] = float(info[10])
-            bbox['yrightmouth'] = float(info[11])
-            
+        if len(info) == 9:
+            bbox['gesture_one'] = float(info[6])
+            bbox['gesture_two'] = float(info[7])
+            bbox['gesture_three'] = float(info[8])
+
+        """
+
         data_example['bbox'] = bbox
         dataset.append(data_example)
 
@@ -129,7 +121,7 @@ def get_dataset(dir, net='PNet'):
 
 
 if __name__ == '__main__':
-    dir = '../../DATA/'
+    dir = '../Dataset/Training/'
     net = 'PNet'
-    output_directory = '../../DATA/imglists/PNet'
+    output_directory = '../Dataset/Training/imglists/PNet'
     run(dir, net, output_directory, shuffling=True)
