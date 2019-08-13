@@ -21,11 +21,11 @@ if __name__ == '__main__':
     base_dir = '../Dataset/Training/imglists/PNet'
     model_name = 'MTCNN'
     #model_path = '../data/%s_model/PNet/PNet' % model_name
-    #with landmark
+    #with gesture
     model_path = '../Model/{0}/PNet'.format(model_name)
             
     prefix = model_path
     end_epoch = 30
     display = 100
-    lr = 0.001
+    lr = 0.0001 #was 0.001
     train_PNet(base_dir, prefix, end_epoch, display, lr)
