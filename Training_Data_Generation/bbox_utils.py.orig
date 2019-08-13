@@ -66,9 +66,15 @@ def getDataFromTxt(txt,data_path, with_gesture=True):
             continue
 
         gesture = np.zeros((3, 1))
+<<<<<<< HEAD
         class_name = img_path.split('/')[-2]
         #print('class_name=',class_name)
+=======
+        for index in range(0, 3):
+            rv = float(components[5+index])
             gesture[index] = rv
+        class_name = img_path.split('/')[-1]
+>>>>>>> 26fac1fae1da859c6d77de14108227d62a92f4d6
         if class_name == 'one':
             gesture = [1,0,0]
         elif class_name == 'fist':
