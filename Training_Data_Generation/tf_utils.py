@@ -14,9 +14,13 @@ def _int64_feature(value):
 
 def _float_feature(value):
     """Wrapper for insert float features into Example proto."""
+    print("this is the damn value: ", value)
     if not isinstance(value, list):
-        value = [value]
-    return tf.train.Feature(float_list=tf.train.FloatList(value=value))
+        _value = [value]
+    else:
+        _value = [float(i) for i in value]
+    print("this is the damn value again: ", _value)
+    return tf.train.Feature(float_list=tf.train.FloatList(value=_value))
 
 
 def _bytes_feature(value):
@@ -62,6 +66,8 @@ def _convert_to_example(image_example, image_buffer, colorspace=b'RGB', channels
         'image/image_bbox/ymax': _float_feature(ymax),
     }))
     return example
+
+
 def _convert_to_example_simple(image_example, image_buffer):
     """
     covert to tfrecord file
@@ -79,15 +85,14 @@ def _convert_to_example_simple(image_example, image_buffer):
     class_label = image_example['label']
     bbox = image_example['bbox']
     roi = [bbox['xmin'],bbox['ymin'],bbox['xmax'],bbox['ymax']]
-    landmark = [bbox['xlefteye'],bbox['ylefteye'],bbox['xrighteye'],bbox['yrighteye'],bbox['xnose'],bbox['ynose'],
-                bbox['xleftmouth'],bbox['yleftmouth'],bbox['xrightmouth'],bbox['yrightmouth']]
+    gesture = [bbox['gesture_one'],bbox['gesture_fist'],bbox['gesture_two']]
                 
       
     example = tf.train.Example(features=tf.train.Features(feature={
         'image/encoded': _bytes_feature(image_buffer),
         'image/label': _int64_feature(class_label),
         'image/roi': _float_feature(roi),
-        'image/landmark': _float_feature(landmark)
+        'image/gesture': _float_feature(gesture)
     }))
     return example
 
@@ -152,7 +157,7 @@ def _process_image(filename, coder):
     # resized_image = tf.image.resize_images(img_data_jpg, [25, 25])
     # image_data = sess.run(tf.cast(resized_image, tf.uint8)).tobytes()
     # image = Image.open(filename)  # 图片的类型必须为array
-    filename = filename + '.jpg'
+
     print(filename)
     image = cv2.imread(filename)
     # image.show()
@@ -175,8 +180,9 @@ def _process_image(filename, coder):
     assert image.shape[2] == 3
 
     return image_data, height, width
+
 def _process_image_withoutcoder(filename):
-    #print(filename)
+    print(filename)
     image = cv2.imread(filename)
     #print(type(image))
     # transform data into string format

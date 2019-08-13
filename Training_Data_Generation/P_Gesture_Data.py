@@ -184,9 +184,12 @@ def GenerateData(ftxt,data_path,net,augment=False):
                 # if np.sum(np.where(F_gesture[i] >= 1, 1, 0)) > 0:
                 #     continue
 
-                cv2.imwrite(join(dstdir,"%d.jpg" %(image_id)), F_imgs[i])
+                name = join(dstdir,"%d.jpg" %(image_id))
+                name.replace('\\','/')
+
+                cv2.imwrite(name, F_imgs[i])
                 gestures = map(str,list(F_gesture[i]))
-                f.write(join(dstdir,"%d.jpg" %(image_id))+" -2 "+" ".join(gestures)+"\n")
+                f.write(name+" -2 "+" ".join(gestures)+"\n")
                 image_id = image_id + 1
             
     #print F_imgs.shape

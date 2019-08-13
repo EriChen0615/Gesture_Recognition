@@ -26,7 +26,7 @@ def _add_to_tfrecord(filename, image_example, tfrecord_writer):
     #height:original image's height
     #width:original image's width
     #image_example dict contains image's info
-    image_data, _, _ = _process_image_withoutcoder(os.path.join('..',filename))
+    image_data, _, _ = _process_image_withoutcoder(filename)
     example = _convert_to_example_simple(image_example, image_data)
     tfrecord_writer.write(example.SerializeToString())
 
@@ -34,7 +34,7 @@ def _add_to_tfrecord(filename, image_example, tfrecord_writer):
 def _get_output_filename(output_dir, name, net):
     #st = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     #return '%s/%s_%s_%s.tfrecord' % (output_dir, name, net, st)
-    return '%s/train_PNet_landmark.tfrecord' % (output_dir)
+    return '%s/train_PNet_gesture.tfrecord' % (output_dir)
     
 
 def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
@@ -59,7 +59,9 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
         random.shuffle(dataset)
     # Process dataset files.
     # write the data to tfrecord
+
     print('lalala')
+
     with tf.python_io.TFRecordWriter(tf_filename) as tfrecord_writer:
         for i, image_example in enumerate(dataset):
             if (i+1) % 100 == 0:
@@ -67,6 +69,8 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
                 #sys.stdout.write('\r>> Converting image %d/%d' % (i + 1, len(dataset)))
             sys.stdout.flush()
             filename = image_example['filename']
+            if filename[0]!='.':
+                filename = '../'+filename
             _add_to_tfrecord(filename, image_example, tfrecord_writer)
     # Finally, write the labels file:
     # labels_to_class_names = dict(zip(range(len(_CLASS_NAMES)), _CLASS_NAMES))
@@ -80,7 +84,8 @@ def get_dataset(dir, net='PNet'):
     item = 'imglists/PNet/train_%s_gesture.txt' % net
     
     dataset_dir = os.path.join(dir, item)
-    #print(dataset_dir)
+
+    print(dataset_dir)
     imagelist = open(dataset_dir, 'r')
 
     dataset = []
@@ -96,6 +101,10 @@ def get_dataset(dir, net='PNet'):
         bbox['ymin'] = 0
         bbox['xmax'] = 0
         bbox['ymax'] = 0
+        bbox['gesture_one'] = 0
+        bbox['gesture_fist'] = 0
+        bbox['gesture_two'] = 0
+
 
         if len(info)==6: # pos(1) & part(-1)
 
@@ -104,6 +113,15 @@ def get_dataset(dir, net='PNet'):
             bbox['ymin'] = info[3]
             bbox['xmax'] = info[4]
             bbox['ymax'] = info[5]
+
+        if len(info)==5: #aug
+
+            bbox['gesture_one'] = info[2]
+            bbox['gesture_fist'] = info[3]
+            bbox['gesture_two'] = info[4]
+
+
+
 
         """
         if len(info) == 6:
