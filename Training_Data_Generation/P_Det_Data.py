@@ -90,7 +90,7 @@ for data_class_name in data_class:
             if np.max(Iou) < 0.3:
                 # Iou with all gts must below 0.3
                 save_file = os.path.join(neg_save_dir, "%s.jpg"%n_idx)
-                f2.write("../../Dataset/Training/negative/%s.jpg"%n_idx + ' 0\n')
+                f2.write("../Dataset/Training/negative/%s.jpg"%n_idx + ' 0\n')
                 cv2.imwrite(save_file, resized_im)
                 n_idx += 1
                 neg_num += 1
@@ -136,7 +136,7 @@ for data_class_name in data_class:
                 if np.max(Iou) < 0.3:
                     # Iou with all gts must below 0.3
                     save_file = os.path.join(neg_save_dir, "%s.jpg" % n_idx)
-                    f2.write("../../Dataset/Training/negative/%s.jpg" % n_idx + ' 0\n')
+                    f2.write("../Dataset/Training/negative/%s.jpg" % n_idx + ' 0\n')
                     cv2.imwrite(save_file, resized_im)
                     n_idx += 1
 
@@ -183,12 +183,12 @@ for data_class_name in data_class:
                 iou = IoU(crop_box, box_)
                 if iou  >= 0.65:
                     save_file = os.path.join(pos_save_dir, "%s.jpg"%p_idx)
-                    f1.write("../../Dataset/Training/positive/%s.jpg"%p_idx + ' 1 %.2f %.2f %.2f %.2f\n'%(offset_x1, offset_y1, offset_x2, offset_y2))
+                    f1.write("../Dataset/Training/positive/%s.jpg"%p_idx + ' 1 %.2f %.2f %.2f %.2f\n'%(offset_x1, offset_y1, offset_x2, offset_y2))
                     cv2.imwrite(save_file, resized_im)
                     p_idx += 1
                 elif iou >= 0.4:
                     save_file = os.path.join(part_save_dir, "%s.jpg"%d_idx)
-                    f3.write("../../Dataset/Training/part/%s.jpg"%d_idx + ' -1 %.2f %.2f %.2f %.2f\n'%(offset_x1, offset_y1, offset_x2, offset_y2))
+                    f3.write("../Dataset/Training/part/%s.jpg"%d_idx + ' -1 %.2f %.2f %.2f %.2f\n'%(offset_x1, offset_y1, offset_x2, offset_y2))
                     cv2.imwrite(save_file, resized_im)
                     d_idx += 1
             box_idx += 1
