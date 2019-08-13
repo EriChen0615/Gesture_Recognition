@@ -52,8 +52,11 @@ def GenerateData(ftxt,data_path,net,augment=False):
         F_imgs = []
         F_gesture = []
         #print(imgPath)
+        #print(bbox)
         img = cv2.imread(imgPath)
-
+        # cv2.imshow('img',img)
+        # while cv2.waitKey(1) != ord('n'):
+        #     continue
         assert(img is not None)
         img_h,img_w, _ = img.shape
         gt_box = np.array([bbox.left,bbox.top,bbox.right,bbox.bottom])
@@ -62,19 +65,23 @@ def GenerateData(ftxt,data_path,net,augment=False):
         # resize the gt image to specified size
         f_hand = cv2.resize(f_hand,(size,size))
         #initialize the gesture
-        gesture = np.zeros((3, 1))
+        gesture = np.zeros(3)
+        #print('gestureGt',gestureGt)
+        for index, item in enumerate(gestureGt):
+            #print('item',item)
+            gesture[index] = item
 
-        #normalize gesture by dividing the width and height of the ground truth bounding box
-        # gestureGt is a list of tuples
-        for index, one in enumerate(gestureGt):
-            # (( x - bbox.left)/ width of bounding box, (y - bbox.top)/ height of bounding box
-            rv = ((one[0]-gt_box[0])/(gt_box[2]-gt_box[0]), (one[1]-gt_box[1])/(gt_box[3]-gt_box[1]))
-            # put the normalized value into the new list landmark
-            gesture[index] = rv
+        # #normalize gesture by dividing the width and height of the ground truth bounding box
+        # # gestureGt is a list of tuples
+        # for index, one in enumerate(gestureGt):
+        #     # (( x - bbox.left)/ width of bounding box, (y - bbox.top)/ height of bounding box
+        #     rv = ((one[0]-gt_box[0])/(gt_box[2]-gt_box[0]), (one[1]-gt_box[1])/(gt_box[3]-gt_box[1]))
+        #     # put the normalized value into the new list landmark
+        #     gesture[index] = rv
         F_imgs.append(f_hand)
         F_gesture.append(gesture.reshape(3))
-
-        gesture = np.zeros((3, 1))        
+        #print('F_gesture',F_gesture)
+        gesture = np.zeros(3)
         if augment:
             idx = idx + 1
             if idx % 100 == 0:
@@ -109,53 +116,61 @@ def GenerateData(ftxt,data_path,net,augment=False):
                 iou = IoU(crop_box, np.expand_dims(gt_box,0))
                 if iou > 0.65:
                     F_imgs.append(resized_im)
-                    #normalize
-                    for index, one in enumerate(gestureGt):
-                        rv = ((one[0]-nx1)/bbox_size, (one[1]-ny1)/bbox_size)
-                        gesture[index] = rv
-                    F_gesture.append(gesture.reshape(3))
-                    gesture = np.zeros((3, 1))
-                    gesture_ = F_gesture[-1].reshape(-1,2)
+
+
+                    for index, item in enumerate(gestureGt):
+                        gesture[index] = item
+
+                    # #normalize
+                    # for index, one in enumerate(gestureGt):
+                    #     rv = ((one[0]-nx1)/bbox_size, (one[1]-ny1)/bbox_size)
+                    #     gesture[index] = rv
+                    F_gesture.append(gesture)
+                    gesture = np.zeros(3)
+                    #gesture_ = F_gesture[-1].reshape(-1,2)
                     bbox = BBox([nx1,ny1,nx2,ny2])                    
 
                     #mirror                    
                     if random.choice([0,1]) > 0:
-                        hand_flipped, gesture_flipped = flip(resized_im, gesture_)
+                        hand_flipped = flip(resized_im)
                         hand_flipped = cv2.resize(hand_flipped, (size, size))
                         #c*h*w
                         F_imgs.append(hand_flipped)
-                        F_gesture.append(gesture_flipped.reshape(10))
+                        F_gesture.append(gesture)
                     #rotate
                     if random.choice([0,1]) > 0:
-                        hand_rotated_by_alpha, gesture_rotated = rotate(img, bbox, \
-                                                                         bbox.reprojectGesture(gesture_), 5)#anti-clockwise
+                        hand_rotated_by_alpha = rotate(img, bbox, 5)#anti-clockwise
                         #gesture_offset
-                        gesture_rotated = bbox.projectGesture(gesture_rotated)
+                        #gesture_rotated = bbox.projectGesture(gesture_rotated)
                         hand_rotated_by_alpha = cv2.resize(hand_rotated_by_alpha, (size, size))
                         F_imgs.append(hand_rotated_by_alpha)
-                        F_gesture.append(gesture_rotated.reshape(3))
+                        F_gesture.append(gesture)
                 
                         #flip
-                        hand_flipped, gesture_flipped = flip(hand_rotated_by_alpha, gesture_rotated)
+                        hand_flipped = flip(hand_rotated_by_alpha)
                         hand_flipped = cv2.resize(hand_flipped, (size, size))
                         F_imgs.append(hand_flipped)
-                        F_gesture.append(gesture_flipped.reshape(3))                
+                        F_gesture.append(gesture)
                     
                     #anti-clockwise rotation
                     if random.choice([0,1]) > 0: 
-                        hand_rotated_by_alpha, gesture_rotated = rotate(img, bbox, \
-                                                                         bbox.reprojectGesture(gesture_), -5)#clockwise
-                        gesture_rotated = bbox.projectGesture(gesture_rotated)
+                        hand_rotated_by_alpha = rotate(img, bbox, -5)#clockwise
+                        #gesture_rotated = bbox.projectGesture(gesture_rotated)
                         hand_rotated_by_alpha = cv2.resize(hand_rotated_by_alpha, (size, size))
                         F_imgs.append(hand_rotated_by_alpha)
-                        F_gesture.append(gesture_rotated.reshape(3))
+                        F_gesture.append(gesture)
                 
-                        hand_flipped, gesture_flipped = flip(hand_rotated_by_alpha, gesture_rotated)
+                        hand_flipped = flip(hand_rotated_by_alpha)
                         hand_flipped = cv2.resize(hand_flipped, (size, size))
                         F_imgs.append(hand_flipped)
-                        F_gesture.append(gesture_flipped.reshape(3)) 
-                    
-            F_imgs, F_gesture = np.asarray(F_imgs), np.asarray(F_gesture)
+                        F_gesture.append(gesture)
+
+            #print(len(F_imgs))
+            #print(len(F_gesture))
+            F_imgs = np.asarray(F_imgs)
+            #print(F_imgs.shape)
+            #print(F_gesture)
+            F_gesture = np.asarray(F_gesture)
             #print F_imgs.shape
             #print F_landmarks.shape
             for i in range(len(F_imgs)):
@@ -163,11 +178,11 @@ def GenerateData(ftxt,data_path,net,augment=False):
 
                     #print('image id : ', image_id)
 
-                if np.sum(np.where(F_gesture[i] <= 0, 1, 0)) > 0:
-                    continue
-
-                if np.sum(np.where(F_gesture[i] >= 1, 1, 0)) > 0:
-                    continue
+                # if np.sum(np.where(F_gesture[i] <= 0, 1, 0)) > 0:
+                #     continue
+                #
+                # if np.sum(np.where(F_gesture[i] >= 1, 1, 0)) > 0:
+                #     continue
 
                 cv2.imwrite(join(dstdir,"%d.jpg" %(image_id)), F_imgs[i])
                 gestures = map(str,list(F_gesture[i]))
@@ -194,7 +209,7 @@ if __name__ == '__main__':
     # train data
     net = "PNet"
     #the file contains the names of all the gesture training data
-    train_txt = os.path.join("Dataset","imglist_with_gesture.txt")
+    train_txt = os.path.join('..',"Dataset",'Training',"imglist_with_gesture.txt")
     imgs,gestures = GenerateData(train_txt,data_path,net,augment=True )
     
    

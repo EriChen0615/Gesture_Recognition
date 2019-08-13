@@ -56,7 +56,7 @@ def getDataFromTxt(txt,data_path, with_gesture=True):
 
         # bounding box, (x1, y1, x2, y2)
         #bbox = (components[1], components[2], components[3], components[4])
-        bbox = (components[1], components[3], components[2], components[4])        
+        bbox = (components[1], components[2], components[3], components[4])
         bbox = [float(_) for _ in bbox]
         bbox = list(map(int,bbox))
 
@@ -66,10 +66,9 @@ def getDataFromTxt(txt,data_path, with_gesture=True):
             continue
 
         gesture = np.zeros((3, 1))
-        for index in range(0, 3):
-            rv = float(components[5+index])
+        class_name = img_path.split('/')[-2]
+        #print('class_name=',class_name)
             gesture[index] = rv
-        class_name = img_path.split('/')[-1]
         if class_name == 'one':
             gesture = [1,0,0]
         elif class_name == 'fist':
@@ -195,3 +194,6 @@ class BBox(object):
         top = self.top + topDelta
         bottom = self.top + bottomDelta
         return BBox([left, right, top, bottom])
+
+    def __repr__(self):
+        return str(self.left)+' '+str(self.bottom)+' '+str(self.right)+' '+str(self.top)
