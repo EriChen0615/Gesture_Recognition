@@ -70,7 +70,7 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
             sys.stdout.flush()
             filename = image_example['filename']
             if filename[0]!='.':
-                filename = '../'+filename
+                filename = os.path.join('..',filename)
             _add_to_tfrecord(filename, image_example, tfrecord_writer)
     # Finally, write the labels file:
     # labels_to_class_names = dict(zip(range(len(_CLASS_NAMES)), _CLASS_NAMES))
