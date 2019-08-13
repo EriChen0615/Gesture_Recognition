@@ -39,9 +39,9 @@ def drawLandmark(img, bbox, landmark):
 def getDataFromTxt(txt,data_path, with_gesture=True):
     """
         Generate data from txt file
-        return [(img_path, bbox, landmark)]
+        return [(img_path, bbox, gesture)]
             bbox: [left, right, top, bottom]
-            landmark: [(x1, y1), (x2, y2), ...]
+            gesture: [g1,g2,g3]
     """
 
 
@@ -59,13 +59,15 @@ def getDataFromTxt(txt,data_path, with_gesture=True):
         bbox = (components[1], components[3], components[2], components[4])        
         bbox = [float(_) for _ in bbox]
         bbox = list(map(int,bbox))
-        # landmark
+
+        # gesture
         if not with_gesture:
             result.append((img_path, BBox(bbox)))
             continue
+
         gesture = np.zeros((3, 1))
         for index in range(0, 3):
-            rv = (float(components[3+index]), float(components[3+index+1]))
+            rv = float(components[5+index])
             gesture[index] = rv
         #normalize
         '''
