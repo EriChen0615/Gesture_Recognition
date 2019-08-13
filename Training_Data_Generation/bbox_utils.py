@@ -65,10 +65,10 @@ def getDataFromTxt(txt,data_path, with_gesture=True):
             result.append((img_path, BBox(bbox)))
             continue
 
-        gesture = np.zeros((3, 1))
+        gesture = np.zeros(3)
         class_name = img_path.split('/')[-2]
         #print('class_name=',class_name)
-            gesture[index] = rv
+        #gesture[index] = rv
         if class_name == 'one':
             gesture = [1,0,0]
         elif class_name == 'fist':
