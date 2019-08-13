@@ -133,7 +133,7 @@ def GenerateData(ftxt,data_path,net,augment=False):
                         gesture_rotated = bbox.projectGesture(gesture_rotated)
                         hand_rotated_by_alpha = cv2.resize(hand_rotated_by_alpha, (size, size))
                         F_imgs.append(hand_rotated_by_alpha)
-                        F_gesture.append(hand_rotated.reshape(3))
+                        F_gesture.append(gesture_rotated.reshape(3))
                 
                         #flip
                         hand_flipped, gesture_flipped = flip(hand_rotated_by_alpha, gesture_rotated)
