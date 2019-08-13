@@ -136,7 +136,7 @@ for data_class_name in data_class:
                 if np.max(Iou) < 0.3:
                     # Iou with all gts must below 0.3
                     save_file = os.path.join(neg_save_dir, "%s.jpg" % n_idx)
-                    f2.write("../../DATA/12/negative/%s.jpg" % n_idx + ' 0\n')
+                    f2.write("../../Dataset/Training/Negative/%s.jpg" % n_idx + ' 0\n')
                     cv2.imwrite(save_file, resized_im)
                     n_idx += 1
 
