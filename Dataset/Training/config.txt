@@ -1,6 +1,6 @@
 @ 16
-! 75 one
-! 85 fist
+! 70 one
+! 80 fist
 ! 46 two
 - Dataset/Training/one/ one
 - Dataset/Training/fist/ fist
