@@ -193,8 +193,14 @@ if __name__ == '__main__':
     assert (exists(dstdir) and exists(OUTPUT))
     # train data
     net = "PNet"
-    #the file contains the names of all the gesture training data
+<<<<<<< HEAD
+    #the file contains the names of all the landmark training data
     train_txt = os.path.join("Dataset","imglist_with_gesture.txt")
+=======
+    #the file contains the names of all the gesture training data
+    #need to preduce the gesture training data name list first
+    train_txt = "trainImageList.txt"
+>>>>>>> f7286b71bac0b1f06766efa8c5257c2ebdc59129
     imgs,gestures = GenerateData(train_txt,data_path,net,augment=True )
     
    
