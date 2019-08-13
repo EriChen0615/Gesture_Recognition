@@ -59,6 +59,7 @@ def random_flip_images(image_batch,label_batch,gesture_batch):
         gesture_batch[i] = gesture_.ravel()
     return image_batch,gesture_batch
 '''
+"""
 # all mini-batch mirror
 def random_flip_images(image_batch,label_batch, gesture_batch):
     #mirror
@@ -82,6 +83,8 @@ def random_flip_images(image_batch,label_batch, gesture_batch):
         
     return image_batch, gesture_batch
 
+    """
+
 def image_color_distort(inputs):
     inputs = tf.image.random_contrast(inputs, lower=0.5, upper=1.5)
     inputs = tf.image.random_brightness(inputs, max_delta=0.2)
@@ -90,6 +93,7 @@ def image_color_distort(inputs):
 
     return inputs
 
+    
 def train(net_factory, prefix, end_epoch, base_dir,
           display=200, base_lr=0.01):
     """
