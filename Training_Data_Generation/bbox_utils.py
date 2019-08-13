@@ -64,9 +64,17 @@ def getDataFromTxt(txt,data_path, with_gesture=True):
             result.append((img_path, BBox(bbox)))
             continue
         gesture = np.zeros((3, 1))
-        for index in range(0, 3):
-            rv = (float(components[3+index]), float(components[3+index+1]))
-            gesture[index] = rv
+        class_name = img_path.split('/')[-1]
+        if class_name == 'one':
+            gesture = [1,0,0]
+        elif class_name == 'fist':
+            gesture = [0,1,0]
+        elif class_name == 'two':
+            gesture = [0,0,1]
+
+        # for index in range(0, 3):
+        #     rv = (float(components[3+index]), float(components[3+index+1]))
+        #     gesture[index] = rv
         #normalize
         '''
         for index, one in enumerate(landmark):
