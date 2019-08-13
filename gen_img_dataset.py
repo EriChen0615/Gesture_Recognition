@@ -43,19 +43,18 @@ def get_next_gs_bbox(gs_bbox_dict,_window,collect_label):
     bbox = [_x1,_y1,_x2,_y2]
     return _gest, bbox
 
-def load_config(filename):
+def load_config(filename,gs_bbox_dict):
     t_count = 0
     dir_count = {}
     dir_p = {}
-    for gs in GS_BBOX_DICT.keys():
+    for gs in gs_bbox_dict.keys():
         dir_count[gs] = 0
-    for gs in GS_BBOX_DICT.keys():
+    for gs in gs_bbox_dict.keys():
         dir_p[gs] = None
 
-    path = os.path.join(DIR_NAME,filename)
-    with open(path) as f:
+    with open(filename) as f:
         contents = f.read().splitlines()
-        print(contents)
+        #print(contents)
         for line in contents:
             words = line.split()
             #print(words)
@@ -90,6 +89,7 @@ if __name__ == '__main__':
     GS_BBOX_DICT = {'one':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*LONG_FAC),
                     'fist':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*SHORT_FAC),
                     'two':(WINDOW_WIDTH*SHORT_FAC,WINDOW_HEIGHT*LONG_FAC)}
+
     COLLECT_LABEL = ['one','fist','two'] # the label to collect
 
     # DATA PATH
@@ -104,7 +104,8 @@ if __name__ == '__main__':
     # --------- CONFIGURATION ENDS ---------- #
 
     # --------- FILE I/O READING -------- #
-    total_counter, gest_counter, gest_path = load_config('config.txt')
+    config_path = os.path.join(DIR_NAME,'config.txt')
+    total_counter, gest_counter, gest_path = load_config(config_path,GS_BBOX_DICT)
 
     gest_anno = {k:open(os.path.join(v,'annotation.txt'),'a+') for (k,v) in gest_path.items()} # a dict of files
 
