@@ -87,15 +87,19 @@ def get_dataset(dir, net='PNet'):
     for line in imagelist.readlines():
         info = line.strip().split(' ')
         data_example = dict()
-        bbox = None # neg(0) & aug(-2) 
+        bbox = dict() # neg(0) & aug(-2) 
         data_example['filename'] = info[0]
         #print(data_example['filename'])
         data_example['label'] = int(info[1])
 
+        bbox['xmin'] = 0
+        bbox['ymin'] = 0
+        bbox['xmax'] = 0
+        bbox['ymax'] = 0
+
         if len(info)==6: # pos(1) & part(-1)
 
-            bbox = dict()
-
+    
             bbox['xmin'] = info[2]
             bbox['ymin'] = info[3]
             bbox['xmax'] = info[4]
