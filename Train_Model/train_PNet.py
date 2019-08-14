@@ -13,7 +13,7 @@ def train_PNet(base_dir, prefix, end_epoch, display, lr):
     :param lr: learning rate
     :return:
     """
-    net_factory = P_Net
+    net_factory = P_Net # P_Net is a function defined in mtcnn_model
     train(net_factory,prefix, end_epoch, base_dir, display=display, base_lr=lr)
 
 if __name__ == '__main__':
