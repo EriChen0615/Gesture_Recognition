@@ -43,7 +43,10 @@ def getDataFromTxt(txt,data_path, with_gesture=True):
             bbox: [left, right, top, bottom]
             gesture: [g1,g2,g3]
     """
-
+    """
+    if not os.path.exists(data_path):
+        os.makedirs(data_path)
+    """
 
     with open(txt, 'r') as fd:
         lines = fd.readlines()
@@ -65,7 +68,7 @@ def getDataFromTxt(txt,data_path, with_gesture=True):
             result.append((img_path, BBox(bbox)))
             continue
 
-        gesture = np.zeros(3)
+        #gesture = np.zeros(3)
         class_name = img_path.split('/')[-2]
         #print('class_name=',class_name)
         #gesture[index] = rv

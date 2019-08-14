@@ -212,7 +212,7 @@ if __name__ == '__main__':
     # train data
     net = "PNet"
     #the file contains the names of all the gesture training data
-    train_txt = os.path.join('..',"Dataset",'Training',"imglist_with_gesture.txt")
+    train_txt = os.path.join('../Dataset/Training',"imglist_with_gesture.txt")
     imgs,gestures = GenerateData(train_txt,data_path,net,augment=True )
     
    
