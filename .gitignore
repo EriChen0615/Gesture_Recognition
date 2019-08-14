@@ -106,3 +106,9 @@ venv.bak/
 # pycharm
 .idea/
 
+# tensorflow files
+Model/*
+Model/MTCNN/
+logs/
+*.meta
+*.data
