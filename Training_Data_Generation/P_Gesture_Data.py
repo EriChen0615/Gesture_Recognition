@@ -81,7 +81,7 @@ def GenerateData(ftxt,data_path,net,augment=False):
         F_imgs.append(f_hand)
         F_gesture.append(gesture.reshape(3))
         #print('F_gesture',F_gesture)
-        gesture = np.zeros(3)
+        #gesture = np.zeros(3)
         if augment:
             idx = idx + 1
             if idx % 100 == 0:
@@ -126,7 +126,7 @@ def GenerateData(ftxt,data_path,net,augment=False):
                     #     rv = ((one[0]-nx1)/bbox_size, (one[1]-ny1)/bbox_size)
                     #     gesture[index] = rv
                     F_gesture.append(gesture)
-                    gesture = np.zeros(3)
+                    #gesture = np.zeros(3)
                     #gesture_ = F_gesture[-1].reshape(-1,2)
                     bbox = BBox([nx1,ny1,nx2,ny2])                    
 
