@@ -210,9 +210,8 @@ def train(net_factory, prefix, end_epoch, base_dir,
     MAX_STEP = int(num / config.BATCH_SIZE + 1) * end_epoch
     epoch = 0
     sess.graph.finalize()
+
     try:
-
-
 
         for step in range(MAX_STEP):
             i = i + 1
