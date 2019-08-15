@@ -4,7 +4,6 @@ from tensorflow.contrib.tensorboard.plugins import projector
 import numpy as np
 num_keep_radio = 0.7
 
-
 #define prelu: an activation function
 def prelu(inputs):
     #set a tensor alphas the same shape as the last dimension of inputs, and initialize its elements to be all 0.25
@@ -12,7 +11,6 @@ def prelu(inputs):
     pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小于0的值赋值为0，输入大于0的值不变
     neg = alphas * (inputs-abs(inputs))*0.5 
     return pos + neg
-
 
 def dense_to_one_hot(labels_dense,num_classes):
     num_labels = labels_dense.shape[0]
@@ -25,7 +23,6 @@ def dense_to_one_hot(labels_dense,num_classes):
 #label:batch
 
 #online hard example mining
-
 def cls_ohem(cls_prob, label):
     zeros = tf.zeros_like(label)
     #label=-1 --> label=0net_factory
@@ -55,7 +52,6 @@ def cls_ohem(cls_prob, label):
     loss,_ = tf.nn.top_k(loss, k=keep_num)
     return tf.reduce_mean(loss)
 
-
 def bbox_ohem_smooth_L1_loss(bbox_pred,bbox_target,label):
     sigma = tf.constant(1.0)
     threshold = 1.0/(sigma**2)
@@ -70,7 +66,6 @@ def bbox_ohem_smooth_L1_loss(bbox_pred,bbox_target,label):
     _, k_index = tf.nn.top_k(smooth_loss, k=keep_num)
     smooth_loss_picked = tf.gather(smooth_loss, k_index)
     return tf.reduce_mean(smooth_loss_picked)
-
 
 def bbox_ohem_orginal(bbox_pred,bbox_target,label):
     zeros_index = tf.zeros_like(label, dtype=tf.float32)
@@ -160,7 +155,6 @@ def cal_accuracy(cls_prob,label):
     accuracy_op = tf.reduce_mean(tf.cast(tf.equal(label_picked,pred_picked),tf.float32))
     return accuracy_op
 
-
 def _activation_summary(x):
 
     '''
@@ -175,10 +169,6 @@ def _activation_summary(x):
     print('load summary for : ',tensor_name)
     tf.summary.histogram(tensor_name + '/activations',x)
     #tf.summary.scalar(tensor_name + '/sparsity', tf.nn.zero_fraction(x))
-
-
-
-
 
 #construct Pnet
 #label:batch
@@ -257,7 +247,8 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
             return cls_pro_test,bbox_pred_test,gesture_pred_test
     
 
-    """ NEED MODIFICATION BEFORE NEXT STAGE TRAINING """
+
+""" -------NEED MODIFICATION BEFORE NEXT STAGE TRAINING-------- """
 # PLEASE MODIFY THE REST TWO FN BEFORE TRAINING R/ONET!!!
 # PLEASE DO NOT FORGET OMG!!!
 def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):

@@ -1,12 +1,11 @@
-#coding:utf-8
 from mtcnn_model import P_Net
-from train import train
+from train import train, test
 
 
 def train_PNet(base_dir, prefix, end_epoch, display, lr):
     """
     train PNet
-    :param dataset_dir: tfrecord path
+    :param base_dir: tfrecord path
     :param prefix:
     :param end_epoch: max epoch for training
     :param display:
@@ -15,6 +14,11 @@ def train_PNet(base_dir, prefix, end_epoch, display, lr):
     """
     net_factory = P_Net
     train(net_factory,prefix, end_epoch, base_dir, display=display, base_lr=lr)
+
+def test_PNet(base_dir, prefix, end_epoch, display):
+    net_factory = P_Net
+    test(net_factory, prefix, end_epoch, base_dir, display=display)
+
 
 if __name__ == '__main__':
     #data path
@@ -27,5 +31,16 @@ if __name__ == '__main__':
     prefix = model_path
     end_epoch = 30
     display = 100
+
+    """change base learning rate here!"""
     lr = 0.1 #was 0.001
+
     train_PNet(base_dir, prefix, end_epoch, display, lr)
+
+    print("------------------Training Finished-------------------\n")
+    print("--------------------Start Testing---------------------")
+
+    test_PNet(base_dir, prefix, end_epoch, display)
+
+
+
