@@ -40,7 +40,8 @@ if __name__ == '__main__':
     print("------------------Training Finished-------------------\n")
     print("--------------------Start Testing---------------------")
 
+    base_dir = '../Dataset/Testing/imglists/PNet'
     test_PNet(base_dir, prefix, end_epoch, display)
-
+ 
 
 

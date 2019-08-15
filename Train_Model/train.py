@@ -19,7 +19,7 @@ from read_tfrecord_v2 import read_multi_tfrecords,read_single_tfrecord
 import random
 import cv2
 
-import mtcnn_model import cls_ohem, bbox_ohem, gesture_ohem, cal_accuracy
+from mtcnn_model import cls_ohem, bbox_ohem, gesture_ohem, cal_accuracy
 
 
 
@@ -297,7 +297,7 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
         radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 0.5
         
     # else 之后再写吧lol：need to use multi_tfrecord reader
-                                """ for RNET & ONET """
+    #                              """ for RNET & ONET """
     #else:
     
     
