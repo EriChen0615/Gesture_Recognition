@@ -289,7 +289,6 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     #PNet use this method to get data
     if net == 'PNet':
         #dataset_dir = os.path.join(base_dir,'train_%s_ALL.tfrecord_shuffle' % net)
-        net_factory = P_Net
         dataset_dir = os.path.join(base_dir,'test_%s_gesture.tfrecord_shuffle' % net)
         print('dataset dir is:',dataset_dir)
         image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, 1, net)
