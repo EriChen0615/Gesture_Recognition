@@ -1,4 +1,3 @@
-#coding:utf-8
 import os
 import sys
 from datetime import datetime
@@ -19,6 +18,10 @@ from read_tfrecord_v2 import read_multi_tfrecords,read_single_tfrecord
 
 import random
 import cv2
+
+import mtcnn_model import cls_ohem, bbox_ohem, gesture_ohem, cal_accuracy
+
+
 
 def train_model(base_lr, loss, data_num):
     """
@@ -89,7 +92,6 @@ def random_flip_images(image_batch,label_batch, gesture_batch):
         
     return image_batch, gesture_batch
 
-    
 
 def image_color_distort(inputs):
     inputs = tf.image.random_contrast(inputs, lower=0.5, upper=1.5)
@@ -101,7 +103,7 @@ def image_color_distort(inputs):
 
 
 def train(net_factory, prefix, end_epoch, base_dir,
-          display=200, base_lr=0.01):
+          display=100, base_lr=0.01):
 
     """
     train PNet/RNet/ONet
@@ -183,7 +185,6 @@ def train(net_factory, prefix, end_epoch, base_dir,
     init = tf.global_variables_initializer()
     sess = tf.Session()
 
-
     #save model
     saver = tf.train.Saver(max_to_keep=0)
     sess.run(init)
@@ -260,3 +261,124 @@ def train(net_factory, prefix, end_epoch, base_dir,
         writer.close()
     coord.join(threads)
     sess.close()
+
+
+def test(net_factory, prefix, end_epoch, base_dir, display=100):
+
+    """
+    testing: batch size = 1
+    :param net_factory: P/R/ONet
+    :param base_dir: tfrecord path
+    :param prefix: model path
+    :param display:
+    :param lr: learning rate
+    :return:
+
+    """
+    net = prefix.split('/')[-1]
+    #label file
+    label_file = os.path.join(base_dir,'test_%s_gesture.txt' % net)
+    #label_file = os.path.join(base_dir,'gesture_12_few.txt')
+    print(label_file)
+    f = open(label_file, 'r')
+    # get number of testing examples
+    num = len(f.readlines())
+    print("Total size of the dataset is: ", num)
+    print(prefix)
+
+    #PNet use this method to get data
+    if net == 'PNet':
+        #dataset_dir = os.path.join(base_dir,'train_%s_ALL.tfrecord_shuffle' % net)
+        net_factory = P_Net
+        dataset_dir = os.path.join(base_dir,'test_%s_gesture.tfrecord_shuffle' % net)
+        print('dataset dir is:',dataset_dir)
+        image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, 1, net)
+        image_size = 12
+        radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 0.5
+        
+    # else 之后再写吧lol：need to use multi_tfrecord reader
+                                """ for RNET & ONET """
+    #else:
+    
+    
+
+    #set placeholders first 
+    #change batchsize to 1 for testing
+    input_image = tf.placeholder(tf.float32, shape=[1, image_size, image_size, 3], name='input_image')
+    label = tf.placeholder(tf.float32, shape=[1], name='label')
+    bbox_target = tf.placeholder(tf.float32, shape=[1, 4], name='bbox_target')
+    gesture_target = tf.placeholder(tf.float32,shape=[1,3],name='gesture_target')
+
+    input_image = image_color_distort(input_image)
+    cls_prob,bbox_prob,gesture_pred = net_factory(input_image, label, bbox_target,gesture_target,training=False)
+    cls_loss = cls_ohem(cls_prob,label)
+    bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
+    gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
+    total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
+    accuracy = cal_accuracy(cls_prob,label)
+
+    tf.summary.scalar("cls_loss",cls_loss_op)#cls_loss
+    tf.summary.scalar("bbox_loss",bbox_loss_op)#bbox_loss
+    tf.summary.scalar("gesture_loss",gesture_loss_op)#gesture_loss
+    tf.summary.scalar("cls_accuracy",accuracy_op)#cls_acc
+    tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, gesture loss and L2 loss add together
+    summary_op = tf.summary.merge_all()
+ 
+
+    init = tf.global_variables_initializer()
+    sess = tf.Session()
+    saver = tf.train.Saver(max_to_keep=0)
+    sess.run(init)
+
+    projector_config = projector.ProjectorConfig()
+    projector.visualize_embeddings(writer,projector_config)
+    #begin 
+    coord = tf.train.Coordinator()
+    #begin enqueue thread
+    threads = tf.train.start_queue_runners(sess=sess, coord=coord)
+    i = 0
+    #total steps
+    MAX_STEP = int(num / 1 + 1) * end_epoch
+    epoch = 0
+    sess.graph.finalize()
+
+    try:
+
+        for step in range(MAX_STEP):
+            i = i + 1
+            if coord.should_stop():
+                break
+            image_batch_array, label_batch_array, bbox_batch_array,gesture_batch_array = sess.run([image_batch, label_batch, bbox_batch,gesture_batch])
+            #random flip
+            image_batch_array,gesture_batch_array = random_flip_images(image_batch_array,label_batch_array,gesture_batch_array)
+
+            _,_,summary = sess.run([summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array,gesture_target:gesture_batch_array})
+
+            if (step+1) % display == 0:
+                #acc = accuracy(cls_pred, labels_batch)
+                cls_loss, bbox_loss,gesture_loss,L2_loss,accuray = sess.run([cls_loss, bbox_loss,gesture_loss,L2_loss,accuracy],
+                                                             feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array, gesture_target: gesture_batch_array})
+
+                total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
+                # gesture loss: %4f,
+                print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f,gesture loss :%4f,L2 loss: %4f, Total Loss: %4f ,lr:%f " % (
+                datetime.now(), step+1,MAX_STEP, acc, cls_loss, bbox_loss,gesture_loss, L2_loss,total_loss, lr))
+
+
+            #save every two epochs
+            if i * config.BATCH_SIZE > num*2:
+                epoch = epoch + 1
+                i = 0
+                path_prefix = saver.save(sess, prefix, global_step=epoch*2)
+                print('path prefix is :', path_prefix)
+
+
+    except tf.errors.OutOfRangeError:
+        print("Finished!( ゜- ゜)つロ乾杯")
+    finally:
+        coord.request_stop()
+
+    coord.join(threads)
+    sess.close()
+
+    

@@ -61,6 +61,7 @@ def load_config(filename,gs_bbox_dict):
             if words[0]=='@': t_count = int(words[1])
             elif words[0]=='!': dir_count[words[2]]=int(words[1])
             elif words[0]=='-': dir_p[words[2]]=words[1]
+    print("---------Config Loaded Successfully---------")
     return t_count, dir_count, dir_p
 
 def export_config(filename,t_count,dir_count,dir_p):
@@ -70,6 +71,7 @@ def export_config(filename,t_count,dir_count,dir_p):
             f.write('! {0} {1}\n'.format(num,gs))
         for gs,path in dir_p.items(): # write path
             f.write('- {0} {1}\n'.format(path,gs))
+    print("-----------Config Exported Successfully----------")
 
 if __name__ == '__main__':
 
@@ -93,7 +95,7 @@ if __name__ == '__main__':
     COLLECT_LABEL = ['one','fist','two'] # the label to collect
 
     # DATA PATH
-    DIR_NAME = os.path.join('Dataset','Training')
+    DIR_NAME = os.path.join('Dataset','Testing')
 
     # COLLECTION SETTING
     SHOTS_PER_BOX = 5
