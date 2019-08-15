@@ -311,17 +311,22 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     input_image = image_color_distort(input_image)
     cls_prob,bbox_prob,gesture_pred = net_factory(input_image, label, bbox_target,gesture_target,training=False)
     cls_loss = cls_ohem(cls_prob,label)
-    bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
+    bbox_loss = bbox_ohem(bbox_prob,bbox_target,label)
     gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
     total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
     accuracy = cal_accuracy(cls_prob,label)
 
-    tf.summary.scalar("cls_loss",cls_loss_op)#cls_loss
-    tf.summary.scalar("bbox_loss",bbox_loss_op)#bbox_loss
-    tf.summary.scalar("gesture_loss",gesture_loss_op)#gesture_loss
-    tf.summary.scalar("cls_accuracy",accuracy_op)#cls_acc
-    tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, gesture loss and L2 loss add together
+    tf.summary.scalar("cls_loss",cls_loss)#cls_loss
+    tf.summary.scalar("bbox_loss",bbox_loss)#bbox_loss
+    tf.summary.scalar("gesture_loss",gesture_loss)#gesture_loss
+    tf.summary.scalar("cls_accuracy",accuracy)#cls_acc
+    tf.summary.scalar("total_loss",total_loss)#cls_loss, bbox loss, gesture loss and L2 loss add together
     summary_op = tf.summary.merge_all()
+
+    logs_dir = "../logs/%s" %(net)
+    if os.path.exists(logs_dir) == False:
+        os.makedirs(logs_dir)
+
  
 
     init = tf.global_variables_initializer()
@@ -329,6 +334,7 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     saver = tf.train.Saver(max_to_keep=0)
     sess.run(init)
 
+    writer = tf.summary.FileWriter(logs_dir,sess.graph)
     projector_config = projector.ProjectorConfig()
     projector.visualize_embeddings(writer,projector_config)
     #begin 
@@ -370,12 +376,15 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
                 i = 0
                 path_prefix = saver.save(sess, prefix, global_step=epoch*2)
                 print('path prefix is :', path_prefix)
+            
+            writer.add_summary(summary,global_step=step)
 
 
     except tf.errors.OutOfRangeError:
         print("Finished!( ゜- ゜)つロ乾杯")
     finally:
         coord.request_stop()
+        writer.close()
 
     coord.join(threads)
     sess.close()
