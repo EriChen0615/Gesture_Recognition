@@ -309,12 +309,9 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     gesture_target = tf.placeholder(tf.float32,shape=[1,3],name='gesture_target')
 
     input_image = image_color_distort(input_image)
-    cls_prob,bbox_prob,gesture_pred = net_factory(input_image, label, bbox_target,gesture_target,training=False)
-    cls_loss = cls_ohem(cls_prob,label)
-    bbox_loss = bbox_ohem(bbox_prob,bbox_target,label)
-    gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
+    cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy = net_factory(input_image, label, bbox_target,gesture_target,training=True)
     total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
-    accuracy = cal_accuracy(cls_prob,label)
+ 
 
     tf.summary.scalar("cls_loss",cls_loss)#cls_loss
     tf.summary.scalar("bbox_loss",bbox_loss)#bbox_loss
@@ -323,7 +320,7 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     tf.summary.scalar("total_loss",total_loss)#cls_loss, bbox loss, gesture loss and L2 loss add together
     summary_op = tf.summary.merge_all()
 
-    logs_dir = "../logs/%s" %(net)
+    logs_dir = "../logs_testing/%s" %(net)
     if os.path.exists(logs_dir) == False:
         os.makedirs(logs_dir)
 
@@ -361,13 +358,13 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
 
             if (step+1) % display == 0:
                 #acc = accuracy(cls_pred, labels_batch)
-                cls_loss, bbox_loss,gesture_loss,L2_loss,accuray = sess.run([cls_loss, bbox_loss,gesture_loss,L2_loss,accuracy],
+                cls_loss, bbox_loss,gesture_loss,L2_loss,acc = sess.run([cls_loss, bbox_loss,gesture_loss,L2_loss,accuracy],
                                                              feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array, gesture_target: gesture_batch_array})
 
                 total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
                 # gesture loss: %4f,
-                print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f,gesture loss :%4f,L2 loss: %4f, Total Loss: %4f ,lr:%f " % (
-                datetime.now(), step+1,MAX_STEP, acc, cls_loss, bbox_loss,gesture_loss, L2_loss,total_loss, lr))
+                print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f,gesture loss :%4f,L2 loss: %4f, Total Loss: %4f  " % (
+                datetime.now(), step+1,MAX_STEP, acc, cls_loss, bbox_loss,gesture_loss, L2_loss,total_loss))
 
 
             #save every two epochs
