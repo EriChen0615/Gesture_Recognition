@@ -19,7 +19,7 @@ from read_tfrecord_v2 import read_multi_tfrecords,read_single_tfrecord
 import random
 import cv2
 
-from mtcnn_model import cls_ohem, bbox_ohem, gesture_ohem, cal_accuracy
+from mtcnn_model import cal_accuracy
 
 
 
@@ -309,6 +309,7 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     gesture_target = tf.placeholder(tf.float32,shape=[1,3],name='gesture_target')
 
     input_image = image_color_distort(input_image)
+    """
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True)
     #train,update learning rate(3 loss)
     total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
@@ -316,6 +317,10 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     train_op, lr_op = train_model(base_lr,
                                   total_loss_op,
                                   num) #for testing, set base lr to 0
+    """
+
+    cls_pro_test,bbox_pred_test,gesture_pred_test = net_factory(input_image, label, bbox_target,gesture_target,training=False)
+
     # init
     init = tf.global_variables_initializer()
     sess = tf.Session()
@@ -325,11 +330,10 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     sess.run(init)
 
     #visualize some variables
-    tf.summary.scalar("cls_loss",cls_loss_op)#cls_loss
-    tf.summary.scalar("bbox_loss",bbox_loss_op)#bbox_loss
-    tf.summary.scalar("gesture_loss",gesture_loss_op)#gesture_loss
-    tf.summary.scalar("cls_accuracy",accuracy_op)#cls_acc
-    tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, gesture loss and L2 loss add together
+    tf.summary.scalar("cls_pro_test",cls_pro_test)
+    tf.summary.scalar("bbox_pred_test",bbox_pred_test)
+    tf.summary.scalar("gesture_pred_test",gesture_pred_test)
+    
     summary_op = tf.summary.merge_all()
     logs_dir = "../logs_testing/%s" %(net)
     if os.path.exists(logs_dir) == False:
@@ -357,17 +361,18 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
             #random flip
             image_batch_array,gesture_batch_array = random_flip_images(image_batch_array,label_batch_array,gesture_batch_array)
 
-            _,_,summary = sess.run([train_op, lr_op ,summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array,gesture_target:gesture_batch_array})
+            _,_,summary = sess.run([summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array,gesture_target:gesture_batch_array})
 
             if (step+1) % display == 0:
-                #acc = accuracy(cls_pred, labels_batch)
-                cls_loss, bbox_loss,gesture_loss,L2_loss,acc = sess.run([cls_loss_op, bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op],
+                acc1 = cal_accuracy(cls_pro_test, label_batch_array)
+                #acc2 = cal_accuracy(bbox_pred_test, bbox_batch_array)
+                #acc3 = cal_accuracy(gesture_pred_test, gesture_batch_array)
+                cls_pro_test, bbox_pred_test,gesture_pred_test, accuracy1 = sess.run([bbox_pred_test,gesture_pred_test,acc1],
                                                              feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array, gesture_target: gesture_batch_array})
 
-                total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
+                #total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
                 # gesture loss: %4f,
-                print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f,gesture loss :%4f,L2 loss: %4f, Total Loss: %4f  " % (
-                datetime.now(), step+1,MAX_STEP, acc, cls_loss, bbox_loss,gesture_loss, L2_loss,total_loss))
+                print("%s : Step: %d/%d, accuracy for cls: %3f  " % (datetime.now(), step+1,MAX_STEP, accuracy1))
 
 
             #save every two epochs
