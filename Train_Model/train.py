@@ -287,16 +287,16 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     print(prefix)
 
     #PNet use this method to get data
-    if net == 'PNet':
+    #if net == 'PNet':
         #dataset_dir = os.path.join(base_dir,'train_%s_ALL.tfrecord_shuffle' % net)
-        dataset_dir = os.path.join(base_dir,'test_%s_gesture.tfrecord_shuffle' % net)
-        print('dataset dir is:',dataset_dir)
-        image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, 1, net)
-        image_size = 12
-        radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 0.5
+    dataset_dir = os.path.join(base_dir,'test_%s_gesture.tfrecord_shuffle' % net)
+    print('dataset dir is:',dataset_dir)
+    image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, 1, net)
+    image_size = 12
+    radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 0.5
         
     # else 之后再写吧lol：need to use multi_tfrecord reader
-    #                              """ for RNET & ONET """
+    """ for RNET & ONET """
     #else:
     
     
