@@ -39,10 +39,10 @@ def cls_ohem(cls_prob, label):
     indices_ = row + label_int
     label_prob = tf.squeeze(tf.gather(cls_prob_reshape, indices_))
     loss = -tf.log(label_prob+1e-10)
-    zeros = tf.zeros_like(label_prob, dtype=tf.float32)
-    ones = tf.ones_like(label_prob,dtype=tf.float32)
+    zeros = tf.zeros_like(label_prob, dtype=tf.float32) # set all elements to 0
+    ones = tf.ones_like(label_prob,dtype=tf.float32) # set all elements to 1
     # set pos and neg to be 1, rest to be 0
-    valid_inds = tf.where(label < zeros,zeros,ones)
+    valid_inds = tf.where(label <= zeros,zeros,ones) #was < before
     # get the number of POS and NEG examples
     num_valid = tf.reduce_sum(valid_inds)
 
