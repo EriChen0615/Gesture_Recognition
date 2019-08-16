@@ -310,7 +310,7 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
 
     input_image = image_color_distort(input_image)
     
-    cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True)
+    cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=False)
     #train,update learning rate(3 loss)
     total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
     base_lr = 0

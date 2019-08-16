@@ -23,7 +23,7 @@ def dense_to_one_hot(labels_dense,num_classes):
 #label:batch
 
 #online hard example mining
-def cls_ohem(cls_prob, label):
+def cls_ohem(cls_prob, label, training=True):
     zeros = tf.zeros_like(label)
     #label=-1 --> label=0net_factory
 
@@ -37,11 +37,18 @@ def cls_ohem(cls_prob, label):
     #row = [0,2,4.....]
     row = tf.range(num_row)*2
     indices_ = row + label_int
-    label_prob = tf.squeeze(tf.gather(cls_prob_reshape, indices_))
+    if training == True:
+        label_prob = tf.squeeze(tf.gather(cls_prob_reshape, indices_))
+    else:
+        label_prob = label
+
     loss = -tf.log(label_prob+1e-10)
     zeros = tf.zeros_like(label_prob, dtype=tf.float32) # set all elements to 0
     ones = tf.ones_like(label_prob,dtype=tf.float32) # set all elements to 1
     # set pos and neg to be 1, rest to be 0
+    print(label.get_shape())
+    print(zeros.get_shape())
+    print(ones.get_shape())
     valid_inds = tf.where(label <= zeros,zeros,ones) #was < before
     # get the number of POS and NEG examples
     num_valid = tf.reduce_sum(valid_inds)
@@ -226,13 +233,16 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
             #batch*2
             # calculate classification loss
             cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
-            cls_loss = cls_ohem(cls_prob,label)
+            print("cls_prob ", cls_prob.get_shape())
+            cls_loss = cls_ohem(cls_prob,label,training)
             #batch*4
             # cal bounding box error, squared sum error
             bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
+            print("bbox_pred ", bbox_pred.get_shape())
             bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
             #batch*3
             gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
+            print("gesture_pred ", gesture_pred.get_shape())
             gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
 
             accuracy = cal_accuracy(cls_prob,label)
@@ -241,10 +251,28 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         #test
         else:
             #when test,batch_size = 1
+            """
             cls_pro_test = tf.squeeze(conv4_1, axis=0)
             bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
             gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
             return cls_pro_test,bbox_pred_test,gesture_pred_test
+            """
+            cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
+            #print("cls_prob ", cls_prob.get_shape())
+            cls_loss = cls_ohem(cls_prob,label,training=False)
+            #batch*4
+            # cal bounding box error, squared sum error
+            bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
+            #print("bbox_pred ", bbox_pred.get_shape())
+            bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
+            #batch*3
+            gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
+            #print("gesture_pred ", gesture_pred.get_shape())
+            gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
+
+            accuracy = cal_accuracy(cls_prob,label)
+            L2_loss = tf.add_n(slim.losses.get_regularization_losses())
+            return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
     
 
 
@@ -284,7 +312,7 @@ def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
         print(gesture_pred.get_shape())
         #train
         if training:
-            cls_loss = cls_ohem(cls_prob,label)
+            cls_loss = cls_ohem(cls_prob,label,training)
             bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
             accuracy = cal_accuracy(cls_prob,label)
             gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
@@ -330,7 +358,7 @@ def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
         print(gesture_pred.get_shape())
         #train
         if training:
-            cls_loss = cls_ohem(cls_prob,label)
+            cls_loss = cls_ohem(cls_prob,label,training)
             bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
             accuracy = cal_accuracy(cls_prob,label)
             gesture_loss = gesture_ohem(gesture_pred, gesture_target,label)
