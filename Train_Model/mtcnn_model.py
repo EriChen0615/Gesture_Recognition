@@ -202,7 +202,7 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         print(net.get_shape())
         #
         net = slim.conv2d(net,num_outputs=32,kernel_size=[3,3],stride=1,scope='conv3')
-        _activation_summary(net)
+        # _activation_summary(net)
         print(net.get_shape())
         """ hand detection """
         #batch*H*W*2 shape=(batch,1,1,2) 
