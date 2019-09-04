@@ -22,7 +22,7 @@ def test_PNet(base_dir, prefix, end_epoch, display):
 
 if __name__ == '__main__':
     #data path
-#    base_dir = '../Dataset/Training/imglists/PNet'
+    base_dir = '../Dataset/Training/imglists/PNet'
     model_name = 'MTCNN'
     #model_path = '../data/%s_model/PNet/PNet' % model_name
     #with gesture
