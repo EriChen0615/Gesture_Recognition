@@ -46,9 +46,9 @@ def cls_ohem(cls_prob, label, training=True):
     zeros = tf.zeros_like(label_prob, dtype=tf.float32) # set all elements to 0
     ones = tf.ones_like(label_prob,dtype=tf.float32) # set all elements to 1
     # set pos and neg to be 1, rest to be 0
-    print(label.get_shape())
-    print(zeros.get_shape())
-    print(ones.get_shape())
+    # print(label.get_shape())
+    # print(zeros.get_shape())
+    # print(ones.get_shape())
     valid_inds = tf.where(label <= zeros,zeros,ones) #was < before
     # get the number of POS and NEG examples
     num_valid = tf.reduce_sum(valid_inds)
@@ -192,13 +192,13 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
 
 
         net = slim.conv2d(inputs, 10, 3, stride=1,scope='conv1')
-        _activation_summary(net)
+        # _activation_summary(net)
         print(net.get_shape())
         net = slim.max_pool2d(net, kernel_size=[2,2], stride=2, scope='pool1', padding='SAME')
-        _activation_summary(net)
+        # _activation_summary(net)
         print(net.get_shape())
         net = slim.conv2d(net,num_outputs=16,kernel_size=[3,3],stride=1,scope='conv2')
-        _activation_summary(net)
+        # _activation_summary(net)
         print(net.get_shape())
         #
         net = slim.conv2d(net,num_outputs=32,kernel_size=[3,3],stride=1,scope='conv3')
@@ -207,14 +207,14 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         """ hand detection """
         #batch*H*W*2 shape=(batch,1,1,2) 
         conv4_1 = slim.conv2d(net,num_outputs=2,kernel_size=[1,1],stride=1,scope='conv4_1',activation_fn=tf.nn.softmax)
-        _activation_summary(conv4_1)
+        # _activation_summary(conv4_1)
         #conv4_1 = slim.conv2d(net,num_outputs=1,kernel_size=[1,1],stride=1,scope='conv4_1',activation_fn=tf.nn.sigmoid)
         print (conv4_1.get_shape())
 
         """ bbox regression """
         #batch*H*W*4 shape=(batch,1,1,4)
         bbox_pred = slim.conv2d(net,num_outputs=4,kernel_size=[1,1],stride=1,scope='conv4_2',activation_fn=None)
-        _activation_summary(bbox_pred)
+        # _activation_summary(bbox_pred)
         print (bbox_pred.get_shape())
 
         """ gesture prediction """
@@ -223,7 +223,7 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         gesture_pred = slim.fully_connected(gesture_pred, num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
         #thinking about change the activation fn to sigmoid or softmax?
         #Here trying to normalize: gesture_pred = gesture_pred / abs(gesture_pred) 
-        _activation_summary(gesture_pred)
+        # _activation_summary(gesture_pred)
         print (gesture_pred.get_shape())
 
 
