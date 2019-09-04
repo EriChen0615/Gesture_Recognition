@@ -35,8 +35,8 @@ if __name__ == '__main__':
     """change base learning rate here!"""
     lr = 0.1 #was 0.001
 
-    # print("------------------Training Started-------------------\n")
-    # train_PNet(base_dir, prefix, end_epoch, display, lr)
+    print("------------------Training Started-------------------\n")
+    train_PNet(base_dir, prefix, end_epoch, display, lr)
 
     print("------------------Training Finished-------------------\n")
     print("--------------------Start Testing---------------------")
