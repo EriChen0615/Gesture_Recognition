@@ -29,7 +29,7 @@ if __name__ == '__main__':
     model_path = '../Model/{0}/PNet'.format(model_name)
             
     prefix = model_path
-    end_epoch = 30
+    end_epoch = 200
     display = 100
 
     """change base learning rate here!"""
