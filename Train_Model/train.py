@@ -125,7 +125,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     # get number of training examples
     lines = f.readlines()
     num = len(f.readlines())
-    if lines[-1] != "":
+    if lines[-1] == "":
         num -= 1
     print("Total size of the dataset is: ", num)
     print(prefix)
@@ -291,9 +291,12 @@ def test(net_factory, prefix, base_dir, display=100):
     print(label_file)
     f = open(label_file, 'r')
     # get number of testing examples
-    num = len(f.readlines())
+    lines = f.readlines()
+    num = len(lines)
+    if lines[-1] == "":
+        num -= 1
     print("Total size of the dataset is: ", num)
-    print(prefix)
+    print("The prefix is: ", prefix)
 
     #PNet use this method to get data
     #if net == 'PNet':
@@ -312,13 +315,15 @@ def test(net_factory, prefix, base_dir, display=100):
 
     #set placeholders first 
     #change batchsize to 1 for testing
-    input_image = tf.placeholder(tf.float32, shape=[1, image_size, image_size, 3], name='input_image')
-    label = tf.placeholder(tf.float32, shape=[1], name='label')
-    bbox_target = tf.placeholder(tf.float32, shape=[1, 4], name='bbox_target')
-    gesture_target = tf.placeholder(tf.float32,shape=[1,3],name='gesture_target')
+    batchsize = 30
+    input_image = tf.placeholder(tf.float32, shape=[batchsize, image_size, image_size, 3], name='input_image')
+    label = tf.placeholder(tf.float32, shape=[batchsize], name='label')
+    bbox_target = tf.placeholder(tf.float32, shape=[batchsize, 4], name='bbox_target')
+    gesture_target = tf.placeholder(tf.float32,shape=[batchsize,3],name='gesture_target')
 
     input_image = image_color_distort(input_image)
-    
+    cls_pro, bbox_pred, gesture_pred = net_factory(input_image, training=False)
+
     """
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=False)
     #train,update learning rate(3 loss)
@@ -329,19 +334,12 @@ def test(net_factory, prefix, base_dir, display=100):
     #                               num) #for testing, set base lr to 0
     """
 
-    cls_pro, bbox_pred, gesture_pred = net_factory(input_image, label, bbox_target,gesture_target,training=False)
-
-    # here calculate the corresponding loss
+    # here calculate the corresponding acc and loss
     accuracy_op = cal_accuracy(cls_pro,label)
     cls_loss_op = cls_ohem(cls_pro,label,training=False)
     bbox_loss_op = bbox_ohem(bbox_pred, bbox_target, label)
     gesture_loss_op = gesture_ohem(gesture_pred,gesture_target,label)
     L2_loss_op = tf.add_n(slim.losses.get_regularization_losses())
-    print("for the shapes of ops:")
-    print("cls_loss_op: ", cls_loss_op.get_shape())
-    print("bbox_loss_op: ", bbox_loss_op.get_shape())
-    print("gesture_loss_op: ", gesture_loss_op.get_shape())
-    print("L2_loss_op: ", L2_loss_op.get_shape())
     total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
 
     # init
@@ -378,7 +376,7 @@ def test(net_factory, prefix, base_dir, display=100):
     threads = tf.train.start_queue_runners(sess=sess, coord=coord)
     i = 0
     #total steps
-    MAX_STEP = int(num / 1 + 1) * 1 #change config.BATCHSIZE and end_epoch to 1, max_step = num+1
+    MAX_STEP = int(num / batchsize + 1) * 1 #change config.BATCHSIZE and end_epoch to 1, max_step = num+1
     epoch = 0
     sess.graph.finalize()
     
@@ -406,7 +404,7 @@ def test(net_factory, prefix, base_dir, display=100):
 
 
             #save every epoch #(was every two epochs) 
-            if i * 1 > num: #change config.BATCHSIZE to 1, num was num*2
+            if i * batchsize > num: #change config.BATCHSIZE to 1, num was num*2
                 epoch = epoch + 1
                 i = 0
                 # path_prefix = saver.save(sess, prefix, global_step=epoch*2)
