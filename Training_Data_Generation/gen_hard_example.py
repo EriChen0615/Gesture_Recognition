@@ -1,7 +1,7 @@
 #coding:utf-8
 import sys
 #sys.path.append("../")
-from prepare_data.utils import convert_to_square
+from utils import convert_to_square
 
 sys.path.insert(0,'..')
 import numpy as np
@@ -9,14 +9,14 @@ import argparse
 import os
 import pickle as pickle
 import cv2
-from train_models.mtcnn_model import P_Net, R_Net, O_Net
-from train_models.MTCNN_config import config
-from prepare_data.loader import TestLoader
-from Detection.detector import Detector
-from Detection.fcn_detector import FcnDetector
-from Detection.MtcnnDetector import MtcnnDetector
-from utils import *
-from prepare_data.data_utils import *
+from Train_Models.mtcnn_model import P_Net, R_Net, O_Net
+from Train_Models.mtcnn_config import config
+from Training_Data_Generation.loader import TestLoader
+from Detector.detector import Detector
+from Detector.fcn_detector import FcnDetector
+from Detector.MtcnnDetector import MtcnnDetector
+from Training_Data_Generation.utils import *
+from Training_Data_Generation.data_utils import *
 #net : 24(RNet)/48(ONet)
 #data: dict()
 def save_hard_example(net, data,save_path):
@@ -32,13 +32,13 @@ def save_hard_example(net, data,save_path):
 
     
     # save files
-    neg_label_file = "../../DATA/no_LM%d/neg_%d.txt" % (net, image_size)
+    neg_label_file = "../Dataset/Training/no_LM%d/neg_%d.txt" % (net, image_size)
     neg_file = open(neg_label_file, 'w')
 
-    pos_label_file = "../../DATA/no_LM%d/pos_%d.txt" % (net, image_size)
+    pos_label_file = "../Dataset/Training/no_LM%d/pos_%d.txt" % (net, image_size)
     pos_file = open(pos_label_file, 'w')
 
-    part_label_file = "../../DATA/no_LM%d/part_%d.txt" % (net, image_size)
+    part_label_file = "../Dataset/Training/no_LM%d/part_%d.txt" % (net, image_size)
     part_file = open(part_label_file, 'w')
     #read detect result
     det_boxes = pickle.load(open(os.path.join(save_path, 'detections.pkl'), 'rb'))
@@ -131,8 +131,8 @@ def t_net(prefix, epoch,
     detectors = [None, None, None]
     print("Test model: ", test_mode)
     #PNet-echo
-    model_path = ['%s-%s' % (x, y) for x, y in zip(prefix, epoch)]
-    print(model_path[0])
+    model_path = ['%s-%s' % (x, y) for x, y in zip(prefix, epoch)] # path model include epoch number
+    print(model_path[0]) # load the first model only
     # load pnet model
     if slide_window:
         PNet = Detector(P_Net, 12, batch_size[0], model_path[0])
@@ -152,11 +152,12 @@ def t_net(prefix, epoch,
         ONet = Detector(O_Net, 48, batch_size[2], model_path[2])
         detectors[2] = ONet
         
-    basedir = '../../DATA/'
+    basedir = '../Dataset/Training/'
     #anno_file
-    filename = './wider_face_train_bbx_gt.txt'
+    filename = 'imglist_with_gesture.txt'
     #read anotation(type:dict), include 'images' and 'bboxes'
-    data = read_annotation(basedir,filename)
+    #data = read_annotation(basedir,filename)
+    data = load_annotation(os.join(basedir,filename)) # modified version of load annotation
     mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
                                    stride=stride, threshold=thresh, slide_window=slide_window)
     print("==================================")
@@ -193,16 +194,16 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Test mtcnn',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--test_mode', dest='test_mode', help='test net type, can be pnet, rnet or onet',
-                        default='RNet', type=str)
+                        default='PNet', type=str)
     parser.add_argument('--prefix', dest='prefix', help='prefix of model name', nargs="+",
-                        default=['../data/MTCNN_model/PNet_No_Landmark/PNet', '../data/MTCNN_model/RNet_No_Landmark/RNet', '../data/MTCNN_model/ONet_No_Landmark/ONet'],
-                        type=str)
+                        default=['../data/Model/MTCNN/PNet_No_Landmark/PNet', '../data/Model/MTCNN/RNet_No_Landmark/RNet', '../data/Model/MTCNN/ONet_No_Landmark/ONet'],
+                        type=str) # model file location
     parser.add_argument('--epoch', dest='epoch', help='epoch number of model to load', nargs="+",
-                        default=[18, 14, 16], type=int)
+                        default=[30], type=int)
     parser.add_argument('--batch_size', dest='batch_size', help='list of batch size used in prediction', nargs="+",
                         default=[2048, 256, 16], type=int)
     parser.add_argument('--thresh', dest='thresh', help='list of thresh for pnet, rnet, onet', nargs="+",
-                        default=[0.3, 0.1, 0.7], type=float)
+                        default=[0.3, 0.1, 0.7], type=float) # note default value for PNet is very low
     parser.add_argument('--min_face', dest='min_face', help='minimum face size for detection',
                         default=20, type=int)
     parser.add_argument('--stride', dest='stride', help='stride of sliding window',
@@ -217,15 +218,15 @@ def parse_args():
 
 if __name__ == '__main__':
 
-    net = 'ONet'
+    net = 'RNet'
 
     if net == "RNet":
         image_size = 24
     if net == "ONet":
         image_size = 48
 
-    base_dir = '../../DATA/WIDER_train'
-    data_dir = '../../DATA/no_LM%s' % str(image_size)
+    base_dir = '../Dataset/Training/WIDER_train'
+    data_dir = '../Dataset/Training/no_LM%s' % str(image_size)
     
     neg_dir = get_path(data_dir, 'negative')
     pos_dir = get_path(data_dir, 'positive')
