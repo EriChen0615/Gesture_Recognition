@@ -1,9 +1,9 @@
 from mtcnn_model import P_Net
 from train import test
 
-def test_PNet(base_dir, prefix, end_epoch, display):
+def test_PNet(base_dir, prefix, display):
     net_factory = P_Net
-    test(net_factory, prefix, end_epoch, base_dir, display=display)
+    test(net_factory, prefix, base_dir, display=display)
 
 if __name__ == '__main__':
     #data path
@@ -19,7 +19,6 @@ if __name__ == '__main__':
 
     base_dir_ = '../Dataset/Testing/imglists/PNet'
     display = 50
-    end_epoch = 300
-    test_PNet(base_dir_, prefix, end_epoch, display)
+    test_PNet(base_dir_, prefix, display)
 
     print("-------------------Testing Finished--------------------\n")

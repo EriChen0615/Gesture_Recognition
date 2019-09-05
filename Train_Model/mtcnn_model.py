@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.contrib import slim
 from tensorflow.contrib.tensorboard.plugins import projector
 import numpy as np
-num_keep_radio = 0.7
+num_keep_radio = 0.7 # ratio for online hard sample mining
 
 #define prelu: an activation function
 def prelu(inputs):
@@ -25,7 +25,7 @@ def dense_to_one_hot(labels_dense,num_classes):
 #online hard example mining
 def cls_ohem(cls_prob, label, training=True):
     zeros = tf.zeros_like(label)
-    #label=-1 --> label=0net_factory
+    #label=-1 --> label=0 net_factory
 
     #pos -> 1, neg -> 0, others -> 0
     label_filter_invalid = tf.where(tf.less(label,0), zeros, label)
@@ -49,13 +49,13 @@ def cls_ohem(cls_prob, label, training=True):
     # print(label.get_shape())
     # print(zeros.get_shape())
     # print(ones.get_shape())
-    valid_inds = tf.where(label < zeros,zeros,ones) #was < before
+    valid_inds = tf.where(label < zeros,zeros,ones) #was < before #这里我真的没看懂
     # the coordinates of 'True' elements of the condition given
     # get the number of POS and NEG examples
     num_valid = tf.reduce_sum(valid_inds)
 
     keep_num = tf.cast(num_valid*num_keep_radio,dtype=tf.int32)
-    #FILTER OUT PART AND gesture DATA
+    #FILTER OUT PART AND GESTURE DATA
     loss = loss * valid_inds
     loss,_ = tf.nn.top_k(loss, k=keep_num)
     return tf.reduce_mean(loss)

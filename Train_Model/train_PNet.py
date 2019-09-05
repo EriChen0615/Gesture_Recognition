@@ -15,9 +15,6 @@ def train_PNet(base_dir, prefix, end_epoch, display, lr):
     net_factory = P_Net
     train(net_factory,prefix, end_epoch, base_dir, display=display, base_lr=lr)
 
-def test_PNet(base_dir, prefix, end_epoch, display):
-    net_factory = P_Net
-    test(net_factory, prefix, end_epoch, base_dir, display=display)
 
 
 if __name__ == '__main__':
