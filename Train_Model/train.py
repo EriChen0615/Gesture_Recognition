@@ -272,7 +272,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     sess.close()
 
 
-def test(net_factory, prefix, base_dir, display=100):
+def test(net_factory, prefix, base_dir, display=100, batchsize = 1):
 
     """
     testing: batch size = 1
@@ -303,7 +303,7 @@ def test(net_factory, prefix, base_dir, display=100):
         #dataset_dir = os.path.join(base_dir,'train_%s_ALL.tfrecord_shuffle' % net)
     dataset_dir = os.path.join(base_dir,'test_%s_gesture.tfrecord_shuffle' % net)
     print('dataset dir is:',dataset_dir)
-    image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, 1, net)
+    image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, batchsize, net)
     image_size = 12
     radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 0.5
         
@@ -315,7 +315,7 @@ def test(net_factory, prefix, base_dir, display=100):
 
     #set placeholders first 
     #change batchsize to 1 for testing
-    batchsize = 30
+    
     input_image = tf.placeholder(tf.float32, shape=[batchsize, image_size, image_size, 3], name='input_image')
     label = tf.placeholder(tf.float32, shape=[batchsize], name='label')
     bbox_target = tf.placeholder(tf.float32, shape=[batchsize, 4], name='bbox_target')
