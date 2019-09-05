@@ -36,11 +36,7 @@ if __name__ == '__main__':
     train_PNet(base_dir, prefix, end_epoch, display, lr)
 
     print("------------------Training Finished-------------------\n")
-    # print("--------------------Start Testing---------------------")
 
-    # base_dir_ = '../Dataset/Testing/imglists/PNet'
-    # display = 200
-    # test_PNet(base_dir_, prefix, end_epoch, display)
  
 
 

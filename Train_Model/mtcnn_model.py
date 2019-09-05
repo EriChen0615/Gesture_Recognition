@@ -180,7 +180,7 @@ def _activation_summary(x):
 
 #construct Pnet
 #label:batch
-def P_Net(inputs,label,bbox_target,gesture_target,training=True):
+def P_Net(inputs,label=None,bbox_target,gesture_target,training=True):
     #define common param
     with slim.arg_scope([slim.conv2d],
                         activation_fn=prelu,
@@ -253,11 +253,11 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         #test
         else:
             #when test,batch_size = 1
-            """
             cls_pro_test = tf.squeeze(conv4_1, axis=0)
             bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
             gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
             return cls_pro_test,bbox_pred_test,gesture_pred_test
+            
             """
             cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
             #print("cls_prob ", cls_prob.get_shape())
@@ -275,6 +275,7 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
             accuracy = cal_accuracy(cls_prob,label)
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
             return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
+            """
     
 
 

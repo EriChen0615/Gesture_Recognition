@@ -16,11 +16,11 @@ sys.path.append("../Training_Data_Generation")
 print(sys.path)
 from read_tfrecord_v2 import read_multi_tfrecords,read_single_tfrecord
 
+from mtcnn_model import *
+from tensorflow.contrib import slim
+
 import random
 import cv2
-
-
-
 
 
 def train_model(base_lr, loss, data_num):
@@ -319,6 +319,7 @@ def test(net_factory, prefix, base_dir, display=100):
 
     input_image = image_color_distort(input_image)
     
+    """
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=False)
     #train,update learning rate(3 loss)
     total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
@@ -326,16 +327,24 @@ def test(net_factory, prefix, base_dir, display=100):
     # train_op, lr_op = train_model(base_lr,
     #                               total_loss_op,
     #                               num) #for testing, set base lr to 0
-    
+    """
 
-    #cls_pro_test,bbox_pred_test,gesture_pred_test = net_factory(input_image, label, bbox_target,gesture_target,training=False)
+    cls_pro, bbox_pred, gesture_pred = net_factory(input_image, label, bbox_target,gesture_target,training=False)
+
+    # here calculate the corresponding loss
+    accuracy_op = cal_accuracy(cls_pro,label)
+    cls_loss_op = cls_ohem(cls_pro,label,training=False)
+    bbox_loss_op = tf.reduce_sum(tf.square(bbox_pred-bbox_target),axis=1)
+    gesture_loss_op = tf.reduce_sum(tf.square(gesture_pred-gesture_target),axis=1)
+    L2_loss_op = tf.add_n(slim.losses.get_regularization_losses())
+    total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
 
     # init
     init = tf.global_variables_initializer()
     sess = tf.Session()
 
-    #save model
-    saver = tf.train.Saver(max_to_keep=0)
+    # #save model //no need since testing
+    # saver = tf.train.Saver(max_to_keep=0)
     sess.run(init)
 
     #visualize some variables
@@ -380,6 +389,7 @@ def test(net_factory, prefix, base_dir, display=100):
 
             summary = sess.run([summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array,gesture_target:gesture_batch_array})
             summary = summary[0]
+
             if (step+1) % display == 0:
                 
                 cls_loss,bbox_loss,gesture_loss, accuracy = sess.run([cls_loss_op,bbox_loss_op,gesture_loss_op,accuracy_op],
@@ -394,8 +404,8 @@ def test(net_factory, prefix, base_dir, display=100):
             if i * 1 > num: #change config.BATCHSIZE to 1, num was num*2
                 epoch = epoch + 1
                 i = 0
-                path_prefix = saver.save(sess, prefix, global_step=epoch*2)
-                print('path prefix is :', path_prefix)
+                # path_prefix = saver.save(sess, prefix, global_step=epoch*2)
+                # print('path prefix is :', path_prefix)
             
             writer.add_summary(summary,global_step=step)
 
