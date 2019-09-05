@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     base_dir_ = '../Dataset/Testing/imglists/PNet'
     display = 50
-    end_epoch = 1
+    end_epoch = 300
     test_PNet(base_dir_, prefix, end_epoch, display)
 
     print("-------------------Testing Finished--------------------\n")
