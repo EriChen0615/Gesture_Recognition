@@ -197,7 +197,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, gesture loss and L2 loss add together
     summary_op = tf.summary.merge_all()
 
-    time = 'test-{date:%Y-%m-%d_%H:%M:%S}'.format( date=datetime.now() )
+    time = 'train-{date:%Y-%m-%d_%H:%M:%S}'.format( date=datetime.now() )
     logs_dir = "../logs/%s/%s" %(net)%(time)
     if os.path.exists(logs_dir) == False:
         os.makedirs(logs_dir)
