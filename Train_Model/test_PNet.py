@@ -3,7 +3,7 @@ from train import test
 
 def test_PNet(base_dir, prefix, display, batchsize):
     net_factory = P_Net
-    test(net_factory, prefix, base_dir, display=display, batchsize)
+    test(net_factory, prefix, base_dir, display=display, batchsize=batchsize)
 
 if __name__ == '__main__':
     #data path
