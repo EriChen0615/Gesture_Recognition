@@ -150,6 +150,10 @@ def cal_accuracy(cls_prob,label):
     '''
     # get the index of maximum value along axis one from cls_prob
     # 0 for negative 1 for positive
+    print("shape of the cls_prob: ")
+    print(cls_prob.get_shape())
+    print("shape of the label: ")
+    print(label.get_shape())
     pred = tf.argmax(cls_prob,axis=1)
     label_int = tf.cast(label,tf.int64)
     # return the index of pos and neg examples
