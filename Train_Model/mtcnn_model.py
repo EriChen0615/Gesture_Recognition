@@ -258,21 +258,12 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
             return cls_pro_test,bbox_pred_test,gesture_pred_test
             """
             cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
-            #print("cls_prob ", cls_prob.get_shape())
-            cls_loss = cls_ohem(cls_prob,label,training=False)
-            #batch*4
-            # cal bounding box error, squared sum error
+            
             bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
-            #print("bbox_pred ", bbox_pred.get_shape())
-            bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
-            #batch*3
+            #
             gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
-            #print("gesture_pred ", gesture_pred.get_shape())
-            gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
-
-            accuracy = cal_accuracy(cls_prob,label)
-            L2_loss = tf.add_n(slim.losses.get_regularization_losses())
-            return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
+    
+            return cls_prob,bbox_pred,gesture_pred
     
 
 
