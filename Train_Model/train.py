@@ -334,8 +334,8 @@ def test(net_factory, prefix, base_dir, display=100):
     # here calculate the corresponding loss
     accuracy_op = cal_accuracy(cls_pro,label)
     cls_loss_op = cls_ohem(cls_pro,label,training=False)
-    bbox_loss_op = tf.reduce_sum(tf.square(bbox_pred-bbox_target),axis=1)
-    gesture_loss_op = tf.reduce_sum(tf.square(gesture_pred-gesture_target),axis=1)
+    bbox_loss_op = bbox_ohem(bbox_pred, bbox_target, label)
+    gesture_loss_op = gesture_ohem(gesture_pred,gesture_target,label)
     L2_loss_op = tf.add_n(slim.losses.get_regularization_losses())
     print("for the shapes of ops:")
     print("cls_loss_op: ", cls_loss_op.get_shape())
