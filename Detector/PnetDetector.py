@@ -4,11 +4,11 @@ import numpy as np
 import sys
 
 sys.path.append("../")
-from train_models.MTCNN_config import config
-from Detection.nms import py_nms
+
+from Detector.nms import py_nms
 
 
-class MtcnnDetector(object):
+class PnetDetector(object):
 
     def __init__(self,
                  detectors,
@@ -125,13 +125,17 @@ class MtcnnDetector(object):
         :param scale:
         :return: resized image
         '''
+        # cv2.imshow('processed_img, before', img)
+        # cv2.waitKey(0)
         height, width, channels = img.shape
         new_height = int(height * scale)  # resized new height
         new_width = int(width * scale)  # resized new width
         new_dim = (new_width, new_height)
         img_resized = cv2.resize(img, new_dim, interpolation=cv2.INTER_LINEAR)  # resized image
-        # don't understand this operation
-        img_resized = (img_resized - 127.5) / 128
+        # # don't understand this operation
+        # img_resized = (img_resized - 127.5) / 128
+        # cv2.imshow('processed_img, after', img_resized)
+        # cv2.waitKey(0)
         return img_resized
 
     def pad(self, bboxes, w, h):
@@ -208,11 +212,16 @@ class MtcnnDetector(object):
         current_scale = float(net_size) / self.min_face_size  # find initial scale
         # print("current_scale", net_size, self.min_face_size, current_scale)
         # risize image using current_scale
+        # cv2.imshow('im_before', im)
+        # cv2.waitKey(0)
         im_resized = self.processed_image(im, current_scale)
+        # cv2.imshow('im', im_resized)
+        # cv2.waitKey(0)
         current_height, current_width, _ = im_resized.shape
         #print('current height and width:',current_height,current_width)
         # fcn
         all_boxes = list()
+        print(current_scale)
         while min(current_height, current_width) > net_size:
             # return the result predicted by pnet
             # cls_cls_map : H*w*2
@@ -225,6 +234,9 @@ class MtcnnDetector(object):
             current_scale *= self.scale_factor
             im_resized = self.processed_image(im, current_scale)
             current_height, current_width, _ = im_resized.shape
+            print(current_scale, current_height, current_width)
+            # cv2.imshow('im', im_resized)
+            # cv2.waitKey(0)
 
             if boxes.size == 0:
                 continue

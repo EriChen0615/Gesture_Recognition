@@ -4,8 +4,7 @@ import numpy as np
 import sys
 
 sys.path.append("../")
-from train_models.MTCNN_config import config
-from Detection.nms import py_nms
+from Detector.nms import py_nms
 
 
 class MtcnnDetector(object):

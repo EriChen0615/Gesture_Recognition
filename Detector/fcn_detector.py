@@ -1,8 +1,7 @@
 
 import tensorflow as tf
 import sys
-sys.path.append("../")
-from train_models.MTCNN_config import config
+
 
 
 class FcnDetector(object):
@@ -22,7 +21,7 @@ class FcnDetector(object):
             #construct model here
             #self.cls_prob, self.bbox_pred = net_factory(image_reshape, training=False)
             #contains landmark
-            self.cls_prob, self.bbox_pred, _ = net_factory(image_reshape, training=False)
+            self.cls_prob, self.bbox_pred, _ = net_factory(image_reshape, None, None, None, training=False)
             
             #allow 
             self.sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True, gpu_options=tf.GPUOptions(allow_growth=True)))

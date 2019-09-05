@@ -180,7 +180,7 @@ def _activation_summary(x):
 
 #construct Pnet
 #label:batch
-def P_Net(inputs,label,bbox_target,gesture_target,training=True):
+def P_Net(inputs,label=None, bbox_target=None, gesture_target=None, training=True):
     #define common param
     with slim.arg_scope([slim.conv2d],
                         activation_fn=prelu,
@@ -252,28 +252,28 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         #test
         else:
             #when test,batch_size = 1
-            """
+
             cls_pro_test = tf.squeeze(conv4_1, axis=0)
             bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
             gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
             return cls_pro_test,bbox_pred_test,gesture_pred_test
-            """
-            cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
-            #print("cls_prob ", cls_prob.get_shape())
-            cls_loss = cls_ohem(cls_prob,label,training=False)
-            #batch*4
-            # cal bounding box error, squared sum error
-            bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
-            #print("bbox_pred ", bbox_pred.get_shape())
-            bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
-            #batch*3
-            gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
-            #print("gesture_pred ", gesture_pred.get_shape())
-            gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
 
-            accuracy = cal_accuracy(cls_prob,label)
-            L2_loss = tf.add_n(slim.losses.get_regularization_losses())
-            return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
+            # cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
+            # #print("cls_prob ", cls_prob.get_shape())
+            # cls_loss = cls_ohem(cls_prob,label,training=False)
+            # #batch*4
+            # # cal bounding box error, squared sum error
+            # bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
+            # #print("bbox_pred ", bbox_pred.get_shape())
+            # bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
+            # #batch*3
+            # gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
+            # #print("gesture_pred ", gesture_pred.get_shape())
+            # gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
+            #
+            # accuracy = cal_accuracy(cls_prob,label)
+            # L2_loss = tf.add_n(slim.losses.get_regularization_losses())
+            # return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
     
 
 
