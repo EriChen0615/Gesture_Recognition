@@ -198,7 +198,8 @@ def train(net_factory, prefix, end_epoch, base_dir,
     summary_op = tf.summary.merge_all()
 
     time = 'train-{date:%Y-%m-%d_%H:%M:%S}'.format( date=datetime.now() )
-    logs_dir = "../logs/%s/%s" %(net)%(time)
+    logs_dir = "../logs/%s/" %(net)
+    logs_dir = logs_dir + time + "/"
     if os.path.exists(logs_dir) == False:
         os.makedirs(logs_dir)
     writer = tf.summary.FileWriter(logs_dir,sess.graph)
