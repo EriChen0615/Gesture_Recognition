@@ -337,6 +337,11 @@ def test(net_factory, prefix, base_dir, display=100):
     bbox_loss_op = tf.reduce_sum(tf.square(bbox_pred-bbox_target),axis=1)
     gesture_loss_op = tf.reduce_sum(tf.square(gesture_pred-gesture_target),axis=1)
     L2_loss_op = tf.add_n(slim.losses.get_regularization_losses())
+    print("for the shapes of ops:")
+    print("cls_loss_op: ", cls_loss_op.get_shape())
+    print("bbox_loss_op: ", bbox_loss_op.get_shape())
+    print("gesture_loss_op: ", gesture_loss_op.get_shape())
+    print("L2_loss_op: ", L2_loss_op.get_shape())
     total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
 
     # init
