@@ -32,7 +32,7 @@ def train_model(base_lr, loss, data_num):
     :return:
     train_op, lr_op
     """
-    lr_factor = 0.1
+    lr_factor = 0.5 # was 0.1
     global_step = tf.Variable(0, trainable=False)
     #LR_EPOCH [8,14]
     #boundaried [num_batch,num_batch]
