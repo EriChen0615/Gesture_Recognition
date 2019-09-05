@@ -1,5 +1,5 @@
 from mtcnn_model import P_Net
-from train import train, test
+from train import train
 
 
 def train_PNet(base_dir, prefix, end_epoch, display, lr):

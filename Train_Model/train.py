@@ -341,9 +341,15 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     tf.summary.scalar("gesture_loss",gesture_loss_op)
     
     summary_op = tf.summary.merge_all()
-    logs_dir = "../logs_testing/%s" %(net)
+    time = 'test-{date:%Y-%m-%d_%H:%M:%S}'.format( date=datetime.now() )
+    print("-------------------------------------------------------------\n")
+    print("the sub dir's name is: ", time)
+    print("-------------------------------------------------------------\n")
+    logs_dir = "../logs/%s/" %(net)
+    logs_dir = logs_dir + time + "/"
     if os.path.exists(logs_dir) == False:
         os.makedirs(logs_dir)
+
     writer = tf.summary.FileWriter(logs_dir,sess.graph)
     projector_config = projector.ProjectorConfig()
     projector.visualize_embeddings(writer,projector_config)
