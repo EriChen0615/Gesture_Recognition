@@ -198,6 +198,9 @@ def train(net_factory, prefix, end_epoch, base_dir,
     summary_op = tf.summary.merge_all()
 
     time = 'train-{date:%Y-%m-%d_%H:%M:%S}'.format( date=datetime.now() )
+    print("-------------------------------------------------------------\n")
+    print("the sub dir's name is: ", time)
+    print("-------------------------------------------------------------\n")
     logs_dir = "../logs/%s/" %(net)
     logs_dir = logs_dir + time + "/"
     if os.path.exists(logs_dir) == False:
