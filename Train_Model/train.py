@@ -322,7 +322,7 @@ def test(net_factory, prefix, base_dir, display=100):
     gesture_target = tf.placeholder(tf.float32,shape=[batchsize,3],name='gesture_target')
 
     input_image = image_color_distort(input_image)
-    cls_pro, bbox_pred, gesture_pred = net_factory(input_image, training=False)
+    cls_pro, bbox_pred, gesture_pred = net_factory(input_image, training=False, testing=True)
 
     """
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=False)

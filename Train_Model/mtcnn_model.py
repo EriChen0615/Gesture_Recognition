@@ -148,16 +148,14 @@ def cal_accuracy(cls_prob,label):
     :param label:
     :return:calculate classification accuracy for pos and neg examples only
     '''
-    # get the index of maximum value along axis one from cls_prob
     # 0 for negative 1 for positive
-    print("shape of the cls_prob: ")
-    print(cls_prob.get_shape())
-    print("shape of the label: ")
-    print(label.get_shape())
-    pred = tf.argmax(cls_prob,axis=1)
-    label_int = tf.cast(label,tf.int64)
-    # return the index of pos and neg examples
-    cond = tf.where(tf.greater_equal(label_int,0))
+    # print("shape of the cls_prob: ")
+    # print(cls_prob.get_shape())
+    # print("shape of the label: ")
+    # print(label.get_shape())
+    pred = tf.argmax(cls_prob,axis=1) # get the index of max value along axis1 of cls_prob
+    label_int = tf.cast(label,tf.int64) # convert element in label to type int
+    cond = tf.where(tf.greater_equal(label_int,0))# return the index of pos and neg examples
     picked = tf.squeeze(cond)
     # gather the label of pos and neg examples
     label_picked = tf.gather(label_int,picked)
@@ -184,7 +182,7 @@ def _activation_summary(x):
 
 #construct Pnet
 #label:batch
-def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
+def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,testing=False):
     #define common param
     with slim.arg_scope([slim.conv2d],
                         activation_fn=prelu,
@@ -255,8 +253,14 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
             return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         #test
+        if testing:
+            cls_pro_test = tf.squeeze(conv4_1, [1,2],name='cls_prob')
+            bbox_pred_test = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
+            gesture_pred_test = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
+            return cls_pro_test,bbox_pred_test,gesture_pred_test
+        
         else:
-            #when test,batch_size = 1
+            #when inference,batch_size = 1
             cls_pro_test = tf.squeeze(conv4_1, axis=0)
             bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
             gesture_pred_test = tf.squeeze(gesture_pred,axis=0)

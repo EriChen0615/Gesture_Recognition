@@ -7,7 +7,6 @@ def test_PNet(base_dir, prefix, display):
 
 if __name__ == '__main__':
     #data path
-    
     base_dir = '../Dataset/Testing/imglists/PNet'
     display = 50
     model_name = 'MTCNN'
@@ -19,7 +18,6 @@ if __name__ == '__main__':
 
     print("--------------------Start Testing---------------------\n")
 
-    
     test_PNet(base_dir, prefix, display)
 
     print("-------------------Testing Finished--------------------\n")
