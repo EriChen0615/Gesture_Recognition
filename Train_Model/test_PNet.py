@@ -9,7 +9,7 @@ if __name__ == '__main__':
     #data path
     base_dir = '../Dataset/Testing/imglists/PNet'
     display = 50
-    batchsize = 100
+    batchsize = 50
     model_name = 'MTCNN'
     #model_path = '../data/%s_model/PNet/PNet' % model_name
     #with gesture
