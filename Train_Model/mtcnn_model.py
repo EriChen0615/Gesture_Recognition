@@ -49,7 +49,7 @@ def cls_ohem(cls_prob, label, training=True):
     # print(label.get_shape())
     # print(zeros.get_shape())
     # print(ones.get_shape())
-    valid_inds = tf.where(label <= zeros,zeros,ones) #was < before
+    valid_inds = tf.where(label < zeros,zeros,ones) #was < before
     # the coordinates of 'True' elements of the condition given
     # get the number of POS and NEG examples
     num_valid = tf.reduce_sum(valid_inds)
@@ -205,6 +205,7 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         net = slim.conv2d(net,num_outputs=32,kernel_size=[3,3],stride=1,scope='conv3')
         _activation_summary(net)
         print(net.get_shape())
+
         """ hand detection """
         #batch*H*W*2 shape=(batch,1,1,2) 
         conv4_1 = slim.conv2d(net,num_outputs=2,kernel_size=[1,1],stride=1,scope='conv4_1',activation_fn=tf.nn.softmax)
