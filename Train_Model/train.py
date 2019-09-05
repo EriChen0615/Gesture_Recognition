@@ -378,7 +378,7 @@ def test(net_factory, prefix, base_dir, display=100):
             #random flip
             image_batch_array,gesture_batch_array = random_flip_images(image_batch_array,label_batch_array,gesture_batch_array)
 
-            _,_,summary = sess.run([summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array,gesture_target:gesture_batch_array})
+            summary = sess.run([summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array,gesture_target:gesture_batch_array})
 
             if (step+1) % display == 0:
                 
