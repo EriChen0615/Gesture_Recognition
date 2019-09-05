@@ -63,7 +63,10 @@ def save_hard_example(net, data,save_path):
 
         if dets.shape[0] == 0:
             continue
-        img = cv2.imread(im_idx)
+
+        base_dir = '../Dataset/Training'
+        img = cv2.imread(os.path.join(base_dir,im_idx))
+        
         #change to square
         dets = convert_to_square(dets)
         dets[:, 0:4] = np.round(dets[:, 0:4])
