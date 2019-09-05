@@ -49,7 +49,7 @@ def cls_ohem(cls_prob, label, training=True):
     # print(label.get_shape())
     # print(zeros.get_shape())
     # print(ones.get_shape())
-    valid_inds = tf.where(label < zeros,zeros,ones) #was < before #这里我真的没看懂
+    valid_inds = tf.where(label < zeros,zeros,ones) #was < before 
     # the coordinates of 'True' elements of the condition given
     # get the number of POS and NEG examples
     num_valid = tf.reduce_sum(valid_inds)
@@ -180,7 +180,7 @@ def _activation_summary(x):
 
 #construct Pnet
 #label:batch
-def P_Net(inputs,label=None,bbox_target,gesture_target,training=True):
+def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
     #define common param
     with slim.arg_scope([slim.conv2d],
                         activation_fn=prelu,
