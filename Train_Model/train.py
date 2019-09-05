@@ -19,7 +19,7 @@ from read_tfrecord_v2 import read_multi_tfrecords,read_single_tfrecord
 import random
 import cv2
 
-import mtcnn_model import cls_ohem, bbox_ohem, gesture_ohem, cal_accuracy
+
 
 
 
@@ -123,7 +123,10 @@ def train(net_factory, prefix, end_epoch, base_dir,
     print(label_file)
     f = open(label_file, 'r')
     # get number of training examples
+    lines = f.readlines()
     num = len(f.readlines())
+    if lines[-1] != "":
+        num -= 1
     print("Total size of the dataset is: ", num)
     print(prefix)
 
@@ -174,7 +177,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     #get loss and accuracy
     print(bbox_target)
     print(gesture_target)
-    input_image = image_color_distort(input_image)
+    input_image = image_color_distort(input_image) # randomly adjust contrast, saturation etc.
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True)
     #train,update learning rate(3 loss)
     total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
@@ -196,7 +199,13 @@ def train(net_factory, prefix, end_epoch, base_dir,
     tf.summary.scalar("cls_accuracy",accuracy_op)#cls_acc
     tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, gesture loss and L2 loss add together
     summary_op = tf.summary.merge_all()
-    logs_dir = "../logs/%s" %(net)
+
+    time = 'train-{date:%Y-%m-%d_%H:%M:%S}'.format( date=datetime.now() )
+    print("-------------------------------------------------------------\n")
+    print("the sub dir's name is: ", time)
+    print("-------------------------------------------------------------\n")
+    logs_dir = "../logs/%s/" %(net)
+    logs_dir = logs_dir + time + "/"
     if os.path.exists(logs_dir) == False:
         os.makedirs(logs_dir)
     writer = tf.summary.FileWriter(logs_dir,sess.graph)
@@ -263,7 +272,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     sess.close()
 
 
-def test(net_factory, prefix, end_epoch, base_dir, display=100):
+def test(net_factory, prefix, base_dir, display=100):
 
     """
     testing: batch size = 1
@@ -287,17 +296,16 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     print(prefix)
 
     #PNet use this method to get data
-    if net == 'PNet':
+    #if net == 'PNet':
         #dataset_dir = os.path.join(base_dir,'train_%s_ALL.tfrecord_shuffle' % net)
-        net_factory = P_Net
-        dataset_dir = os.path.join(base_dir,'test_%s_gesture.tfrecord_shuffle' % net)
-        print('dataset dir is:',dataset_dir)
-        image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, 1, net)
-        image_size = 12
-        radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 0.5
+    dataset_dir = os.path.join(base_dir,'test_%s_gesture.tfrecord_shuffle' % net)
+    print('dataset dir is:',dataset_dir)
+    image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, 1, net)
+    image_size = 12
+    radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 0.5
         
     # else 之后再写吧lol：need to use multi_tfrecord reader
-                                """ for RNET & ONET """
+    """ for RNET & ONET """
     #else:
     
     
@@ -310,26 +318,44 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     gesture_target = tf.placeholder(tf.float32,shape=[1,3],name='gesture_target')
 
     input_image = image_color_distort(input_image)
-    cls_prob,bbox_prob,gesture_pred = net_factory(input_image, label, bbox_target,gesture_target,training=False)
-    cls_loss = cls_ohem(cls_prob,label)
-    bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
-    gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
-    total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
-    accuracy = cal_accuracy(cls_prob,label)
+    
+    cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=False)
+    #train,update learning rate(3 loss)
+    total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
+    # base_lr = 0
+    # train_op, lr_op = train_model(base_lr,
+    #                               total_loss_op,
+    #                               num) #for testing, set base lr to 0
+    
 
-    tf.summary.scalar("cls_loss",cls_loss_op)#cls_loss
-    tf.summary.scalar("bbox_loss",bbox_loss_op)#bbox_loss
-    tf.summary.scalar("gesture_loss",gesture_loss_op)#gesture_loss
-    tf.summary.scalar("cls_accuracy",accuracy_op)#cls_acc
-    tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, gesture loss and L2 loss add together
-    summary_op = tf.summary.merge_all()
- 
+    #cls_pro_test,bbox_pred_test,gesture_pred_test = net_factory(input_image, label, bbox_target,gesture_target,training=False)
 
+    # init
     init = tf.global_variables_initializer()
     sess = tf.Session()
+
+    #save model
     saver = tf.train.Saver(max_to_keep=0)
     sess.run(init)
 
+    #visualize some variables
+    tf.summary.scalar("accuracy", accuracy_op)
+    tf.summary.scalar("cls_loss",cls_loss_op)
+    tf.summary.scalar("bbox_loss",bbox_loss_op)
+    tf.summary.scalar("gesture_loss",gesture_loss_op)
+    tf.summary.scalar("total_loss", total_loss_op)
+    summary_op = tf.summary.merge_all()
+
+    time = 'test-{date:%Y-%m-%d_%H:%M:%S}'.format( date=datetime.now() )
+    print("-------------------------------------------------------------\n")
+    print("the sub dir's name is: ", time)
+    print("-------------------------------------------------------------\n")
+    logs_dir = "../logs/%s/" %(net)
+    logs_dir = logs_dir + time + "/"
+    if os.path.exists(logs_dir) == False:
+        os.makedirs(logs_dir)
+
+    writer = tf.summary.FileWriter(logs_dir,sess.graph)
     projector_config = projector.ProjectorConfig()
     projector.visualize_embeddings(writer,projector_config)
     #begin 
@@ -338,10 +364,10 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
     threads = tf.train.start_queue_runners(sess=sess, coord=coord)
     i = 0
     #total steps
-    MAX_STEP = int(num / 1 + 1) * end_epoch
+    MAX_STEP = int(num / 1 + 1) * 1 #change config.BATCHSIZE and end_epoch to 1, max_step = num+1
     epoch = 0
     sess.graph.finalize()
-
+    
     try:
 
         for step in range(MAX_STEP):
@@ -352,31 +378,33 @@ def test(net_factory, prefix, end_epoch, base_dir, display=100):
             #random flip
             image_batch_array,gesture_batch_array = random_flip_images(image_batch_array,label_batch_array,gesture_batch_array)
 
-            _,_,summary = sess.run([summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array,gesture_target:gesture_batch_array})
-
+            summary = sess.run([summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array,gesture_target:gesture_batch_array})
+            summary = summary[0]
             if (step+1) % display == 0:
-                #acc = accuracy(cls_pred, labels_batch)
-                cls_loss, bbox_loss,gesture_loss,L2_loss,accuray = sess.run([cls_loss, bbox_loss,gesture_loss,L2_loss,accuracy],
+                
+                cls_loss,bbox_loss,gesture_loss, accuracy = sess.run([cls_loss_op,bbox_loss_op,gesture_loss_op,accuracy_op],
                                                              feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array, gesture_target: gesture_batch_array})
 
-                total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
+                #total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
                 # gesture loss: %4f,
-                print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f,gesture loss :%4f,L2 loss: %4f, Total Loss: %4f ,lr:%f " % (
-                datetime.now(), step+1,MAX_STEP, acc, cls_loss, bbox_loss,gesture_loss, L2_loss,total_loss, lr))
+                print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f, gesture_loss: %4f  " % (datetime.now(), step+1,MAX_STEP, accuracy, cls_loss,bbox_loss,gesture_loss))
 
 
-            #save every two epochs
-            if i * config.BATCH_SIZE > num*2:
+            #save every epoch #(was every two epochs) 
+            if i * 1 > num: #change config.BATCHSIZE to 1, num was num*2
                 epoch = epoch + 1
                 i = 0
                 path_prefix = saver.save(sess, prefix, global_step=epoch*2)
                 print('path prefix is :', path_prefix)
+            
+            writer.add_summary(summary,global_step=step)
 
 
     except tf.errors.OutOfRangeError:
         print("Finished!( ゜- ゜)つロ乾杯")
     finally:
         coord.request_stop()
+        writer.close()
 
     coord.join(threads)
     sess.close()

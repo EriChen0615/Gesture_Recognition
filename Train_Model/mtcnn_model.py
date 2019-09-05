@@ -2,7 +2,12 @@ import tensorflow as tf
 from tensorflow.contrib import slim
 from tensorflow.contrib.tensorboard.plugins import projector
 import numpy as np
+<<<<<<< HEAD
 num_keep_radio = 0.7 # the remaining smaller loss is neglected to keep loss large enough
+
+=======
+num_keep_radio = 0.7 # ratio for online hard sample mining
+>>>>>>> joycy
 
 #define prelu: an activation function
 def prelu(inputs):
@@ -23,9 +28,9 @@ def dense_to_one_hot(labels_dense,num_classes):
 #label:batch
 
 #online hard example mining
-def cls_ohem(cls_prob, label):
+def cls_ohem(cls_prob, label, training=True):
     zeros = tf.zeros_like(label)
-    #label=-1 --> label=0net_factory
+    #label=-1 --> label=0 net_factory
 
     #pos -> 1, neg -> 0, others -> 0
     label_filter_invalid = tf.where(tf.less(label,0), zeros, label)
@@ -42,19 +47,41 @@ def cls_ohem(cls_prob, label):
     # get the number of rows of class_prob
     num_row = tf.to_int32(cls_prob.get_shape()[0])
     #row = [0,2,4.....]
+<<<<<<< HEAD
     row = tf.range(num_row)*2 # [0,2,4..,(num_row-1)*2], because cls_prob was (-1,2), with the even items representing postive detection
     indices_ = row + label_int # valid label of either 0 or 1
     label_prob = tf.squeeze(tf.gather(cls_prob_reshape, indices_)) # if img is neg, choose the odd one and drive it to 1; if pos drive even to 1
     loss = -tf.log(label_prob+1e-10) # if 1 loss close to 0; otherwise 10 <driving the label_prob to 1>
     zeros = tf.zeros_like(label_prob, dtype=tf.float32)
     ones = tf.ones_like(label_prob,dtype=tf.float32)
+=======
+    row = tf.range(num_row)*2
+    indices_ = row + label_int
+    if training == True:
+        label_prob = tf.squeeze(tf.gather(cls_prob_reshape, indices_))
+    else:
+        label_prob = label
+
+    loss = -tf.log(label_prob+1e-10)
+    zeros = tf.zeros_like(label_prob, dtype=tf.float32) # set all elements to 0
+    ones = tf.ones_like(label_prob,dtype=tf.float32) # set all elements to 1
+>>>>>>> joycy
     # set pos and neg to be 1, rest to be 0
-    valid_inds = tf.where(label < zeros,zeros,ones)
+    # print(label.get_shape())
+    # print(zeros.get_shape())
+    # print(ones.get_shape())
+    valid_inds = tf.where(label < zeros,zeros,ones) #was < before #这里我真的没看懂
+    # the coordinates of 'True' elements of the condition given
     # get the number of POS and NEG examples
     num_valid = tf.reduce_sum(valid_inds)
 
+<<<<<<< HEAD
     keep_num = tf.cast(num_valid*num_keep_radio,dtype=tf.int32) # discard some loss
     #FILTER OUT PART AND gesture DATA
+=======
+    keep_num = tf.cast(num_valid*num_keep_radio,dtype=tf.int32)
+    #FILTER OUT PART AND GESTURE DATA
+>>>>>>> joycy
     loss = loss * valid_inds
     loss,_ = tf.nn.top_k(loss, k=keep_num) # Finds values and indices of the k largest entries for the last dimension. _ is indices
     return tf.reduce_mean(loss) # take the mean of loss
@@ -201,10 +228,11 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         net = slim.conv2d(net,num_outputs=16,kernel_size=[3,3],stride=1,scope='conv2')
         _activation_summary(net)
         print(net.get_shape())
-        #
+        
         net = slim.conv2d(net,num_outputs=32,kernel_size=[3,3],stride=1,scope='conv3')
         _activation_summary(net)
         print(net.get_shape())
+
         """ hand detection """
         #batch*H*W*2 shape=(batch,1,1,2) 
         conv4_1 = slim.conv2d(net,num_outputs=2,kernel_size=[1,1],stride=1,scope='conv4_1',activation_fn=tf.nn.softmax)
@@ -224,8 +252,13 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         gesture_pred = slim.fully_connected(gesture_pred, num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
         #thinking about change the activation fn to sigmoid or softmax?
         #Here trying to normalize: gesture_pred = gesture_pred / abs(gesture_pred) 
+<<<<<<< HEAD
         _activation_summary(gesture_pred)
         print ('gesture_pred.shape=',gesture_pred.get_shape())
+=======
+        # _activation_summary(gesture_pred)
+        print (gesture_pred.get_shape())
+>>>>>>> joycy
 
 
         #cls_prob_original = conv4_1 
@@ -233,14 +266,22 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         if training:
             #batch*2
             # calculate classification loss
+<<<<<<< HEAD
             cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob') # remove all size 1 dimensions, conv4_1 is the output tensor, [1,2] are axes
             cls_loss = cls_ohem(cls_prob,label)
+=======
+            cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
+            print("cls_prob ", cls_prob.get_shape())
+            cls_loss = cls_ohem(cls_prob,label,training)
+>>>>>>> joycy
             #batch*4
             # cal bounding box error, squared sum error
             bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
+            print("bbox_pred ", bbox_pred.get_shape())
             bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
             #batch*3
             gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
+            print("gesture_pred ", gesture_pred.get_shape())
             gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
 
             accuracy = cal_accuracy(cls_prob,label)
@@ -249,10 +290,28 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
         #test
         else:
             #when test,batch_size = 1
+            """
             cls_pro_test = tf.squeeze(conv4_1, axis=0)
             bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
             gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
             return cls_pro_test,bbox_pred_test,gesture_pred_test
+            """
+            cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
+            #print("cls_prob ", cls_prob.get_shape())
+            cls_loss = cls_ohem(cls_prob,label,training=False)
+            #batch*4
+            # cal bounding box error, squared sum error
+            bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
+            #print("bbox_pred ", bbox_pred.get_shape())
+            bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
+            #batch*3
+            gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
+            #print("gesture_pred ", gesture_pred.get_shape())
+            gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
+
+            accuracy = cal_accuracy(cls_prob,label)
+            L2_loss = tf.add_n(slim.losses.get_regularization_losses())
+            return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
     
 
 
@@ -292,7 +351,7 @@ def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
         print(gesture_pred.get_shape())
         #train
         if training:
-            cls_loss = cls_ohem(cls_prob,label)
+            cls_loss = cls_ohem(cls_prob,label,training)
             bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
             accuracy = cal_accuracy(cls_prob,label)
             gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
@@ -338,7 +397,7 @@ def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
         print(gesture_pred.get_shape())
         #train
         if training:
-            cls_loss = cls_ohem(cls_prob,label)
+            cls_loss = cls_ohem(cls_prob,label,training)
             bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
             accuracy = cal_accuracy(cls_prob,label)
             gesture_loss = gesture_ohem(gesture_pred, gesture_target,label)

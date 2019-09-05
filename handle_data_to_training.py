@@ -1,3 +1,8 @@
+"""
+Can be used for both training and testing data
+set mode to be 'Training' or 'Testing'
+
+"""
 from gen_img_dataset import load_config
 import os
 
@@ -6,6 +11,9 @@ def append_field(wds,f):
         wds.append(w)
 
 if __name__ == '__main__':
+    #define the mode to be testing or training
+    mode = 'Testing'
+
     # definition of different gestures
     ONE_FIELD = '100'
     FIST_FIELD = '010'
@@ -32,7 +40,7 @@ if __name__ == '__main__':
     COLLECT_LABEL = ['one','fist','two'] # the label to collect
 
     # DATA PATH
-    DIR_NAME = os.path.join('Dataset','Training')
+    DIR_NAME = os.path.join('Dataset',mode)
 
     # COLLECTION SETTING
     SHOTS_PER_BOX = 5
@@ -46,7 +54,7 @@ if __name__ == '__main__':
 
 
 
-    with open(os.path.join('Dataset','Training','imglist_with_gesture.txt'),'w+') as f_out:
+    with open(os.path.join('Dataset',mode,'imglist_with_gesture.txt'),'w+') as f_out:
         for gs,f_gs in gest_anno.items():
             annos = f_gs.read().splitlines()
             for anno in annos:
