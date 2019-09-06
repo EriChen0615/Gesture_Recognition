@@ -405,9 +405,11 @@ def test(net_factory, prefix, base_dir, display=100, batchsize = 1):
     summary_op = tf.summary.merge_all()
 
     time = 'test-{date:%Y-%m-%d_%H:%M:%S}'.format( date=datetime.now() )
-    print("-------------------------------------------------------------\n")
+    print("---------------------------------------------------------------------------\n")
+    print("current time: ", time)
+    print("---------------------------------------------------------------------------\n")
     print("the sub dir's name is: ", time)
-    print("-------------------------------------------------------------\n")
+    print("---------------------------------------------------------------------------\n")
     logs_dir = "../logs/%s/" %(net)
     logs_dir = logs_dir + time + "/"
     if os.path.exists(logs_dir) == False:
@@ -452,14 +454,18 @@ def test(net_factory, prefix, base_dir, display=100, batchsize = 1):
             if (pos_label in label_batch_array) or (neg_label in label_batch_array):
                 cls_loss, accuracy = sess.run([cls_loss_op, accuracy_op],
                                                  feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array, gesture_target: gesture_batch_array})
-                cls_loss_list.append(cls_loss)
-                acc_list.append(accuracy)
+                if cls_loss != None:
+                    cls_loss_list.append(cls_loss)
+                if accuracy != None:
+                    acc_list.append(accuracy)
             elif (pos_label in label_batch_array) or (part_label in label_batch_array):
                 bbox_loss = sess.run([bbox_loss_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array, gesture_target: gesture_batch_array})
-                bbox_loss_list.append(bbox_loss)
+                if bbox_loss != None:
+                    bbox_loss_list.append(bbox_loss)
             elif gesture_label in label_batch_array:
                 gesture_loss = sess.run([gesture_loss_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array, gesture_target: gesture_batch_array})
-                gesture_loss_list.append(gesture_loss)
+                if gesture_loss != None:
+                    gesture_loss_list.append(gesture_loss)
 
             if (step+1) % display == 0:
                 
