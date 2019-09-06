@@ -254,9 +254,12 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,
             return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         #test
         if testing:
-            cls_pro_test = tf.squeeze(conv4_1, [1,2],name='cls_prob')
-            bbox_pred_test = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
-            gesture_pred_test = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
+            cls_pro_test = tf.squeeze(conv4_1, name='cls_prob')
+            print("cls_pro_test: ", cls_pro_test.get_shape())
+            bbox_pred_test = tf.squeeze(bbox_pred, name='bbox_pred')
+            print("bbox_pred_test: ", bbox_pred_test.get_shape())
+            gesture_pred_test = tf.squeeze(gesture_pred,name="gesture_pred")
+            print("gesture_pred_test: ", gesture_pred_test.get_shape())
             return cls_pro_test,bbox_pred_test,gesture_pred_test
         #inference
         else:
