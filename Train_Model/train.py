@@ -97,7 +97,7 @@ def image_color_distort(inputs):
 
     return inputs
 
-def cal_acc(cls_pro,label):
+def cal_acc(cls_prob,label):
     pred = tf.argmax(cls_prob,axis=1)
     label_int = tf.cast(label,tf.int64)
     cond = tf.where(tf.greater_equal(label_int,0))
