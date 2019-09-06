@@ -468,7 +468,7 @@ def test(net_factory, prefix, base_dir, display=100, batchsize = 1):
 
                 # total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
                 # gesture loss: %4f,
-                print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f, gesture_loss: %4f, total_loss: %4f  " % (datetime.now(), step+1,MAX_STEP, accuracy, cls_loss,bbox_loss,gesture_loss, total_loss))
+                print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f, gesture_loss: %4f  " % (datetime.now(), step+1,MAX_STEP, accuracy, cls_loss,bbox_loss,gesture_loss))
 
 
             #save every epoch #(was every two epochs) 
