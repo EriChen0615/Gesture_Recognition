@@ -258,7 +258,7 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,
             bbox_pred_test = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
             gesture_pred_test = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
             return cls_pro_test,bbox_pred_test,gesture_pred_test
-        
+        #inference
         else:
             #when inference,batch_size = 1
             cls_pro_test = tf.squeeze(conv4_1, axis=0)
