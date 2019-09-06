@@ -183,8 +183,8 @@ batch_size = [2048, 64, 16]
 model_path = ['%s-%s' % (x, y) for x, y in zip(prefix, epoch)]
 print(model_path)
 
-TestImage_path = "Testing_Data/Test/"
-TestResult_path = "PNet_demo/ResultImage/Test/"
+TestImage_path = "Testing_Data/Train/"
+TestResult_path = "PNet_demo/ResultImage/Train/"
 
 mkdir(TestResult_path)
 
@@ -229,10 +229,17 @@ count = 0
 for imagepath in gt_imdb:
     print(imagepath)
     image = cv2.imread(imagepath)
-    for bbox in all_boxes[count]:
+    image_original = image.copy()
+    for box_number, bbox in enumerate(all_boxes[count]):
         cv2.putText(image, str(np.round(bbox[4], 2)), (int(bbox[0]), int(bbox[1])), cv2.FONT_HERSHEY_TRIPLEX, 1,
                     color=(255, 0, 255))
         cv2.rectangle(image, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
+        image_single = image_original.copy()
+        cv2.rectangle(image_single, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
+        cv2.imwrite("{}/{}_{}.png".format(TestResult_path, count, box_number), image_single)
+        with open("{}/{}_{}.txt".format(TestResult_path, count, box_number), 'w') as f:
+            f.write('(x1,y1):({},{})\n(x2,y2):({},{})\nprediction:{}'.format(int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3]), np.round(bbox[4], 4)))
+
 
 
         # for landmark in landmarks[count]:

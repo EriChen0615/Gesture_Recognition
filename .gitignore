@@ -112,3 +112,7 @@ Model/MTCNN/
 logs/
 *.meta
 *.data
+
+#test result
+Testing_Demo_Data/
+PNet_demo/

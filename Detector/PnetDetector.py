@@ -114,7 +114,6 @@ class PnetDetector(object):
                                  np.round((stride * t_index[0] + cellsize) / scale),
                                  score,
                                  reg])
-
         return boundingbox.T
 
     # pre-process images
@@ -133,7 +132,7 @@ class PnetDetector(object):
         new_dim = (new_width, new_height)
         img_resized = cv2.resize(img, new_dim, interpolation=cv2.INTER_LINEAR)  # resized image
         # # don't understand this operation
-        # img_resized = (img_resized - 127.5) / 128
+        img_resized = (img_resized - 127.5) / 128
         # cv2.imshow('processed_img, after', img_resized)
         # cv2.waitKey(0)
         return img_resized
@@ -226,10 +225,26 @@ class PnetDetector(object):
             # return the result predicted by pnet
             # cls_cls_map : H*w*2
             # reg: H*w*4
-            # class_prob andd bbox_pred
+            # class_prob and bbox_pred
             cls_cls_map, reg = self.pnet_detector.predict(im_resized)
             # boxes: num*9(x1,y1,x2,y2,score,x1_offset,y1_offset,x2_offset,y2_offset)
             boxes = self.generate_bbox(cls_cls_map[:, :, 1], reg, current_scale, self.thresh[0])
+
+            with open("{}/{}_{}.txt".format('PNet_demo/raw/', time.time(), round(current_scale, 2)), 'w') as f:
+                # f.write('{}'.format(cls_cls_map))
+                f.write('map shape:{}\n'.format(cls_cls_map[:, :, 1].shape))
+                f.write('\n\n============== map =============\n\n')
+                f.write('{}'.format(cls_cls_map[:, :, 1]))
+                f.write('\n\n============== scale =============\n\n')
+                f.write('{}'.format(current_scale))
+                f.write('\n\n============== reg =============\n\n')
+                f.write('reg shape:{}\n'.format(cls_cls_map[:, :, 1].shape))
+                f.write('{}'.format(reg))
+                f.write('\n\n============== box =============\n\n')
+                f.write('box shape:{}\n'.format(boxes.shape))
+                f.write('{}'.format(boxes))
+
+
             # scale_factor is 0.79 in default
             current_scale *= self.scale_factor
             im_resized = self.processed_image(im, current_scale)
@@ -265,6 +280,7 @@ class PnetDetector(object):
                              all_boxes[:, 3] + all_boxes[:, 8] * bbh,
                              all_boxes[:, 4]])
         boxes_c = boxes_c.T
+        # print("=====final shape====: ",boxes_c.shape())
 
         return boxes, boxes_c, None
 
