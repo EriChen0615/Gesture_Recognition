@@ -24,7 +24,7 @@ if __name__ == '__main__':
     #model_path = '../data/%s_model/PNet/PNet' % model_name
     #with gesture
     model_path = '../Model/{0}/PNet'.format(model_name)
-            
+    
     prefix = model_path
     end_epoch = 30
     display = 100
