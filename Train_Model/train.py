@@ -220,8 +220,8 @@ def train(net_factory, prefix, end_epoch, base_dir,
     bbox_target = tf.placeholder(tf.float32, shape=[config.BATCH_SIZE, 4], name='bbox_target')
     gesture_target = tf.placeholder(tf.float32,shape=[config.BATCH_SIZE,3],name='gesture_target')
     #get loss and accuracy
-    print(bbox_target)
-    print(gesture_target)
+    # print(bbox_target)
+    # print(gesture_target)
     input_image = image_color_distort(input_image)
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True,testing=False)
     #train,update learning rate(3 loss)
@@ -263,6 +263,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     i = 0
     #total steps
     MAX_STEP = int(num / config.BATCH_SIZE + 1) * end_epoch
+    print("max_step: ", MAX_STEP)
     epoch = 0
     sess.graph.finalize()
 
