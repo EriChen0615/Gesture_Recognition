@@ -89,7 +89,7 @@ def bbox_ohem_orginal(bbox_pred,bbox_target,label):
     square_error = tf.gather(square_error, k_index)
     return tf.reduce_mean(square_error)
 
-#label=1 or label=-1 then do regression
+#label=1 or label=-1 then do regression !!!this is not doing ohem!!!
 def bbox_ohem(bbox_pred,bbox_target,label):
     '''
 
@@ -119,7 +119,7 @@ def bbox_ohem(bbox_pred,bbox_target,label):
 
     return tf.reduce_mean(square_error)
 
-def gesture_ohem(gesture_pred,gesture_target,label):
+def gesture_ohem(gesture_pred,gesture_target,label): # !!!this is not doing ohem!!!
     '''
 
     :param gesture_pred:
