@@ -165,6 +165,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     #label file
     label_file = os.path.join(base_dir,'train_%s_gesture.txt' % net)
     #label_file = os.path.join(base_dir,'gesture_12_few.txt')
+    print("--------------------------------------------------------")
     print(label_file)
     f = open(label_file, 'r')
     # get number of training examples
@@ -175,6 +176,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
         num -= 1
     print("Total size of the dataset is: ", num)
     print(prefix)
+    print("--------------------------------------------------------")
 
     #PNet use this method to get data
     if net == 'PNet':
