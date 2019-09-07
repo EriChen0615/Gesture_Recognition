@@ -240,10 +240,10 @@ def train(net_factory, prefix, end_epoch, base_dir,
     sess.run(init)
 
     #visualize some variables
+    tf.summary.scalar("cls_accuracy",accuracy_op)#cls_acc
     tf.summary.scalar("cls_loss",cls_loss_op)#cls_loss
     tf.summary.scalar("bbox_loss",bbox_loss_op)#bbox_loss
     tf.summary.scalar("gesture_loss",gesture_loss_op)#gesture_loss
-    tf.summary.scalar("cls_accuracy",accuracy_op)#cls_acc
     tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, gesture loss and L2 loss add together
     summary_op = tf.summary.merge_all()
 
