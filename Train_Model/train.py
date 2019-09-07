@@ -170,6 +170,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     # get number of training examples
     lines = f.readlines()
     num = len(f.readlines())
+    print("number of training examples: ", num)
     if lines[0] != ".":
         num -= 1
     print("Total size of the dataset is: ", num)
