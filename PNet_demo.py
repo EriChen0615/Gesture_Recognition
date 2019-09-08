@@ -177,14 +177,13 @@ stride = 2
 slide_window = False
 shuffle = False
 detectors = [None, None, None]
-prefix = ['Model/MTCNN/PNet', '', '']
-epoch = [300, 14, 16]
+model_path = ['Model/MTCNN/PNet-500', '', '']
+epoch = [500, 14, 16]
 batch_size = [2048, 64, 16]
-model_path = ['%s-%s' % (x, y) for x, y in zip(prefix, epoch)]
 print(model_path)
 
-TestImage_path = "Testing_Data/Train/"
-TestResult_path = "PNet_demo/ResultImage/Train/"
+TestImage_path = "Testing_Demo_Data/Test/"
+TestResult_path = "PNet_demo/ResultImage/7_SEP_Test_clean/"
 
 mkdir(TestResult_path)
 
@@ -229,14 +228,14 @@ count = 0
 for imagepath in gt_imdb:
     print(imagepath)
     image = cv2.imread(imagepath)
-    image_original = image.copy()
+    # image_original = image.copy()
     for box_number, bbox in enumerate(all_boxes[count]):
         cv2.putText(image, str(np.round(bbox[4], 2)), (int(bbox[0]), int(bbox[1])), cv2.FONT_HERSHEY_TRIPLEX, 1,
                     color=(255, 0, 255))
         cv2.rectangle(image, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
-        image_single = image_original.copy()
-        cv2.rectangle(image_single, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
-        cv2.imwrite("{}/{}_{}.png".format(TestResult_path, count, box_number), image_single)
+        # image_single = image_original.copy()
+        # cv2.rectangle(image_single, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
+        # cv2.imwrite("{}/{}_{}.png".format(TestResult_path, count, box_number), image_single)
         with open("{}/{}_{}.txt".format(TestResult_path, count, box_number), 'w') as f:
             f.write('(x1,y1):({},{})\n(x2,y2):({},{})\nprediction:{}'.format(int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3]), np.round(bbox[4], 4)))
 
@@ -249,7 +248,7 @@ for imagepath in gt_imdb:
 
     count = count + 1
     # cv2.imwrite("result_landmark/%d.png" %(count),image)
-    cv2.imwrite("{}/{}.png".format(TestResult_path, count), image)
+    cv2.imwrite("{}/{}.png".format(TestResult_path, count-1), image)
     # cv2.imshow("PNet", image)
     # cv2.waitKey(0)
 
