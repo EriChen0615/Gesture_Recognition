@@ -64,8 +64,7 @@ def save_hard_example(net, data,save_path):
         if dets.shape[0] == 0:
             continue
 
-        base_dir = '../Dataset/Training'
-        img = cv2.imread(os.path.join(base_dir,im_idx))
+        img = cv2.imread(im_idx)
         
         #change to square
         dets = convert_to_square(dets)
@@ -160,7 +159,8 @@ def t_net(prefix, epoch,
     filename = 'imglist_with_gesture.txt'
     #read anotation(type:dict), include 'images' and 'bboxes'
     #data = read_annotation(basedir,filename)
-    data = load_annotation(os.join(basedir,filename)) # modified version of load annotation
+    data = load_annotation(os.path.join(basedir,filename)) # modified version of load annotation
+    print('data:',data)
     mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
                                    stride=stride, threshold=thresh, slide_window=slide_window)
     print("==================================")
@@ -173,6 +173,7 @@ def t_net(prefix, epoch,
     #list
     print ('start detecting....')
     detections,_ = mtcnn_detector.detect_face(test_data)
+    print('detections:',detections)
     print ('finish detecting ')
     save_net = 'RNet'
     if test_mode == "PNet":
@@ -199,7 +200,7 @@ def parse_args():
     parser.add_argument('--test_mode', dest='test_mode', help='test net type, can be pnet, rnet or onet',
                         default='PNet', type=str)
     parser.add_argument('--prefix', dest='prefix', help='prefix of model name', nargs="+",
-                        default=['../Model/MTCNN'],
+                        default=['../Model/MTCNN/PNet'],
                         type=str) # model file location
     parser.add_argument('--epoch', dest='epoch', help='epoch number of model to load', nargs="+",
                         default=[500], type=int)
