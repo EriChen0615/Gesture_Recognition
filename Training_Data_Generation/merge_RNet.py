@@ -2,7 +2,7 @@ import numpy as np
 import numpy.random as npr
 import os
 
-data_dir = '../Dataset/Training'
+data_dir = '../Dataset/Training/no_LM24'
 #anno_file = os.path.join(data_dir, "annotation.txt")
 
 size = 24

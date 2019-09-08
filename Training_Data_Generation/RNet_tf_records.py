@@ -1,5 +1,5 @@
 """
-This file is used to generate tf_records for training of PNet
+This file is used to generate tf_records for training of RNet
 
 """
 
@@ -34,7 +34,7 @@ def _add_to_tfrecord(filename, image_example, tfrecord_writer):
 def _get_output_filename(output_dir, name, net):
     #st = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     #return '%s/%s_%s_%s.tfrecord' % (output_dir, name, net, st)
-    return '%s/train_PNet_gesture.tfrecord' % (output_dir)
+    return '%s/train_RNet_gesture.tfrecord' % (output_dir)
     
 
 def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
@@ -79,10 +79,10 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
     print('\nFinished converting the MTCNN dataset!')
 
 
-def get_dataset(dir, net='PNet'):
+def get_dataset(dir, net='RNet'):
     #get file name , label and anotation
     #item = 'imglists/PNet/train_%s_raw.txt' % net
-    item = 'imglists/PNet/train_%s_gesture.txt' % net
+    item = 'no_LM24/imglists/RNet/train_%s_gesture.txt' % net
     
     dataset_dir = os.path.join(dir, item)
 
