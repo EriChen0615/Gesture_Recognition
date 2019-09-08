@@ -9,7 +9,7 @@ num_keep_radio = 0.7 # ratio for online hard sample mining
 def prelu(inputs):
     #set a tensor alphas the same shape as the last dimension of inputs, and initialize its elements to be all 0.25
     alphas = tf.get_variable("alphas", shape=inputs.get_shape()[-1], dtype=tf.float32, initializer=tf.constant_initializer(0.25))
-    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小于0的值赋值为0，输入大于0的值不变
+    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小�的值赋值为0，输入大�的值不�
     neg = alphas * (inputs-abs(inputs))*0.5 
     return pos + neg
 
@@ -55,7 +55,7 @@ def cls_ohem(cls_prob, label, training=True):
     # print(label.get_shape())
     # print(zeros.get_shape())
     # print(ones.get_shape())
-    valid_inds = tf.where(label < zeros,zeros,ones) #was < before #这里我真的没看懂
+    valid_inds = tf.where(label < zeros,zeros,ones) #was < before 
     # the coordinates of 'True' elements of the condition given
     # get the number of POS and NEG examples
     num_valid = tf.reduce_sum(valid_inds)
@@ -97,7 +97,7 @@ def bbox_ohem_orginal(bbox_pred,bbox_target,label):
     square_error = tf.gather(square_error, k_index)
     return tf.reduce_mean(square_error)
 
-#label=1 or label=-1 then do regression
+#label=1 or label=-1 then do regression !!!this is not doing ohem!!!
 def bbox_ohem(bbox_pred,bbox_target,label):
     '''
 
@@ -127,7 +127,7 @@ def bbox_ohem(bbox_pred,bbox_target,label):
 
     return tf.reduce_mean(square_error)
 
-def gesture_ohem(gesture_pred,gesture_target,label):
+def gesture_ohem(gesture_pred,gesture_target,label): # !!!this is not doing ohem!!!
     '''
 
     :param gesture_pred:
@@ -156,12 +156,14 @@ def cal_accuracy(cls_prob,label):
     :param label:
     :return:calculate classification accuracy for pos and neg examples only
     '''
-    # get the index of maximum value along axis one from cls_prob
     # 0 for negative 1 for positive
-    pred = tf.argmax(cls_prob,axis=1)
-    label_int = tf.cast(label,tf.int64)
-    # return the index of pos and neg examples
-    cond = tf.where(tf.greater_equal(label_int,0))
+    # print("shape of the cls_prob: ")
+    # print(cls_prob.get_shape())
+    # print("shape of the label: ")
+    # print(label.get_shape())
+    pred = tf.argmax(cls_prob,axis=1) # get the index of max value along axis1 of cls_prob
+    label_int = tf.cast(label,tf.int64) # convert element in label to type int
+    cond = tf.where(tf.greater_equal(label_int,0))# return the index of pos and neg examples
     picked = tf.squeeze(cond)
     # gather the label of pos and neg examples
     label_picked = tf.gather(label_int,picked)
@@ -188,7 +190,7 @@ def _activation_summary(x):
 
 #construct Pnet
 #label:batch
-def P_Net(inputs,label,bbox_target,gesture_target,training=True):
+def P_Net(inputs,label=None, bbox_target=None, gesture_target=None, training=True):
     #define common param
     with slim.arg_scope([slim.conv2d],
                         activation_fn=prelu,
@@ -261,16 +263,40 @@ def P_Net(inputs,label,bbox_target,gesture_target,training=True):
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
             return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         #test
+        if testing:
+            cls_pro_test = tf.squeeze(conv4_1, name='cls_prob')
+            print("cls_pro_test: ", cls_pro_test.get_shape())
+            bbox_pred_test = tf.squeeze(bbox_pred, name='bbox_pred')
+            print("bbox_pred_test: ", bbox_pred_test.get_shape())
+            gesture_pred_test = tf.squeeze(gesture_pred,name="gesture_pred")
+            print("gesture_pred_test: ", gesture_pred_test.get_shape())
+            return cls_pro_test,bbox_pred_test,gesture_pred_test
+        #inference
         else:
-            #when test,batch_size = 1
-            """
+            #when inference,batch_size = 1
+
             cls_pro_test = tf.squeeze(conv4_1, axis=0)
             bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
             gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
             return cls_pro_test,bbox_pred_test,gesture_pred_test
-            """
+            
 
-            return cls_prob,bbox_pred,gesture_pred
+            # cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
+            # #print("cls_prob ", cls_prob.get_shape())
+            # cls_loss = cls_ohem(cls_prob,label,training=False)
+            # #batch*4
+            # # cal bounding box error, squared sum error
+            # bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
+            # #print("bbox_pred ", bbox_pred.get_shape())
+            # bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
+            # #batch*3
+            # gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
+            # #print("gesture_pred ", gesture_pred.get_shape())
+            # gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
+            #
+            # accuracy = cal_accuracy(cls_prob,label)
+            # L2_loss = tf.add_n(slim.losses.get_regularization_losses())
+            # return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
     
 
 
