@@ -32,7 +32,7 @@ def train_model(base_lr, loss, data_num):
     :return:
     train_op, lr_op
     """
-    lr_factor = 0.1
+    lr_factor = 0.5 # was 0.1
     global_step = tf.Variable(0, trainable=False)
     #LR_EPOCH [8,14]
     #boundaried [num_batch,num_batch]
@@ -198,6 +198,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     tf.summary.scalar("gesture_loss",gesture_loss_op)#gesture_loss
     tf.summary.scalar("cls_accuracy",accuracy_op)#cls_acc
     tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, gesture loss and L2 loss add together
+    tf.summary.scaler("learn_rate",lr_op)#logging learning rate
     summary_op = tf.summary.merge_all()
 
     time = 'train-{date:%Y-%m-%d_%H:%M:%S}'.format( date=datetime.now() )
