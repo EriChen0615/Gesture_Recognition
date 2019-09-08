@@ -199,10 +199,10 @@ def parse_args():
     parser.add_argument('--test_mode', dest='test_mode', help='test net type, can be pnet, rnet or onet',
                         default='PNet', type=str)
     parser.add_argument('--prefix', dest='prefix', help='prefix of model name', nargs="+",
-                        default=['../data/Model/MTCNN/PNet_No_Landmark/PNet', '../data/Model/MTCNN/RNet_No_Landmark/RNet', '../data/Model/MTCNN/ONet_No_Landmark/ONet'],
+                        default=['../Model/MTCNN'],
                         type=str) # model file location
     parser.add_argument('--epoch', dest='epoch', help='epoch number of model to load', nargs="+",
-                        default=[30], type=int)
+                        default=[500], type=int)
     parser.add_argument('--batch_size', dest='batch_size', help='list of batch size used in prediction', nargs="+",
                         default=[2048, 256, 16], type=int)
     parser.add_argument('--thresh', dest='thresh', help='list of thresh for pnet, rnet, onet', nargs="+",
