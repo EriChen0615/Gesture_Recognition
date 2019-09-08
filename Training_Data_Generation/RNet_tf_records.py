@@ -146,5 +146,5 @@ def get_dataset(dir, net='RNet'):
 if __name__ == '__main__':
     dir = '../Dataset/Training/'
     net = 'RNet'
-    output_directory = '../Dataset/Training/imglists/RNet'
+    output_directory = '../Dataset/Training/no_LM24/imglists/RNet'
     run(dir, net, output_directory, shuffling=True)
