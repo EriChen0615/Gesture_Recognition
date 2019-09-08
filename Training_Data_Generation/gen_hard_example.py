@@ -9,8 +9,8 @@ import argparse
 import os
 import pickle as pickle
 import cv2
-from Train_Models.mtcnn_model import P_Net, R_Net, O_Net
-from Train_Models.mtcnn_config import config
+from Train_Model.mtcnn_model import P_Net, R_Net, O_Net
+from Train_Model.mtcnn_config import config
 from Training_Data_Generation.loader import TestLoader
 from Detector.detector import Detector
 from Detector.fcn_detector import FcnDetector
