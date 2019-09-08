@@ -1,7 +1,7 @@
 """
 This python file is to genereate hand detection data for PNet Training
 --crop into 12*12 pics and classifies into pos, neg, part
-but I guess 'part' is not going to be used?
+
 """
 
 import os
@@ -48,7 +48,7 @@ for data_class_name in data_class:
     d_idx = 0 # don't care
     idx = 0
     box_idx = 0
-    for annotation in annotations:
+    for annotation in annotations: 
         annotation = annotation.strip().split(' ')
         #image path
         im_path = annotation[0]
@@ -95,8 +95,10 @@ for data_class_name in data_class:
                 n_idx += 1
                 neg_num += 1
 
+        # here we already have 50 neg examples
 
         #for every bounding boxes
+        # this is actually for multi-hands in a pic but actually we only have one hand per img
         for box in boxes:
             # box (x_left, y_top, x_right, y_bottom)
             x1, y1, x2, y2 = box
@@ -106,12 +108,12 @@ for data_class_name in data_class:
             h = y2 - y1 + 1
 
 
-            # ignore small faces and those faces has left-top corner out of the image
+            # ignore small hands and those hands has left-top corner out of the image
             # in case the ground truth boxes of small faces are not accurate
-            if max(w, h) < 20 or x1 < 0 or y1 < 0:
+            if max(w, h) < 20 or x1 < 0 or y1 < 0: # but actually previous operations have already ensured that all coordinates are +ve
                 continue
 
-            # crop another 5 images near the bounding box if IoU less than 0.5, save as negative samples
+            # crop another 5 images near the bounding box and add to neg if IoU less than 0.3
             for i in range(5):
                 #size of the image to be cropped
                 size = npr.randint(12, min(width, height) / 2)
@@ -141,13 +143,13 @@ for data_class_name in data_class:
                     n_idx += 1
 
 
-            #generate positive examples and part faces
+            #generate positive examples and part examples
 
 
             for i in range(20):
-                # pos and part face size [minsize*0.8,maxsize*1.25]
+                # pos and part hand size [minsize*0.8,maxsize*1.25]
                 size = npr.randint(int(min(w, h) * 0.8), np.ceil(1.25 * max(w, h)))
-
+  
                 # delta here is the offset of box center
                 if w<5:
                     print (w)
@@ -168,7 +170,7 @@ for data_class_name in data_class:
                 if nx2 > width or ny2 > height:
                     continue 
                 crop_box = np.array([nx1, ny1, nx2, ny2])
-                #yu gt de offset
+                
                 offset_x1 = (x1 - nx1) / float(size)
                 offset_y1 = (y1 - ny1) / float(size)
                 offset_x2 = (x2 - nx2) / float(size)
