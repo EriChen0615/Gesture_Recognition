@@ -3,7 +3,7 @@ import minibatch
 import sys
 import cv2
 sys.path.append("../")
-from Train_models.MTCNN_config import config
+from Train_Model.mtcnn_config import config
 
 
 class TestLoader:
