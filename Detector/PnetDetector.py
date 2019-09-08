@@ -4,10 +4,11 @@ import numpy as np
 import sys
 
 sys.path.append("../")
+
 from Detector.nms import py_nms
 
 
-class MtcnnDetector(object):
+class PnetDetector(object):
 
     def __init__(self,
                  detectors,
@@ -19,8 +20,8 @@ class MtcnnDetector(object):
                  slide_window=False):
 
         self.pnet_detector = detectors[0]
-        self.rnet_detector = detectors[1]
-        self.onet_detector = detectors[2]
+        # self.rnet_detector = detectors[1]
+        # self.onet_detector = detectors[2]
         self.min_face_size = min_face_size
         self.stride = stride
         self.thresh = threshold
@@ -113,7 +114,6 @@ class MtcnnDetector(object):
                                  np.round((stride * t_index[0] + cellsize) / scale),
                                  score,
                                  reg])
-
         return boundingbox.T
 
     # pre-process images
@@ -124,13 +124,17 @@ class MtcnnDetector(object):
         :param scale:
         :return: resized image
         '''
+        # cv2.imshow('processed_img, before', img)
+        # cv2.waitKey(0)
         height, width, channels = img.shape
         new_height = int(height * scale)  # resized new height
         new_width = int(width * scale)  # resized new width
         new_dim = (new_width, new_height)
         img_resized = cv2.resize(img, new_dim, interpolation=cv2.INTER_LINEAR)  # resized image
-        # don't understand this operation
+        # # don't understand this operation
         img_resized = (img_resized - 127.5) / 128
+        # cv2.imshow('processed_img, after', img_resized)
+        # cv2.waitKey(0)
         return img_resized
 
     def pad(self, bboxes, w, h):
@@ -207,23 +211,47 @@ class MtcnnDetector(object):
         current_scale = float(net_size) / self.min_face_size  # find initial scale
         # print("current_scale", net_size, self.min_face_size, current_scale)
         # risize image using current_scale
+        # cv2.imshow('im_before', im)
+        # cv2.waitKey(0)
         im_resized = self.processed_image(im, current_scale)
+        # cv2.imshow('im', im_resized)
+        # cv2.waitKey(0)
         current_height, current_width, _ = im_resized.shape
         #print('current height and width:',current_height,current_width)
         # fcn
         all_boxes = list()
+        print(current_scale)
         while min(current_height, current_width) > net_size:
             # return the result predicted by pnet
             # cls_cls_map : H*w*2
             # reg: H*w*4
-            # class_prob andd bbox_pred
+            # class_prob and bbox_pred
             cls_cls_map, reg = self.pnet_detector.predict(im_resized)
             # boxes: num*9(x1,y1,x2,y2,score,x1_offset,y1_offset,x2_offset,y2_offset)
             boxes = self.generate_bbox(cls_cls_map[:, :, 1], reg, current_scale, self.thresh[0])
+
+            with open("{}/{}_{}.txt".format('PNet_demo/raw/', time.time(), round(current_scale, 2)), 'w') as f:
+                # f.write('{}'.format(cls_cls_map))
+                f.write('map shape:{}\n'.format(cls_cls_map[:, :, 1].shape))
+                f.write('\n\n============== map =============\n\n')
+                f.write('{}'.format(cls_cls_map[:, :, 1]))
+                f.write('\n\n============== scale =============\n\n')
+                f.write('{}'.format(current_scale))
+                f.write('\n\n============== reg =============\n\n')
+                f.write('reg shape:{}\n'.format(cls_cls_map[:, :, 1].shape))
+                f.write('{}'.format(reg))
+                f.write('\n\n============== box =============\n\n')
+                f.write('box shape:{}\n'.format(boxes.shape))
+                f.write('{}'.format(boxes))
+
+
             # scale_factor is 0.79 in default
             current_scale *= self.scale_factor
             im_resized = self.processed_image(im, current_scale)
             current_height, current_width, _ = im_resized.shape
+            print(current_scale, current_height, current_width)
+            # cv2.imshow('im', im_resized)
+            # cv2.waitKey(0)
 
             if boxes.size == 0:
                 continue
@@ -252,6 +280,7 @@ class MtcnnDetector(object):
                              all_boxes[:, 3] + all_boxes[:, 8] * bbh,
                              all_boxes[:, 4]])
         boxes_c = boxes_c.T
+        # print("=====final shape====: ",boxes_c.shape())
 
         return boxes, boxes_c, None
 
@@ -374,28 +403,28 @@ class MtcnnDetector(object):
             t1 = time.time() - t
             t = time.time()
 
-        # rnet
-        t2 = 0
-        if self.rnet_detector:
-            boxes, boxes_c, _ = self.detect_rnet(img, boxes_c)
-            if boxes_c is None:
-                return np.array([]), np.array([])
-
-            t2 = time.time() - t
-            t = time.time()
-
-        # onet
-        t3 = 0
-        if self.onet_detector:
-            boxes, boxes_c, landmark = self.detect_onet(img, boxes_c)
-            if boxes_c is None:
-                return np.array([]), np.array([])
-
-            t3 = time.time() - t
-            t = time.time()
-            # print(
-            #    "time cost " + '{:.3f}'.format(t1 + t2 + t3) + '  pnet {:.3f}  rnet {:.3f}  onet {:.3f}'.format(t1, t2,
-            #                                                                                                  t3))
+        # # rnet
+        # t2 = 0
+        # if self.rnet_detector:
+        #     boxes, boxes_c, _ = self.detect_rnet(img, boxes_c)
+        #     if boxes_c is None:
+        #         return np.array([]), np.array([])
+        #
+        #     t2 = time.time() - t
+        #     t = time.time()
+        #
+        # # onet
+        # t3 = 0
+        # if self.onet_detector:
+        #     boxes, boxes_c, landmark = self.detect_onet(img, boxes_c)
+        #     if boxes_c is None:
+        #         return np.array([]), np.array([])
+        #
+        #     t3 = time.time() - t
+        #     t = time.time()
+        #     # print(
+        #     #    "time cost " + '{:.3f}'.format(t1 + t2 + t3) + '  pnet {:.3f}  rnet {:.3f}  onet {:.3f}'.format(t1, t2,
+        #     #                                                                                                  t3))
 
         return boxes_c, landmark
 
@@ -445,31 +474,31 @@ class MtcnnDetector(object):
 
             # rnet
 
-            if self.rnet_detector:
-                t = time.time()
-                # ignore landmark
-                boxes, boxes_c, landmark = self.detect_rnet(im, boxes_c)
-                t2 = time.time() - t
-                sum_time += t2
-                t2_sum += t2
-                if boxes_c is None:
-                    all_boxes.append(empty_array)
-                    landmarks.append(empty_array)
-
-                    continue
-            # onet
-
-            if self.onet_detector:
-                t = time.time()
-                boxes, boxes_c, landmark = self.detect_onet(im, boxes_c)
-                t3 = time.time() - t
-                sum_time += t3
-                t3_sum += t3
-                if boxes_c is None:
-                    all_boxes.append(empty_array)
-                    landmarks.append(empty_array)
-
-                    continue
+            # if self.rnet_detector:
+            #     t = time.time()
+            #     # ignore landmark
+            #     boxes, boxes_c, landmark = self.detect_rnet(im, boxes_c)
+            #     t2 = time.time() - t
+            #     sum_time += t2
+            #     t2_sum += t2
+            #     if boxes_c is None:
+            #         all_boxes.append(empty_array)
+            #         landmarks.append(empty_array)
+            #
+            #         continue
+            # # onet
+            #
+            # if self.onet_detector:
+            #     t = time.time()
+            #     boxes, boxes_c, landmark = self.detect_onet(im, boxes_c)
+            #     t3 = time.time() - t
+            #     sum_time += t3
+            #     t3_sum += t3
+            #     if boxes_c is None:
+            #         all_boxes.append(empty_array)
+            #         landmarks.append(empty_array)
+            #
+            #         continue
 
             all_boxes.append(boxes_c)
             landmark = [1]
