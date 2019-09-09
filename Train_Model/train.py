@@ -98,13 +98,15 @@ def image_color_distort(inputs):
     return inputs
 
 def cal_acc(cls_prob,label):
-    pred = tf.argmax(cls_prob,axis=1)
+    # don't need to pick in cls_prob and label since batchsize = 1
+    # pred = tf.argmax(cls_prob,axis=1)
     label_int = tf.cast(label,tf.int64)
-    cond = tf.where(tf.greater_equal(label_int,0))
-    picked = tf.squeeze(cond)
-    label_picked = tf.gather(label_int,picked)
-    pred_picked = tf.gather(pred,picked)
-    accuracy_op = tf.reduce_mean(tf.cast(tf.equal(label_picked,pred_picked),tf.float32))
+    # cond = tf.where(tf.greater_equal(label_int,0))
+    # picked = tf.squeeze(cond)
+    # label_picked = tf.gather(label_int,picked)
+    # pred_picked = tf.gather(pred,picked)
+    # accuracy_op = tf.reduce_mean(tf.cast(tf.equal(label_picked,pred_picked),tf.float32))
+    accuracy_op = tf.reduce_mean(tf.cast(tf.equal(label,cls_prob),tf.float32))
     return accuracy_op
 
 def cls_cal_loss(cls_prob, label): 
@@ -213,10 +215,10 @@ def train(net_factory, prefix, end_epoch, base_dir,
         image_size = 24
         radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 0.5
     else:
-        radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 1
         image_size = 48
-    
-    #define placeholder
+        radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 1
+        
+    #define placeholders
     input_image = tf.placeholder(tf.float32, shape=[config.BATCH_SIZE, image_size, image_size, 3], name='input_image')
     label = tf.placeholder(tf.float32, shape=[config.BATCH_SIZE], name='label')
     bbox_target = tf.placeholder(tf.float32, shape=[config.BATCH_SIZE, 4], name='bbox_target')
@@ -224,8 +226,13 @@ def train(net_factory, prefix, end_epoch, base_dir,
     #get loss and accuracy
     # print(bbox_target)
     # print(gesture_target)
+<<<<<<< HEAD
     input_image = image_color_distort(input_image) # randomly adjust contrast, saturation etc.
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True,testing=False)
+=======
+    input_image = image_color_distort(input_image)
+    cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True)
+>>>>>>> d0079d24789f2f6c44233af480cdf8a2a60f9071
     #train,update learning rate(3 loss)
     total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
     train_op, lr_op = train_model(base_lr,
@@ -248,7 +255,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     tf.summary.scaler("learn_rate",lr_op)#logging learning rate
     summary_op = tf.summary.merge_all()
 
-    time = 'train-{date:%Y-%m-%d_%H:%M:%S}'.format( date=datetime.now() )
+    time = 'train-{}-{date:%Y-%m-%d_%H:%M:%S}'.format(net, date=datetime.now() )
     print("-------------------------------------------------------------\n")
     print("the sub dir's name is: ", time)
     print("-------------------------------------------------------------\n")
@@ -358,7 +365,8 @@ def test(net_factory, prefix, base_dir, display=100, batchsize = 1):
         
     # else 之后再写吧lol：need to use multi_tfrecord reader
     """ for RNET & ONET """
-    #else:
+    #else
+
     
     
 
