@@ -10,8 +10,8 @@ class Detector(object):
         graph = tf.Graph()
         with graph.as_default():
             self.image_op = tf.placeholder(tf.float32, shape=[batch_size, data_size, data_size, 3], name='input_image')
-            #figure out landmark            
-            self.cls_prob, self.bbox_pred, self.landmark_pred = net_factory(self.image_op, training=False)
+            #figure out landmark
+            self.cls_prob, self.bbox_pred, self.gesture_pred = net_factory(self.image_op, training=False)
             self.sess = tf.Session(
                 config=tf.ConfigProto(allow_soft_placement=True, gpu_options=tf.GPUOptions(allow_growth=True)))
             saver = tf.train.Saver()
@@ -19,6 +19,8 @@ class Detector(object):
             model_dict = '/'.join(model_path.split('/')[:-1])
             ckpt = tf.train.get_checkpoint_state(model_dict)
             print(model_path)
+            # print("=================ckpt:{}".format(ckpt))
+            # print("=================ckpt.model_checkpoint_path:{}".format(ckpt.model_checkpoint_path))
             readstate = ckpt and ckpt.model_checkpoint_path
             assert  readstate, "the params dictionary is not valid"
             print("restore models' param")
@@ -62,7 +64,7 @@ class Detector(object):
                 real_size = m
             #cls_prob batch*2
             #bbox_pred batch*4
-            cls_prob, bbox_pred,landmark_pred = self.sess.run([self.cls_prob, self.bbox_pred,self.landmark_pred], feed_dict={self.image_op: data})
+            cls_prob, bbox_pred,landmark_pred = self.sess.run([self.cls_prob, self.bbox_pred,self.gesture_pred], feed_dict={self.image_op: data})
             #num_batch * batch_size *2
             cls_prob_list.append(cls_prob[:real_size])
             #num_batch * batch_size *4

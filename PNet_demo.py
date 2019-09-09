@@ -177,13 +177,13 @@ stride = 2
 slide_window = False
 shuffle = False
 detectors = [None, None, None]
-model_path = ['Model/MTCNN/PNet-500', '', '']
+model_path = ['Model/PNet/PNet-500', '', '']
 epoch = [500, 14, 16]
 batch_size = [2048, 64, 16]
 print(model_path)
 
-TestImage_path = "Testing_Demo_Data/Test/"
-TestResult_path = "PNet_demo/ResultImage/7_SEP_Test_clean/"
+TestImage_path = "Testing_Demo_Data/webimg/"
+TestResult_path = "PNet_demo/ResultImage/webimg/"
 
 mkdir(TestResult_path)
 
@@ -236,8 +236,8 @@ for imagepath in gt_imdb:
         # image_single = image_original.copy()
         # cv2.rectangle(image_single, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
         # cv2.imwrite("{}/{}_{}.png".format(TestResult_path, count, box_number), image_single)
-        with open("{}/{}_{}.txt".format(TestResult_path, count, box_number), 'w') as f:
-            f.write('(x1,y1):({},{})\n(x2,y2):({},{})\nprediction:{}'.format(int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3]), np.round(bbox[4], 4)))
+        # with open("{}/{}_{}.txt".format(TestResult_path, count, box_number), 'w') as f:
+        #     f.write('(x1,y1):({},{})\n(x2,y2):({},{})\nprediction:{}'.format(int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3]), np.round(bbox[4], 4)))
 
 
 

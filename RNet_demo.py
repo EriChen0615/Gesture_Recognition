@@ -177,13 +177,13 @@ stride = 2
 slide_window = False
 shuffle = False
 detectors = [None, None, None]
-model_path = ['Model/MTCNN/PNet-500', 'Model/RNet/RNet_No_Landmark/RNet-500', '']
-epoch = [500, 14, 16]
-batch_size = [2048, 64, 16]
+model_path = ['Model/PNet/PNet-500', 'Model/RNet/RNet_No_Landmark/RNet-500', '']
+epoch = [500, 500, 16]
+batch_size = [300, 300, 300]
 print(model_path)
 
-TestImage_path = "Testing_Demo_Data/Test/"
-TestResult_path = "RNet_demo/ResultImage/Test/"
+TestImage_path = "Testing_Demo_Data/webimg/"
+TestResult_path = "RNet_demo/ResultImage/webimg/"
 
 mkdir(TestResult_path)
 
@@ -223,6 +223,7 @@ test_data = TestLoader(gt_imdb)
 
 print(test_data)
 all_boxes, landmarks = mtcnn_detector.detect_face(test_data)
+print(len(landmarks))
 
 count = 0
 
