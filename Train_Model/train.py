@@ -34,7 +34,7 @@ def train_model(base_lr, loss, data_num):
     lr_factor = 0.5 # was 0.1
     global_step = tf.Variable(0, trainable=False)
     #LR_EPOCH [8,14]
-    #boundaried [num_batch,num_batch]
+    #boundaried [num_of_batch,num_of_batch,num_of_batch]
     boundaries = [int(epoch * data_num / config.BATCH_SIZE) for epoch in config.LR_EPOCH]
     #lr_values[0.01,0.001,0.0001,0.00001]
     lr_values = [base_lr * (lr_factor ** x) for x in range(0, len(config.LR_EPOCH) + 1)]
