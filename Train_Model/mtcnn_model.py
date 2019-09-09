@@ -368,7 +368,8 @@ def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
         bbox_pred = slim.fully_connected(fc1,num_outputs=4,scope="bbox_fc",activation_fn=None)
         print(bbox_pred.get_shape())
         #batch*3
-        gesture_pred = slim.fully_connected(fc1,num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
+        gesture_pred = slim.fully_connected(fc1,num_outputs=10,scope="gesture_pre_fc",activation_fn=None)
+        gesture_pred = slim.fully_connected(gesture_pred,num_outputs=3,scope="gesture_pre_fc",activation_fn=tf.nn.softmax)
         print(gesture_pred.get_shape())
         #train
         if training:
