@@ -9,7 +9,7 @@ num_keep_radio = 0.7 # ratio for online hard sample mining
 def prelu(inputs):
     #set a tensor alphas the same shape as the last dimension of inputs, and initialize its elements to be all 0.25
     alphas = tf.get_variable("alphas", shape=inputs.get_shape()[-1], dtype=tf.float32, initializer=tf.constant_initializer(0.25))
-    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小�的值赋值为0，输入大�的值不�
+    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小�的值赋值为0，输入大�的值不�
     neg = alphas * (inputs-abs(inputs))*0.5 
     return pos + neg
 
@@ -190,11 +190,7 @@ def _activation_summary(x):
 
 #construct Pnet
 #label:batch
-<<<<<<< HEAD
 def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
-=======
-def P_Net(inputs,label=None, bbox_target=None, gesture_target=None, training=True):
->>>>>>> 1a17e746ba41092f1a1f88908323c99b6dd9fb77
     #define common param
     with slim.arg_scope([slim.conv2d],
                         activation_fn=prelu,
@@ -267,7 +263,6 @@ def P_Net(inputs,label=None, bbox_target=None, gesture_target=None, training=Tru
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
             return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         #test
-<<<<<<< HEAD
         #inference
         else:
             #when inference,batch_size = 1
@@ -275,24 +270,6 @@ def P_Net(inputs,label=None, bbox_target=None, gesture_target=None, training=Tru
             bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
             gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
             return cls_pro_test,bbox_pred_test,gesture_pred_test
-=======
-        else:
-            cls_pro_test = tf.squeeze(conv4_1, name='cls_prob')
-            print("cls_pro_test: ", cls_pro_test.get_shape())
-            bbox_pred_test = tf.squeeze(bbox_pred, name='bbox_pred')
-            print("bbox_pred_test: ", bbox_pred_test.get_shape())
-            gesture_pred_test = tf.squeeze(gesture_pred,name="gesture_pred")
-            print("gesture_pred_test: ", gesture_pred_test.get_shape())
-            return cls_pro_test,bbox_pred_test,gesture_pred_test
-        # #inference
-        # else:
-        #     #when inference,batch_size = 1
-
-        #     cls_pro_test = tf.squeeze(conv4_1, axis=0)
-        #     bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
-        #     gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
-        #     return cls_pro_test,bbox_pred_test,gesture_pred_test
->>>>>>> 1a17e746ba41092f1a1f88908323c99b6dd9fb77
             
 
             # cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
