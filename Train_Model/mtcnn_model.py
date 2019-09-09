@@ -182,7 +182,7 @@ def _activation_summary(x):
 
 #construct Pnet
 #label:batch
-def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,testing=False):
+def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
     #define common param
     with slim.arg_scope([slim.conv2d],
                         activation_fn=prelu,
@@ -253,14 +253,6 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
             return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         #test
-        if testing:
-            cls_pro_test = tf.squeeze(conv4_1, name='cls_prob')
-            print("cls_pro_test: ", cls_pro_test.get_shape())
-            bbox_pred_test = tf.squeeze(bbox_pred, name='bbox_pred')
-            print("bbox_pred_test: ", bbox_pred_test.get_shape())
-            gesture_pred_test = tf.squeeze(gesture_pred,name="gesture_pred")
-            print("gesture_pred_test: ", gesture_pred_test.get_shape())
-            return cls_pro_test,bbox_pred_test,gesture_pred_test
         #inference
         else:
             #when inference,batch_size = 1
@@ -289,11 +281,7 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,
             """
     
 
-
-""" -------NEED MODIFICATION BEFORE NEXT STAGE TRAINING-------- """
-# PLEASE MODIFY THE REST TWO FN BEFORE TRAINING R/ONET!!!
-# PLEASE DO NOT FORGET OMG!!!
-def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
+def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
     with slim.arg_scope([slim.conv2d],
                         activation_fn = prelu,
                         weights_initializer=slim.xavier_initializer(),
@@ -322,7 +310,8 @@ def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
         bbox_pred = slim.fully_connected(fc1,num_outputs=4,scope="bbox_fc",activation_fn=None)
         print(bbox_pred.get_shape())
         #batch*3
-        gesture_pred = slim.fully_connected(fc1,num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
+        gesture_pred = slim.conv2d(net,num_outputs=10,kernel_size=[1,1],stride=1,scope='conv4_3',activation_fn=None)
+        gesture_pred = slim.fully_connected(gesture_pred, num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
         print(gesture_pred.get_shape())
         #train
         if training:
@@ -335,6 +324,8 @@ def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
         else:
             return cls_prob,bbox_pred,gesture_pred
     
+    """ -------NEED MODIFICATION BEFORE NEXT STAGE TRAINING-------- """
+# PLEASE MODIFY THE FN BEFORE TRAINING ONET!!!
 def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
     with slim.arg_scope([slim.conv2d],
                         activation_fn = prelu,
