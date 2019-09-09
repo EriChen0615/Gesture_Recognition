@@ -56,7 +56,7 @@ def getDataFromTxt(txt,data_path, with_gesture=True):
         line = line.strip()
         components = line.split(' ')
         img_path = os.path.join(data_path, components[0]).replace('\\','/') # file path
-`   `
+
         # bounding box, (x1, y1, x2, y2)
         #bbox = (components[1], components[2], components[3], components[4])
         bbox = (components[1], components[2], components[3], components[4])

@@ -9,8 +9,8 @@ import argparse
 import os
 import pickle as pickle
 import cv2
-from Train_Models.mtcnn_model import P_Net, R_Net, O_Net
-from Train_Models.mtcnn_config import config
+from Train_Model.mtcnn_model import P_Net, R_Net, O_Net
+from Train_Model.mtcnn_config import config
 from Training_Data_Generation.loader import TestLoader
 from Detector.detector import Detector
 from Detector.fcn_detector import FcnDetector
@@ -63,7 +63,9 @@ def save_hard_example(net, data,save_path):
 
         if dets.shape[0] == 0:
             continue
+
         img = cv2.imread(im_idx)
+        
         #change to square
         dets = convert_to_square(dets)
         dets[:, 0:4] = np.round(dets[:, 0:4])
@@ -157,7 +159,8 @@ def t_net(prefix, epoch,
     filename = 'imglist_with_gesture.txt'
     #read anotation(type:dict), include 'images' and 'bboxes'
     #data = read_annotation(basedir,filename)
-    data = load_annotation(os.join(basedir,filename)) # modified version of load annotation
+    data = load_annotation(os.path.join(basedir,filename)) # modified version of load annotation
+    print('data:',data)
     mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
                                    stride=stride, threshold=thresh, slide_window=slide_window)
     print("==================================")
@@ -170,6 +173,7 @@ def t_net(prefix, epoch,
     #list
     print ('start detecting....')
     detections,_ = mtcnn_detector.detect_face(test_data)
+    print('detections:',detections)
     print ('finish detecting ')
     save_net = 'RNet'
     if test_mode == "PNet":
@@ -196,10 +200,10 @@ def parse_args():
     parser.add_argument('--test_mode', dest='test_mode', help='test net type, can be pnet, rnet or onet',
                         default='PNet', type=str)
     parser.add_argument('--prefix', dest='prefix', help='prefix of model name', nargs="+",
-                        default=['../data/Model/MTCNN/PNet_No_Landmark/PNet', '../data/Model/MTCNN/RNet_No_Landmark/RNet', '../data/Model/MTCNN/ONet_No_Landmark/ONet'],
+                        default=['../Model/MTCNN/PNet'],
                         type=str) # model file location
     parser.add_argument('--epoch', dest='epoch', help='epoch number of model to load', nargs="+",
-                        default=[30], type=int)
+                        default=[500], type=int)
     parser.add_argument('--batch_size', dest='batch_size', help='list of batch size used in prediction', nargs="+",
                         default=[2048, 256, 16], type=int)
     parser.add_argument('--thresh', dest='thresh', help='list of thresh for pnet, rnet, onet', nargs="+",
