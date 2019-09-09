@@ -319,7 +319,7 @@ def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
         bbox_pred = slim.fully_connected(fc1,num_outputs=4,scope="bbox_fc",activation_fn=None)
         print("bbox_pred shape: ", bbox_pred.get_shape())
         #batch*3
-        gesture_pred = slim.conv2d(net,num_outputs=10,kernel_size=[1,1],stride=1,scope='conv4_3',activation_fn=None)
+        gesture_pred = slim.conv2d(fc1,num_outputs=10,kernel_size=[1,1],stride=1,scope='conv4_3',activation_fn=None)
         gesture_pred = slim.fully_connected(gesture_pred, num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
         print("gesture_pred shape: ", gesture_pred.get_shape())
         #train
