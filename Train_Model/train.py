@@ -252,7 +252,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     tf.summary.scalar("bbox_loss",bbox_loss_op)#bbox_loss
     tf.summary.scalar("gesture_loss",gesture_loss_op)#gesture_loss
     tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, gesture loss and L2 loss add together
-    tf.summary.scaler("learn_rate",lr_op)#logging learning rate
+    tf.summary.scalar("learn_rate",lr_op)#logging learning rate
     summary_op = tf.summary.merge_all()
 
     time = 'train-{}-{date:%Y-%m-%d_%H:%M:%S}'.format(net, date=datetime.now() )
