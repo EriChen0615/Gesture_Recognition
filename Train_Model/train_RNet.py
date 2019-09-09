@@ -1,6 +1,6 @@
 #coding:utf-8
-from train_models.mtcnn_model import R_Net
-from train_models.train import train
+from mtcnn_model import R_Net
+from train import train
 
 
 def train_RNet(base_dir, prefix, end_epoch, display, lr):
@@ -17,10 +17,10 @@ def train_RNet(base_dir, prefix, end_epoch, display, lr):
     train(net_factory, prefix, end_epoch, base_dir, display=display, base_lr=lr)
 
 if __name__ == '__main__':
-    base_dir = '../../DATA/imglists_noLM/RNet'
+    base_dir = '../Dataset/Training/no_LM24/imglists/RNet'
 
     model_name = 'MTCNN'
-    model_path = '../data/%s_model/RNet_No_Landmark/RNet' % model_name
+    model_path = '../Model/%s/RNet_No_Landmark/RNet' % model_name
     prefix = model_path
     end_epoch = 22
     display = 100
