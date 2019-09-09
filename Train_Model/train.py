@@ -106,7 +106,7 @@ def cal_acc(cls_prob,label):
     # label_picked = tf.gather(label_int,picked)
     # pred_picked = tf.gather(pred,picked)
     # accuracy_op = tf.reduce_mean(tf.cast(tf.equal(label_picked,pred_picked),tf.float32))
-    accuracy_op = tf.reduce_mean(tf.cast(tf.equal(label,cls_prob),tf.float32))
+    accuracy_op = tf.reduce_mean(tf.cast(tf.equal(label_int,cls_prob),tf.float32))
     return accuracy_op
 
 def cls_cal_loss(cls_prob, label): 
