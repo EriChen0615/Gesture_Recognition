@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# ignore the dataset
+Dataset
+
 # C extensions
 *.so
 
@@ -112,3 +115,7 @@ Model/MTCNN/
 logs/
 *.meta
 *.data
+
+#test result
+Testing_Demo_Data/
+PNet_demo/

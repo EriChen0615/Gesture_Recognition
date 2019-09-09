@@ -2,13 +2,14 @@ import tensorflow as tf
 from tensorflow.contrib import slim
 from tensorflow.contrib.tensorboard.plugins import projector
 import numpy as np
+
 num_keep_radio = 0.7 # ratio for online hard sample mining
 
 #define prelu: an activation function
 def prelu(inputs):
     #set a tensor alphas the same shape as the last dimension of inputs, and initialize its elements to be all 0.25
     alphas = tf.get_variable("alphas", shape=inputs.get_shape()[-1], dtype=tf.float32, initializer=tf.constant_initializer(0.25))
-    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小于0的值赋值为0，输入大于0的值不变
+    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小�的值赋值为0，输入大�的值不�
     neg = alphas * (inputs-abs(inputs))*0.5 
     return pos + neg
 
@@ -29,22 +30,27 @@ def cls_ohem(cls_prob, label, training=True):
 
     #pos -> 1, neg -> 0, others -> 0
     label_filter_invalid = tf.where(tf.less(label,0), zeros, label)
+    """
+    The condition tensor acts as a mask that chooses, based on the value at each element, 
+    whether the corresponding element / row in the output should be taken from x (if true)
+    or y (if false).
+    
+    tf.less() Returns the truth value of (x < y) element-wise
+    """
     num_cls_prob = tf.size(cls_prob)
-    cls_prob_reshape = tf.reshape(cls_prob,[num_cls_prob,-1])
+    cls_prob_reshape = tf.reshape(cls_prob,[num_cls_prob,-1]) # <tensor>,<shape> flattened
     label_int = tf.cast(label_filter_invalid,tf.int32)
     # get the number of rows of class_prob
     num_row = tf.to_int32(cls_prob.get_shape()[0])
     #row = [0,2,4.....]
-    row = tf.range(num_row)*2
-    indices_ = row + label_int
-    if training == True:
-        label_prob = tf.squeeze(tf.gather(cls_prob_reshape, indices_))
-    else:
-        label_prob = label
 
-    loss = -tf.log(label_prob+1e-10)
-    zeros = tf.zeros_like(label_prob, dtype=tf.float32) # set all elements to 0
-    ones = tf.ones_like(label_prob,dtype=tf.float32) # set all elements to 1
+    row = tf.range(num_row)*2 # [0,2,4..,(num_row-1)*2], because cls_prob was (-1,2), with the even items representing postive detection
+    indices_ = row + label_int # valid label of either 0 or 1
+    label_prob = tf.squeeze(tf.gather(cls_prob_reshape, indices_)) # if img is neg, choose the odd one and drive it to 1; if pos drive even to 1
+    loss = -tf.log(label_prob+1e-10) # if 1 loss close to 0; otherwise 10 <driving the label_prob to 1>
+    zeros = tf.zeros_like(label_prob, dtype=tf.float32)
+    ones = tf.ones_like(label_prob,dtype=tf.float32)
+
     # set pos and neg to be 1, rest to be 0
     # print(label.get_shape())
     # print(zeros.get_shape())
@@ -54,11 +60,13 @@ def cls_ohem(cls_prob, label, training=True):
     # get the number of POS and NEG examples
     num_valid = tf.reduce_sum(valid_inds)
 
-    keep_num = tf.cast(num_valid*num_keep_radio,dtype=tf.int32)
-    #FILTER OUT PART AND GESTURE DATA
+
+    keep_num = tf.cast(num_valid*num_keep_radio,dtype=tf.int32) # discard some loss
+    #FILTER OUT PART AND gesture DATA
+
     loss = loss * valid_inds
-    loss,_ = tf.nn.top_k(loss, k=keep_num)
-    return tf.reduce_mean(loss)
+    loss,_ = tf.nn.top_k(loss, k=keep_num) # Finds values and indices of the k largest entries for the last dimension. _ is indices
+    return tf.reduce_mean(loss) # take the mean of loss
 
 def bbox_ohem_smooth_L1_loss(bbox_pred,bbox_target,label):
     sigma = tf.constant(1.0)
@@ -182,7 +190,11 @@ def _activation_summary(x):
 
 #construct Pnet
 #label:batch
+<<<<<<< HEAD
 def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
+=======
+def P_Net(inputs,label=None, bbox_target=None, gesture_target=None, training=True):
+>>>>>>> 1a17e746ba41092f1a1f88908323c99b6dd9fb77
     #define common param
     with slim.arg_scope([slim.conv2d],
                         activation_fn=prelu,
@@ -194,7 +206,8 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
         print(inputs.get_shape())
 
 
-        net = slim.conv2d(inputs, 10, 3, stride=1,scope='conv1')
+        net = slim.conv2d(inputs, 10, 3, stride=1,scope='conv1') # <input>,<number of output>,<kernel size>
+                            # 3 interpreted as [3,3]
         _activation_summary(net)
         print(net.get_shape())
         net = slim.max_pool2d(net, kernel_size=[2,2], stride=2, scope='pool1', padding='SAME')
@@ -213,13 +226,13 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
         conv4_1 = slim.conv2d(net,num_outputs=2,kernel_size=[1,1],stride=1,scope='conv4_1',activation_fn=tf.nn.softmax)
         _activation_summary(conv4_1)
         #conv4_1 = slim.conv2d(net,num_outputs=1,kernel_size=[1,1],stride=1,scope='conv4_1',activation_fn=tf.nn.sigmoid)
-        print (conv4_1.get_shape())
+        print ('conv4_1.shape=',conv4_1.get_shape())
 
         """ bbox regression """
         #batch*H*W*4 shape=(batch,1,1,4)
         bbox_pred = slim.conv2d(net,num_outputs=4,kernel_size=[1,1],stride=1,scope='conv4_2',activation_fn=None)
         _activation_summary(bbox_pred)
-        print (bbox_pred.get_shape())
+        print ('bbox_pred.shape=',bbox_pred.get_shape())
 
         """ gesture prediction """
         #batch*H*W*3 shape=(batch,1,1,3)
@@ -227,18 +240,19 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
         gesture_pred = slim.fully_connected(gesture_pred, num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
         #thinking about change the activation fn to sigmoid or softmax?
         #Here trying to normalize: gesture_pred = gesture_pred / abs(gesture_pred) 
-        # _activation_summary(gesture_pred)
-        print (gesture_pred.get_shape())
 
+        _activation_summary(gesture_pred)
+        print ('gesture_pred.shape=',gesture_pred.get_shape())
 
         #cls_prob_original = conv4_1 
         #bbox_pred_original = bbox_pred
         if training:
             #batch*2
             # calculate classification loss
-            cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
-            print("cls_prob ", cls_prob.get_shape())
-            cls_loss = cls_ohem(cls_prob,label,training)
+
+            cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob') # remove all size 1 dimensions, conv4_1 is the output tensor, [1,2] are axes
+            cls_loss = cls_ohem(cls_prob,label)
+
             #batch*4
             # cal bounding box error, squared sum error
             bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
@@ -253,6 +267,7 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
             return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         #test
+<<<<<<< HEAD
         #inference
         else:
             #when inference,batch_size = 1
@@ -260,25 +275,42 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
             bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
             gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
             return cls_pro_test,bbox_pred_test,gesture_pred_test
-            
-            """
-            cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
-            #print("cls_prob ", cls_prob.get_shape())
-            cls_loss = cls_ohem(cls_prob,label,training=False)
-            #batch*4
-            # cal bounding box error, squared sum error
-            bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
-            #print("bbox_pred ", bbox_pred.get_shape())
-            bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
-            #batch*3
-            gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
-            #print("gesture_pred ", gesture_pred.get_shape())
-            gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
+=======
+        else:
+            cls_pro_test = tf.squeeze(conv4_1, name='cls_prob')
+            print("cls_pro_test: ", cls_pro_test.get_shape())
+            bbox_pred_test = tf.squeeze(bbox_pred, name='bbox_pred')
+            print("bbox_pred_test: ", bbox_pred_test.get_shape())
+            gesture_pred_test = tf.squeeze(gesture_pred,name="gesture_pred")
+            print("gesture_pred_test: ", gesture_pred_test.get_shape())
+            return cls_pro_test,bbox_pred_test,gesture_pred_test
+        # #inference
+        # else:
+        #     #when inference,batch_size = 1
 
-            accuracy = cal_accuracy(cls_prob,label)
-            L2_loss = tf.add_n(slim.losses.get_regularization_losses())
-            return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
-            """
+        #     cls_pro_test = tf.squeeze(conv4_1, axis=0)
+        #     bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
+        #     gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
+        #     return cls_pro_test,bbox_pred_test,gesture_pred_test
+>>>>>>> 1a17e746ba41092f1a1f88908323c99b6dd9fb77
+            
+
+            # cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
+            # #print("cls_prob ", cls_prob.get_shape())
+            # cls_loss = cls_ohem(cls_prob,label,training=False)
+            # #batch*4
+            # # cal bounding box error, squared sum error
+            # bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
+            # #print("bbox_pred ", bbox_pred.get_shape())
+            # bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
+            # #batch*3
+            # gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
+            # #print("gesture_pred ", gesture_pred.get_shape())
+            # gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
+            #
+            # accuracy = cal_accuracy(cls_prob,label)
+            # L2_loss = tf.add_n(slim.losses.get_regularization_losses())
+            # return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
     
 
 def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
