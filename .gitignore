@@ -113,8 +113,6 @@ logs/
 
 # test result
 Testing_Demo_Data/
-MTCNN_demo/ONet
-MTCNN_demo/RNet
-MTCNN_demo/PNet
+MTCNN_demo/
 Model/
 

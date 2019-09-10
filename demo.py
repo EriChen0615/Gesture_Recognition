@@ -185,9 +185,9 @@ def demo(test_mode="ONet"):
     batch_size = [2048, 64, 16]
 
     # The model path, should be the same in the checkpoint file
-    model_path = ['Model/PNet/PNet-500', 'Model/RNet/RNet-500', 'Model/ONet/ONet-116']
+    model_path = ['Model/PNet/PNet-30', 'Model/RNet/RNet-500', 'Model/ONet/ONet-116']
     # The sub-folder in the folder Testing_Demo_Data
-    TestImage_subfolder = "Train"
+    TestImage_subfolder = "test"
     # Test image postfix
     Image_postfix = 'jpg'
 
