@@ -200,7 +200,7 @@ def parse_args():
     parser.add_argument('--test_mode', dest='test_mode', help='test net type, can be pnet, rnet or onet',
                         default='RNet', type=str)
     parser.add_argument('--prefix', dest='prefix', help='prefix of model name', nargs="+",
-                        default=['../Model/MTCNN/PNet','../Model/MTCNN/RNet'],
+                        default=['../Model/MTCNN/PNet','../Model/MTCNN/PNet/RNet_No_Landmark'],
                         type=str) # model file location
     parser.add_argument('--epoch', dest='epoch', help='epoch number of model to load', nargs="+",
                         default=[500,300], type=int)
