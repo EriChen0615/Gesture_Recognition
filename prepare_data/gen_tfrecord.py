@@ -156,5 +156,5 @@ if __name__ == '__main__':
     args = parse_args()
     dir = args.data_dir
     net = args.net
-    output_directory = os.join(dir,'imglists/PNet')
+    output_directory = os.path.join(dir,'imglists/PNet')
     run(dir, net, output_directory, shuffling=True)
