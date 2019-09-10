@@ -352,7 +352,7 @@ def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
         net = slim.max_pool2d(net, kernel_size=[3, 3], stride=2, scope="pool2")
         print("pool2: ", net.get_shape())
         net = slim.conv2d(net,num_outputs=64,kernel_size=[3,3],stride=1,scope="conv3")
-        print("conv3: ", et.get_shape())
+        print("conv3: ", net.get_shape())
         net = slim.max_pool2d(net, kernel_size=[2, 2], stride=2, scope="pool3", padding='SAME')
         print("pool3: ", net.get_shape())
         net = slim.conv2d(net,num_outputs=128,kernel_size=[2,2],stride=1,scope="conv4")
