@@ -33,13 +33,13 @@ def save_hard_example(net, data,save_path):
 
     
     # save files
-    neg_label_file = "../Dataset/Training/no_LM%d/neg_%d.txt" % (net, image_size)
+    neg_label_file = "%s/neg_%d.txt" % (save_path, image_size)
     neg_file = open(neg_label_file, 'w')
 
-    pos_label_file = "../Dataset/Training/no_LM%d/pos_%d.txt" % (net, image_size)
+    pos_label_file = "%s/pos_%d.txt" % (save_path, image_size)
     pos_file = open(pos_label_file, 'w')
 
-    part_label_file = "../Dataset/Training/no_LM%d/part_%d.txt" % (net, image_size)
+    part_label_file = "%s/part_%d.txt" % (save_path, image_size)
     part_file = open(part_label_file, 'w')
     #read detect result
     det_boxes = pickle.load(open(os.path.join(save_path, 'detections.pkl'), 'rb'))
@@ -130,7 +130,7 @@ def save_hard_example(net, data,save_path):
 def t_net(prefix, epoch,
              batch_size, test_mode="PNet",
              thresh=[0.6, 0.6, 0.7], min_face_size=25,
-             stride=2, slide_window=False, shuffle=False, vis=False):
+             stride=2, slide_window=False, shuffle=False, vis=False,im_dir=None,filename='imglist_with_gesture.txt'):
     detectors = [None, None, None]
     print("Test model: ", test_mode)
     #PNet-echo
@@ -155,16 +155,16 @@ def t_net(prefix, epoch,
         ONet = Detector(O_Net, 48, batch_size[2], model_path[2])
         detectors[2] = ONet
         
-    basedir = '../Dataset/Training/'
+    basedir = im_dir
     #anno_file
     filename = 'imglist_with_gesture.txt'
     #read anotation(type:dict), include 'images' and 'bboxes'
     #data = read_annotation(basedir,filename)
     data = load_annotation(os.path.join(basedir,filename)) # modified version of load annotation
-    print('data:',data)
+    #print('data:',data)
     mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
                                    stride=stride, threshold=thresh, slide_window=slide_window)
-    print("==================================")
+    #print("==================================")
     # 注意是在“test”模式下
     # imdb = IMDB("wider", image_set, root_path, dataset_path, 'test')
     # gt_imdb = imdb.gt_imdb()
@@ -182,7 +182,7 @@ def t_net(prefix, epoch,
     elif test_mode == "RNet":
         save_net = "ONet"
     #save detect result
-    save_path = os.path.join(data_dir, save_net)
+    save_path = data_dir
     print ('save_path is :')
     print(save_path)
     if not os.path.exists(save_path):
@@ -199,6 +199,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Test mtcnn',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--im_dir',dest='im_dir',help='base directory for the dataset')
+    parser.add_argument('--anno_file',dest='anno_file',help='path under im_dir of the annotation file')
     parser.add_argument('--save_dir',dest='save_dir',help='the directory to save the gesture data')
     parser.add_argument('--test_mode', dest='test_mode', help='test net type, can be pnet, rnet or onet',
                         default='RNet', type=str)
@@ -229,13 +230,13 @@ if __name__ == '__main__':
     
     net = args.test_mode
 
-    if net == "RNet":
+    if net == "PNet":
         image_size = 24
-    if net == "ONet":
+    if net == "RNet":
         image_size = 48
 
     base_dir = args.im_dir
-    data_dir = os.path.join(args.save_dir,str(net))
+    data_dir = args.save_dir
     
     neg_dir = get_path(data_dir, 'negative')
     pos_dir = get_path(data_dir, 'positive')
@@ -256,4 +257,7 @@ if __name__ == '__main__':
           args.stride,#stride
           args.slide_window, 
           args.shuffle, 
-          vis=False)
+          vis=False,
+          im_dir=base_dir,
+          filename=args.anno_file
+          )
