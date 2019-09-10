@@ -20,17 +20,6 @@ from prepare_data.data_utils import *
 #net : 24(RNet)/48(ONet)
 #data: dict()
 
-def parse_args():
-    parser = argparse.ArgumentParser(description='Generate gesture data for training',
-                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--net',dest='net',help='a net in [RNet, ONet]')
-    parser.add_argument('--RNet_dir',dest='RNet_dir',help='path of RNet model',default=None)
-    parser.add_argument('--ONet_dir', dest='ONet_dir', help='path of ONet model',default=None)
-    parser.add_argument('--save_dir', dest='save_dir', help='directory to save the training data') # model file location
-    parser.add_argument('--im_dir',dest='im_dir',help='base directory of the dataset')
-    args = parser.parse_args()
-    return args
-
 def save_hard_example(net, data,save_path):
     # load ground truth from annotation file
     # format of each line: image/path [x1,y1,x2,y2] for each gt_box in this image
@@ -209,6 +198,8 @@ def t_net(prefix, epoch,
 def parse_args():
     parser = argparse.ArgumentParser(description='Test mtcnn',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('--im_dir',dest='im_dir',help='base directory for the dataset')
+    parser.add_argument('--save_dir',dest='save_dir',help='the directory to save the gesture data')
     parser.add_argument('--test_mode', dest='test_mode', help='test net type, can be pnet, rnet or onet',
                         default='RNet', type=str)
     parser.add_argument('--prefix', dest='prefix', help='prefix of model name', nargs="+",
@@ -219,7 +210,7 @@ def parse_args():
     parser.add_argument('--batch_size', dest='batch_size', help='list of batch size used in prediction', nargs="+",
                         default=[2048, 256, 16], type=int)
     parser.add_argument('--thresh', dest='thresh', help='list of thresh for pnet, rnet, onet', nargs="+",
-                        default=[0.3, 0.1, 0.7], type=float) # note default value for PNet is very low
+                        default=[0.6, 0.7, 0.8], type=float) # note default value for PNet is very low
     parser.add_argument('--min_face', dest='min_face', help='minimum face size for detection',
                         default=20, type=int)
     parser.add_argument('--stride', dest='stride', help='stride of sliding window',
@@ -234,15 +225,17 @@ def parse_args():
 
 if __name__ == '__main__':
 
-    net = 'ONet'
+    args = parse_args()
+    
+    net = args.test_mode
 
     if net == "RNet":
         image_size = 24
     if net == "ONet":
         image_size = 48
 
-    base_dir = '../Dataset/Training/WIDER_train'
-    data_dir = '../Dataset/Training/no_LM%s' % str(image_size)
+    base_dir = args.im_dir
+    data_dir = os.path.join(args.save_dir,str(net))
     
     neg_dir = get_path(data_dir, 'negative')
     pos_dir = get_path(data_dir, 'positive')
@@ -251,8 +244,6 @@ if __name__ == '__main__':
     for dir_path in [neg_dir, pos_dir, part_dir]:
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
-
-    args = parse_args()
 
     print('Called with argument:')
     print(args)
