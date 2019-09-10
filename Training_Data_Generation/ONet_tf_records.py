@@ -82,7 +82,7 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
 def get_dataset(dir, net='ONet'):
     #get file name , label and anotation
     #item = 'imglists/PNet/train_%s_raw.txt' % net
-    item = 'no_LM24/imglists/ONet/train_%s_gesture.txt' % net
+    item = 'no_LM48/imglists/ONet/train_%s_gesture.txt' % net
     
     dataset_dir = os.path.join(dir, item)
 
@@ -146,5 +146,5 @@ def get_dataset(dir, net='ONet'):
 if __name__ == '__main__':
     dir = '../Dataset/Training/'
     net = 'ONet'
-    output_directory = '../Dataset/Training/no_LM24/imglists/ONet'
+    output_directory = '../Dataset/Training/no_LM48/imglists/ONet'
     run(dir, net, output_directory, shuffling=True)

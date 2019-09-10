@@ -19,7 +19,7 @@ from utils import IoU
 
 
 
-def GenerateData(ftxt,data_path,net,augment=False):
+def GenerateData(ftxt,data_path,net,augment=True):
     '''
 
     :param ftxt: name/path of the text file that contains image path,
@@ -201,7 +201,7 @@ def GenerateData(ftxt,data_path,net,augment=False):
     return F_imgs,F_gesture
 
 if __name__ == '__main__':
-    dstdir = "../Dataset/Training/train_RNet_aug"
+    dstdir = "../Dataset/Training/train_ONet_aug"
     OUTPUT = '../Dataset/Training'
     data_path = '../Dataset/Training'
     if not exists(OUTPUT):
@@ -210,7 +210,7 @@ if __name__ == '__main__':
         os.mkdir(dstdir)
     assert (exists(dstdir) and exists(OUTPUT))
     # train data
-    net = "RNet"
+    net = "ONet"
     #the file contains the names of all the gesture training data
     train_txt = os.path.join('../Dataset/Training',"imglist_with_gesture.txt")
     imgs,gestures = GenerateData(train_txt,data_path,net,augment=True )

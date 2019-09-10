@@ -1,0 +1,2579 @@
+../Dataset/Training/no_LM48/positive/9.jpg 1 0.10 -0.05 -0.17 0.03
+../Dataset/Training/no_LM48/positive/234.jpg 1 -0.02 0.10 -0.08 -0.02
+../Dataset/Training/no_LM48/positive/17.jpg 1 0.12 -0.02 -0.08 0.14
+../Dataset/Training/no_LM48/positive/205.jpg 1 0.02 0.05 0.02 0.00
+../Dataset/Training/no_LM48/positive/314.jpg 1 -0.01 -0.07 -0.02 -0.08
+../Dataset/Training/no_LM48/positive/298.jpg 1 0.03 0.07 0.08 0.05
+../Dataset/Training/no_LM48/positive/79.jpg 1 0.15 0.02 -0.13 -0.03
+../Dataset/Training/no_LM48/positive/402.jpg 1 0.22 -0.06 -0.05 0.01
+../Dataset/Training/no_LM48/positive/103.jpg 1 0.07 0.09 -0.07 -0.06
+../Dataset/Training/no_LM48/positive/182.jpg 1 -0.02 -0.11 -0.02 0.01
+../Dataset/Training/no_LM48/positive/241.jpg 1 0.08 0.20 -0.05 0.02
+../Dataset/Training/no_LM48/positive/313.jpg 1 0.05 0.02 -0.06 -0.10
+../Dataset/Training/no_LM48/positive/370.jpg 1 0.04 -0.18 -0.07 0.08
+../Dataset/Training/no_LM48/positive/334.jpg 1 0.03 0.00 -0.17 0.10
+../Dataset/Training/no_LM48/positive/91.jpg 1 0.13 -0.10 -0.10 0.04
+../Dataset/Training/no_LM48/positive/142.jpg 1 -0.03 0.13 -0.04 0.09
+../Dataset/Training/no_LM48/positive/380.jpg 1 0.11 -0.03 0.03 0.26
+../Dataset/Training/no_LM48/positive/238.jpg 1 0.10 0.04 0.20 0.08
+../Dataset/Training/no_LM48/positive/137.jpg 1 0.15 0.08 0.08 0.00
+../Dataset/Training/no_LM48/positive/318.jpg 1 -0.04 0.01 -0.13 0.21
+../Dataset/Training/no_LM48/positive/113.jpg 1 0.04 0.09 -0.08 -0.04
+../Dataset/Training/no_LM48/positive/114.jpg 1 0.00 0.12 -0.03 0.07
+../Dataset/Training/no_LM48/positive/309.jpg 1 0.06 0.05 -0.07 -0.09
+../Dataset/Training/no_LM48/positive/190.jpg 1 0.07 -0.01 -0.01 0.03
+../Dataset/Training/no_LM48/positive/115.jpg 1 0.00 0.01 -0.08 -0.08
+../Dataset/Training/no_LM48/positive/108.jpg 1 0.00 0.08 0.01 0.07
+../Dataset/Training/no_LM48/positive/114.jpg 1 0.00 0.12 -0.03 0.07
+../Dataset/Training/no_LM48/positive/122.jpg 1 0.11 0.01 -0.01 -0.04
+../Dataset/Training/no_LM48/positive/389.jpg 1 0.13 -0.02 -0.12 0.03
+../Dataset/Training/no_LM48/positive/390.jpg 1 0.07 0.02 -0.13 0.15
+../Dataset/Training/no_LM48/positive/229.jpg 1 -0.01 0.02 -0.01 0.04
+../Dataset/Training/no_LM48/positive/256.jpg 1 -0.04 -0.01 0.00 0.03
+../Dataset/Training/no_LM48/positive/240.jpg 1 0.03 0.04 0.06 0.01
+../Dataset/Training/no_LM48/positive/14.jpg 1 0.00 -0.40 -0.05 0.03
+../Dataset/Training/no_LM48/positive/260.jpg 1 -0.06 -0.09 0.02 -0.01
+../Dataset/Training/no_LM48/positive/161.jpg 1 -0.03 0.04 -0.09 -0.05
+../Dataset/Training/no_LM48/positive/133.jpg 1 0.17 0.11 0.05 0.00
+../Dataset/Training/no_LM48/positive/182.jpg 1 -0.02 -0.11 -0.02 0.01
+../Dataset/Training/no_LM48/positive/212.jpg 1 0.04 -0.04 0.03 -0.04
+../Dataset/Training/no_LM48/positive/79.jpg 1 0.15 0.02 -0.13 -0.03
+../Dataset/Training/no_LM48/positive/244.jpg 1 0.05 0.08 0.04 0.01
+../Dataset/Training/no_LM48/positive/132.jpg 1 0.08 0.02 -0.10 -0.16
+../Dataset/Training/no_LM48/positive/154.jpg 1 -0.10 0.08 -0.18 -0.03
+../Dataset/Training/no_LM48/positive/321.jpg 1 0.08 0.02 -0.14 0.06
+../Dataset/Training/no_LM48/positive/88.jpg 1 0.15 0.02 -0.15 0.07
+../Dataset/Training/no_LM48/positive/18.jpg 1 0.05 -0.02 -0.22 0.02
+../Dataset/Training/no_LM48/positive/133.jpg 1 0.17 0.11 0.05 0.00
+../Dataset/Training/no_LM48/positive/257.jpg 1 0.07 0.09 0.11 0.12
+../Dataset/Training/no_LM48/positive/122.jpg 1 0.11 0.01 -0.01 -0.04
+../Dataset/Training/no_LM48/positive/107.jpg 1 -0.02 -0.05 0.13 0.11
+../Dataset/Training/no_LM48/positive/388.jpg 1 0.08 0.01 -0.23 -0.03
+../Dataset/Training/no_LM48/positive/253.jpg 1 -0.08 -0.05 -0.06 -0.04
+../Dataset/Training/no_LM48/positive/169.jpg 1 0.07 0.16 0.00 0.06
+../Dataset/Training/no_LM48/positive/369.jpg 1 0.11 0.01 -0.17 0.03
+../Dataset/Training/no_LM48/positive/349.jpg 1 0.09 -0.12 -0.12 0.02
+../Dataset/Training/no_LM48/positive/138.jpg 1 0.00 0.01 0.00 0.01
+../Dataset/Training/no_LM48/positive/26.jpg 1 0.09 -0.09 -0.07 0.13
+../Dataset/Training/no_LM48/positive/267.jpg 1 0.01 0.01 -0.03 -0.03
+../Dataset/Training/no_LM48/positive/171.jpg 1 0.12 -0.01 0.08 -0.13
+../Dataset/Training/no_LM48/positive/103.jpg 1 0.07 0.09 -0.07 -0.06
+../Dataset/Training/no_LM48/positive/241.jpg 1 0.08 0.20 -0.05 0.02
+../Dataset/Training/no_LM48/positive/122.jpg 1 0.11 0.01 -0.01 -0.04
+../Dataset/Training/no_LM48/positive/340.jpg 1 -0.04 -0.09 -0.14 0.15
+../Dataset/Training/no_LM48/positive/75.jpg 1 0.10 -0.05 -0.08 0.05
+../Dataset/Training/no_LM48/positive/167.jpg 1 -0.08 0.02 -0.03 0.03
+../Dataset/Training/no_LM48/positive/326.jpg 1 -0.02 0.02 -0.20 0.09
+../Dataset/Training/no_LM48/positive/95.jpg 1 -0.12 -0.01 0.19 0.12
+../Dataset/Training/no_LM48/positive/217.jpg 1 -0.01 -0.07 0.07 0.03
+../Dataset/Training/no_LM48/positive/121.jpg 1 0.00 -0.01 0.02 0.10
+../Dataset/Training/no_LM48/positive/306.jpg 1 0.03 -0.01 -0.05 -0.09
+../Dataset/Training/no_LM48/positive/343.jpg 1 0.04 -0.07 -0.12 0.11
+../Dataset/Training/no_LM48/positive/113.jpg 1 0.04 0.09 -0.08 -0.04
+../Dataset/Training/no_LM48/positive/26.jpg 1 0.09 -0.09 -0.07 0.13
+../Dataset/Training/no_LM48/positive/26.jpg 1 0.09 -0.09 -0.07 0.13
+../Dataset/Training/no_LM48/positive/31.jpg 1 0.18 0.04 -0.12 0.05
+../Dataset/Training/no_LM48/positive/148.jpg 1 -0.19 0.02 -0.07 0.12
+../Dataset/Training/no_LM48/positive/239.jpg 1 0.07 0.12 0.01 0.01
+../Dataset/Training/no_LM48/positive/230.jpg 1 0.07 0.02 0.06 0.04
+../Dataset/Training/no_LM48/positive/36.jpg 1 0.21 -0.20 -0.02 -0.01
+../Dataset/Training/no_LM48/positive/271.jpg 1 0.22 -0.05 0.13 -0.01
+../Dataset/Training/no_LM48/positive/407.jpg 1 0.04 -0.31 -0.11 0.05
+../Dataset/Training/no_LM48/positive/52.jpg 1 0.00 -0.25 -0.11 -0.04
+../Dataset/Training/no_LM48/positive/385.jpg 1 0.04 0.05 -0.18 0.15
+../Dataset/Training/no_LM48/positive/280.jpg 1 0.09 0.10 0.03 0.08
+../Dataset/Training/no_LM48/positive/103.jpg 1 0.07 0.09 -0.07 -0.06
+../Dataset/Training/no_LM48/positive/44.jpg 1 -0.01 -0.15 -0.06 0.05
+../Dataset/Training/no_LM48/positive/290.jpg 1 0.06 0.02 0.09 -0.02
+../Dataset/Training/no_LM48/positive/34.jpg 1 0.05 0.01 -0.23 0.05
+../Dataset/Training/no_LM48/positive/133.jpg 1 0.17 0.11 0.05 0.00
+../Dataset/Training/no_LM48/positive/365.jpg 1 0.20 0.00 -0.11 0.02
+../Dataset/Training/no_LM48/positive/200.jpg 1 -0.02 0.01 0.09 0.06
+../Dataset/Training/no_LM48/positive/46.jpg 1 0.05 -0.08 -0.06 0.04
+../Dataset/Training/no_LM48/positive/407.jpg 1 0.04 -0.31 -0.11 0.05
+../Dataset/Training/no_LM48/positive/350.jpg 1 0.07 -0.06 -0.16 0.04
+../Dataset/Training/no_LM48/positive/16.jpg 1 0.18 -0.10 -0.01 0.07
+../Dataset/Training/no_LM48/positive/163.jpg 1 0.00 -0.05 0.11 0.02
+../Dataset/Training/no_LM48/positive/81.jpg 1 0.16 0.00 -0.10 -0.01
+../Dataset/Training/no_LM48/positive/168.jpg 1 0.06 0.09 -0.02 -0.02
+../Dataset/Training/no_LM48/positive/297.jpg 1 0.07 0.17 0.04 0.07
+../Dataset/Training/no_LM48/positive/232.jpg 1 0.09 0.18 -0.07 -0.02
+../Dataset/Training/no_LM48/positive/147.jpg 1 0.03 0.00 -0.01 -0.06
+../Dataset/Training/no_LM48/positive/153.jpg 1 0.09 0.15 0.02 0.06
+../Dataset/Training/no_LM48/positive/18.jpg 1 0.05 -0.02 -0.22 0.02
+../Dataset/Training/no_LM48/positive/116.jpg 1 0.09 0.05 0.02 -0.04
+../Dataset/Training/no_LM48/positive/305.jpg 1 0.03 0.02 0.03 0.00
+../Dataset/Training/no_LM48/positive/126.jpg 1 0.02 0.08 -0.02 0.12
+../Dataset/Training/no_LM48/positive/12.jpg 1 0.14 -0.01 -0.17 0.01
+../Dataset/Training/no_LM48/positive/356.jpg 1 0.09 -0.06 -0.21 0.01
+../Dataset/Training/no_LM48/positive/403.jpg 1 0.21 0.03 -0.05 0.14
+../Dataset/Training/no_LM48/positive/406.jpg 1 0.03 -0.07 -0.22 0.11
+../Dataset/Training/no_LM48/positive/126.jpg 1 0.02 0.08 -0.02 0.12
+../Dataset/Training/no_LM48/positive/240.jpg 1 0.03 0.04 0.06 0.01
+../Dataset/Training/no_LM48/positive/15.jpg 1 0.00 -0.26 -0.11 0.06
+../Dataset/Training/no_LM48/positive/297.jpg 1 0.07 0.17 0.04 0.07
+../Dataset/Training/no_LM48/positive/75.jpg 1 0.10 -0.05 -0.08 0.05
+../Dataset/Training/no_LM48/positive/362.jpg 1 0.03 -0.12 -0.15 0.13
+../Dataset/Training/no_LM48/positive/108.jpg 1 0.00 0.08 0.01 0.07
+../Dataset/Training/no_LM48/positive/2.jpg 1 0.20 -0.09 -0.10 0.02
+../Dataset/Training/no_LM48/positive/97.jpg 1 -0.01 0.06 0.18 0.09
+../Dataset/Training/no_LM48/positive/225.jpg 1 0.05 0.04 0.02 0.02
+../Dataset/Training/no_LM48/positive/389.jpg 1 0.13 -0.02 -0.12 0.03
+../Dataset/Training/no_LM48/positive/56.jpg 1 0.06 -0.12 -0.14 -0.04
+../Dataset/Training/no_LM48/positive/320.jpg 1 0.12 0.06 -0.18 -0.01
+../Dataset/Training/no_LM48/positive/385.jpg 1 0.04 0.05 -0.18 0.15
+../Dataset/Training/no_LM48/positive/154.jpg 1 -0.10 0.08 -0.18 -0.03
+../Dataset/Training/no_LM48/positive/106.jpg 1 -0.06 -0.03 -0.08 -0.06
+../Dataset/Training/no_LM48/positive/297.jpg 1 0.07 0.17 0.04 0.07
+../Dataset/Training/no_LM48/positive/294.jpg 1 0.03 0.09 0.02 0.01
+../Dataset/Training/no_LM48/positive/231.jpg 1 -0.02 0.08 0.00 0.04
+../Dataset/Training/no_LM48/positive/249.jpg 1 0.00 0.00 0.03 0.04
+../Dataset/Training/no_LM48/positive/53.jpg 1 0.09 -0.03 -0.14 0.00
+../Dataset/Training/no_LM48/positive/109.jpg 1 0.05 0.21 -0.04 0.11
+../Dataset/Training/no_LM48/positive/188.jpg 1 0.04 0.05 -0.10 0.02
+../Dataset/Training/no_LM48/positive/153.jpg 1 0.09 0.15 0.02 0.06
+../Dataset/Training/no_LM48/positive/349.jpg 1 0.09 -0.12 -0.12 0.02
+../Dataset/Training/no_LM48/positive/33.jpg 1 0.16 -0.17 -0.02 0.04
+../Dataset/Training/no_LM48/positive/112.jpg 1 -0.01 0.16 -0.06 0.10
+../Dataset/Training/no_LM48/positive/211.jpg 1 -0.04 -0.07 0.23 0.13
+../Dataset/Training/no_LM48/positive/49.jpg 1 0.15 -0.03 -0.09 -0.01
+../Dataset/Training/no_LM48/positive/402.jpg 1 0.22 -0.06 -0.05 0.01
+../Dataset/Training/no_LM48/positive/182.jpg 1 -0.02 -0.11 -0.02 0.01
+../Dataset/Training/no_LM48/positive/106.jpg 1 -0.06 -0.03 -0.08 -0.06
+../Dataset/Training/no_LM48/positive/176.jpg 1 0.03 0.10 -0.05 -0.05
+../Dataset/Training/no_LM48/positive/391.jpg 1 0.05 -0.13 -0.04 0.23
+../Dataset/Training/no_LM48/positive/69.jpg 1 0.16 0.01 -0.15 0.06
+../Dataset/Training/no_LM48/positive/317.jpg 1 0.15 0.08 -0.05 0.13
+../Dataset/Training/no_LM48/positive/309.jpg 1 0.06 0.05 -0.07 -0.09
+../Dataset/Training/no_LM48/positive/79.jpg 1 0.15 0.02 -0.13 -0.03
+../Dataset/Training/no_LM48/positive/376.jpg 1 0.11 0.05 -0.18 0.05
+../Dataset/Training/no_LM48/positive/346.jpg 1 0.06 -0.10 -0.08 0.12
+../Dataset/Training/no_LM48/positive/301.jpg 1 0.05 0.05 0.01 -0.06
+../Dataset/Training/no_LM48/positive/57.jpg 1 0.08 -0.10 -0.14 -0.03
+../Dataset/Training/no_LM48/positive/167.jpg 1 -0.08 0.02 -0.03 0.03
+../Dataset/Training/no_LM48/positive/360.jpg 1 0.09 -0.02 -0.18 0.09
+../Dataset/Training/no_LM48/positive/275.jpg 1 0.07 0.01 -0.02 0.06
+../Dataset/Training/no_LM48/positive/56.jpg 1 0.06 -0.12 -0.14 -0.04
+../Dataset/Training/no_LM48/positive/1.jpg 1 0.22 -0.09 -0.08 0.02
+../Dataset/Training/no_LM48/positive/309.jpg 1 0.06 0.05 -0.07 -0.09
+../Dataset/Training/no_LM48/positive/21.jpg 1 0.12 -0.14 -0.10 -0.02
+../Dataset/Training/no_LM48/positive/28.jpg 1 0.06 -0.10 -0.13 0.07
+../Dataset/Training/no_LM48/negative/134.jpg 0
+../Dataset/Training/no_LM48/negative/152.jpg 0
+../Dataset/Training/no_LM48/negative/110.jpg 0
+../Dataset/Training/no_LM48/negative/158.jpg 0
+../Dataset/Training/no_LM48/negative/43.jpg 0
+../Dataset/Training/no_LM48/negative/131.jpg 0
+../Dataset/Training/no_LM48/negative/66.jpg 0
+../Dataset/Training/no_LM48/negative/133.jpg 0
+../Dataset/Training/no_LM48/negative/53.jpg 0
+../Dataset/Training/no_LM48/negative/27.jpg 0
+../Dataset/Training/no_LM48/negative/66.jpg 0
+../Dataset/Training/no_LM48/negative/7.jpg 0
+../Dataset/Training/no_LM48/negative/17.jpg 0
+../Dataset/Training/no_LM48/negative/34.jpg 0
+../Dataset/Training/no_LM48/negative/132.jpg 0
+../Dataset/Training/no_LM48/negative/104.jpg 0
+../Dataset/Training/no_LM48/negative/94.jpg 0
+../Dataset/Training/no_LM48/negative/144.jpg 0
+../Dataset/Training/no_LM48/negative/128.jpg 0
+../Dataset/Training/no_LM48/negative/157.jpg 0
+../Dataset/Training/no_LM48/negative/90.jpg 0
+../Dataset/Training/no_LM48/negative/2.jpg 0
+../Dataset/Training/no_LM48/negative/40.jpg 0
+../Dataset/Training/no_LM48/negative/121.jpg 0
+../Dataset/Training/no_LM48/negative/14.jpg 0
+../Dataset/Training/no_LM48/negative/48.jpg 0
+../Dataset/Training/no_LM48/negative/87.jpg 0
+../Dataset/Training/no_LM48/negative/87.jpg 0
+../Dataset/Training/no_LM48/negative/69.jpg 0
+../Dataset/Training/no_LM48/negative/93.jpg 0
+../Dataset/Training/no_LM48/negative/18.jpg 0
+../Dataset/Training/no_LM48/negative/153.jpg 0
+../Dataset/Training/no_LM48/negative/93.jpg 0
+../Dataset/Training/no_LM48/negative/72.jpg 0
+../Dataset/Training/no_LM48/negative/93.jpg 0
+../Dataset/Training/no_LM48/negative/51.jpg 0
+../Dataset/Training/no_LM48/negative/111.jpg 0
+../Dataset/Training/no_LM48/negative/66.jpg 0
+../Dataset/Training/no_LM48/negative/101.jpg 0
+../Dataset/Training/no_LM48/negative/118.jpg 0
+../Dataset/Training/no_LM48/negative/142.jpg 0
+../Dataset/Training/no_LM48/negative/134.jpg 0
+../Dataset/Training/no_LM48/negative/95.jpg 0
+../Dataset/Training/no_LM48/negative/72.jpg 0
+../Dataset/Training/no_LM48/negative/22.jpg 0
+../Dataset/Training/no_LM48/negative/116.jpg 0
+../Dataset/Training/no_LM48/negative/9.jpg 0
+../Dataset/Training/no_LM48/negative/51.jpg 0
+../Dataset/Training/no_LM48/negative/49.jpg 0
+../Dataset/Training/no_LM48/negative/126.jpg 0
+../Dataset/Training/no_LM48/negative/147.jpg 0
+../Dataset/Training/no_LM48/negative/76.jpg 0
+../Dataset/Training/no_LM48/negative/129.jpg 0
+../Dataset/Training/no_LM48/negative/146.jpg 0
+../Dataset/Training/no_LM48/negative/135.jpg 0
+../Dataset/Training/no_LM48/negative/116.jpg 0
+../Dataset/Training/no_LM48/negative/119.jpg 0
+../Dataset/Training/no_LM48/negative/55.jpg 0
+../Dataset/Training/no_LM48/negative/57.jpg 0
+../Dataset/Training/no_LM48/negative/50.jpg 0
+../Dataset/Training/no_LM48/negative/92.jpg 0
+../Dataset/Training/no_LM48/negative/26.jpg 0
+../Dataset/Training/no_LM48/negative/102.jpg 0
+../Dataset/Training/no_LM48/negative/156.jpg 0
+../Dataset/Training/no_LM48/negative/105.jpg 0
+../Dataset/Training/no_LM48/negative/29.jpg 0
+../Dataset/Training/no_LM48/negative/38.jpg 0
+../Dataset/Training/no_LM48/negative/77.jpg 0
+../Dataset/Training/no_LM48/negative/16.jpg 0
+../Dataset/Training/no_LM48/negative/29.jpg 0
+../Dataset/Training/no_LM48/negative/63.jpg 0
+../Dataset/Training/no_LM48/negative/136.jpg 0
+../Dataset/Training/no_LM48/negative/116.jpg 0
+../Dataset/Training/no_LM48/negative/42.jpg 0
+../Dataset/Training/no_LM48/negative/16.jpg 0
+../Dataset/Training/no_LM48/negative/110.jpg 0
+../Dataset/Training/no_LM48/negative/143.jpg 0
+../Dataset/Training/no_LM48/negative/61.jpg 0
+../Dataset/Training/no_LM48/negative/45.jpg 0
+../Dataset/Training/no_LM48/negative/64.jpg 0
+../Dataset/Training/no_LM48/negative/145.jpg 0
+../Dataset/Training/no_LM48/negative/145.jpg 0
+../Dataset/Training/no_LM48/negative/43.jpg 0
+../Dataset/Training/no_LM48/negative/5.jpg 0
+../Dataset/Training/no_LM48/negative/60.jpg 0
+../Dataset/Training/no_LM48/negative/138.jpg 0
+../Dataset/Training/no_LM48/negative/65.jpg 0
+../Dataset/Training/no_LM48/negative/22.jpg 0
+../Dataset/Training/no_LM48/negative/56.jpg 0
+../Dataset/Training/no_LM48/negative/105.jpg 0
+../Dataset/Training/no_LM48/negative/126.jpg 0
+../Dataset/Training/no_LM48/negative/89.jpg 0
+../Dataset/Training/no_LM48/negative/68.jpg 0
+../Dataset/Training/no_LM48/negative/155.jpg 0
+../Dataset/Training/no_LM48/negative/126.jpg 0
+../Dataset/Training/no_LM48/negative/111.jpg 0
+../Dataset/Training/no_LM48/negative/76.jpg 0
+../Dataset/Training/no_LM48/negative/43.jpg 0
+../Dataset/Training/no_LM48/negative/40.jpg 0
+../Dataset/Training/no_LM48/negative/141.jpg 0
+../Dataset/Training/no_LM48/negative/48.jpg 0
+../Dataset/Training/no_LM48/negative/13.jpg 0
+../Dataset/Training/no_LM48/negative/119.jpg 0
+../Dataset/Training/no_LM48/negative/28.jpg 0
+../Dataset/Training/no_LM48/negative/39.jpg 0
+../Dataset/Training/no_LM48/negative/41.jpg 0
+../Dataset/Training/no_LM48/negative/18.jpg 0
+../Dataset/Training/no_LM48/negative/68.jpg 0
+../Dataset/Training/no_LM48/negative/143.jpg 0
+../Dataset/Training/no_LM48/negative/0.jpg 0
+../Dataset/Training/no_LM48/negative/146.jpg 0
+../Dataset/Training/no_LM48/negative/64.jpg 0
+../Dataset/Training/no_LM48/negative/136.jpg 0
+../Dataset/Training/no_LM48/negative/158.jpg 0
+../Dataset/Training/no_LM48/negative/151.jpg 0
+../Dataset/Training/no_LM48/negative/93.jpg 0
+../Dataset/Training/no_LM48/negative/79.jpg 0
+../Dataset/Training/no_LM48/negative/81.jpg 0
+../Dataset/Training/no_LM48/negative/10.jpg 0
+../Dataset/Training/no_LM48/negative/65.jpg 0
+../Dataset/Training/no_LM48/negative/26.jpg 0
+../Dataset/Training/no_LM48/negative/70.jpg 0
+../Dataset/Training/no_LM48/negative/129.jpg 0
+../Dataset/Training/no_LM48/negative/14.jpg 0
+../Dataset/Training/no_LM48/negative/108.jpg 0
+../Dataset/Training/no_LM48/negative/139.jpg 0
+../Dataset/Training/no_LM48/negative/10.jpg 0
+../Dataset/Training/no_LM48/negative/150.jpg 0
+../Dataset/Training/no_LM48/negative/92.jpg 0
+../Dataset/Training/no_LM48/negative/145.jpg 0
+../Dataset/Training/no_LM48/negative/143.jpg 0
+../Dataset/Training/no_LM48/negative/25.jpg 0
+../Dataset/Training/no_LM48/negative/101.jpg 0
+../Dataset/Training/no_LM48/negative/3.jpg 0
+../Dataset/Training/no_LM48/negative/13.jpg 0
+../Dataset/Training/no_LM48/negative/155.jpg 0
+../Dataset/Training/no_LM48/negative/47.jpg 0
+../Dataset/Training/no_LM48/negative/127.jpg 0
+../Dataset/Training/no_LM48/negative/38.jpg 0
+../Dataset/Training/no_LM48/negative/13.jpg 0
+../Dataset/Training/no_LM48/negative/11.jpg 0
+../Dataset/Training/no_LM48/negative/153.jpg 0
+../Dataset/Training/no_LM48/negative/4.jpg 0
+../Dataset/Training/no_LM48/negative/77.jpg 0
+../Dataset/Training/no_LM48/negative/147.jpg 0
+../Dataset/Training/no_LM48/negative/67.jpg 0
+../Dataset/Training/no_LM48/negative/30.jpg 0
+../Dataset/Training/no_LM48/negative/54.jpg 0
+../Dataset/Training/no_LM48/negative/112.jpg 0
+../Dataset/Training/no_LM48/negative/63.jpg 0
+../Dataset/Training/no_LM48/negative/74.jpg 0
+../Dataset/Training/no_LM48/negative/86.jpg 0
+../Dataset/Training/no_LM48/negative/62.jpg 0
+../Dataset/Training/no_LM48/negative/2.jpg 0
+../Dataset/Training/no_LM48/negative/135.jpg 0
+../Dataset/Training/no_LM48/negative/1.jpg 0
+../Dataset/Training/no_LM48/negative/78.jpg 0
+../Dataset/Training/no_LM48/negative/54.jpg 0
+../Dataset/Training/no_LM48/negative/69.jpg 0
+../Dataset/Training/no_LM48/negative/35.jpg 0
+../Dataset/Training/no_LM48/part/221.jpg -1 -0.17 -0.41 0.32 0.06
+../Dataset/Training/no_LM48/part/462.jpg -1 0.29 0.14 -0.15 -0.05
+../Dataset/Training/no_LM48/part/335.jpg -1 0.12 -0.22 0.25 -0.02
+../Dataset/Training/no_LM48/part/185.jpg -1 0.27 0.20 -0.19 0.01
+../Dataset/Training/no_LM48/part/48.jpg -1 0.20 0.13 -0.21 -0.02
+../Dataset/Training/no_LM48/part/150.jpg -1 -0.13 0.06 -0.42 0.04
+../Dataset/Training/no_LM48/part/339.jpg -1 0.23 0.06 0.27 0.04
+../Dataset/Training/no_LM48/part/349.jpg -1 0.15 -0.09 0.14 -0.11
+../Dataset/Training/no_LM48/part/138.jpg -1 0.23 0.11 -0.10 0.18
+../Dataset/Training/no_LM48/part/362.jpg -1 0.01 -0.04 -0.26 -0.08
+../Dataset/Training/no_LM48/part/238.jpg -1 0.10 0.29 -0.17 0.01
+../Dataset/Training/no_LM48/part/255.jpg -1 0.07 0.23 0.04 0.16
+../Dataset/Training/no_LM48/part/516.jpg -1 -0.05 0.11 -0.32 0.26
+../Dataset/Training/no_LM48/part/34.jpg -1 0.17 -0.04 -0.20 -0.10
+../Dataset/Training/no_LM48/part/471.jpg -1 0.17 0.10 -0.15 0.04
+../Dataset/Training/no_LM48/part/338.jpg -1 0.34 0.27 -0.01 -0.05
+../Dataset/Training/no_LM48/part/15.jpg -1 0.25 0.03 -0.04 0.08
+../Dataset/Training/no_LM48/part/434.jpg -1 0.23 0.07 -0.15 0.01
+../Dataset/Training/no_LM48/part/355.jpg -1 0.04 0.22 -0.17 0.00
+../Dataset/Training/no_LM48/part/61.jpg -1 0.16 -0.03 -0.18 -0.08
+../Dataset/Training/no_LM48/part/29.jpg -1 0.05 -0.01 -0.32 -0.08
+../Dataset/Training/no_LM48/part/450.jpg -1 0.25 0.07 -0.19 -0.11
+../Dataset/Training/no_LM48/part/169.jpg -1 0.18 0.08 -0.15 -0.03
+../Dataset/Training/no_LM48/part/163.jpg -1 0.28 0.03 -0.06 0.03
+../Dataset/Training/no_LM48/part/192.jpg -1 0.25 0.10 -0.17 -0.03
+../Dataset/Training/no_LM48/part/213.jpg -1 -0.13 -0.34 -0.05 -0.27
+../Dataset/Training/no_LM48/part/155.jpg -1 -0.11 -0.48 -0.07 -0.04
+../Dataset/Training/no_LM48/part/198.jpg -1 0.33 -0.01 0.07 -0.37
+../Dataset/Training/no_LM48/part/155.jpg -1 -0.11 -0.48 -0.07 -0.04
+../Dataset/Training/no_LM48/part/459.jpg -1 0.24 0.05 -0.22 -0.15
+../Dataset/Training/no_LM48/part/193.jpg -1 0.17 0.01 -0.20 -0.04
+../Dataset/Training/no_LM48/part/165.jpg -1 0.16 0.19 -0.17 0.20
+../Dataset/Training/no_LM48/part/67.jpg -1 0.15 -0.17 -0.16 -0.17
+../Dataset/Training/no_LM48/part/184.jpg -1 0.16 0.10 -0.27 -0.05
+../Dataset/Training/no_LM48/part/143.jpg -1 0.06 0.00 -0.36 -0.07
+../Dataset/Training/no_LM48/part/286.jpg -1 0.28 0.18 -0.01 -0.09
+../Dataset/Training/no_LM48/part/251.jpg -1 0.11 0.15 0.09 0.10
+../Dataset/Training/no_LM48/part/188.jpg -1 0.14 0.08 -0.25 -0.03
+../Dataset/Training/no_LM48/part/44.jpg -1 0.15 0.05 -0.26 -0.08
+../Dataset/Training/no_LM48/part/456.jpg -1 0.05 -0.22 -0.19 -0.11
+../Dataset/Training/no_LM48/part/83.jpg -1 -0.02 -0.39 -0.17 -0.06
+../Dataset/Training/no_LM48/part/47.jpg -1 0.24 -0.18 -0.02 -0.12
+../Dataset/Training/no_LM48/part/67.jpg -1 0.15 -0.17 -0.16 -0.17
+../Dataset/Training/no_LM48/part/172.jpg -1 0.13 -0.28 0.09 -0.01
+../Dataset/Training/no_LM48/part/122.jpg -1 0.20 0.18 -0.23 0.09
+../Dataset/Training/no_LM48/part/506.jpg -1 -0.06 -0.35 0.03 0.27
+../Dataset/Training/no_LM48/part/476.jpg -1 0.11 0.10 -0.27 -0.04
+../Dataset/Training/no_LM48/part/248.jpg -1 -0.09 0.17 -0.07 0.17
+../Dataset/Training/no_LM48/part/165.jpg -1 0.16 0.19 -0.17 0.20
+../Dataset/Training/no_LM48/part/4.jpg -1 0.18 -0.28 0.03 0.05
+../Dataset/Training/no_LM48/part/351.jpg -1 0.14 0.21 0.03 0.09
+../Dataset/Training/no_LM48/part/359.jpg -1 0.11 0.26 -0.06 0.08
+../Dataset/Training/no_LM48/part/321.jpg -1 0.06 0.11 -0.25 -0.20
+../Dataset/Training/no_LM48/part/146.jpg -1 0.09 -0.02 -0.24 0.07
+../Dataset/Training/no_LM48/part/117.jpg -1 0.08 -0.23 -0.23 -0.11
+../Dataset/Training/no_LM48/part/171.jpg -1 -0.16 -0.31 -0.11 0.08
+../Dataset/Training/no_LM48/part/466.jpg -1 0.20 0.07 -0.13 0.01
+../Dataset/Training/no_LM48/part/17.jpg -1 0.14 -0.03 -0.22 -0.07
+../Dataset/Training/no_LM48/part/77.jpg -1 0.31 -0.37 0.06 -0.21
+../Dataset/Training/no_LM48/part/302.jpg -1 -0.04 0.20 -0.13 0.06
+../Dataset/Training/no_LM48/part/266.jpg -1 -0.18 0.13 -0.44 -0.04
+../Dataset/Training/no_LM48/part/356.jpg -1 0.07 0.26 -0.12 0.06
+../Dataset/Training/no_LM48/part/393.jpg -1 -0.01 -0.58 0.31 0.30
+../Dataset/Training/no_LM48/part/270.jpg -1 -0.07 0.22 -0.35 0.03
+../Dataset/Training/no_LM48/part/382.jpg -1 -0.22 -0.43 -0.05 0.17
+../Dataset/Training/no_LM48/part/280.jpg -1 0.04 -0.08 0.45 0.27
+../Dataset/Training/no_LM48/part/122.jpg -1 0.20 0.18 -0.23 0.09
+../Dataset/Training/no_LM48/part/399.jpg -1 0.24 0.09 0.08 0.29
+../Dataset/Training/no_LM48/part/181.jpg -1 -0.04 0.23 -0.19 0.49
+../Dataset/Training/no_LM48/part/5.jpg -1 0.12 -0.24 -0.15 -0.07
+../Dataset/Training/no_LM48/part/479.jpg -1 0.04 -0.33 -0.07 -0.09
+../Dataset/Training/no_LM48/part/123.jpg -1 0.15 -0.61 0.20 0.08
+../Dataset/Training/no_LM48/part/500.jpg -1 0.16 0.14 -0.14 0.19
+../Dataset/Training/no_LM48/part/229.jpg -1 0.10 -0.20 0.07 -0.23
+../Dataset/Training/no_LM48/part/425.jpg -1 0.24 -0.11 -0.16 -0.20
+../Dataset/Training/no_LM48/part/309.jpg -1 -0.14 0.13 -0.13 0.15
+../Dataset/Training/no_LM48/part/490.jpg -1 0.23 0.07 -0.16 -0.03
+../Dataset/Training/no_LM48/part/471.jpg -1 0.17 0.10 -0.15 0.04
+../Dataset/Training/no_LM48/part/394.jpg -1 -0.12 -0.17 -0.26 0.03
+../Dataset/Training/no_LM48/part/129.jpg -1 0.23 -0.06 -0.10 0.03
+../Dataset/Training/no_LM48/part/171.jpg -1 -0.16 -0.31 -0.11 0.08
+../Dataset/Training/no_LM48/part/288.jpg -1 0.32 0.04 0.03 -0.23
+../Dataset/Training/no_LM48/part/68.jpg -1 0.05 -0.55 -0.09 -0.30
+../Dataset/Training/no_LM48/part/473.jpg -1 0.23 0.04 0.18 0.38
+../Dataset/Training/no_LM48/part/6.jpg -1 0.12 -0.28 -0.11 -0.07
+../Dataset/Training/no_LM48/part/228.jpg -1 -0.21 -0.05 -0.31 -0.14
+../Dataset/Training/no_LM48/part/447.jpg -1 -0.01 -0.15 -0.25 -0.04
+../Dataset/Training/no_LM48/part/196.jpg -1 0.19 0.01 0.24 -0.08
+../Dataset/Training/no_LM48/part/503.jpg -1 -0.17 -0.08 -0.36 0.12
+../Dataset/Training/no_LM48/part/145.jpg -1 0.16 -0.05 -0.22 -0.05
+../Dataset/Training/no_LM48/part/42.jpg -1 0.16 -0.07 -0.21 -0.14
+../Dataset/Training/no_LM48/part/502.jpg -1 0.17 0.15 -0.28 -0.04
+../Dataset/Training/no_LM48/part/41.jpg -1 0.22 0.08 -0.15 0.01
+../Dataset/Training/no_LM48/part/32.jpg -1 0.12 0.06 -0.29 -0.05
+../Dataset/Training/no_LM48/part/224.jpg -1 0.14 0.13 -0.10 -0.04
+../Dataset/Training/no_LM48/part/124.jpg -1 0.05 -0.31 -0.12 0.03
+../Dataset/Training/no_LM48/part/427.jpg -1 0.19 0.07 -0.19 0.00
+../Dataset/Training/no_LM48/part/107.jpg -1 -0.21 -0.54 -0.11 0.11
+../Dataset/Training/no_LM48/part/252.jpg -1 0.15 0.27 -0.03 0.06
+../Dataset/Training/no_LM48/part/74.jpg -1 0.04 -0.73 0.22 0.09
+../Dataset/Training/no_LM48/part/88.jpg -1 0.17 0.04 -0.20 0.03
+../Dataset/Training/no_LM48/part/501.jpg -1 0.24 0.13 -0.11 0.09
+../Dataset/Training/no_LM48/part/168.jpg -1 0.12 0.09 -0.19 0.01
+../Dataset/Training/no_LM48/part/44.jpg -1 0.15 0.05 -0.26 -0.08
+../Dataset/Training/no_LM48/part/328.jpg -1 0.26 0.17 -0.12 -0.12
+../Dataset/Training/no_LM48/part/183.jpg -1 -0.04 -0.37 -0.15 -0.07
+../Dataset/Training/no_LM48/part/454.jpg -1 0.27 0.07 -0.19 -0.13
+../Dataset/Training/no_LM48/part/175.jpg -1 0.24 0.11 -0.03 0.07
+../Dataset/Training/no_LM48/part/223.jpg -1 -0.05 0.24 -0.07 0.21
+../Dataset/Training/no_LM48/part/106.jpg -1 0.10 -0.16 -0.25 -0.18
+../Dataset/Training/no_LM48/part/477.jpg -1 0.16 0.03 -0.17 -0.02
+../Dataset/Training/no_LM48/part/20.jpg -1 0.19 0.06 -0.21 -0.04
+../Dataset/Training/no_LM48/part/255.jpg -1 0.07 0.23 0.04 0.16
+../Dataset/Training/no_LM48/part/451.jpg -1 -0.10 0.16 -0.38 0.23
+../Dataset/Training/no_LM48/part/192.jpg -1 0.25 0.10 -0.17 -0.03
+../Dataset/Training/no_LM48/part/168.jpg -1 0.12 0.09 -0.19 0.01
+../Dataset/Training/no_LM48/part/354.jpg -1 0.12 0.22 0.04 0.13
+../Dataset/Training/no_LM48/part/225.jpg -1 -0.04 0.15 -0.13 0.14
+../Dataset/Training/no_LM48/part/446.jpg -1 0.06 -0.19 -0.24 -0.16
+../Dataset/Training/no_LM48/part/353.jpg -1 0.24 0.37 -0.05 0.08
+../Dataset/Training/no_LM48/part/234.jpg -1 0.16 0.21 -0.03 -0.01
+../Dataset/Training/no_LM48/part/473.jpg -1 0.23 0.04 0.18 0.38
+../Dataset/Training/no_LM48/part/130.jpg -1 0.18 0.18 -0.21 0.16
+../Dataset/Training/no_LM48/part/212.jpg -1 -0.15 0.20 -0.24 0.10
+../Dataset/Training/no_LM48/part/423.jpg -1 0.25 0.09 -0.20 -0.08
+../Dataset/Training/no_LM48/part/142.jpg -1 0.22 0.02 -0.13 0.08
+../Dataset/Training/no_LM48/part/20.jpg -1 0.19 0.06 -0.21 -0.04
+../Dataset/Training/no_LM48/part/401.jpg -1 -0.01 -0.55 0.29 0.31
+../Dataset/Training/no_LM48/part/265.jpg -1 0.04 0.11 -0.26 -0.11
+../Dataset/Training/no_LM48/part/92.jpg -1 0.20 -0.48 0.37 -0.01
+../Dataset/Training/no_LM48/part/76.jpg -1 0.07 -0.05 -0.33 -0.12
+../Dataset/Training/no_LM48/part/371.jpg -1 0.22 0.07 -0.13 -0.07
+../Dataset/Training/no_LM48/part/300.jpg -1 0.05 0.22 -0.15 -0.02
+../Dataset/Training/no_LM48/part/506.jpg -1 -0.06 -0.35 0.03 0.27
+../Dataset/Training/no_LM48/part/168.jpg -1 0.12 0.09 -0.19 0.01
+../Dataset/Training/no_LM48/part/105.jpg -1 0.16 0.04 -0.20 0.01
+../Dataset/Training/no_LM48/part/14.jpg -1 -0.08 -0.67 0.10 0.06
+../Dataset/Training/no_LM48/part/374.jpg -1 0.17 0.05 -0.15 -0.05
+../Dataset/Training/no_LM48/part/117.jpg -1 0.08 -0.23 -0.23 -0.11
+../Dataset/Training/no_LM48/part/507.jpg -1 0.15 0.12 -0.16 0.15
+../Dataset/Training/no_LM48/part/242.jpg -1 -0.11 0.17 -0.07 0.18
+../Dataset/Training/no_LM48/part/134.jpg -1 0.12 -0.14 -0.09 0.14
+../Dataset/Training/no_LM48/part/312.jpg -1 0.25 0.01 0.09 -0.14
+../Dataset/Training/no_LM48/part/100.jpg -1 0.37 0.19 0.06 0.24
+../Dataset/Training/no_LM48/part/513.jpg -1 0.17 0.05 -0.09 0.22
+../Dataset/Training/no_LM48/part/244.jpg -1 -0.05 0.24 -0.08 0.18
+../Dataset/Training/no_LM48/part/430.jpg -1 -0.06 -0.05 -0.21 0.23
+../Dataset/Training/no_LM48/part/458.jpg -1 0.20 -0.06 -0.22 -0.20
+../Dataset/Training/no_LM48/part/38.jpg -1 0.08 -0.44 0.11 0.11
+../Dataset/Training/no_LM48/part/197.jpg -1 0.17 0.03 0.23 -0.04
+../Dataset/Training/no_LM48/part/482.jpg -1 0.12 0.05 -0.28 -0.05
+../Dataset/Training/no_LM48/part/162.jpg -1 0.15 0.06 -0.03 0.31
+../Dataset/Training/no_LM48/part/312.jpg -1 0.25 0.01 0.09 -0.14
+../Dataset/Training/no_LM48/part/69.jpg -1 0.06 0.06 -0.39 -0.14
+../Dataset/Training/no_LM48/part/466.jpg -1 0.20 0.07 -0.13 0.01
+../Dataset/Training/no_LM48/part/375.jpg -1 0.17 0.12 -0.19 -0.02
+../Dataset/Training/no_LM48/part/363.jpg -1 0.21 -0.12 0.21 0.21
+../Dataset/Training/no_LM48/part/258.jpg -1 0.19 0.15 0.22 0.10
+../Dataset/Training/no_LM48/part/170.jpg -1 0.13 0.12 -0.13 0.10
+../Dataset/Training/no_LM48/part/466.jpg -1 0.20 0.07 -0.13 0.01
+../Dataset/Training/train_ONet_aug\0.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\1.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\2.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\3.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\4.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\5.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\6.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\7.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\8.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\9.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\10.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\11.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\12.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\13.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\14.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\15.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\16.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\17.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\18.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\19.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\20.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\21.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\22.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\23.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\24.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\25.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\26.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\27.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\28.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\29.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\30.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\31.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\32.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\33.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\34.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\35.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\36.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\37.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\38.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\39.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\40.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\41.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\42.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\43.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\44.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\45.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\46.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\47.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\48.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\49.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\50.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\51.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\52.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\53.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\54.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\55.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\56.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\57.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\58.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\59.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\60.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\61.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\62.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\63.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\64.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\65.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\66.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\67.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\68.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\69.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\70.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\71.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\72.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\73.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\74.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\75.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\76.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\77.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\78.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\79.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\80.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\81.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\82.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\83.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\84.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\85.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\86.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\87.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\88.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\89.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\90.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\91.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\92.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\93.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\94.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\95.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\96.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\97.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\98.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\99.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\100.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\101.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\102.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\103.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\104.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\105.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\106.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\107.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\108.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\109.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\110.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\111.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\112.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\113.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\114.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\115.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\116.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\117.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\118.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\119.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\120.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\121.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\122.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\123.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\124.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\125.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\126.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\127.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\128.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\129.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\130.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\131.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\132.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\133.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\134.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\135.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\136.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\137.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\138.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\139.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\140.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\141.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\142.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\143.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\144.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\145.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\146.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\147.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\148.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\149.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\150.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\151.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\152.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\153.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\154.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\155.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\156.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\157.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\158.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\159.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\160.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\161.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\162.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\163.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\164.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\165.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\166.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\167.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\168.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\169.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\170.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\171.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\172.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\173.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\174.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\175.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\176.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\177.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\178.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\179.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\180.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\181.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\182.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\183.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\184.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\185.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\186.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\187.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\188.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\189.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\190.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\191.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\192.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\193.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\194.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\195.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\196.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\197.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\198.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\199.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\200.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\201.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\202.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\203.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\204.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\205.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\206.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\207.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\208.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\209.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\210.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\211.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\212.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\213.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\214.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\215.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\216.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\217.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\218.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\219.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\220.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\221.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\222.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\223.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\224.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\225.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\226.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\227.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\228.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\229.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\230.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\231.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\232.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\233.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\234.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\235.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\236.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\237.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\238.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\239.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\240.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\241.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\242.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\243.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\244.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\245.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\246.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\247.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\248.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\249.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\250.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\251.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\252.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\253.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\254.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\255.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\256.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\257.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\258.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\259.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\260.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\261.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\262.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\263.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\264.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\265.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\266.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\267.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\268.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\269.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\270.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\271.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\272.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\273.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\274.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\275.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\276.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\277.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\278.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\279.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\280.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\281.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\282.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\283.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\284.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\285.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\286.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\287.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\288.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\289.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\290.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\291.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\292.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\293.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\294.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\295.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\296.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\297.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\298.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\299.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\300.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\301.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\302.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\303.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\304.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\305.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\306.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\307.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\308.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\309.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\310.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\311.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\312.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\313.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\314.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\315.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\316.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\317.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\318.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\319.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\320.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\321.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\322.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\323.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\324.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\325.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\326.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\327.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\328.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\329.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\330.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\331.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\332.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\333.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\334.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\335.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\336.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\337.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\338.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\339.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\340.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\341.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\342.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\343.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\344.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\345.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\346.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\347.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\348.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\349.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\350.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\351.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\352.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\353.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\354.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\355.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\356.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\357.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\358.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\359.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\360.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\361.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\362.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\363.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\364.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\365.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\366.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\367.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\368.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\369.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\370.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\371.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\372.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\373.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\374.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\375.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\376.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\377.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\378.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\379.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\380.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\381.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\382.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\383.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\384.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\385.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\386.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\387.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\388.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\389.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\390.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\391.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\392.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\393.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\394.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\395.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\396.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\397.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\398.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\399.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\400.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\401.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\402.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\403.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\404.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\405.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\406.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\407.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\408.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\409.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\410.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\411.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\412.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\413.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\414.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\415.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\416.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\417.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\418.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\419.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\420.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\421.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\422.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\423.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\424.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\425.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\426.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\427.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\428.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\429.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\430.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\431.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\432.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\433.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\434.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\435.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\436.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\437.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\438.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\439.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\440.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\441.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\442.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\443.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\444.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\445.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\446.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\447.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\448.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\449.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\450.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\451.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\452.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\453.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\454.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\455.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\456.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\457.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\458.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\459.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\460.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\461.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\462.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\463.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\464.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\465.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\466.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\467.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\468.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\469.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\470.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\471.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\472.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\473.jpg -2 1.0 0.0 0.0
+../Dataset/Training/train_ONet_aug\474.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\475.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\476.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\477.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\478.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\479.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\480.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\481.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\482.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\483.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\484.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\485.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\486.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\487.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\488.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\489.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\490.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\491.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\492.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\493.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\494.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\495.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\496.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\497.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\498.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\499.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\500.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\501.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\502.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\503.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\504.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\505.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\506.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\507.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\508.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\509.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\510.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\511.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\512.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\513.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\514.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\515.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\516.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\517.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\518.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\519.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\520.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\521.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\522.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\523.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\524.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\525.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\526.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\527.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\528.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\529.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\530.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\531.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\532.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\533.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\534.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\535.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\536.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\537.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\538.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\539.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\540.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\541.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\542.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\543.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\544.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\545.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\546.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\547.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\548.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\549.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\550.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\551.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\552.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\553.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\554.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\555.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\556.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\557.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\558.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\559.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\560.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\561.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\562.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\563.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\564.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\565.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\566.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\567.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\568.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\569.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\570.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\571.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\572.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\573.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\574.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\575.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\576.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\577.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\578.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\579.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\580.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\581.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\582.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\583.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\584.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\585.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\586.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\587.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\588.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\589.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\590.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\591.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\592.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\593.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\594.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\595.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\596.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\597.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\598.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\599.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\600.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\601.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\602.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\603.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\604.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\605.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\606.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\607.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\608.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\609.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\610.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\611.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\612.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\613.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\614.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\615.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\616.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\617.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\618.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\619.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\620.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\621.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\622.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\623.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\624.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\625.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\626.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\627.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\628.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\629.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\630.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\631.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\632.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\633.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\634.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\635.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\636.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\637.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\638.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\639.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\640.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\641.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\642.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\643.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\644.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\645.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\646.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\647.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\648.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\649.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\650.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\651.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\652.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\653.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\654.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\655.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\656.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\657.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\658.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\659.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\660.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\661.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\662.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\663.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\664.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\665.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\666.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\667.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\668.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\669.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\670.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\671.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\672.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\673.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\674.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\675.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\676.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\677.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\678.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\679.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\680.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\681.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\682.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\683.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\684.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\685.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\686.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\687.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\688.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\689.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\690.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\691.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\692.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\693.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\694.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\695.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\696.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\697.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\698.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\699.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\700.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\701.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\702.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\703.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\704.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\705.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\706.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\707.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\708.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\709.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\710.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\711.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\712.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\713.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\714.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\715.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\716.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\717.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\718.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\719.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\720.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\721.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\722.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\723.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\724.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\725.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\726.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\727.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\728.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\729.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\730.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\731.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\732.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\733.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\734.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\735.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\736.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\737.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\738.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\739.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\740.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\741.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\742.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\743.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\744.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\745.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\746.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\747.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\748.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\749.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\750.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\751.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\752.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\753.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\754.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\755.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\756.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\757.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\758.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\759.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\760.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\761.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\762.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\763.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\764.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\765.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\766.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\767.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\768.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\769.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\770.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\771.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\772.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\773.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\774.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\775.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\776.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\777.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\778.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\779.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\780.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\781.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\782.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\783.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\784.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\785.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\786.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\787.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\788.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\789.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\790.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\791.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\792.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\793.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\794.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\795.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\796.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\797.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\798.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\799.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\800.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\801.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\802.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\803.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\804.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\805.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\806.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\807.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\808.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\809.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\810.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\811.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\812.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\813.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\814.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\815.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\816.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\817.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\818.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\819.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\820.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\821.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\822.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\823.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\824.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\825.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\826.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\827.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\828.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\829.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\830.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\831.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\832.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\833.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\834.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\835.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\836.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\837.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\838.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\839.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\840.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\841.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\842.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\843.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\844.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\845.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\846.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\847.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\848.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\849.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\850.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\851.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\852.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\853.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\854.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\855.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\856.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\857.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\858.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\859.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\860.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\861.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\862.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\863.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\864.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\865.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\866.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\867.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\868.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\869.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\870.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\871.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\872.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\873.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\874.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\875.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\876.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\877.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\878.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\879.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\880.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\881.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\882.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\883.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\884.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\885.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\886.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\887.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\888.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\889.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\890.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\891.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\892.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\893.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\894.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\895.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\896.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\897.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\898.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\899.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\900.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\901.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\902.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\903.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\904.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\905.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\906.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\907.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\908.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\909.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\910.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\911.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\912.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\913.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\914.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\915.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\916.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\917.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\918.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\919.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\920.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\921.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\922.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\923.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\924.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\925.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\926.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\927.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\928.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\929.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\930.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\931.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\932.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\933.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\934.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\935.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\936.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\937.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\938.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\939.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\940.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\941.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\942.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\943.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\944.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\945.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\946.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\947.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\948.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\949.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\950.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\951.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\952.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\953.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\954.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\955.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\956.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\957.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\958.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\959.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\960.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\961.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\962.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\963.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\964.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\965.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\966.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\967.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\968.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\969.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\970.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\971.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\972.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\973.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\974.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\975.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\976.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\977.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\978.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\979.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\980.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\981.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\982.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\983.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\984.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\985.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\986.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\987.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\988.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\989.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\990.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\991.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\992.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\993.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\994.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\995.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\996.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\997.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\998.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\999.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1000.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1001.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1002.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1003.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1004.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1005.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1006.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1007.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1008.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1009.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1010.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1011.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1012.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1013.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1014.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1015.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1016.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1017.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1018.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1019.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1020.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1021.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1022.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1023.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1024.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1025.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1026.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1027.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1028.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1029.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1030.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1031.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1032.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1033.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1034.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1035.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1036.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1037.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1038.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1039.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1040.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1041.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1042.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1043.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1044.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1045.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1046.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1047.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1048.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1049.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1050.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1051.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1052.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1053.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1054.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1055.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1056.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1057.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1058.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1059.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1060.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1061.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1062.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1063.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1064.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1065.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1066.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1067.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1068.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1069.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1070.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1071.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1072.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1073.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1074.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1075.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1076.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1077.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1078.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1079.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1080.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1081.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1082.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1083.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1084.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1085.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1086.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1087.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1088.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1089.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1090.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1091.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1092.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1093.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1094.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1095.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1096.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1097.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1098.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1099.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1100.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1101.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1102.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1103.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1104.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1105.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1106.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1107.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1108.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1109.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1110.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1111.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1112.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1113.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1114.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1115.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1116.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1117.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1118.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1119.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1120.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1121.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1122.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1123.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1124.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1125.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1126.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1127.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1128.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1129.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1130.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1131.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1132.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1133.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1134.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1135.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1136.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1137.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1138.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1139.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1140.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1141.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1142.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1143.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1144.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1145.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1146.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1147.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1148.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1149.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1150.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1151.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1152.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1153.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1154.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1155.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1156.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1157.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1158.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1159.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1160.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1161.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1162.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1163.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1164.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1165.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1166.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1167.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1168.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1169.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1170.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1171.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1172.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1173.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1174.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1175.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1176.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1177.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1178.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1179.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1180.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1181.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1182.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1183.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1184.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1185.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1186.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1187.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1188.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1189.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1190.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1191.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1192.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1193.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1194.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1195.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1196.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1197.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1198.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1199.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1200.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1201.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1202.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1203.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1204.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1205.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1206.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1207.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1208.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1209.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1210.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1211.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1212.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1213.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1214.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1215.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1216.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1217.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1218.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1219.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1220.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1221.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1222.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1223.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1224.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1225.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1226.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1227.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1228.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1229.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1230.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1231.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1232.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1233.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1234.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1235.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1236.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1237.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1238.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1239.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1240.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1241.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1242.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1243.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1244.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1245.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1246.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1247.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1248.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1249.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1250.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1251.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1252.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1253.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1254.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1255.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1256.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1257.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1258.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1259.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1260.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1261.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1262.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1263.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1264.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1265.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1266.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1267.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1268.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1269.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1270.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1271.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1272.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1273.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1274.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1275.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1276.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1277.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1278.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1279.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1280.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1281.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1282.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1283.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1284.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1285.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1286.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1287.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1288.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1289.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1290.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1291.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1292.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1293.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1294.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1295.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1296.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1297.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1298.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1299.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1300.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1301.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1302.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1303.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1304.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1305.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1306.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1307.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1308.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1309.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1310.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1311.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1312.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1313.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1314.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1315.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1316.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1317.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1318.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1319.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1320.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1321.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1322.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1323.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1324.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1325.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1326.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1327.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1328.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1329.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1330.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1331.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1332.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1333.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1334.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1335.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1336.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1337.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1338.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1339.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1340.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1341.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1342.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1343.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1344.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1345.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1346.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1347.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1348.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1349.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1350.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1351.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1352.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1353.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1354.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1355.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1356.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1357.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1358.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1359.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1360.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1361.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1362.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1363.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1364.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1365.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1366.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1367.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1368.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1369.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1370.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1371.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1372.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1373.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1374.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1375.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1376.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1377.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1378.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1379.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1380.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1381.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1382.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1383.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1384.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1385.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1386.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1387.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1388.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1389.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1390.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1391.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1392.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1393.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1394.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1395.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1396.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1397.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1398.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1399.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1400.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1401.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1402.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1403.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1404.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1405.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1406.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1407.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1408.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1409.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1410.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1411.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1412.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1413.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1414.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1415.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1416.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1417.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1418.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1419.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1420.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1421.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1422.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1423.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1424.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1425.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1426.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1427.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1428.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1429.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1430.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1431.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1432.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1433.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1434.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1435.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1436.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1437.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1438.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1439.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1440.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1441.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1442.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1443.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1444.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1445.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1446.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1447.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1448.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1449.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1450.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1451.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1452.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1453.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1454.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1455.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1456.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1457.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1458.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1459.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1460.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1461.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1462.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1463.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1464.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1465.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1466.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1467.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1468.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1469.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1470.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1471.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1472.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1473.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1474.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1475.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1476.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1477.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1478.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1479.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1480.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1481.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1482.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1483.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1484.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1485.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1486.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1487.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1488.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1489.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1490.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1491.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1492.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1493.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1494.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1495.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1496.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1497.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1498.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1499.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1500.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1501.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1502.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1503.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1504.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1505.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1506.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1507.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1508.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1509.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1510.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1511.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1512.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1513.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1514.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1515.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1516.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1517.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1518.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1519.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1520.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1521.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1522.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1523.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1524.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1525.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1526.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1527.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1528.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1529.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1530.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1531.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1532.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1533.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1534.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1535.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1536.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1537.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1538.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1539.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1540.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1541.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1542.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1543.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1544.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1545.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1546.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1547.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1548.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1549.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1550.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1551.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1552.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1553.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1554.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1555.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1556.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1557.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1558.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1559.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1560.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1561.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1562.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1563.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1564.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1565.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1566.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1567.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1568.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1569.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1570.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1571.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1572.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1573.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1574.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1575.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1576.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1577.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1578.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1579.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1580.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1581.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1582.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1583.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1584.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1585.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1586.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1587.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1588.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1589.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1590.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1591.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1592.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1593.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1594.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1595.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1596.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1597.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1598.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1599.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1600.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1601.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1602.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1603.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1604.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1605.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1606.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1607.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1608.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1609.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1610.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1611.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1612.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1613.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1614.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1615.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1616.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1617.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1618.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1619.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1620.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1621.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1622.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1623.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1624.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1625.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1626.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1627.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1628.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1629.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1630.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1631.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1632.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1633.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1634.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1635.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1636.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1637.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1638.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1639.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1640.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1641.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1642.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1643.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1644.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1645.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1646.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1647.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1648.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1649.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1650.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1651.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1652.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1653.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1654.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1655.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1656.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1657.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1658.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1659.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1660.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1661.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1662.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1663.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1664.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1665.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1666.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1667.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1668.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1669.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1670.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1671.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1672.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1673.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1674.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1675.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1676.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1677.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1678.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1679.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1680.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1681.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1682.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1683.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1684.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1685.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1686.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1687.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1688.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1689.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1690.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1691.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1692.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1693.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1694.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1695.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1696.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1697.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1698.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1699.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1700.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1701.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1702.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1703.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1704.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1705.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1706.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1707.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1708.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1709.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1710.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1711.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1712.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1713.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1714.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1715.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1716.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1717.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1718.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1719.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1720.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1721.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1722.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1723.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1724.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1725.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1726.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1727.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1728.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1729.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1730.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1731.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1732.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1733.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1734.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1735.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1736.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1737.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1738.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1739.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1740.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1741.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1742.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1743.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1744.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1745.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1746.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1747.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1748.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1749.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1750.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1751.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1752.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1753.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1754.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1755.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1756.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1757.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1758.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1759.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1760.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1761.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1762.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1763.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1764.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1765.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1766.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1767.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1768.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1769.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1770.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1771.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1772.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1773.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1774.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1775.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1776.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1777.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1778.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1779.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1780.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1781.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1782.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1783.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1784.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1785.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1786.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1787.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1788.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1789.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1790.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1791.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1792.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1793.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1794.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1795.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1796.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1797.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1798.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1799.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1800.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1801.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1802.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1803.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1804.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1805.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1806.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1807.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1808.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1809.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1810.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1811.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1812.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1813.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1814.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1815.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1816.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1817.jpg -2 0.0 1.0 0.0
+../Dataset/Training/train_ONet_aug\1818.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1819.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1820.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1821.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1822.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1823.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1824.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1825.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1826.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1827.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1828.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1829.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1830.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1831.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1832.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1833.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1834.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1835.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1836.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1837.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1838.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1839.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1840.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1841.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1842.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1843.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1844.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1845.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1846.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1847.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1848.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1849.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1850.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1851.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1852.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1853.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1854.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1855.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1856.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1857.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1858.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1859.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1860.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1861.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1862.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1863.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1864.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1865.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1866.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1867.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1868.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1869.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1870.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1871.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1872.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1873.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1874.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1875.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1876.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1877.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1878.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1879.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1880.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1881.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1882.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1883.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1884.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1885.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1886.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1887.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1888.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1889.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1890.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1891.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1892.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1893.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1894.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1895.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1896.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1897.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1898.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1899.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1900.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1901.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1902.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1903.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1904.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1905.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1906.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1907.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1908.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1909.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1910.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1911.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1912.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1913.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1914.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1915.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1916.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1917.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1918.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1919.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1920.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1921.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1922.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1923.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1924.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1925.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1926.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1927.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1928.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1929.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1930.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1931.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1932.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1933.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1934.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1935.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1936.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1937.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1938.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1939.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1940.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1941.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1942.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1943.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1944.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1945.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1946.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1947.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1948.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1949.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1950.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1951.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1952.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1953.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1954.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1955.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1956.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1957.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1958.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1959.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1960.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1961.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1962.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1963.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1964.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1965.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1966.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1967.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1968.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1969.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1970.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1971.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1972.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1973.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1974.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1975.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1976.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1977.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1978.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1979.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1980.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1981.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1982.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1983.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1984.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1985.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1986.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1987.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1988.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1989.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1990.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1991.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1992.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1993.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1994.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1995.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1996.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1997.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1998.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\1999.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2000.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2001.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2002.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2003.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2004.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2005.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2006.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2007.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2008.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2009.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2010.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2011.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2012.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2013.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2014.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2015.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2016.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2017.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2018.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2019.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2020.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2021.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2022.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2023.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2024.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2025.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2026.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2027.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2028.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2029.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2030.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2031.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2032.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2033.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2034.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2035.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2036.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2037.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2038.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2039.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2040.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2041.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2042.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2043.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2044.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2045.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2046.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2047.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2048.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2049.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2050.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2051.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2052.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2053.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2054.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2055.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2056.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2057.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2058.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2059.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2060.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2061.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2062.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2063.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2064.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2065.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2066.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2067.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2068.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2069.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2070.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2071.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2072.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2073.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2074.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2075.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2076.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2077.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2078.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2079.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2080.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2081.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2082.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2083.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2084.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2085.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2086.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2087.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2088.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2089.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2090.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2091.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2092.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2093.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2094.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2095.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2096.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2097.jpg -2 0.0 0.0 1.0
+../Dataset/Training/train_ONet_aug\2098.jpg -2 0.0 0.0 1.0
