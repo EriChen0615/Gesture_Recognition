@@ -18,7 +18,7 @@ def train_ONet(base_dir, prefix, end_epoch, display, lr):
 if __name__ == '__main__':
     base_dir = '../Dataset/Training/no_LM48/imglists/ONet'
     model_name = 'MTCNN'
-    model_path = '../Model/%s/ONet_No_Landmark/RNet' % model_name
+    model_path = '../Model/%s/ONet_No_Landmark/ONet' % model_name
     prefix = model_path
     end_epoch = 160 #was 22
     display = 100
