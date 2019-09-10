@@ -14,12 +14,12 @@ def _int64_feature(value):
 
 def _float_feature(value):
     """Wrapper for insert float features into Example proto."""
-    print("this is the damn value: ", value)
+    #print("this is the damn value: ", value)
     if not isinstance(value, list):
         _value = [value]
     else:
         _value = [float(i) for i in value]
-    print("this is the damn value again: ", _value)
+    #print("this is the damn value again: ", _value)
     return tf.train.Feature(float_list=tf.train.FloatList(value=_value))
 
 

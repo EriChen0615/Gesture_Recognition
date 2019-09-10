@@ -1,5 +1,5 @@
 """
-This file is used to generate tf_records for training of PNet
+This file is used to generate tf_records for training
 
 """
 
@@ -43,7 +43,7 @@ def _add_to_tfrecord(filename, image_example, tfrecord_writer):
 def _get_output_filename(output_dir, name, net):
     #st = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     #return '%s/%s_%s_%s.tfrecord' % (output_dir, name, net, st)
-    return '%s/train_PNet_gesture.tfrecord' % (output_dir)
+    return '%s/train_%s_gesture.tfrecord' % (output_dir,net)
     
 
 def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
@@ -70,7 +70,7 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
     # Process dataset files.
     # write the data to tfrecord
 
-    print('lalala')
+    #print('lalala')
 
     with tf.python_io.TFRecordWriter(tf_filename) as tfrecord_writer:
         for i, image_example in enumerate(dataset):
@@ -91,7 +91,7 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
 def get_dataset(dir, net='PNet'):
     #get file name , label and anotation
     #item = 'imglists/PNet/train_%s_raw.txt' % net
-    item = 'imglists/PNet/train_%s_gesture.txt' % net
+    item = 'imglists/%s/train_%s_gesture.txt' % (net,net)
     
     dataset_dir = os.path.join(dir, item)
 
@@ -156,5 +156,5 @@ if __name__ == '__main__':
     args = parse_args()
     dir = args.data_dir
     net = args.net
-    output_directory = os.path.join(dir,'imglists/PNet')
+    output_directory = os.path.join(dir,'imglists/{0}'.format(net))
     run(dir, net, output_directory, shuffling=True)
