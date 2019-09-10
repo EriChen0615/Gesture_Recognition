@@ -127,7 +127,7 @@ def bbox_ohem(bbox_pred,bbox_target,label):
 
     return tf.reduce_mean(square_error)
 
-def gesture_ohem(gesture_pred,gesture_target,label): # !!!this is not doing ohem!!!
+def gesture_ohem(gesture_pred,gesture_target,label): 
     '''
 
     :param gesture_pred:
@@ -234,7 +234,7 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
 # ignore the gesture prediction part and see how will the training go
         """ gesture prediction """
         #batch*H*W*3 shape=(batch,1,1,3)
-        """
+        
         gesture_pred = slim.conv2d(net,num_outputs=10,kernel_size=[1,1],stride=1,scope='conv4_3',activation_fn=None)
         gesture_pred = slim.fully_connected(gesture_pred, num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
         #thinking about change the activation fn to sigmoid or softmax?
@@ -242,7 +242,7 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
 
         _activation_summary(gesture_pred)
         print ('gesture_pred.shape=',gesture_pred.get_shape())
-        """
+        
 
         #cls_prob_original = conv4_1 
         #bbox_pred_original = bbox_pred
@@ -259,29 +259,28 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
             print("bbox_pred ", bbox_pred.get_shape())
             bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
             #batch*3
-            """
+            
             gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
             print("gesture_pred ", gesture_pred.get_shape())
             gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
-            """
+            
             accuracy = cal_accuracy(cls_prob,label)
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
             # return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
             return cls_loss,bbox_loss,L2_loss,accuracy #without gesture loss
         #test
 
-
         else:
             cls_pro_test = tf.squeeze(conv4_1, name='cls_prob')
             print("cls_pro_test: ", cls_pro_test.get_shape())
             bbox_pred_test = tf.squeeze(bbox_pred, name='bbox_pred')
             print("bbox_pred_test: ", bbox_pred_test.get_shape())
-            """
+            
             gesture_pred_test = tf.squeeze(gesture_pred,name="gesture_pred")
             print("gesture_pred_test: ", gesture_pred_test.get_shape())
-            """
-            # return cls_pro_test,bbox_pred_test,gesture_pred_test
-            return cls_pro_test,bbox_pred_test
+            
+            return cls_pro_test,bbox_pred_test,gesture_pred_test
+            # return cls_pro_test,bbox_pred_test
         # #inference
         # else:
         #     #when inference,batch_size = 1
