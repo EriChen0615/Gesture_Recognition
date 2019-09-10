@@ -127,7 +127,7 @@ def bbox_ohem(bbox_pred,bbox_target,label):
 
     return tf.reduce_mean(square_error)
 
-def gesture_ohem(gesture_pred,gesture_target,label): # !!!this is not doing ohem!!!
+def gesture_ohem(gesture_pred,gesture_target,label): 
     '''
 
     :param gesture_pred:
@@ -266,10 +266,9 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
             
             accuracy = cal_accuracy(cls_prob,label)
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
-            return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
-            # return cls_loss,bbox_loss,L2_loss,accuracy #without gesture loss
+            # return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
+            return cls_loss,bbox_loss,L2_loss,accuracy #without gesture loss
         #test
-
 
         else:
             cls_pro_test = tf.squeeze(conv4_1, name='cls_prob')
