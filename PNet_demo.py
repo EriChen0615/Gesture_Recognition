@@ -182,8 +182,8 @@ epoch = [500, 14, 16]
 batch_size = [2048, 64, 16]
 print(model_path)
 
-TestImage_path = "Testing_Demo_Data/webimg/"
-TestResult_path = "PNet_demo/ResultImage/webimg/"
+TestImage_path = "Testing_Demo_Data/G1/"
+TestResult_path = "PNet_demo/ResultImage/G1/"
 
 mkdir(TestResult_path)
 

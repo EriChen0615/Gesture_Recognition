@@ -177,13 +177,13 @@ stride = 2
 slide_window = False
 shuffle = False
 detectors = [None, None, None]
-model_path = ['Model/PNet/PNet-500', 'Model/RNet/RNet_No_Landmark/RNet-500', '']
+model_path = ['Model/PNet/PNet-500', 'Model/RNet/RNet_No_Landmark/RNet-500', 'Model/ONet/ONet-500']
 epoch = [500, 500, 16]
 batch_size = [300, 300, 300]
 print(model_path)
 
-TestImage_path = "Testing_Demo_Data/webimg/"
-TestResult_path = "RNet_demo/ResultImage/webimg/"
+TestImage_path = "Testing_Demo_Data/Test/"
+TestResult_path = "{}_demo/ResultImage/Test/".format(test_mode)
 
 mkdir(TestResult_path)
 
@@ -200,7 +200,7 @@ if test_mode in ["RNet", "ONet"]:
     RNet = Detector(R_Net, 24, batch_size[1], model_path[1])
     detectors[1] = RNet
 
-#  ---------- R&O Net Model -------------------
+
 # # load onet model
 # if test_mode == "ONet":
 #     ONet = Detector(O_Net, 48, batch_size[2], model_path[2])
@@ -216,7 +216,7 @@ gt_imdb = []
 # imdb_['label'] = 5
 
 
-_, img_list = scan_file(TestImage_path, 'jpg')
+_, img_list = scan_file(TestImage_path, 'png')
 for item in img_list:
     gt_imdb.append(os.path.join(TestImage_path, item))
 test_data = TestLoader(gt_imdb)
