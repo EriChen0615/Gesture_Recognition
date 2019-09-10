@@ -247,7 +247,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     sess = tf.Session()
 
     #save model
-    saver = tf.train.Saver(max_to_keep=0)
+    saver = tf.train.Saver(max_to_keep=1)
     sess.run(init)
 
     #visualize some variables
