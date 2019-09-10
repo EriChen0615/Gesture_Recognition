@@ -171,97 +171,112 @@ def mkdir(path):
         print(path + ' already exist')
         return False
 
-test_mode =  "ONet"
-thresh = [0.6, 0.7, 0.7]
-min_face_size = 20
-stride = 2
-slide_window = False
-shuffle = False
-detectors = [None, None, None]
-model_path = ['Model/PNet/PNet-500', 'Model/RNet//RNet-500', 'Model/ONet/ONet-116']
-TestImage_folder = "Train"
-Image_postfix = 'jpg'
-epoch = [500, 500, 500]
-batch_size = [300, 300, 300]
-print(model_path)
+def main():
 
-TestImage_path = "Testing_Demo_Data/{}/".format(TestImage_folder)
-TestResult_path = "MTCNN_demo/{}/ResultImage/{}/".format(test_mode, TestImage_folder)
+    # Initialise
+    slide_window = False
+    shuffle = False
+    detectors = [None, None, None]
+    thresh = [0.6, 0.7, 0.7]
+    min_face_size = 20
+    stride = 2
+    batch_size = [2048, 64, 16]
 
-mkdir(TestResult_path)
-mkdir(TestResult_path+'prediction/')
+    # Configuration mode
+    test_mode =  "RNet"
+    # The model path, should be the same in the checkpoint file
+    model_path = ['Model/PNet/PNet-500', 'Model/RNet/RNet-500', 'Model/ONet/ONet-116']
+    # The sub-folder in the folder Testing_Demo_Data
+    TestImage_folder = "Train"
+    # Test image postfix
+    Image_postfix = 'jpg'
 
-
-# load pnet model
-if slide_window:
-    PNet = Detector(P_Net, 12, batch_size[0], model_path[0])
-else:
-    PNet = FcnDetector(P_Net, model_path[0])
-detectors[0] = PNet
+    TestImage_path = "Testing_Demo_Data/{}/".format(TestImage_folder)
+    TestResult_path = "MTCNN_demo/{}/ResultImage/{}/".format(test_mode, TestImage_folder)
+    mkdir(TestResult_path)
+    if test_mode in ["RNet", "ONet"]:
+        mkdir(TestResult_path+'prediction/')
 
 
-# load rnet model
-if test_mode in ["RNet", "ONet"]:
-    RNet = Detector(R_Net, 24, batch_size[1], model_path[1])
-    detectors[1] = RNet
+    # load pnet model
+    if slide_window:
+        PNet = Detector(P_Net, 12, batch_size[0], model_path[0])
+    else:
+        PNet = FcnDetector(P_Net, model_path[0])
+    detectors[0] = PNet
 
 
-# load onet model
-if test_mode == "ONet":
-    ONet = Detector(O_Net, 48, batch_size[2], model_path[2])
-    detectors[2] = ONet
-
-mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
-                               stride=stride, threshold=thresh, slide_window=slide_window)
-gt_imdb = []
-
-_, img_list = scan_file(TestImage_path, Image_postfix)
-for item in img_list:
-    gt_imdb.append(os.path.join(TestImage_path, item))
-test_data = TestLoader(gt_imdb)
-
-# print(test_data)
-all_boxes, landmarks = mtcnn_detector.detect_face(test_data)
-# print("-------", landmarks)
-
-count = 0
-
-for imagepath in gt_imdb:
-    print(imagepath)
-    image = cv2.imread(imagepath)
-    image_original = image.copy()
-    for box_number, bbox in enumerate(all_boxes[count]):
-        cv2.putText(image, str(np.round(bbox[4], 2)), (int(bbox[0]), int(bbox[1])), cv2.FONT_HERSHEY_TRIPLEX, 1,
-                    color=(255, 0, 255))
-        cv2.rectangle(image, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
-
-        image_single = image_original.copy()
-        cv2.rectangle(image_single, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
-
-        # with open("{}/{}_{}.txt".format(TestResult_path, count, box_number), 'w') as f:
-        #     f.write('(x1,y1):({},{})\n(x2,y2):({},{})\nprediction:{}'.format(int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3]), np.round(bbox[4], 4)))
-
-        class_list = np.array(landmarks[count][box_number])
-        pred_index = np.argmax(class_list)
-        pred_text = str(pred_index)
-        if pred_index==0:
-            pred_text = "One"
-        elif pred_index==1:
-            pred_text = 'Fist'
-        elif pred_index==2:
-            pred_text = 'Two'
-        else:
-            with open("{}/prediction/{}_{}.txt".format(TestResult_path, count, box_number), 'w') as f:
-                f.write('prediction list:{}'.format(class_list))
-            print('file saved!')
-
-        cv2.putText(image_single, pred_text, (120,120), cv2.FONT_HERSHEY_TRIPLEX, 1, color=(0, 255, 0))
-
-        cv2.imwrite("{}/prediction/{}_{}.png".format(TestResult_path, count, box_number), image_single)
+    # load rnet model
+    if test_mode in ["RNet", "ONet"]:
+        RNet = Detector(R_Net, 24, batch_size[1], model_path[1])
+        detectors[1] = RNet
 
 
-    count = count + 1
-    # cv2.imwrite("result_landmark/%d.png" %(count),image)
-    cv2.imwrite("{}/{}.png".format(TestResult_path, count-1), image)
-    # cv2.imshow("PNet", image)
-    # cv2.waitKey(0)
+    # load onet model
+    if test_mode == "ONet":
+        ONet = Detector(O_Net, 48, batch_size[2], model_path[2])
+        detectors[2] = ONet
+
+    # Initialise detcector
+    mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
+                                   stride=stride, threshold=thresh, slide_window=slide_window)
+    gt_imdb = []
+
+    # Get the test img list
+    _, img_list = scan_file(TestImage_path, Image_postfix)
+    for item in img_list:
+        gt_imdb.append(os.path.join(TestImage_path, item))
+    test_data = TestLoader(gt_imdb)
+
+    # Get boxes and landmarks
+    all_boxes, landmarks = mtcnn_detector.detect_face(test_data)
+
+    count = 0
+
+    for image_path in gt_imdb:
+        print(image_path)
+        image = cv2.imread(image_path)
+        image_original = image.copy()
+        for box_number, bbox in enumerate(all_boxes[count]):
+            # Process img with all boxes
+            cv2.putText(image, str(np.round(bbox[4], 2)), (int(bbox[0]), int(bbox[1])), cv2.FONT_HERSHEY_TRIPLEX, 1,
+                        color=(255, 0, 255))
+            cv2.rectangle(image, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
+
+            # Draw Single Box img
+            image_single = image_original.copy()
+            cv2.rectangle(image_single, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
+
+
+            # Skip the landmarks if it is PNet mode
+            if test_mode == "PNet":
+                continue
+
+            class_list = np.array(landmarks[count][box_number])
+            pred_index = np.argmax(class_list)
+            pred_text = str(pred_index)
+            if pred_index==0:
+                pred_text = "One"
+            elif pred_index==1:
+                pred_text = 'Fist'
+            elif pred_index==2:
+                pred_text = 'Two'
+            else:
+                # if failed to classify, a txt file will be generated
+                with open("{}/prediction/{}_{}.txt".format(TestResult_path, count, box_number), 'w') as f:
+                    f.write('prediction list:{}'.format(class_list))
+                print('file saved!')
+
+            # Save img with single boxes in sub-folder prediction
+            cv2.putText(image_single, pred_text, (120,120), cv2.FONT_HERSHEY_TRIPLEX, 1, color=(0, 255, 0))
+
+            cv2.imwrite("{}/prediction/{}_{}.png".format(TestResult_path, count, box_number), image_single)
+
+
+        count = count + 1
+
+        # Save img with all boxes.
+        cv2.imwrite("{}/{}.png".format(TestResult_path, count-1), image)
+
+if __name__ == '__main__':
+    main()
