@@ -2,7 +2,9 @@
 
 ## How to configure demo.py
 
-- Test images should be put in a sub-folder of the `Testing_Demo_Data` folder, configure `TestImage_subfolder = YourSubfolderName`
+- Test images should be put in a sub-folder of the `Testing_Demo_Data` folder, configure 
+
+  `TestImage_subfolder = YourSubfolderName`
 
   `Image_postfix = YourImagePostfix` (Postfix without '.')
 
