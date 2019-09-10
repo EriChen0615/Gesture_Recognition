@@ -20,7 +20,7 @@ if __name__ == '__main__':
     model_name = 'MTCNN'
     model_path = '../Model/%s/ONet_No_Landmark/ONet' % model_name
     prefix = model_path
-    end_epoch = 180 #was 22
+    end_epoch = 116 #was 22
     display = 100
     lr = 0.01 #was 0.001
     train_ONet(base_dir, prefix, end_epoch, display, lr)
