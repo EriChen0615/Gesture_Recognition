@@ -11,8 +11,6 @@ from Train_Model.mtcnn_model import P_Net, R_Net, O_Net
 import cv2
 import os
 import numpy as np
-import time
-import progressbar
 
 def scan_file(file_dir = '', file_postfix = 'jpg'):
     '''
@@ -171,28 +169,30 @@ def mkdir(path):
         print(path + ' already exist')
         return False
 
-def main():
+def demo(test_mode="ONet"):
+
+    # Configuration mode
+    print("===============================")
+    print("> Test mode is {}".format(test_mode))
+    print("===============================")
 
     # Initialise
     slide_window = False
-    shuffle = False
     detectors = [None, None, None]
     thresh = [0.6, 0.7, 0.7]
     min_face_size = 20
     stride = 2
     batch_size = [2048, 64, 16]
 
-    # Configuration mode
-    test_mode =  "RNet"
     # The model path, should be the same in the checkpoint file
     model_path = ['Model/PNet/PNet-500', 'Model/RNet/RNet-500', 'Model/ONet/ONet-116']
     # The sub-folder in the folder Testing_Demo_Data
-    TestImage_folder = "Train"
+    TestImage_subfolder = "Train"
     # Test image postfix
     Image_postfix = 'jpg'
 
-    TestImage_path = "Testing_Demo_Data/{}/".format(TestImage_folder)
-    TestResult_path = "MTCNN_demo/{}/ResultImage/{}/".format(test_mode, TestImage_folder)
+    TestImage_path = "Testing_Demo_Data/{}/".format(TestImage_subfolder)
+    TestResult_path = "MTCNN_demo/{}/ResultImage/{}/".format(test_mode, TestImage_subfolder)
     mkdir(TestResult_path)
     if test_mode in ["RNet", "ONet"]:
         mkdir(TestResult_path+'prediction/')
@@ -279,4 +279,6 @@ def main():
         cv2.imwrite("{}/{}.png".format(TestResult_path, count-1), image)
 
 if __name__ == '__main__':
-    main()
+    test_mode = sys.argv[1]
+    assert test_mode == "PNet" or test_mode == "RNet" or test_mode == "ONet", "Invalid test mode, please check your input."
+    demo(test_mode)
