@@ -9,4 +9,4 @@ source ~/anaconda3/etc/profile.d/conda.sh
 conda activate tf-gpu
 
 cd Train_Model
-python train_PNet --model_name $model_name --tfrecord_dir $tfrecord_dir --base_lr $base_lr --end_epoch $end_epoch
+python train_PNet.py --model_name $model_name --tfrecord_dir ../$tfrecord_dir --base_lr $base_lr --end_epoch $end_epoch

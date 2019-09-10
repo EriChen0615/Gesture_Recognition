@@ -1,6 +1,6 @@
 from mtcnn_model import P_Net
 from train import train
-import argparser
+import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train PNet',
@@ -38,11 +38,11 @@ if __name__ == '__main__':
     # model_path = '../Model/{0}/PNet/PNet'.format(model_name)
     
     prefix = model_path
-    end_epoch = args.end_epoch
+    end_epoch = int(args.end_epoch)
     display = 20
 
     """change base learning rate here!"""
-    lr = args.lr #was 0.001
+    lr = float(args.lr) #was 0.001
 
     print("------------------Training Started-------------------\n")
     train_PNet(base_dir, prefix, end_epoch, display, lr)
