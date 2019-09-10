@@ -2,8 +2,7 @@
 
 output_dir='Training_Data/RNet-24'
 anno_name='imglist_with_gesture.txt'
-model_prefix='Model/MTCNN/PNet'
-model_prefix='Model/MTCNN/PNet'
+model_prefix='Model/MTCNN-test/PNet'
 model_epoch=30
 raw_img_dir='Dataset/Training'
 
