@@ -45,7 +45,7 @@ python3 demo.py PNet
 python3 demo.py RNet
 python3 demo.py ONet
 ```
-For other input argument, it will raise AssertionError.
+For other input arguments, it will raise AssertionError.
 
 ## Results
 
