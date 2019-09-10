@@ -2,7 +2,7 @@
 
 ## How to configure demo.py
 
-- Test images should be put in a sub-folder of the `Testing_Demo_Data` folder, configure 
+- Test images should be put at the path `Testing_Demo_Data/YourSubfolderName/` , configure 
 
   `TestImage_subfolder = YourSubfolderName`
 
