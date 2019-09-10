@@ -237,7 +237,8 @@ def train(net_factory, prefix, end_epoch, base_dir,
     # cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True)
     #train,update learning rate(3 loss)
     cls_loss_op,bbox_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,training=True)
-    total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
+    # total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
+    total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + L2_loss_op
     train_op, lr_op = train_model(base_lr,
                                   total_loss_op,
                                   num)
