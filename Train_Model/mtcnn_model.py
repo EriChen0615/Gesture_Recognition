@@ -9,7 +9,7 @@ num_keep_radio = 0.7 # ratio for online hard sample mining
 def prelu(inputs):
     #set a tensor alphas the same shape as the last dimension of inputs, and initialize its elements to be all 0.25
     alphas = tf.get_variable("alphas", shape=inputs.get_shape()[-1], dtype=tf.float32, initializer=tf.constant_initializer(0.25))
-    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小�的值赋值为0，输入大�的值不�
+    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小�的值赋值为0，输入大�的值不�
     neg = alphas * (inputs-abs(inputs))*0.5 
     return pos + neg
 
@@ -190,11 +190,7 @@ def _activation_summary(x):
 
 #construct Pnet
 #label:batch
-<<<<<<< HEAD
-def P_Net(inputs,label=None, bbox_target=None, gesture_target=None, training=True):
-=======
 def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
->>>>>>> d0079d24789f2f6c44233af480cdf8a2a60f9071
     #define common param
     with slim.arg_scope([slim.conv2d],
                         activation_fn=prelu,
@@ -267,7 +263,8 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
             return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         #test
-<<<<<<< HEAD
+
+
         else:
             cls_pro_test = tf.squeeze(conv4_1, name='cls_prob')
             print("cls_pro_test: ", cls_pro_test.get_shape())
@@ -284,33 +281,13 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
         #     bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
         #     gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
         #     return cls_pro_test,bbox_pred_test,gesture_pred_test
-=======
-        #inference
-        else:
-            #when inference,batch_size = 1
-            cls_pro_test = tf.squeeze(conv4_1, axis=0)
-            bbox_pred_test = tf.squeeze(bbox_pred,axis=0)
-            gesture_pred_test = tf.squeeze(gesture_pred,axis=0)
-            return cls_pro_test,bbox_pred_test,gesture_pred_test
->>>>>>> d0079d24789f2f6c44233af480cdf8a2a60f9071
+
+
+
+
             
 
-            # cls_prob = tf.squeeze(conv4_1,[1,2],name='cls_prob')
-            # #print("cls_prob ", cls_prob.get_shape())
-            # cls_loss = cls_ohem(cls_prob,label,training=False)
-            # #batch*4
-            # # cal bounding box error, squared sum error
-            # bbox_pred = tf.squeeze(bbox_pred,[1,2],name='bbox_pred')
-            # #print("bbox_pred ", bbox_pred.get_shape())
-            # bbox_loss = bbox_ohem(bbox_pred,bbox_target,label)
-            # #batch*3
-            # gesture_pred = tf.squeeze(gesture_pred,[1,2],name="gesture_pred")
-            # #print("gesture_pred ", gesture_pred.get_shape())
-            # gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
-            #
-            # accuracy = cal_accuracy(cls_prob,label)
-            # L2_loss = tf.add_n(slim.losses.get_regularization_losses())
-            # return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
+
     
 
 def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
@@ -320,31 +297,31 @@ def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
                         biases_initializer=tf.zeros_initializer(),
                         weights_regularizer=slim.l2_regularizer(0.0005),                        
                         padding='valid'):
-        print (inputs.get_shape())
+        print ("input shape: ", inputs.get_shape())
         net = slim.conv2d(inputs, num_outputs=28, kernel_size=[3,3], stride=1, scope="conv1")
-        print (net.get_shape())
+        print ("conv1 shape: ", net.get_shape())
         net = slim.max_pool2d(net, kernel_size=[3, 3], stride=2, scope="pool1", padding='SAME')
-        print(net.get_shape())
+        print("pool1 shape: ", net.get_shape())
         net = slim.conv2d(net,num_outputs=48,kernel_size=[3,3],stride=1,scope="conv2")
-        print(net.get_shape())
+        print("conv2 shape: ", net.get_shape())
         net = slim.max_pool2d(net,kernel_size=[3,3],stride=2,scope="pool2")
-        print(net.get_shape())
+        print("pool2 shape: ", net.get_shape())
         net = slim.conv2d(net,num_outputs=64,kernel_size=[2,2],stride=1,scope="conv3")
-        print(net.get_shape())
+        print("conv3 shape: ", net.get_shape())
         fc_flatten = slim.flatten(net)
-        print(fc_flatten.get_shape())
+        print("flatten: ", fc_flatten.get_shape())
         fc1 = slim.fully_connected(fc_flatten, num_outputs=128,scope="fc1")
-        print(fc1.get_shape())
+        print("fc1 shape: ", fc1.get_shape())
         #batch*2
         cls_prob = slim.fully_connected(fc1,num_outputs=2,scope="cls_fc",activation_fn=tf.nn.softmax)
-        print(cls_prob.get_shape())
+        print("cls_prob shape: ", cls_prob.get_shape())
         #batch*4
         bbox_pred = slim.fully_connected(fc1,num_outputs=4,scope="bbox_fc",activation_fn=None)
-        print(bbox_pred.get_shape())
+        print("bbox_pred shape: ", bbox_pred.get_shape())
         #batch*3
-        gesture_pred = slim.conv2d(net,num_outputs=10,kernel_size=[1,1],stride=1,scope='conv4_3',activation_fn=None)
+        gesture_pred = slim.fully_connected(fc1,num_outputs=10,scope="gesture_pre_fc",activation_fn=None)
         gesture_pred = slim.fully_connected(gesture_pred, num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
-        print(gesture_pred.get_shape())
+        print("gesture_pred shape: ", gesture_pred.get_shape())
         #train
         if training:
             cls_loss = cls_ohem(cls_prob,label,training)
@@ -391,7 +368,8 @@ def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
         bbox_pred = slim.fully_connected(fc1,num_outputs=4,scope="bbox_fc",activation_fn=None)
         print(bbox_pred.get_shape())
         #batch*3
-        gesture_pred = slim.fully_connected(fc1,num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
+        gesture_pred = slim.fully_connected(fc1,num_outputs=10,scope="gesture_pre_fc",activation_fn=None)
+        gesture_pred = slim.fully_connected(gesture_pred,num_outputs=3,scope="gesture_pre_fc",activation_fn=tf.nn.softmax)
         print(gesture_pred.get_shape())
         #train
         if training:

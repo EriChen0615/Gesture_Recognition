@@ -34,7 +34,7 @@ def train_model(base_lr, loss, data_num):
     lr_factor = 0.5 # was 0.1
     global_step = tf.Variable(0, trainable=False)
     #LR_EPOCH [8,14]
-    #boundaried [num_batch,num_batch]
+    #boundaried [num_of_batch,num_of_batch,num_of_batch]
     boundaries = [int(epoch * data_num / config.BATCH_SIZE) for epoch in config.LR_EPOCH]
     #lr_values[0.01,0.001,0.0001,0.00001]
     lr_values = [base_lr * (lr_factor ** x) for x in range(0, len(config.LR_EPOCH) + 1)]
@@ -106,7 +106,7 @@ def cal_acc(cls_prob,label):
     # label_picked = tf.gather(label_int,picked)
     # pred_picked = tf.gather(pred,picked)
     # accuracy_op = tf.reduce_mean(tf.cast(tf.equal(label_picked,pred_picked),tf.float32))
-    accuracy_op = tf.reduce_mean(tf.cast(tf.equal(label,cls_prob),tf.float32))
+    accuracy_op = tf.reduce_mean(tf.cast(tf.equal(label_int,cls_prob),tf.float32))
     return accuracy_op
 
 def cls_cal_loss(cls_prob, label): 
@@ -188,6 +188,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
         
     #RNet use 3 tfrecords to get data    
     else:
+        """
         pos_dir = os.path.join(base_dir,'pos_gesture.tfrecord_shuffle')
         part_dir = os.path.join(base_dir,'part_gesture.tfrecord_shuffle')
         neg_dir = os.path.join(base_dir,'neg_gesture.tfrecord_shuffle')
@@ -206,7 +207,11 @@ def train(net_factory, prefix, end_epoch, base_dir,
         batch_sizes = [pos_batch_size,part_batch_size,neg_batch_size,gesture_batch_size]
         #print('batch_size is:', batch_sizes)
         image_batch, label_batch, bbox_batch,gesture_batch = read_multi_tfrecords(dataset_dirs,batch_sizes, net)        
-        
+        """
+        # if we make sure that no need for multiple tfrecords we can remove the if-else statement
+        dataset_dir = os.path.join(base_dir,'train_%s_gesture.tfrecord_shuffle' % net)
+        print('dataset dir is:',dataset_dir)
+        image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, config.BATCH_SIZE, net)
     #gesture_dir    
     if net == 'PNet':
         image_size = 12
@@ -226,13 +231,8 @@ def train(net_factory, prefix, end_epoch, base_dir,
     #get loss and accuracy
     # print(bbox_target)
     # print(gesture_target)
-<<<<<<< HEAD
-    input_image = image_color_distort(input_image) # randomly adjust contrast, saturation etc.
-    cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True,testing=False)
-=======
     input_image = image_color_distort(input_image)
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True)
->>>>>>> d0079d24789f2f6c44233af480cdf8a2a60f9071
     #train,update learning rate(3 loss)
     total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
     train_op, lr_op = train_model(base_lr,
@@ -252,7 +252,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     tf.summary.scalar("bbox_loss",bbox_loss_op)#bbox_loss
     tf.summary.scalar("gesture_loss",gesture_loss_op)#gesture_loss
     tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, gesture loss and L2 loss add together
-    tf.summary.scaler("learn_rate",lr_op)#logging learning rate
+    tf.summary.scalar("learn_rate",lr_op)#logging learning rate
     summary_op = tf.summary.merge_all()
 
     time = 'train-{}-{date:%Y-%m-%d_%H:%M:%S}'.format(net, date=datetime.now() )
@@ -320,7 +320,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
             writer.add_summary(summary,global_step=step)
 
     except tf.errors.OutOfRangeError:
-        print("Finished!( � �つロ乾杯")
+        print("Finished!")
     finally:
         coord.request_stop()
         writer.close()
@@ -379,7 +379,7 @@ def test(net_factory, prefix, base_dir, display=100, batchsize = 1):
     gesture_target = tf.placeholder(tf.float32,shape=[batchsize,3],name='gesture_target')
 
     input_image = image_color_distort(input_image)
-    cls_pro, bbox_pred, gesture_pred = net_factory(input_image, training=False, testing=True)
+    cls_pro, bbox_pred, gesture_pred = net_factory(input_image, training=False)
 
     """
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=False)
@@ -515,7 +515,7 @@ def test(net_factory, prefix, base_dir, display=100, batchsize = 1):
         
 
     except tf.errors.OutOfRangeError:
-        print("Finished!( � �つロ乾杯")
+        print("Finished!( � �つロ乾杯")
     finally:
         coord.request_stop()
         writer.close()

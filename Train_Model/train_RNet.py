@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from mtcnn_model import P_Net
 from train import train, test
 
@@ -49,6 +48,8 @@ if __name__ == '__main__':
 
 
 =======
+=======
+>>>>>>> 8be4ff448102083ab46d3635c7a3de300101affd
 #coding:utf-8
 from mtcnn_model import R_Net
 from train import train
@@ -73,8 +74,7 @@ if __name__ == '__main__':
     model_name = 'MTCNN'
     model_path = '../Model/%s/RNet_No_Landmark/RNet' % model_name
     prefix = model_path
-    end_epoch = 22
+    end_epoch = 160 #was 22
     display = 100
-    lr = 0.001
+    lr = 0.01 #was 0.001
     train_RNet(base_dir, prefix, end_epoch, display, lr)
->>>>>>> d0079d24789f2f6c44233af480cdf8a2a60f9071
