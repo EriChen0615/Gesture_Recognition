@@ -8,7 +8,7 @@
 
   `Image_postfix = YourImagePostfix` (Postfix without '.')
 
-- Model weights should be put at the path `Model/{One Net}/` and should contain four files:
+- Model weights should be put at the path `Model/NetName}/` and should contain four files:
 
   e.g.
 
