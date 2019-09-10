@@ -55,4 +55,4 @@ The results will be saved in the MTCNN_demo folder, Depending on test_mode
 - MTCNN_demo/RNet/{Your sub-folder name}/ResultImage
 - MTCNN_demo/ONet/{Your sub-folder name}/ResultImage
 
-For RNet and ONet, in the ResultImage folder, a sub-folder`prediction` is generated to store image for each bounding box and its classification.
+For RNet and ONet, in the ResultImage folder, a sub-folder`prediction` is generated to store images for each bounding box and its classification.
