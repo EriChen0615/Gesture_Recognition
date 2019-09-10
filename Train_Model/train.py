@@ -314,7 +314,8 @@ def train(net_factory, prefix, end_epoch, base_dir,
                 cls_loss, bbox_loss,L2_loss,lr,acc = sess.run([cls_loss_op, bbox_loss_op,L2_loss_op,lr_op,accuracy_op],
                                                              feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array})
 
-                total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
+                # total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
+                total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + L2_loss
                 # gesture loss: %4f,
                 # print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f,gesture loss :%4f,L2 loss: %4f, Total Loss: %4f ,lr:%f " % (
                 # datetime.now(), step+1,MAX_STEP, acc, cls_loss, bbox_loss,gesture_loss, L2_loss,total_loss, lr))
