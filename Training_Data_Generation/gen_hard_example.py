@@ -198,12 +198,12 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Test mtcnn',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--test_mode', dest='test_mode', help='test net type, can be pnet, rnet or onet',
-                        default='PNet', type=str)
+                        default='RNet', type=str)
     parser.add_argument('--prefix', dest='prefix', help='prefix of model name', nargs="+",
-                        default=['../Model/MTCNN/PNet'],
+                        default=['../Model/MTCNN/PNet','../Model/MTCNN/RNet'],
                         type=str) # model file location
     parser.add_argument('--epoch', dest='epoch', help='epoch number of model to load', nargs="+",
-                        default=[500], type=int)
+                        default=[500,300], type=int)
     parser.add_argument('--batch_size', dest='batch_size', help='list of batch size used in prediction', nargs="+",
                         default=[2048, 256, 16], type=int)
     parser.add_argument('--thresh', dest='thresh', help='list of thresh for pnet, rnet, onet', nargs="+",
@@ -222,7 +222,7 @@ def parse_args():
 
 if __name__ == '__main__':
 
-    net = 'RNet'
+    net = 'ONet'
 
     if net == "RNet":
         image_size = 24
