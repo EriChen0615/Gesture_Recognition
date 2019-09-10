@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # ignore the dataset
-Training_Data/
+
 
 # C extensions
 *.so
