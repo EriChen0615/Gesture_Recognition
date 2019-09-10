@@ -177,7 +177,7 @@ stride = 2
 slide_window = False
 shuffle = False
 detectors = [None, None, None]
-model_path = ['Model/PNet/PNet-500', 'Model/RNet/RNet_No_Landmark/RNet-500', 'Model/ONet/ONet-500']
+model_path = ['Model/PNet/PNet-500', 'Model/RNet/RNet-500', 'Model/ONet/ONet-500']
 epoch = [500, 500, 16]
 batch_size = [300, 300, 300]
 print(model_path)

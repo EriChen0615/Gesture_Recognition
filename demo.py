@@ -178,13 +178,15 @@ stride = 2
 slide_window = False
 shuffle = False
 detectors = [None, None, None]
-model_path = ['Model/PNet/PNet-500', 'Model/RNet/RNet_No_Landmark/RNet-500', 'Model/ONet/ONet-116']
+model_path = ['Model/PNet/PNet-500', 'Model/RNet//RNet-500', 'Model/ONet/ONet-116']
+TestImage_folder = "Train"
+Image_postfix = 'jpg'
 epoch = [500, 500, 500]
 batch_size = [300, 300, 300]
 print(model_path)
 
-TestImage_path = "Testing_Demo_Data/Train/"
-TestResult_path = "MTCNN_demo/{}/ResultImage/Train/".format(test_mode)
+TestImage_path = "Testing_Demo_Data/{}/".format(TestImage_folder)
+TestResult_path = "MTCNN_demo/{}/ResultImage/{}/".format(test_mode, TestImage_folder)
 
 mkdir(TestResult_path)
 mkdir(TestResult_path+'prediction/')
@@ -213,7 +215,7 @@ mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
                                stride=stride, threshold=thresh, slide_window=slide_window)
 gt_imdb = []
 
-_, img_list = scan_file(TestImage_path, 'jpg')
+_, img_list = scan_file(TestImage_path, Image_postfix)
 for item in img_list:
     gt_imdb.append(os.path.join(TestImage_path, item))
 test_data = TestLoader(gt_imdb)
