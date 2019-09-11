@@ -1,4 +1,4 @@
-from mtcnn_model import P_Net
+from mtcnn_model import P_Net,R_Net,O_Net
 from train import train
 import argparse
 
