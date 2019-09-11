@@ -12,7 +12,6 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-def train_ONet(base_dir, prefix, end_epoch, display, lr):
     """
     train PNet
     :param dataset_dir: tfrecord path
@@ -23,7 +22,7 @@ def train_ONet(base_dir, prefix, end_epoch, display, lr):
     :return:
     """
     net_factory = O_Net
-    train(net_factory, prefix, end_epoch, base_dir, display=display, base_lr=lr)
+    train(net_factory, prefix, end_epoch, base_dir, display=display, base_lr=lr, with_gesture)
 
 if __name__ == '__main__':
  
@@ -40,4 +39,5 @@ if __name__ == '__main__':
     end_epoch = int(args.end_epoch)
     display = 20
 
-    train_ONet(base_dir, prefix, end_epoch, display, lr)
+    with_gesture = False
+    train_ONet(base_dir, prefix, end_epoch, display, lr, with_gesture)

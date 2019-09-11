@@ -12,7 +12,7 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-def train_PNet(base_dir, prefix, end_epoch, display, lr):
+def train_PNet(base_dir, prefix, end_epoch, display, lr, with_gesture):
     """
     train PNet
     :param base_dir: tfrecord path
@@ -23,7 +23,7 @@ def train_PNet(base_dir, prefix, end_epoch, display, lr):
     :return:
     """
     net_factory = P_Net # P_Net is a function defined in mtcnn_model
-    train(net_factory,prefix, end_epoch, base_dir, display=display, base_lr=lr)
+    train(net_factory,prefix, end_epoch, base_dir, display=display, base_lr=lr, with_gesture)
 
 
 
@@ -42,10 +42,15 @@ if __name__ == '__main__':
     display = 20
 
     """change base learning rate here!"""
+<<<<<<< HEAD
+    lr = 0.1 #was 0.001
+    with_gesture = False
+=======
     lr = float(args.lr) #was 0.001
+>>>>>>> 6b3ab7a425f72b8e639cd261ba11822ac9899f0b
 
     print("------------------Training Started-------------------\n")
-    train_PNet(base_dir, prefix, end_epoch, display, lr)
+    train_PNet(base_dir, prefix, end_epoch, display, lr, with_gesture)
 
     print("------------------Training Finished-------------------\n")
 

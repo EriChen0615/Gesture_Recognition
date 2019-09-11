@@ -24,7 +24,7 @@ def train_RNet(base_dir, prefix, end_epoch, display, lr):
     :return:
     """
     net_factory = R_Net
-    train(net_factory, prefix, end_epoch, base_dir, display=display, base_lr=lr)
+    train(net_factory, prefix, end_epoch, base_dir, display=display, base_lr=lr, with_gesture)
 
 if __name__ == '__main__':
 
@@ -41,4 +41,5 @@ if __name__ == '__main__':
     end_epoch = int(args.end_epoch)
     display = 20
 
-    train_RNet(base_dir, prefix, end_epoch, display, lr)
+    with_gesture = False
+    train_RNet(base_dir, prefix, end_epoch, display, lr, with_gesture)
