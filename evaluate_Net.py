@@ -333,7 +333,7 @@ def main(test_mode="ONet"):
     # print result
     print('=================== Result =====================\n')
 
-    print(" Testing samples: {};\n Testing Model: {};\n Testing Net: {}.\n".format(len(img_list), model_path[0], test_mode))
+    print(" Testing samples: {};\n Testing Model: {};\n Testing Net: {}.\n".format(len(img_list), model_path, test_mode))
 
     print("1. Max FPR: {}, Min FPR: {}, Average FPR: {}".
           format(round(max(FPR_set), 4), round(min(FPR_set), 4), round(sum(FPR_set) / len(FPR_set), 4)))
