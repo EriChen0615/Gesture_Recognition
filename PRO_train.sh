@@ -11,9 +11,9 @@ anno_name=imglist_with_gesture.txt
 
 tfrecord_dir=imglists
 base_lr=0.1
-pend_epoch=5
-rend_epoch=5
-oend_epoch=5
+pend_epoch=4
+rend_epoch=4
+oend_epoch=4
 
 
 # PNet data generation
@@ -26,15 +26,15 @@ python gen_gesture.py --net PNet --im_dir ../$raw_img_dir --anno_file $anno_name
 python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
 python gen_tfrecord.py --net PNet --data_dir ../$output_dir/$net
 cd ..
-echo('PNet data generation completes!')
+echo 'PNet data generation completes!'
 
 # PNet training
 
 cd Train_Model
-python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $base_lr --end_epoch $end_epoch
+python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $base_lr --end_epoch $pend_epoch
 cd ..
 
-echo('PNet training completes!')
+echo 'PNet training completes!'
 
 # RNet data generation
 net=RNet
@@ -45,35 +45,35 @@ python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
 python gen_tfrecord.py --net RNet --data_dir ../$output_dir/$net
 cd ..
 
-echo('RNet data generation completes!')
+echo 'RNet data generation completes!'
 
 # RNet training
 cd Train_Model
-python train_net --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $base_lr --end_epoch $rend_epoch
+python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $base_lr --end_epoch $rend_epoch
 cd ..
 
-echo('RNet training completes')
+echo 'RNet training completes'
 
 # ONet data generation
 net=ONet
 cd prepare_data
-python gen_data.py --test_mode RNet --anno_file $anno_name --im_dir ../$raw_img_dir --save_dir ../$output_dir/$net --epoch $pnet_epoch $rnet_epoch --prefix ../$net_prefix/PNet ../$rnet_prefix/RNet
+python gen_data.py --test_mode RNet --anno_file $anno_name --im_dir ../$raw_img_dir --save_dir ../$output_dir/$net --epoch $pend_epoch $rend_epoch --prefix ../$net_prefix/PNet ../$rnet_prefix/RNet
 python gen_gesture.py --net $net --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
 python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
 python gen_tfrecord.py --net $net --data_dir ../$output_dir/$net
 cd ..
 
-echo('ONet data generation completes')
+echo 'ONet data generation completes'
 
 # ONet training
 cd Train_Model
-python train_net --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $base_lr --end_epoch $oend_epoch
+python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $base_lr --end_epoch $oend_epoch
 cd ..
 
-echo('ONet training completes')
+echo 'ONet training completes'
 
-echo('PRO training completes!')
-echo(model name: $model_name)
-echo(output_dir: $output_dir)
-echo(save_path: $net_prefix)
-echo(dataset: $raw_img_dir)
+echo 'PRO training completes!'
+echo 'model name: $model_name'
+echo 'output_dir: $output_dir'
+echo 'save_path: $net_prefix'
+echo 'dataset: $raw_img_dir'

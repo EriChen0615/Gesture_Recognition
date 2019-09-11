@@ -34,13 +34,13 @@ if __name__ == '__main__':
     save_dir = args.save_dir
 
     if not os.path.exists(save_dir):
-        os.mkdir(save_dir)
+        os.makedirs(save_dir)
     if not os.path.exists(pos_save_dir):
-        os.mkdir(pos_save_dir)
+        os.makedirs(pos_save_dir)
     if not os.path.exists(part_save_dir):
-        os.mkdir(part_save_dir)
+        os.makedirs(part_save_dir)
     if not os.path.exists(neg_save_dir):
-        os.mkdir(neg_save_dir)
+        os.makedirs(neg_save_dir)
 
     f1 = open(os.path.join(save_dir, 'pos_12.txt'), 'w+')
     f2 = open(os.path.join(save_dir, 'neg_12.txt'), 'w+')
