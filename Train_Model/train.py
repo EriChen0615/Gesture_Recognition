@@ -184,11 +184,6 @@ def train(net_factory, prefix, end_epoch, base_dir,
         #dataset_dir = os.path.join(base_dir,'train_%s_ALL.tfrecord_shuffle' % net)
         dataset_dir = os.path.join(base_dir,'train_%s_gesture.tfrecord_shuffle' % net)
         print('dataset dir is:',dataset_dir)
-        if with_gesture:
-            image_batch, label_batch, bbox_batch, _ = read_single_tfrecord(dataset_dir, config.BATCH_SIZE, net)
-        else:
-            image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, config.BATCH_SIZE, net)
-        # 
         
     #RNet use 3 tfrecords to get data    
     else:
@@ -215,10 +210,8 @@ def train(net_factory, prefix, end_epoch, base_dir,
         # if we make sure that no need for multiple tfrecords we can remove the if-else statement
         dataset_dir = os.path.join(base_dir,'train_%s_gesture.tfrecord_shuffle' % net)
         print('dataset dir is:',dataset_dir)
-        if with_gesture:
-            image_batch, label_batch, bbox_batch, _ = read_single_tfrecord(dataset_dir, config.BATCH_SIZE, net)
-        else:
-            image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, config.BATCH_SIZE, net)
+    
+    image_batch, label_batch, bbox_batch, gesture_batch = read_single_tfrecord(dataset_dir, config.BATCH_SIZE, net)
         # 
     #gesture_dir    
     if net == 'PNet':
