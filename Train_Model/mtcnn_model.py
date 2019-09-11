@@ -346,7 +346,7 @@ def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,
     
     """ -------NEED MODIFICATION BEFORE NEXT STAGE TRAINING-------- """
 # PLEASE MODIFY THE FN BEFORE TRAINING ONET!!!
-def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True,with_gesture):
+def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True,with_gesture=False):
     with slim.arg_scope([slim.conv2d],
                         activation_fn = prelu,
                         weights_initializer=slim.xavier_initializer(),
