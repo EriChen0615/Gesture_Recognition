@@ -1,6 +1,16 @@
 from mtcnn_model import P_Net
 from train import train
+import argparse
 
+def parse_args():
+    parser = argparse.ArgumentParser(description='Train PNet',
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('--model_name',dest='model_name',help='the name of the model',default='MTCNN')
+    parser.add_argument('--tfrecord_dir',dest='tfrecord_dir',help='directory for tfrecord',default='../Dataset/Training/imglists/PNet')
+    parser.add_argument('--base_lr',dest='lr',help='starting learn rate for training',default=0.1)
+    parser.add_argument('--end_epoch',dest='end_epoch',help='end epoch',default=30)
+    args = parser.parse_args()
+    return args
 
 def train_PNet(base_dir, prefix, end_epoch, display, lr, with_gesture):
     """
@@ -18,21 +28,26 @@ def train_PNet(base_dir, prefix, end_epoch, display, lr, with_gesture):
 
 
 if __name__ == '__main__':
+    args = parse_args()
     #data path
-    base_dir = '../Dataset/Training/imglists/PNet'
-    model_name = 'MTCNN'
+    base_dir = args.tfrecord_dir
+    model_name = args.model_name
     #model_path = '../data/%s_model/PNet/PNet' % model_name
     #with gesture
-    model_path = '../Model/{0}/PNet_NO_Landmark/PNet'.format(model_name)
+    model_path = '../Model/{0}/PNet'.format(model_name)
     # model_path = '../Model/{0}/PNet/PNet'.format(model_name)
     
     prefix = model_path
-    end_epoch = 30
+    end_epoch = int(args.end_epoch)
     display = 20
 
     """change base learning rate here!"""
+<<<<<<< HEAD
     lr = 0.1 #was 0.001
     with_gesture = False
+=======
+    lr = float(args.lr) #was 0.001
+>>>>>>> 6b3ab7a425f72b8e639cd261ba11822ac9899f0b
 
     print("------------------Training Started-------------------\n")
     train_PNet(base_dir, prefix, end_epoch, display, lr, with_gesture)
