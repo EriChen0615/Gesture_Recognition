@@ -1,0 +1,7 @@
+@ 14
+! 101 one
+! 101 fist
+! 101 others
+- XW-Dataset/Training/one/ one
+- XW-Dataset/Training/fist/ fist
+- XW-Dataset/Training/others/ others
