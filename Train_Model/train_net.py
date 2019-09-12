@@ -32,7 +32,7 @@ def train_net(base_dir, prefix, end_epoch, display, lr, net, with_gesture=False)
     elif net == 'ONet':
         net_factory = O_Net
 
-    train(net_factory,prefix, end_epoch, base_dir, display=display, base_lr=lr,with_gesture)
+    train(net_factory,prefix, end_epoch, base_dir, display=display, base_lr=lr,with_gesture=with_gesture)
 
 
 

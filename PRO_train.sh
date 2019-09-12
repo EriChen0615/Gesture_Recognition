@@ -1,6 +1,6 @@
 #!/bin/bash
 
-env_name=tf-gpu
+env_name=tf
 model_name=MTCNN-test
 output_dir=Training_Data/$model_name
 net_prefix=Model/MTCNN-test
