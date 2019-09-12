@@ -5,8 +5,8 @@ model_name=MTCNN-test
 output_dir=Training_Data/$model_name
 net_prefix=Model/MTCNN-test
 
-raw_img_dir=Dataset/Training
-anno_name=imglist_with_gesture.txt
+raw_img_dir=ego_data/Training
+anno_name=imglist_without_gesture.txt
 
 
 tfrecord_dir=imglists
@@ -23,7 +23,8 @@ net=PNet
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate $env_name
 cd prepare_ego_data
-python PNet_gen_data.py --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
+python PNet_gen_data.py --im_dir ../$raw_img_dir  --save_dir ../$output_dir/$net
+python handle_data_to_training.py 
 python gen_gesture.py --net PNet --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
 python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
 python gen_tfrecord.py --net PNet --data_dir ../$output_dir/$net

@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
 
 
-    with open(os.path.join('../ego_data','Training','imglist_with_gesture.txt'),'w+') as f_out:
+    with open(os.path.join('../ego_data','Training','imglist_without_gesture.txt'),'w+') as f_out:
         for gs,f_gs in gest_anno.items():
             annos = f_gs.read().splitlines()
             for anno in annos:
