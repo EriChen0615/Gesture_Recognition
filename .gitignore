@@ -5,6 +5,7 @@ __pycache__/
 
 # ignore the dataset
 Training_Data/
+ego_data/
 
 # C extensions
 *.so
