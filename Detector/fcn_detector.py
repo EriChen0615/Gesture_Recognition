@@ -7,7 +7,7 @@ import sys
 class FcnDetector(object):
     #net_factory: which net
     #model_path: where the params'file is
-    def __init__(self, net_factory, model_path,with_gesture=False):
+    def __init__(self, net_factory, model_path):
         #create a graph
         graph = tf.Graph()
         with graph.as_default():
@@ -21,10 +21,7 @@ class FcnDetector(object):
             #construct model here
             #self.cls_prob, self.bbox_pred = net_factory(image_reshape, training=False)
             #contains landmark
-            if with_gesture:
-                self.cls_prob, self.bbox_pred, _ = net_factory(image_reshape, None, None, None, training=False)
-            else:
-                self.cls_prob, self.bbox_pred = net_factory(image_reshape, None, None, None, training=False)
+            self.cls_prob, self.bbox_pred, _ = net_factory(image_reshape, None, None, None, training=False)
             
             #allow 
             self.sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True, gpu_options=tf.GPUOptions(allow_growth=True)))
