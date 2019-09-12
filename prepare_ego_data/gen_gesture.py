@@ -162,16 +162,18 @@ def GenerateData(ftxt,data_path,net,augment=False):
                         """
                         F_gesture.append(gesture)
                         """
-                    #rotate
-                    if random.choice([0,1]) > 0:
-                        hand_rotated_by_alpha = rotate(img, bbox, 5)#anti-clockwise
-                        #gesture_offset
-                        #gesture_rotated = bbox.projectGesture(gesture_rotated)
-                        hand_rotated_by_alpha = cv2.resize(hand_rotated_by_alpha, (size, size))
-                        F_imgs.append(hand_rotated_by_alpha)
-                        """
-                        F_gesture.append(gesture)
-                        """
+                    
+                    # 这个操作并不太有道理 所以还是算了
+                    # #rotate
+                    # if random.choice([0,1]) > 0:
+                    #     hand_rotated_by_alpha = rotate(img, bbox, 5)#anti-clockwise
+                    #     #gesture_offset
+                    #     #gesture_rotated = bbox.projectGesture(gesture_rotated)
+                    #     hand_rotated_by_alpha = cv2.resize(hand_rotated_by_alpha, (size, size))
+                    #     F_imgs.append(hand_rotated_by_alpha)
+                    #     """
+                    #     F_gesture.append(gesture)
+                    #     """
                 
                         #flip
                         hand_flipped = flip(hand_rotated_by_alpha)
@@ -227,7 +229,7 @@ def GenerateData(ftxt,data_path,net,augment=False):
                 gestures = map(str,list(F_gesture[i]))
                 f.write(name+" -2 "+" ".join(gestures)+"\n")
                 """
-                f.write(name+" -2 "+" ".join(gestures)+"\n")
+                f.write(name+" -2 "+" ".join([0, 0, 0])"\n") #这里统一处理成000了以后要用到再说吧 
                 image_id = image_id + 1
             
     #print F_imgs.shape
