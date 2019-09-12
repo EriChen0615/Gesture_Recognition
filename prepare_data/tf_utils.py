@@ -158,7 +158,7 @@ def _process_image(filename, coder):
     # image_data = sess.run(tf.cast(resized_image, tf.uint8)).tobytes()
     # image = Image.open(filename)  # 图片的类型必须为array
 
-    print(filename)
+   #print(filename)
     image = cv2.imread(filename)
     # image.show()
     # image_data = image.tobytes()
@@ -166,7 +166,7 @@ def _process_image(filename, coder):
 
     # Clean the dirty data.
     if _is_png(filename):
-        print(filename, 'to convert jpeg')
+        #print(filename, 'to convert jpeg')
         image_data = coder.png_to_jpeg(image_data)
 
     # Decode the RGB JPEG.
@@ -182,7 +182,7 @@ def _process_image(filename, coder):
     return image_data, height, width
 
 def _process_image_withoutcoder(filename):
-    print(filename)
+    #print(filename)
     image = cv2.imread(filename)
     #print(type(image))
     # transform data into string format

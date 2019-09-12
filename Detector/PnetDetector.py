@@ -230,19 +230,19 @@ class PnetDetector(object):
             # boxes: num*9(x1,y1,x2,y2,score,x1_offset,y1_offset,x2_offset,y2_offset)
             boxes = self.generate_bbox(cls_cls_map[:, :, 1], reg, current_scale, self.thresh[0])
 
-            with open("{}/{}_{}.txt".format('PNet_demo/raw/', time.time(), round(current_scale, 2)), 'w') as f:
-                # f.write('{}'.format(cls_cls_map))
-                f.write('map shape:{}\n'.format(cls_cls_map[:, :, 1].shape))
-                f.write('\n\n============== map =============\n\n')
-                f.write('{}'.format(cls_cls_map[:, :, 1]))
-                f.write('\n\n============== scale =============\n\n')
-                f.write('{}'.format(current_scale))
-                f.write('\n\n============== reg =============\n\n')
-                f.write('reg shape:{}\n'.format(cls_cls_map[:, :, 1].shape))
-                f.write('{}'.format(reg))
-                f.write('\n\n============== box =============\n\n')
-                f.write('box shape:{}\n'.format(boxes.shape))
-                f.write('{}'.format(boxes))
+            # with open("{}/{}_{}.txt".format('PNet_demo/raw/', time.time(), round(current_scale, 2)), 'w') as f:
+            #     # f.write('{}'.format(cls_cls_map))
+            #     f.write('map shape:{}\n'.format(cls_cls_map[:, :, 1].shape))
+            #     f.write('\n\n============== map =============\n\n')
+            #     f.write('{}'.format(cls_cls_map[:, :, 1]))
+            #     f.write('\n\n============== scale =============\n\n')
+            #     f.write('{}'.format(current_scale))
+            #     f.write('\n\n============== reg =============\n\n')
+            #     f.write('reg shape:{}\n'.format(cls_cls_map[:, :, 1].shape))
+            #     f.write('{}'.format(reg))
+            #     f.write('\n\n============== box =============\n\n')
+            #     f.write('box shape:{}\n'.format(boxes.shape))
+            #     f.write('{}'.format(boxes))
 
 
             # scale_factor is 0.79 in default

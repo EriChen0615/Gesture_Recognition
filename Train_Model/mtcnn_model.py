@@ -9,7 +9,7 @@ num_keep_radio = 0.7 # ratio for online hard sample mining
 def prelu(inputs):
     #set a tensor alphas the same shape as the last dimension of inputs, and initialize its elements to be all 0.25
     alphas = tf.get_variable("alphas", shape=inputs.get_shape()[-1], dtype=tf.float32, initializer=tf.constant_initializer(0.25))
-    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小�的值赋值为0，输入大�的值不�
+    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小�的值赋值为0，输入大�的值不�
     neg = alphas * (inputs-abs(inputs))*0.5 
     return pos + neg
 
@@ -190,7 +190,7 @@ def _activation_summary(x):
 
 #construct Pnet
 #label:batch
-def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,with_gesture=False):
+def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
     #define common param
     with slim.arg_scope([slim.conv2d],
                         activation_fn=prelu,
@@ -266,10 +266,7 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,
             
             accuracy = cal_accuracy(cls_prob,label)
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
-            if with_gesture:
-                return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
-            else:
-                return cls_loss,bbox_loss,L2_loss,accuracy #without gesture loss
+            return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         #test
 
         else:
@@ -281,10 +278,8 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,
             gesture_pred_test = tf.squeeze(gesture_pred,name="gesture_pred")
             print("gesture_pred_test: ", gesture_pred_test.get_shape())
             
-            if with_gesture:
-                return cls_pro_test,bbox_pred_test,gesture_pred_test
-            else:
-                return cls_pro_test,bbox_pred_test
+            return cls_pro_test,bbox_pred_test,gesture_pred_test
+
         # #inference
         # else:
         #     #when inference,batch_size = 1
@@ -295,7 +290,7 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,
         #     return cls_pro_test,bbox_pred_test,gesture_pred_test
 
 
-def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,with_gesture=False):
+def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False):
     with slim.arg_scope([slim.conv2d],
                         activation_fn = prelu,
                         weights_initializer=slim.xavier_initializer(),
@@ -334,19 +329,14 @@ def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False,
             accuracy = cal_accuracy(cls_prob,label)
             gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
-            if with_gesture:
-                return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
-            else:
-                return cls_loss,bbox_loss,L2_loss,accuracy
+            return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
+
         else:
-            if with_gesture:
-                return cls_prob,bbox_pred,gesture_pred
-            else:
-                return cls_prob,bbox_pred
+            return cls_prob,bbox_pred,gesture_pred
     
     """ -------NEED MODIFICATION BEFORE NEXT STAGE TRAINING-------- """
 # PLEASE MODIFY THE FN BEFORE TRAINING ONET!!!
-def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True,with_gesture=False):
+def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
     with slim.arg_scope([slim.conv2d],
                         activation_fn = prelu,
                         weights_initializer=slim.xavier_initializer(),
@@ -389,12 +379,7 @@ def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True,w
             accuracy = cal_accuracy(cls_prob,label)
             gesture_loss = gesture_ohem(gesture_pred, gesture_target,label)
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
-            if with_gesture:
-                return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
-            else:
-                return cls_loss,bbox_loss,L2_loss,accuracy
+            return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         else:
-            if with_gesture:
-                return cls_prob,bbox_pred,gesture_pred
-            else:
-                return cls_prob,bbox_pred
+            return cls_prob,bbox_pred,gesture_pred
+        

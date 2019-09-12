@@ -2,8 +2,8 @@
 
 output_dir='Training_Data/ONet-48'
 anno_name='imglist_with_gesture.txt'
-pnet_prefix='Model/MTCNN/PNet'
-rnet_prefix='Model/MTCNN/RNet'
+pnet_prefix='Model/MTCNN-test/PNet'
+rnet_prefix='Model/MTCNN-test/RNet'
 pnet_epoch=30
 rnet_epoch=30
 raw_img_dir='Dataset/Training'
