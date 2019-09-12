@@ -3,6 +3,9 @@ This file is to generate training data for task2 & 3 in PNet
 Will be merge with the previously generated data in another file:
 PNet_Data.py
 
+This version will generate data without gesture info 
+if want to use gesture later pls go to initial version 
+
 """
 import os
 import random
@@ -25,7 +28,7 @@ def parse_args():
     parser.add_argument('--im_dir',dest='im_dir',help='base directory for the dataset used')
     parser.add_argument('--anno_file', dest='anno_file', help='name of the annotation file ',
                         default='imglist_with_gesture.txt', type=str)
-    parser.add_argument('--save_dir', dest='save_dir', help='directory to save the training data', default='../Training_Data/-PNet-12') # model file location
+    parser.add_argument('--save_dir', dest='save_dir', help='directory to save the training data', default='../ego_data/Training/PNet-12') # model file location
     args = parser.parse_args()
     return args
 
@@ -52,16 +55,21 @@ def GenerateData(ftxt,data_path,net,augment=False):
         return
     image_id = 0
     #
-    f = open(join(OUTPUT,"gesture_%s_aug.txt" %(size)),'w')
+    f = open(join(OUTPUT,"%s_aug.txt" %(size)),'w')
     #dstdir = "train_landmark_few"
     # get image path , bounding box, and landmarks from file 'ftxt'
-    data = getDataFromTxt(ftxt,data_path=data_path)
+    data = getDataFromTxt(ftxt,data_path=data_path,with_gesture=False)
     idx = 0
     #image_path bbox landmark(5*2)
+    """
     for (imgPath, bbox, gestureGt) in data:
+    """
+    for (imgPath, bbox) in data:
         #print imgPath
         F_imgs = []
+        """
         F_gesture = []
+        """
         #print(imgPath)
         #print(bbox)
         img = cv2.imread(imgPath)
@@ -75,13 +83,14 @@ def GenerateData(ftxt,data_path,net,augment=False):
         f_hand = img[bbox.top:bbox.bottom+1,bbox.left:bbox.right+1]
         # resize the gt image to specified size
         f_hand = cv2.resize(f_hand,(size,size))
+        """
         #initialize the gesture
         gesture = np.zeros(3)
         #print('gestureGt',gestureGt)
         for index, item in enumerate(gestureGt):
             #print('item',item)
             gesture[index] = item
-
+        """
         # #normalize gesture by dividing the width and height of the ground truth bounding box
         # # gestureGt is a list of tuples
         # for index, one in enumerate(gestureGt):
@@ -90,7 +99,9 @@ def GenerateData(ftxt,data_path,net,augment=False):
         #     # put the normalized value into the new list landmark
         #     gesture[index] = rv
         F_imgs.append(f_hand)
+        """
         F_gesture.append(gesture.reshape(3))
+        """
         #print('F_gesture',F_gesture)
         #gesture = np.zeros(3)
         if augment:
@@ -128,15 +139,16 @@ def GenerateData(ftxt,data_path,net,augment=False):
                 if iou > 0.65:
                     F_imgs.append(resized_im)
 
-
+                    """
                     for index, item in enumerate(gestureGt):
                         gesture[index] = item
-
+                    
                     # #normalize
                     # for index, one in enumerate(gestureGt):
                     #     rv = ((one[0]-nx1)/bbox_size, (one[1]-ny1)/bbox_size)
                     #     gesture[index] = rv
                     F_gesture.append(gesture)
+                    """
                     #gesture = np.zeros(3)
                     #gesture_ = F_gesture[-1].reshape(-1,2)
                     bbox = BBox([nx1,ny1,nx2,ny2])                    
@@ -147,7 +159,9 @@ def GenerateData(ftxt,data_path,net,augment=False):
                         hand_flipped = cv2.resize(hand_flipped, (size, size))
                         #c*h*w
                         F_imgs.append(hand_flipped)
+                        """
                         F_gesture.append(gesture)
+                        """
                     #rotate
                     if random.choice([0,1]) > 0:
                         hand_rotated_by_alpha = rotate(img, bbox, 5)#anti-clockwise
@@ -155,13 +169,17 @@ def GenerateData(ftxt,data_path,net,augment=False):
                         #gesture_rotated = bbox.projectGesture(gesture_rotated)
                         hand_rotated_by_alpha = cv2.resize(hand_rotated_by_alpha, (size, size))
                         F_imgs.append(hand_rotated_by_alpha)
+                        """
                         F_gesture.append(gesture)
+                        """
                 
                         #flip
                         hand_flipped = flip(hand_rotated_by_alpha)
                         hand_flipped = cv2.resize(hand_flipped, (size, size))
                         F_imgs.append(hand_flipped)
+                        """
                         F_gesture.append(gesture)
+                        """
                     
                     #anti-clockwise rotation
                     if random.choice([0,1]) > 0: 
@@ -169,19 +187,25 @@ def GenerateData(ftxt,data_path,net,augment=False):
                         #gesture_rotated = bbox.projectGesture(gesture_rotated)
                         hand_rotated_by_alpha = cv2.resize(hand_rotated_by_alpha, (size, size))
                         F_imgs.append(hand_rotated_by_alpha)
+                        """
                         F_gesture.append(gesture)
+                        """
                 
                         hand_flipped = flip(hand_rotated_by_alpha)
                         hand_flipped = cv2.resize(hand_flipped, (size, size))
                         F_imgs.append(hand_flipped)
+                        """
                         F_gesture.append(gesture)
+                        """
 
             #print(len(F_imgs))
             #print(len(F_gesture))
             F_imgs = np.asarray(F_imgs)
             #print(F_imgs.shape)
             #print(F_gesture)
+            """
             F_gesture = np.asarray(F_gesture)
+            """
             #print F_imgs.shape
             #print F_landmarks.shape
             for i in range(len(F_imgs)):
@@ -199,7 +223,10 @@ def GenerateData(ftxt,data_path,net,augment=False):
                 name.replace('\\','/')
 
                 cv2.imwrite(name, F_imgs[i])
+                """
                 gestures = map(str,list(F_gesture[i]))
+                f.write(name+" -2 "+" ".join(gestures)+"\n")
+                """
                 f.write(name+" -2 "+" ".join(gestures)+"\n")
                 image_id = image_id + 1
             
@@ -209,7 +236,10 @@ def GenerateData(ftxt,data_path,net,augment=False):
     #shuffle_in_unison_scary(F_imgs, F_landmarks)
     
     f.close()
+    """
     return F_imgs,F_gesture
+    """
+    return F_imgs
 
 if __name__ == '__main__':
     args = parse_args()
@@ -230,6 +260,10 @@ if __name__ == '__main__':
 
     #the file contains the names of all the gesture training data
     train_txt = os.path.join(im_dir,_anno_file)
+    """
     imgs,gestures = GenerateData(train_txt,data_path,net,augment=True )
+    """
+    imgs = GenerateData(train_txt,data_path,net,augment=True)
+
     
    

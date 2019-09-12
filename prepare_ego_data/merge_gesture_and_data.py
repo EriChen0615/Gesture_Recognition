@@ -35,7 +35,7 @@ if __name__ == '__main__':
     with open(os.path.join(data_dir, 'part_%s.txt' %(size)), 'r') as f:
         part = f.readlines()
 
-    with open(os.path.join(data_dir,'gesture_%s_aug.txt' %(size)), 'r') as f:
+    with open(os.path.join(data_dir,'%s_aug.txt' %(size)), 'r') as f:
         gesture = f.readlines()
 
     dir_path = os.path.join(data_dir, 'imglists')
@@ -45,7 +45,7 @@ if __name__ == '__main__':
 
     with open(os.path.join(dir_path,"train_%s_gesture.txt"%(net)), "w") as f:
         nums = [len(neg), len(pos), len(part)]
-        ratio = [3, 1, 1]
+        ratio = [2, 1, 1] # was 3 1 1 but we think 3 is too much for neg samples
         base_num = min(nums)
         #base_num = 250000
         print(len(neg), len(pos), len(part), base_num)
@@ -53,8 +53,8 @@ if __name__ == '__main__':
         #shuffle the order of the initial data
         #if negative examples are more than 750k then only choose 750k
 
-        if len(neg) > base_num * 3:
-            neg_keep = npr.choice(len(neg), size=base_num * 3, replace=True)
+        if len(neg) > base_num * 2: # was 3
+            neg_keep = npr.choice(len(neg), size=base_num * 2, replace=True) # was 3
         else:
             neg_keep = npr.choice(len(neg), size=len(neg), replace=True)
         # npr.choice: randomly choose some index to keep
