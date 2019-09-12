@@ -9,7 +9,7 @@ num_keep_radio = 0.7 # ratio for online hard sample mining
 def prelu(inputs):
     #set a tensor alphas the same shape as the last dimension of inputs, and initialize its elements to be all 0.25
     alphas = tf.get_variable("alphas", shape=inputs.get_shape()[-1], dtype=tf.float32, initializer=tf.constant_initializer(0.25))
-    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小�的值赋值为0，输入大�的值不�
+    pos = tf.nn.relu(inputs) #pos has the same dimension as inputs, max(inputs,0) 将输入小�的值赋值为0，输入大�的值不�
     neg = alphas * (inputs-abs(inputs))*0.5 
     return pos + neg
 
@@ -320,8 +320,13 @@ def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
         print("bbox_pred shape: ", bbox_pred.get_shape())
         #batch*3
         gesture_pred = slim.fully_connected(fc1,num_outputs=10,scope="gesture_pre_fc",activation_fn=None)
+<<<<<<< HEAD
         gesture_pred = slim.fully_connected(gesture_pred, num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
         print("gesture_pred shape: ", gesture_pred.get_shape())
+=======
+        gesture_pred = slim.fully_connected(gesture_pred,num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
+        print(gesture_pred.get_shape())
+>>>>>>> xw
         #train
         if training:
             cls_loss = cls_ohem(cls_prob,label,training)
@@ -369,9 +374,15 @@ def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
         bbox_pred = slim.fully_connected(fc1,num_outputs=4,scope="bbox_fc",activation_fn=None)
         print("bbox pred: ", bbox_pred.get_shape())
         #batch*3
+<<<<<<< HEAD
         gesture_pred = slim.fully_connected(fc1,num_outputs=10,scope="gesture_pre_fc",activation_fn=None)
         gesture_pred = slim.fully_connected(gesture_pred,num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
         print("gesture pred: ", gesture_pred.get_shape())
+=======
+        gesture_pred = slim.fully_connected(fc1,num_outputs=10,scope="gesture_pre_fc",activation_fn=tf.nn.softmax)
+        gesture_pred = slim.fully_connected(gesture_pred,num_outputs=3,scope="gesture_fc",activation_fn=tf.nn.softmax)
+        print(gesture_pred.get_shape())
+>>>>>>> xw
         #train
         if training:
             cls_loss = cls_ohem(cls_prob,label,training)

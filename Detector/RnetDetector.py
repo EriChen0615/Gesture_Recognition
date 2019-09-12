@@ -4,10 +4,11 @@ import numpy as np
 import sys
 
 sys.path.append("../")
+
 from Detector.nms import py_nms
 
 
-class MtcnnDetector(object):
+class RnetDetector(object):
 
     def __init__(self,
                  detectors,
@@ -20,7 +21,7 @@ class MtcnnDetector(object):
 
         self.pnet_detector = detectors[0]
         self.rnet_detector = detectors[1]
-        self.onet_detector = detectors[2]
+        # self.onet_detector = detectors[2]
         self.min_face_size = min_face_size
         self.stride = stride
         self.thresh = threshold
@@ -113,7 +114,6 @@ class MtcnnDetector(object):
                                  np.round((stride * t_index[0] + cellsize) / scale),
                                  score,
                                  reg])
-
         return boundingbox.T
 
     # pre-process images
@@ -124,13 +124,17 @@ class MtcnnDetector(object):
         :param scale:
         :return: resized image
         '''
+        # cv2.imshow('processed_img, before', img)
+        # cv2.waitKey(0)
         height, width, channels = img.shape
         new_height = int(height * scale)  # resized new height
         new_width = int(width * scale)  # resized new width
         new_dim = (new_width, new_height)
         img_resized = cv2.resize(img, new_dim, interpolation=cv2.INTER_LINEAR)  # resized image
-        # don't understand this operation
+        # # don't understand this operation
         img_resized = (img_resized - 127.5) / 128
+        # cv2.imshow('processed_img, after', img_resized)
+        # cv2.waitKey(0)
         return img_resized
 
     def pad(self, bboxes, w, h):
@@ -207,23 +211,47 @@ class MtcnnDetector(object):
         current_scale = float(net_size) / self.min_face_size  # find initial scale
         # print("current_scale", net_size, self.min_face_size, current_scale)
         # risize image using current_scale
+        # cv2.imshow('im_before', im)
+        # cv2.waitKey(0)
         im_resized = self.processed_image(im, current_scale)
+        # cv2.imshow('im', im_resized)
+        # cv2.waitKey(0)
         current_height, current_width, _ = im_resized.shape
         #print('current height and width:',current_height,current_width)
         # fcn
         all_boxes = list()
+        print(current_scale)
         while min(current_height, current_width) > net_size:
             # return the result predicted by pnet
             # cls_cls_map : H*w*2
             # reg: H*w*4
-            # class_prob andd bbox_pred
+            # class_prob and bbox_pred
             cls_cls_map, reg = self.pnet_detector.predict(im_resized)
             # boxes: num*9(x1,y1,x2,y2,score,x1_offset,y1_offset,x2_offset,y2_offset)
             boxes = self.generate_bbox(cls_cls_map[:, :, 1], reg, current_scale, self.thresh[0])
+
+            with open("{}/{}_{}.txt".format('PNet_demo/raw/', time.time(), round(current_scale, 2)), 'w') as f:
+                # f.write('{}'.format(cls_cls_map))
+                f.write('map shape:{}\n'.format(cls_cls_map[:, :, 1].shape))
+                f.write('\n\n============== map =============\n\n')
+                f.write('{}'.format(cls_cls_map[:, :, 1]))
+                f.write('\n\n============== scale =============\n\n')
+                f.write('{}'.format(current_scale))
+                f.write('\n\n============== reg =============\n\n')
+                f.write('reg shape:{}\n'.format(cls_cls_map[:, :, 1].shape))
+                f.write('{}'.format(reg))
+                f.write('\n\n============== box =============\n\n')
+                f.write('box shape:{}\n'.format(boxes.shape))
+                f.write('{}'.format(boxes))
+
+
             # scale_factor is 0.79 in default
             current_scale *= self.scale_factor
             im_resized = self.processed_image(im, current_scale)
             current_height, current_width, _ = im_resized.shape
+            print(current_scale, current_height, current_width)
+            # cv2.imshow('im', im_resized)
+            # cv2.waitKey(0)
 
             if boxes.size == 0:
                 continue
@@ -252,6 +280,7 @@ class MtcnnDetector(object):
                              all_boxes[:, 3] + all_boxes[:, 8] * bbh,
                              all_boxes[:, 4]])
         boxes_c = boxes_c.T
+        # print("=====final shape====: ",boxes_c.shape())
 
         return boxes, boxes_c, None
 
@@ -279,39 +308,31 @@ class MtcnnDetector(object):
         [dy, edy, dx, edx, y, ey, x, ex, tmpw, tmph] = self.pad(dets, w, h)
         num_boxes = dets.shape[0]
         cropped_ims = np.zeros((num_boxes, 24, 24, 3), dtype=np.float32)
+        # print(num_boxes)
         for i in range(num_boxes):
+            if tmpw[i]<0 or tmph[i]<0:
+                continue
             tmp = np.zeros((tmph[i], tmpw[i], 3), dtype=np.uint8)
             tmp[dy[i]:edy[i] + 1, dx[i]:edx[i] + 1, :] = im[y[i]:ey[i] + 1, x[i]:ex[i] + 1, :]
             cropped_ims[i, :, :, :] = (cv2.resize(tmp, (24, 24)) - 127.5) / 128
         # cls_scores : num_data*2
         # reg: num_data*4
         # landmark: num_data*10
-        cls_scores, reg, landmark = self.rnet_detector.predict(cropped_ims)
-        # print('------1--------')
-        # print(landmark)
-
+        cls_scores, reg, _ = self.rnet_detector.predict(cropped_ims)
         cls_scores = cls_scores[:, 1]
         keep_inds = np.where(cls_scores > self.thresh[1])[0]
         if len(keep_inds) > 0:
             boxes = dets[keep_inds]
             boxes[:, 4] = cls_scores[keep_inds]
             reg = reg[keep_inds]
-            # print(keep_inds)
-            # print('------2-------')
-            landmark = landmark[keep_inds]
-            # print(landmark)
+            # landmark = landmark[keep_inds]
         else:
             return None, None, None
 
-        # Added
-
         keep = py_nms(boxes, 0.6)
         boxes = boxes[keep]
-        landmark = landmark[keep]
-        # print('------3-------')
-        # print(landmark)
         boxes_c = self.calibrate_box(boxes, reg[keep])
-        return boxes, boxes_c, landmark
+        return boxes, boxes_c, None
 
     def detect_onet(self, im, dets):
         """Get face candidates using onet
@@ -354,12 +375,12 @@ class MtcnnDetector(object):
         else:
             return None, None, None
 
-        # # width
-        # w = boxes[:, 2] - boxes[:, 0] + 1
-        # # height
-        # h = boxes[:, 3] - boxes[:, 1] + 1
-        # landmark[:, 0::2] = (np.tile(w, (5, 1)) * landmark[:, 0::2].T + np.tile(boxes[:, 0], (5, 1)) - 1).T
-        # landmark[:, 1::2] = (np.tile(h, (5, 1)) * landmark[:, 1::2].T + np.tile(boxes[:, 1], (5, 1)) - 1).T
+        # width
+        w = boxes[:, 2] - boxes[:, 0] + 1
+        # height
+        h = boxes[:, 3] - boxes[:, 1] + 1
+        landmark[:, 0::2] = (np.tile(w, (5, 1)) * landmark[:, 0::2].T + np.tile(boxes[:, 0], (5, 1)) - 1).T
+        landmark[:, 1::2] = (np.tile(h, (5, 1)) * landmark[:, 1::2].T + np.tile(boxes[:, 1], (5, 1)) - 1).T
         boxes_c = self.calibrate_box(boxes, reg)
 
         boxes = boxes[py_nms(boxes, 0.6, "Minimum")]
@@ -394,19 +415,19 @@ class MtcnnDetector(object):
 
             t2 = time.time() - t
             t = time.time()
-
-        # onet
-        t3 = 0
-        if self.onet_detector:
-            boxes, boxes_c, landmark = self.detect_onet(img, boxes_c)
-            if boxes_c is None:
-                return np.array([]), np.array([])
-
-            t3 = time.time() - t
-            t = time.time()
-            # print(
-            #    "time cost " + '{:.3f}'.format(t1 + t2 + t3) + '  pnet {:.3f}  rnet {:.3f}  onet {:.3f}'.format(t1, t2,
-            #                                                                                                  t3))
+        #
+        # # onet
+        # t3 = 0
+        # if self.onet_detector:
+        #     boxes, boxes_c, landmark = self.detect_onet(img, boxes_c)
+        #     if boxes_c is None:
+        #         return np.array([]), np.array([])
+        #
+        #     t3 = time.time() - t
+        #     t = time.time()
+        #     # print(
+        #     #    "time cost " + '{:.3f}'.format(t1 + t2 + t3) + '  pnet {:.3f}  rnet {:.3f}  onet {:.3f}'.format(t1, t2,
+        #     #                                                                                                  t3))
 
         return boxes_c, landmark
 
@@ -458,6 +479,7 @@ class MtcnnDetector(object):
 
             if self.rnet_detector:
                 t = time.time()
+                # ignore landmark
                 boxes, boxes_c, landmark = self.detect_rnet(im, boxes_c)
                 t2 = time.time() - t
                 sum_time += t2
@@ -467,26 +489,23 @@ class MtcnnDetector(object):
                     landmarks.append(empty_array)
 
                     continue
-            # onet
-
-            if self.onet_detector:
-                t = time.time()
-                boxes, boxes_c, landmark = self.detect_onet(im, boxes_c)
-                t3 = time.time() - t
-                sum_time += t3
-                t3_sum += t3
-                if boxes_c is None:
-                    all_boxes.append(empty_array)
-                    landmarks.append(empty_array)
-
-                    continue
+            # # onet
+            #
+            # if self.onet_detector:
+            #     t = time.time()
+            #     boxes, boxes_c, landmark = self.detect_onet(im, boxes_c)
+            #     t3 = time.time() - t
+            #     sum_time += t3
+            #     t3_sum += t3
+            #     if boxes_c is None:
+            #         all_boxes.append(empty_array)
+            #         landmarks.append(empty_array)
+            #
+            #         continue
 
             all_boxes.append(boxes_c)
-            # print('------------4-----------')
-            # print(landmark)
+            landmark = [1]
             landmarks.append(landmark)
-            # print('------------5-----------')
-            # print(landmarks)
         print('num of images', num_of_img)
         print("time cost in average" +
             '{:.3f}'.format(sum_time/num_of_img) +
@@ -540,7 +559,6 @@ class MtcnnDetector(object):
             print('boxes_c is None after Rnet')
 
         if self.onet_detector and not boxes_c is  None:
-            print("ONet entered!")
           #  t = time.time()
             boxes, boxes_c, landmark = self.detect_onet(im, boxes_c)
          #   t3 = time.time() - t
