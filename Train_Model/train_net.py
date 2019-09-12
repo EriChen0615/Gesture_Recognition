@@ -10,10 +10,11 @@ def parse_args():
     parser.add_argument('--tfrecord_dir',dest='tfrecord_dir',help='directory for tfrecord',default='../Dataset/Training/imglists/PNet')
     parser.add_argument('--base_lr',dest='lr',help='starting learn rate for training',default=0.1)
     parser.add_argument('--end_epoch',dest='end_epoch',help='end epoch',default=30)
+    parser.add_argument('--with_gesture',dest='with_gesture',help='trained with gesture input or not',default='store_ture')
     args = parser.parse_args()
     return args
 
-def train_net(base_dir, prefix, end_epoch, display, lr, net):
+def train_net(base_dir, prefix, end_epoch, display, lr, net, with_gesture=False):
     """
     train PNet
     :param base_dir: tfrecord path
@@ -31,7 +32,7 @@ def train_net(base_dir, prefix, end_epoch, display, lr, net):
     elif net == 'ONet':
         net_factory = O_Net
 
-    train(net_factory,prefix, end_epoch, base_dir, display=display, base_lr=lr)
+    train(net_factory,prefix, end_epoch, base_dir, display=display, base_lr=lr,with_gesture)
 
 
 
@@ -54,7 +55,7 @@ if __name__ == '__main__':
     lr = float(args.lr) #was 0.001
 
     print("------------------Training Started-------------------\n")
-    train_net(base_dir, prefix, end_epoch, display, lr, net)
+    train_net(base_dir, prefix, end_epoch, display, lr, net,args.with_gesture)
 
     print("------------------Training Finished-------------------\n")
 
