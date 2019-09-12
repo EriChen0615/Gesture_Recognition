@@ -73,7 +73,7 @@ cd ..
 echo 'ONet training completes'
 
 echo 'PRO training completes!'
-echo 'model name: $model_name'
-echo 'output_dir: $output_dir'
-echo 'save_path: $net_prefix'
-echo 'dataset: $raw_img_dir'
+echo "model name: ${model_name}"
+echo "output_dir: ${output_dir}"
+echo "save_path: ${net_prefix}"
+echo "dataset: ${raw_img_dir}"
