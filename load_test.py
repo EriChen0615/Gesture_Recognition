@@ -2,24 +2,32 @@ import cv2
 import os, os.path
 
 
-def get_lists(path=''):
-    with open(os.path.join(path, 'imglist_with_gesture.txt')) as f:
+def get_lists(img_dir='', label_dir='', label_name=''):
+    with open(os.path.join(label_dir, label_name)) as f:
         list_of_img = f.readlines()
     img_list = []
     gt_list = []
+    x = 0
     for i in list_of_img:
-        i = i.split(" ")
-        # print(i)
-        img = cv2.imread(os.path.join(path,i[0]))
+        i = i.split("    ") # need 4 spaces here
+        print(i)
+        print(len(i))
+        img = cv2.imread(os.path.join(img_dir,i[0]))
+        # print(open(os.path.join(img_dir,i[0])))
+        print(img.size)
         img_list.append(img)
-        bbox = [int(i[1]), int(i[2]),int(i[3]), int(i[4])]
+        print([i[1], i[2], i[3], i[4]])
+        bbox = [float(i[1])*640, float(i[2])*480,float(i[3])*640, float(i[4])*480]
         # print(bbox)
         print(bbox)
         gt_list.append(bbox)
-        cv2.rectangle(img, (bbox[0], bbox[1]), (bbox[2], bbox[3]), (0, 0, 255))
+        cv2.rectangle(img, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255))
         cv2.imshow('img',img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+        if x==5:
+            break
+        x += 1
     return img_list, gt_list
 
 def IoU(box, bboxes):
@@ -47,8 +55,13 @@ def IoU(box, bboxes):
     return over
     
 def main():
-    path = 'Dataset/Training'
-    img_list, gt_list = get_lists(path)
+    label_name = 'SingleBad.txt'
+    label_dir = 'ego_data/label'
+    img_dir = 'ego_data/JPG'
+    img_list, gt_list = get_lists(img_dir, label_dir, label_name)
+    print(img_list)
+    print(gt_list)
+
 
 if __name__ == "__main__":
     main()

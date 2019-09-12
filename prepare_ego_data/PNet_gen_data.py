@@ -4,7 +4,7 @@ This python file is to genereate hand detection data for PNet Training
 
 """
 
-import os
+import os, os.path
 import cv2
 import numpy as np
 import numpy.random as npr
@@ -75,10 +75,10 @@ if __name__ == '__main__':
             height, width, channel = img.shape
 
             neg_num = 0
-            #1---->50
+            #1---->30
             # keep crop random parts, until have 50 negative examples
             # get 50 negative sample from every image
-            while neg_num < 50:
+            while neg_num < 30: # was 50 and adjusted to 30
                 #neg_num's size [40,min(width, height) / 2],min_size:40
                 # size is a random number between 12 and min(width,height)
                 size = npr.randint(12, min(width, height) / 2)
@@ -141,7 +141,7 @@ if __name__ == '__main__':
                     Iou = IoU(crop_box, boxes)
             
                     cropped_im = img[ny1: ny1 + size, nx1: nx1 + size, :]
-                    #rexize cropped image to be 12 * 12
+                    #resize cropped image to be 12 * 12
                     resized_im = cv2.resize(cropped_im, (12, 12), interpolation=cv2.INTER_LINEAR)
             
                     if np.max(Iou) < 0.3:
@@ -155,7 +155,7 @@ if __name__ == '__main__':
                 #generate positive examples and part examples
 
 
-                for i in range(20):
+                for i in range(30): # was 20 
                     # pos and part hand size [minsize*0.8,maxsize*1.25]
                     size = npr.randint(int(min(w, h) * 0.8), np.ceil(1.25 * max(w, h)))
       

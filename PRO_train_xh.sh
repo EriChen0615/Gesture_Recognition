@@ -22,7 +22,7 @@ oend_epoch=22
 net=PNet
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate $env_name
-cd prepare_data
+cd prepare_ego_data
 python PNet_gen_data.py --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
 python gen_gesture.py --net PNet --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
 python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
