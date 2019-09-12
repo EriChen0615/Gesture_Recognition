@@ -42,12 +42,7 @@ if __name__ == '__main__':
     display = 20
 
     """change base learning rate here!"""
-<<<<<<< HEAD
-    lr = 0.1 #was 0.001
-    with_gesture = False
-=======
     lr = float(args.lr) #was 0.001
->>>>>>> 6b3ab7a425f72b8e639cd261ba11822ac9899f0b
 
     print("------------------Training Started-------------------\n")
     train_PNet(base_dir, prefix, end_epoch, display, lr, with_gesture)

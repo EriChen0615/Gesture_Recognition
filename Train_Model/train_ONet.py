@@ -38,6 +38,7 @@ if __name__ == '__main__':
     prefix = model_path
     end_epoch = int(args.end_epoch)
     display = 20
+    lr = float(args.lr)
 
     with_gesture = False
     train_ONet(base_dir, prefix, end_epoch, display, lr, with_gesture)

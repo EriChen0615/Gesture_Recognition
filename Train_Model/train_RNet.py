@@ -42,4 +42,5 @@ if __name__ == '__main__':
     display = 20
 
     with_gesture = False
+    lr = float(args.lr)
     train_RNet(base_dir, prefix, end_epoch, display, lr, with_gesture)
