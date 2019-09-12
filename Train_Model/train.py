@@ -135,6 +135,7 @@ def bbox_cal_loss(bbox_pred,bbox_target,label):
     square_error = tf.gather(square_error, k_index)
     return tf.reduce_mean(square_error)
 
+""" need to change to cross entropy loss before training with gesture """
 def gesture_cal_loss(gesture_pred,gesture_target,label):
     #keep label =-2  then do gesture detection
     ones = tf.ones_like(label,dtype=tf.float32)
@@ -234,7 +235,10 @@ def train(net_factory, prefix, end_epoch, base_dir,
     # print(gesture_target)
     input_image = image_color_distort(input_image)
     cls_loss_op,bbox_loss_op,gesture_loss_op,L2_loss_op,accuracy_op = net_factory(input_image, label, bbox_target,gesture_target,training=True)
-    total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
+    if with_gesture:
+        total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + radio_gesture_loss*gesture_loss_op + L2_loss_op
+    else:
+        total_loss_op  = radio_cls_loss*cls_loss_op + radio_bbox_loss*bbox_loss_op + L2_loss_op
     #train,update learning rate(3 loss)
     
     train_op, lr_op = train_model(base_lr,
@@ -311,14 +315,14 @@ def train(net_factory, prefix, end_epoch, base_dir,
                 if with_gesture:
                     cls_loss, bbox_loss,gesture_loss,L2_loss,lr,acc = sess.run([cls_loss_op, bbox_loss_op,gesture_loss_op,L2_loss_op,lr_op,accuracy_op],
                                                                  feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array, gesture_target: gesture_batch_array})
-                    total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + L2_loss
-                    print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f,gesture loss :%4f,L2 loss: %4f, Total Loss: %4f ,lr:%f " % (
-                    datetime.now(), step+1,MAX_STEP, acc, cls_loss, bbox_loss,gesture_loss, L2_loss,total_loss, lr))
-                else:
-                    cls_loss, bbox_loss,L2_loss,lr,acc = sess.run([cls_loss_op, bbox_loss_op,L2_loss_op,lr_op,accuracy_op],
-                                                        feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array, gesture_target: gesture_batch_array})
                     total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + radio_gesture_loss*gesture_loss + L2_loss
-                    print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f,L2 loss: %4f, Total Loss: %4f ,lr:%f " % (
+                    print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f,gesture loss :%4f,regularisation loss: %4f, Total Loss: %4f ,lr:%f " % (
+                    datetime.now(), step+1,MAX_STEP, acc, cls_loss, bbox_loss,gesture_loss, L2_loss,total_loss, lr))
+                else: # without gesture loss
+                    cls_loss, bbox_loss,L2_loss,lr,acc = sess.run([cls_loss_op, bbox_loss_op,L2_loss_op,lr_op,accuracy_op],
+                                                     feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array, gesture_target: gesture_batch_array})
+                    total_loss = radio_cls_loss*cls_loss + radio_bbox_loss*bbox_loss + L2_loss
+                    print("%s : Step: %d/%d, accuracy: %3f, cls loss: %4f, bbox loss: %4f,regularisation loss: %4f, Total Loss: %4f ,lr:%f " % (
                     datetime.now(), step+1,MAX_STEP, acc, cls_loss, bbox_loss, L2_loss,total_loss, lr))
 
             #save every two epochs
