@@ -169,9 +169,6 @@ def mkdir(path):
         print(path + ' already exist')
         return False
 
-def IoU(bbox, gt):
-    pass
-
 def evaluate(boxes_per_img, gt):
 
     sum_IoU = 0
@@ -249,7 +246,7 @@ def main(test_mode="ONet"):
     # The model path, should be the same in the checkpoint file
     model_path = ['Model/PNet/PNet-30', 'Model/RNet/RNet-500', 'Model/ONet/ONet-116']
     # Test image path
-    path = 'Dataset/Training'
+    path = 'XW-Dataset/Training'
 
 
     # load pnet model
