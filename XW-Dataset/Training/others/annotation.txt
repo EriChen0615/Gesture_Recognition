@@ -86,8 +86,6 @@ others_84.jpg 77 97 205 239
 others_85.jpg 77 97 205 239
 others_86.jpg 77 97 205 239
 others_87.jpg 68 125 189 260
-others_87.jpg 179 79 303 208
-others_87.jpg 41 38 168 175
 others_88.jpg 41 38 168 175
 others_89.jpg 41 38 168 175
 others_90.jpg 182 33 311 151

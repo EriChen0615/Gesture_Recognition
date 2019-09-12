@@ -14,7 +14,7 @@ def get_lists(path=''):
         img_list.append(img)
         bbox = [int(i[1]), int(i[2]),int(i[3]), int(i[4])]
         # print(bbox)
-        print(bbox)
+        print(i[0], bbox)
         gt_list.append(bbox)
         cv2.rectangle(img, (bbox[0], bbox[1]), (bbox[2], bbox[3]), (0, 0, 255))
         cv2.imshow('img',img)
