@@ -10,10 +10,12 @@ anno_name=imglist_with_gesture.txt
 
 
 tfrecord_dir=imglists
-base_lr=0.1
-pend_epoch=4
-rend_epoch=4
-oend_epoch=4
+pnet_lr=0.1
+rnet_lr=0.01
+onet_lr=0.01
+pend_epoch=30
+rend_epoch=30
+oend_epoch=30
 
 
 # PNet data generation
@@ -31,7 +33,7 @@ echo 'PNet data generation completes!'
 # PNet training
 
 cd Train_Model
-python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $base_lr --end_epoch $pend_epoch
+python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $pnet_lr --end_epoch $pend_epoch
 cd ..
 
 echo 'PNet training completes!'
@@ -49,7 +51,7 @@ echo 'RNet data generation completes!'
 
 # RNet training
 cd Train_Model
-python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $base_lr --end_epoch $rend_epoch
+python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $rnet_lr --end_epoch $rend_epoch
 cd ..
 
 echo 'RNet training completes'
@@ -67,7 +69,7 @@ echo 'ONet data generation completes'
 
 # ONet training
 cd Train_Model
-python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $base_lr --end_epoch $oend_epoch
+python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $onet_lr --end_epoch $oend_epoch
 cd ..
 
 echo 'ONet training completes'
