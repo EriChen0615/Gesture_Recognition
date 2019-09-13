@@ -286,21 +286,32 @@ class MtcnnDetector(object):
         # cls_scores : num_data*2
         # reg: num_data*4
         # landmark: num_data*10
-        cls_scores, reg, _ = self.rnet_detector.predict(cropped_ims)
+        cls_scores, reg, landmark = self.rnet_detector.predict(cropped_ims)
+        # print('------1--------')
+        # print(landmark)
+
         cls_scores = cls_scores[:, 1]
         keep_inds = np.where(cls_scores > self.thresh[1])[0]
         if len(keep_inds) > 0:
             boxes = dets[keep_inds]
             boxes[:, 4] = cls_scores[keep_inds]
             reg = reg[keep_inds]
-            # landmark = landmark[keep_inds]
+            # print(keep_inds)
+            # print('------2-------')
+            landmark = landmark[keep_inds]
+            # print(landmark)
         else:
             return None, None, None
 
+        # Added
+
         keep = py_nms(boxes, 0.6)
         boxes = boxes[keep]
+        landmark = landmark[keep]
+        # print('------3-------')
+        # print(landmark)
         boxes_c = self.calibrate_box(boxes, reg[keep])
-        return boxes, boxes_c, None
+        return boxes, boxes_c, landmark
 
     def detect_onet(self, im, dets):
         """Get face candidates using onet
@@ -343,12 +354,12 @@ class MtcnnDetector(object):
         else:
             return None, None, None
 
-        # width
-        w = boxes[:, 2] - boxes[:, 0] + 1
-        # height
-        h = boxes[:, 3] - boxes[:, 1] + 1
-        landmark[:, 0::2] = (np.tile(w, (5, 1)) * landmark[:, 0::2].T + np.tile(boxes[:, 0], (5, 1)) - 1).T
-        landmark[:, 1::2] = (np.tile(h, (5, 1)) * landmark[:, 1::2].T + np.tile(boxes[:, 1], (5, 1)) - 1).T
+        # # width
+        # w = boxes[:, 2] - boxes[:, 0] + 1
+        # # height
+        # h = boxes[:, 3] - boxes[:, 1] + 1
+        # landmark[:, 0::2] = (np.tile(w, (5, 1)) * landmark[:, 0::2].T + np.tile(boxes[:, 0], (5, 1)) - 1).T
+        # landmark[:, 1::2] = (np.tile(h, (5, 1)) * landmark[:, 1::2].T + np.tile(boxes[:, 1], (5, 1)) - 1).T
         boxes_c = self.calibrate_box(boxes, reg)
 
         boxes = boxes[py_nms(boxes, 0.6, "Minimum")]
@@ -447,7 +458,6 @@ class MtcnnDetector(object):
 
             if self.rnet_detector:
                 t = time.time()
-                # ignore landmark
                 boxes, boxes_c, landmark = self.detect_rnet(im, boxes_c)
                 t2 = time.time() - t
                 sum_time += t2
@@ -472,8 +482,11 @@ class MtcnnDetector(object):
                     continue
 
             all_boxes.append(boxes_c)
-            landmark = [1]
+            # print('------------4-----------')
+            # print(landmark)
             landmarks.append(landmark)
+            # print('------------5-----------')
+            # print(landmarks)
         print('num of images', num_of_img)
         print("time cost in average" +
             '{:.3f}'.format(sum_time/num_of_img) +
@@ -527,6 +540,7 @@ class MtcnnDetector(object):
             print('boxes_c is None after Rnet')
 
         if self.onet_detector and not boxes_c is  None:
+            print("ONet entered!")
           #  t = time.time()
             boxes, boxes_c, landmark = self.detect_onet(im, boxes_c)
          #   t3 = time.time() - t

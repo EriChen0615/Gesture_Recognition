@@ -265,9 +265,9 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
             gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
             
             accuracy = cal_accuracy(cls_prob,label)
+            # regularization loss: L2_loss
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
-            # return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
-            return cls_loss,bbox_loss,L2_loss,accuracy #without gesture loss
+            return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         #test
 
         else:
@@ -280,7 +280,7 @@ def P_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
             print("gesture_pred_test: ", gesture_pred_test.get_shape())
             
             return cls_pro_test,bbox_pred_test,gesture_pred_test
-            # return cls_pro_test,bbox_pred_test
+
         # #inference
         # else:
         #     #when inference,batch_size = 1
@@ -331,6 +331,7 @@ def R_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=False)
             gesture_loss = gesture_ohem(gesture_pred,gesture_target,label)
             L2_loss = tf.add_n(slim.losses.get_regularization_losses())
             return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
+
         else:
             return cls_prob,bbox_pred,gesture_pred
     
@@ -382,3 +383,4 @@ def O_Net(inputs,label=None,bbox_target=None,gesture_target=None,training=True):
             return cls_loss,bbox_loss,gesture_loss,L2_loss,accuracy
         else:
             return cls_prob,bbox_pred,gesture_pred
+        
