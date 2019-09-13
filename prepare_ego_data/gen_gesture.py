@@ -76,7 +76,10 @@ def GenerateData(ftxt,data_path,net,augment=False):
         # cv2.imshow('img',img)
         # while cv2.waitKey(1) != ord('n'):
         #     continue
-        assert(img is not None)
+        try:
+            assert(img is not None)
+        except AssertionError as error:
+            continue
         img_h,img_w, _ = img.shape
         gt_box = np.array([bbox.left,bbox.top,bbox.right,bbox.bottom])
         #get sub-image from bbox
