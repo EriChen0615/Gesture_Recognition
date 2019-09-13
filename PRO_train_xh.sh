@@ -6,7 +6,7 @@ output_dir=ego_data/Training
 net_prefix=Model/$model_name
 
 raw_img_dir=ego_data/Training
-anno_name=imglist_without_gesture.txt
+anno_name=imglist_with_gesture.txt
 
 
 tfrecord_dir=imglists
@@ -25,15 +25,21 @@ conda activate $env_name
 # source ~/venv/bin/activate
 cd prepare_ego_data
 python PNet_gen_data.py --im_dir ../$raw_img_dir  --save_dir ../$output_dir/$net
+echo 'Running PNet_gen_data.py'
 python handle_data_to_training.py 
+echo 'Handling data to training'
 python gen_gesture.py --net PNet --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
+echo 'Running gen_gesture'
 python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
+echo 'Merging training data'
 python gen_tfrecord.py --net PNet --data_dir ../$output_dir/$net
+echo 'Generating tfrecord'
 cd ..
 echo 'PNet data generation completes!'
 
 # PNet training
 
+echo 'Start training'
 cd Train_Model
 python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $p_base_lr --end_epoch $pend_epoch
 cd ..

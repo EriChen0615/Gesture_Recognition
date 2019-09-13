@@ -48,7 +48,10 @@ if __name__ == '__main__':
         ratio = [2, 1, 1] # was 3 1 1 but we think 3 is too much for neg samples
         base_num = min(nums)
         #base_num = 250000
-        print(len(neg), len(pos), len(part), base_num)
+        print('num of neg: ', len(neg))
+        print('num of pos: ', len(pos))
+        print('num of part: ', len(part))
+        print('base num: ', base_num)
 
         #shuffle the order of the initial data
         #if negative examples are more than 750k then only choose 750k
@@ -61,6 +64,7 @@ if __name__ == '__main__':
         # i.e. randomly choose from np.arange(len(pos))
         pos_keep = npr.choice(len(pos), size=base_num, replace=True)
         part_keep = npr.choice(len(part), size=base_num, replace=True)
+        print('number of kept neg, pos and part: ')
         print(len(neg_keep), len(pos_keep), len(part_keep))
 
         # write the data according to the shuffled order
