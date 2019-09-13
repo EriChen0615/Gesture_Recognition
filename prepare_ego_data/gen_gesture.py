@@ -166,7 +166,7 @@ def GenerateData(ftxt,data_path,net,augment=False):
                         F_gesture.append(gesture)
                     
                     
-                    这个操作并不太有道理 所以还是算了
+                    #这个操作并不太有道理 所以还是算了
                     #rotate
                     if random.choice([0,1]) > 0:
                         hand_rotated_by_alpha = rotate(img, bbox, 5)#anti-clockwise
@@ -174,17 +174,15 @@ def GenerateData(ftxt,data_path,net,augment=False):
                         #gesture_rotated = bbox.projectGesture(gesture_rotated)
                         hand_rotated_by_alpha = cv2.resize(hand_rotated_by_alpha, (size, size))
                         F_imgs.append(hand_rotated_by_alpha)
-                        """
                         F_gesture.append(gesture)
-                        """
+
                 
                         #flip
                         hand_flipped = flip(hand_rotated_by_alpha)
                         hand_flipped = cv2.resize(hand_flipped, (size, size))
                         F_imgs.append(hand_flipped)
-                        """
                         F_gesture.append(gesture)
-                        """
+
                     
                     #anti-clockwise rotation
                     if random.choice([0,1]) > 0: 
@@ -260,7 +258,7 @@ if __name__ == '__main__':
 
     #the file contains the names of all the gesture training data
     train_txt = os.path.join(im_dir,_anno_file)
-    
+
     imgs,gestures = GenerateData(train_txt,data_path,net,augment=True )
    
     # imgs = GenerateData(train_txt,data_path,net,augment=True)

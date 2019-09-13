@@ -88,7 +88,7 @@ if __name__ == '__main__':
                 #1---->50
                 # keep crop random parts, until have 50 negative examples
                 # get 50 negative sample from every image
-                while neg_num < 50: # was 50 and adjusted to 30
+                while neg_num < 30: # was 50 and adjusted to 30
                     #neg_num's size [40,min(width, height) / 2],min_size:40
                     # size is a random number between 12 and min(width,height)
                     size = npr.randint(12, min(width, height) / 2)
