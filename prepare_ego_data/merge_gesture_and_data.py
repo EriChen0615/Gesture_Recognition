@@ -56,8 +56,8 @@ if __name__ == '__main__':
         #shuffle the order of the initial data
         #if negative examples are more than 750k then only choose 750k
 
-        if len(neg) > base_num * 2: # was 3
-            neg_keep = npr.choice(len(neg), size=base_num * 2, replace=True) # was 3
+        if len(neg) > base_num * 3: # was 3
+            neg_keep = npr.choice(len(neg), size=base_num * 3, replace=True) # was 3
         else:
             neg_keep = npr.choice(len(neg), size=len(neg), replace=True)
         # npr.choice: randomly choose some index to keep
