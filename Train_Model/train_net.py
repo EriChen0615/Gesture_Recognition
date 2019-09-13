@@ -10,7 +10,7 @@ def parse_args():
     parser.add_argument('--tfrecord_dir',dest='tfrecord_dir',help='directory for tfrecord',default='../Dataset/Training/imglists/PNet')
     parser.add_argument('--base_lr',dest='lr',help='starting learn rate for training',default=0.1)
     parser.add_argument('--end_epoch',dest='end_epoch',help='end epoch',default=30)
-    parser.add_argument('--with_gesture',dest='with_gesture',help='trained with gesture input or not',default='store_ture')
+    parser.add_argument('--with_gesture',dest='with_gesture',help='trained with gesture input or not',default=False)
     args = parser.parse_args()
     return args
 
@@ -49,7 +49,7 @@ if __name__ == '__main__':
     
     prefix = model_path
     end_epoch = int(args.end_epoch)
-    display = 20
+    display = 1000
 
     """change base learning rate here!"""
     lr = float(args.lr) #was 0.001
