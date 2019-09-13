@@ -32,13 +32,13 @@ python gen_tfrecord.py --net PNet --data_dir ../$output_dir/$net
 cd ..
 echo 'PNet data generation completes!'
 
-# # PNet training
+# PNet training
 
-# cd Train_Model
-# python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --p_base_lr $base_lr --end_epoch $pend_epoch
-# cd ..
+cd Train_Model
+python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --p_base_lr $base_lr --end_epoch $pend_epoch
+cd ..
 
-# echo 'PNet training completes!'
+echo 'PNet training completes!'
 
 # # RNet data generation
 # net=RNet

@@ -2,7 +2,7 @@ import os, os.path
 import fnmatch
 import numpy as np
 import random 
-import shutil
+import cv2
 
 def mkdir(path):
     path = path.strip()
@@ -104,11 +104,15 @@ def main():
             # print(type(test_img))
             test_writer.write(test_img + '\n')
             test_img = test_img.strip().split(" ")
-            shutil.copy(os.path.join(img_base_dir, test_img[0]), os.path.join(test_dir, test_img[0]))
+            img = cv2.imread(os.path.join(img_base_dir, test_img[0]))
+            img = cv2.resize(img, (240, 180))
+            cv2.imwrite(os.path.join(test_dir, test_img[0]), img)
         for train_img in train_list:
             train_writer.write(train_img + '\n')
             train_img = train_img.strip().split(" ")
-            shutil.copy(os.path.join(img_base_dir, train_img[0]), os.path.join(train_dir, train_img[0]))
+            img = cv2.imread(os.path.join(img_base_dir, train_img[0]))
+            img = cv2.resize(img, (240, 180))
+            cv2.imwrite(os.path.join(train_dir, train_img[0]), img)
         print('writing annotation files completed')
         print('-----------------------------------------------\n')
         train_writer.close()
