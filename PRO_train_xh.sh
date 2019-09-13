@@ -2,7 +2,7 @@
 
 env_name=tf-gpu
 model_name=MTCNN-test
-output_dir=ego_data/Training/\
+output_dir=ego_data/Training
 net_prefix=Model/$model_name
 
 raw_img_dir=ego_data/Training
@@ -35,7 +35,7 @@ echo 'PNet data generation completes!'
 # PNet training
 
 cd Train_Model
-python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --p_base_lr $base_lr --end_epoch $pend_epoch
+python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $p_base_lr --end_epoch $pend_epoch
 cd ..
 
 echo 'PNet training completes!'
