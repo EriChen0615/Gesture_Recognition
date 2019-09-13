@@ -64,24 +64,31 @@ if __name__ == '__main__':
                 annotation = annotation.strip().split(' ')
                 #image path
                 im_path = annotation[0]
-                #print(im_path)
-                #box change to float type
-                bbox = list(map(float, annotation[1:5]))
-                #gt
-                boxes = np.array(bbox, dtype=np.float32).reshape(-1, 4)
-                #load image
+                 #load image
                 img = cv2.imread(os.path.join(im_dir,im_path))
                 idx += 1
                 #if idx % 100 == 0:
                     #print(idx, "images done")
 
                 height, width, channel = img.shape
+                #print(im_path)
+                #box change to float type
+                bbox = list(map(float, annotation[1:5]))
+                # print('bbox:', bbox)
+                # since the coordinates of bbox are normalised 
+                bbox[0] *= width
+                bbox[1] *= height
+                bbox[2] *= width
+                bbox[3] *= height
+                #gt
+                boxes = np.array(bbox, dtype=np.float32).reshape(-1, 4) #shape (1,4) 
+                # print('boxes: ', boxes)
 
                 neg_num = 0
-                #1---->30
+                #1---->50
                 # keep crop random parts, until have 50 negative examples
                 # get 50 negative sample from every image
-                while neg_num < 30: # was 50 and adjusted to 30
+                while neg_num < 50: # was 50 and adjusted to 30
                     #neg_num's size [40,min(width, height) / 2],min_size:40
                     # size is a random number between 12 and min(width,height)
                     size = npr.randint(12, min(width, height) / 2)
@@ -158,7 +165,7 @@ if __name__ == '__main__':
                     #generate positive examples and part examples
 
 
-                    for i in range(30): # was 20 
+                    for i in range(20): # was 20 
                         # pos and part hand size [minsize*0.8,maxsize*1.25]
                         size = npr.randint(int(min(w, h) * 0.8), np.ceil(1.25 * max(w, h)))
         
@@ -206,7 +213,7 @@ if __name__ == '__main__':
                             cv2.imwrite(save_file, resized_im)
                             d_idx += 1
                     box_idx += 1
-                    if idx % 20 == 0:
+                    if idx % 1000 == 0:
                         print("%s images done, pos: %s part: %s neg: %s" % (idx, p_idx, d_idx, n_idx))
 
 
