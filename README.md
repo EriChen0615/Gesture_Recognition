@@ -42,3 +42,15 @@
 - os
 - cv2
 
+# Data Generation and Training
+## PRO_train
+PRO_train.bash is a helper program which helps you generate training data and train the nets in one go. Simply run ```bash PRO_train.sh``` to train your network. To configure the bash file:
+- ```env_name``` anaconda virtual environment name where tensorflow is installed
+- ```model_name``` the name of the model
+- ```output_dir``` the directory where the training data will be output
+- ```net_prefix``` the prefix where the net is saved
+- ```raw_img_dir``` the base directory of the dataset used
+- ```anno_name``` the name of the annotation file of the raw dataset under its base directory as specified in ```raw_img_dir```
+- ```tfrecord_dir``` sub dir to save tfrecord
+- ```base_lr``` base learn rate for P R ONet training
+- ```pend_epoch```,```rend_epoch```,```oend_epoch``` epoch number to be trained on P R ONet
