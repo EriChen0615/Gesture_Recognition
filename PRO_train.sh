@@ -11,9 +11,9 @@ anno_name=imglist_with_gesture.txt
 
 tfrecord_dir=imglists
 base_lr=0.1
-pend_epoch=4
-rend_epoch=4
-oend_epoch=4
+pend_epoch=30
+rend_epoch=30
+oend_epoch=30
 
 
 # PNet data generation
