@@ -229,7 +229,7 @@ def GenerateData(ftxt,data_path,net,augment=False):
                 gestures = map(str,list(F_gesture[i]))
                 f.write(name+" -2 "+" ".join(gestures)+"\n")
                 """
-                f.write(name+" -2 "+" ".join([0, 0, 0])"\n") #这里统一处理成000了以后要用到再说吧 
+                f.write(name+" -2 "+" ".join([0, 0, 0])+"\n") #这里统一处理成000了以后要用到再说吧 
                 image_id = image_id + 1
             
     #print F_imgs.shape

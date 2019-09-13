@@ -2,7 +2,7 @@
 
 env_name=tf-gpu
 model_name=MTCNN-test
-output_dir=ego_data/Training/
+output_dir=ego_data/Training/\
 net_prefix=Model/$model_name
 
 raw_img_dir=ego_data/Training
