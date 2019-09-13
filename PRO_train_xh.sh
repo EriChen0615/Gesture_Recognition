@@ -20,9 +20,9 @@ oend_epoch=22
 
 # PNet data generation
 net=PNet
-# source ~/anaconda3/etc/profile.d/conda.sh
-# conda activate $env_name
-source ~/venv/bin/activate
+source ~/anaconda3/etc/profile.d/conda.sh
+conda activate $env_name
+# source ~/venv/bin/activate
 cd prepare_ego_data
 python PNet_gen_data.py --im_dir ../$raw_img_dir  --save_dir ../$output_dir/$net
 python handle_data_to_training.py 
