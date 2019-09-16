@@ -28,7 +28,7 @@ def load_annotation(label_path):
             temp = anno[0]
             for i in range(len(temp)):
                 if temp[i] != '/':
-                    temp.remove(temp[i])
+                    temp = temp[i:]
                 else:
                     break
                 i += 1
