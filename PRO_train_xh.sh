@@ -69,7 +69,7 @@ conda activate $env_name
 # echo 'RNet training completes'
 
 # # ONet data generation
-# net=ONet
+net=ONet
 # cd prepare_ego_data
 # echo '==========>start generating data - gen_data.py'
 # python gen_data.py --test_mode RNet --anno_file $anno_name --im_dir ../$raw_img_dir --save_dir ../$output_dir/$net --epoch $pend_epoch $rend_epoch --prefix ../$net_prefix/PNet ../$net_prefix/RNet
