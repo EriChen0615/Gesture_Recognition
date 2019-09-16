@@ -26,7 +26,9 @@ def load_annotation(label_path):
             anno = anno.split(' ')
             # find repeated directories and try to remove the repeated part
             temp = anno[0]
-            for i in range(len(temp)):
+            num = len(temp)
+            print('length: ', num)
+            for i in range(num):
                 if temp[i] != '/':
                     temp = temp[i:]
                 else:
