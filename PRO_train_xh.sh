@@ -68,27 +68,27 @@ conda activate $env_name
 
 # echo 'RNet training completes'
 
-# ONet data generation
-net=ONet
-cd prepare_ego_data
-echo '==========>start generating data - gen_data.py'
-python gen_data.py --test_mode RNet --anno_file $anno_name --im_dir ../$raw_img_dir --save_dir ../$output_dir/$net --epoch $pend_epoch $rend_epoch --prefix ../$net_prefix/PNet ../$net_prefix/RNet
-echo '==========>start generating gesture - gen_gesture.py'
-python gen_gesture.py --net $net --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
-echo '==========>start merging generated data - merge_gesture_and_data.py'
-python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
-echo '==========>start generating tfrecord - gen_tfrecord.py'
-python gen_tfrecord.py --net $net --data_dir ../$output_dir/$net
-cd ..
-
-echo 'ONet data generation completes'
-
-# # ONet training
-# cd Train_Model
-# python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $o_base_lr --end_epoch $oend_epoch
+# # ONet data generation
+# net=ONet
+# cd prepare_ego_data
+# echo '==========>start generating data - gen_data.py'
+# python gen_data.py --test_mode RNet --anno_file $anno_name --im_dir ../$raw_img_dir --save_dir ../$output_dir/$net --epoch $pend_epoch $rend_epoch --prefix ../$net_prefix/PNet ../$net_prefix/RNet
+# echo '==========>start generating gesture - gen_gesture.py'
+# python gen_gesture.py --net $net --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
+# echo '==========>start merging generated data - merge_gesture_and_data.py'
+# python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
+# echo '==========>start generating tfrecord - gen_tfrecord.py'
+# python gen_tfrecord.py --net $net --data_dir ../$output_dir/$net
 # cd ..
 
-# echo 'ONet training completes'
+# echo 'ONet data generation completes'
+
+# ONet training
+cd Train_Model
+python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $o_base_lr --end_epoch $oend_epoch
+cd ..
+
+echo 'ONet training completes'
 
 # echo 'PRO training completes!'
 # echo "model name: ${model_name}"

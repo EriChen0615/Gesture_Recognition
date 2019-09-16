@@ -171,7 +171,7 @@ def t_net(prefix, epoch,
     # gt_imdb = imdb.gt_imdb()
     print('load test data')
     test_data = TestLoader(data['images'])
-    print('test data: ', test_data.imdb[0])
+    print('test data example: ', test_data.imdb[0])
     print ('finish loading')
     #list
     print ('start detecting....')
