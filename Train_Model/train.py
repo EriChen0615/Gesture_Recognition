@@ -223,6 +223,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
         radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 0.5
     else:
         image_size = 48
+        display = 50
         radio_cls_loss = 1.0;radio_bbox_loss = 0.5;radio_gesture_loss = 1
         
     #define placeholders
