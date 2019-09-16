@@ -161,7 +161,7 @@ def t_net(prefix, epoch,
     #read anotation(type:dict), include 'images' and 'bboxes'
     #data = read_annotation(basedir,filename)
     data = load_annotation(os.path.join(basedir,filename)) # modified version of load annotation
-    print('to see if load_annotation works fine: ')
+    # print('to see if load_annotation works fine: ')
     # print('data:',data)
     mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
                                    stride=stride, threshold=thresh, slide_window=slide_window)
@@ -171,7 +171,7 @@ def t_net(prefix, epoch,
     # gt_imdb = imdb.gt_imdb()
     print('load test data')
     test_data = TestLoader(data['images'])
-    # print('test data: ', test_data.imdb)
+    print('test data: ', test_data.imdb[0])
     print ('finish loading')
     #list
     print ('start detecting....')
