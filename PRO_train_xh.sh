@@ -70,10 +70,14 @@ conda activate $env_name
 
 # ONet data generation
 net=ONet
-cd prepare_data
+cd prepare_ego_data
+echo '==========>start generating data - gen_data.py'
 python gen_data.py --test_mode RNet --anno_file $anno_name --im_dir ../$raw_img_dir --save_dir ../$output_dir/$net --epoch $pend_epoch $rend_epoch --prefix ../$net_prefix/PNet ../$net_prefix/RNet
+echo '==========>start generating gesture - gen_gesture.py'
 python gen_gesture.py --net $net --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
+echo '==========>start merging generated data - merge_gesture_and_data.py'
 python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
+echo '==========>start generating tfrecord - gen_tfrecord.py'
 python gen_tfrecord.py --net $net --data_dir ../$output_dir/$net
 cd ..
 
