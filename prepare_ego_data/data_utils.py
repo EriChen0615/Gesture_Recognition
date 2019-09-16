@@ -27,14 +27,14 @@ def load_annotation(label_path):
             # find repeated directories and try to remove the repeated part
             temp = anno[0]
             num = len(temp)
-            print('length: ', num)
+            # print('length: ', num)
             while True:
                 if temp[0] != '/':
                     temp = temp[1:]
                 else:
                     temp = temp[1:]
                     break
-            images.append(os.path.join('../ego_data/Training',anno[0]))
+            images.append(os.path.join('../ego_data/Training',temp))
             xmin = anno[1]
             ymin = anno[2]
             xmax = anno[3]
