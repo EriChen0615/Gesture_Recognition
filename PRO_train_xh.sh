@@ -46,25 +46,26 @@ conda activate $env_name
 # echo 'PNet training completes!'
 
 
-# RNet data generation
-net=RNet
-cd prepare_ego_data
-echo 'running gen_data.py'
-python gen_data.py --test_mode PNet --anno_file $anno_name --im_dir ../$raw_img_dir --save_dir ../$output_dir/$net --epoch $pend_epoch --prefix ../$net_prefix/PNet
-echo 'running gen_gesture.py'
-python gen_gesture.py --net RNet --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
-echo 'running merge_gesture_and_data.py'
-python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
-echo 'running gen_tfrecord.py'
-python gen_tfrecord.py --net RNet --data_dir ../$output_dir/$net
-cd ..
-
-echo 'RNet data generation completes!'
-
-# # RNet training
-# cd Train_Model
-# python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --r_base_lr $base_lr --end_epoch $rend_epoch
+# # RNet data generation
+# net=RNet
+# cd prepare_ego_data
+# echo 'running gen_data.py'
+# python gen_data.py --test_mode PNet --anno_file $anno_name --im_dir ../$raw_img_dir --save_dir ../$output_dir/$net --epoch $pend_epoch --prefix ../$net_prefix/PNet
+# echo 'running gen_gesture.py'
+# python gen_gesture.py --net RNet --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
+# echo 'running merge_gesture_and_data.py'
+# python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
+# echo 'running gen_tfrecord.py'
+# python gen_tfrecord.py --net RNet --data_dir ../$output_dir/$net
 # cd ..
+
+# echo 'RNet data generation completes!'
+
+# RNet training
+net = RNet
+cd Train_Model
+python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --r_base_lr $base_lr --end_epoch $rend_epoch
+cd ..
 
 # echo 'RNet training completes'
 
