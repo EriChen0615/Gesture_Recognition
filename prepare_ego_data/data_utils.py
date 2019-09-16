@@ -28,12 +28,12 @@ def load_annotation(label_path):
             temp = anno[0]
             num = len(temp)
             print('length: ', num)
-            for i in range(num):
-                if temp[i] != '/':
-                    temp = temp[i:]
+            while True:
+                if temp[0] != '/':
+                    temp = temp[1:]
                 else:
+                    temp = temp[1:]
                     break
-                i += 1
             images.append(os.path.join('../ego_data/Training',anno[0]))
             xmin = anno[1]
             ymin = anno[2]
