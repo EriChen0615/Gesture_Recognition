@@ -76,6 +76,7 @@ if __name__ == '__main__':
             annos = f_gs.read().splitlines()
             for anno in annos:
                 words = anno.split(' ')
+                # here append also gs to the imglist_with_gesture.txt means that the first directory will be redundant
                 words[0] = os.path.join(gs,words[0]) # change img_name to img_path as in Training directory
 
                 # if gs == 'one':

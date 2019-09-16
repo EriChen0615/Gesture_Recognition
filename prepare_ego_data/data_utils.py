@@ -35,10 +35,10 @@ def load_annotation(label_path):
                     temp = temp[1:]
                     break
             images.append(os.path.join('../ego_data/Training',temp))
-            xmin = anno[1]
-            ymin = anno[2]
-            xmax = anno[3]
-            ymax = anno[4]
+            xmin = str(float(anno[1])*240))
+            ymin = str(float(anno[2]*180))
+            xmax = str(float(anno[3]*240))
+            ymax = str(float(anno[4]*180))
             bboxes.append([xmin,ymin,xmax,ymax])
 
     data['images'] = images
