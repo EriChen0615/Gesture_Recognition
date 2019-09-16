@@ -162,7 +162,7 @@ def t_net(prefix, epoch,
     #data = read_annotation(basedir,filename)
     data = load_annotation(os.path.join(basedir,filename)) # modified version of load annotation
     print('to see if load_annotation works fine: ')
-    print('data:',data)
+    # print('data:',data)
     mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
                                    stride=stride, threshold=thresh, slide_window=slide_window)
     #print("==================================")

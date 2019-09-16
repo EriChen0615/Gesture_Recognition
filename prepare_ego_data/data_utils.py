@@ -24,6 +24,7 @@ def load_annotation(label_path):
         #print(contents)
         for anno in contents:
             anno = anno.split(' ')
+            print(anno[0])
             images.append(os.path.join('../ego_data/Training',anno[0]))
             xmin = anno[1]
             ymin = anno[2]
