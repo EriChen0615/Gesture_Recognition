@@ -191,7 +191,7 @@ def t_net(prefix, epoch,
     save_file = os.path.join(save_path, "detections.pkl")
     with open(save_file, 'wb') as f:
         pickle.dump(detections, f,1)
-    print("%s测试完成开始OHEM" % image_size)
+    print("%s testing finished, start OHEM" % image_size)
     save_hard_example(image_size, data, save_path)
 
 
