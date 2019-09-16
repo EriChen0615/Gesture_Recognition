@@ -11,12 +11,12 @@ import pickle as pickle
 import cv2
 from Train_Model.mtcnn_model import P_Net, R_Net, O_Net
 from Train_Model.mtcnn_config import config
-from prepare_data.loader import TestLoader
+from loader import TestLoader
 from Detector.detector import Detector
 from Detector.fcn_detector import FcnDetector
 from Detector.MtcnnDetector import MtcnnDetector
-from prepare_data.utils import *
-from prepare_data.data_utils import *
+from utils import *
+from data_utils import *
 #net : 24(RNet)/48(ONet)
 #data: dict()
 

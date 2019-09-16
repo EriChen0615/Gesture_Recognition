@@ -19,7 +19,6 @@ oend_epoch=22
 
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate $env_name
-# source ~/venv/bin/activate
 
 # # PNet data generation
 # net=PNet
