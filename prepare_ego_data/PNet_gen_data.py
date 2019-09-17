@@ -26,7 +26,8 @@ def parse_args():
 
 if __name__ == '__main__':
     data_class = ['SingleBad', 'SingleGood', 'SingleOne', 'SingleTwo', 'SingleFour',
-             'SingleSix', 'SingleEight', 'SingleNine']
+             'SingleSix', 'SingleEight', 'SingleNine', 'PairEight', 'PairNine', 'PairSix', 
+             'PairTen']
     args = parse_args()
     _anno_file = args.anno_file
     im_dir = args.im_dir
@@ -59,7 +60,6 @@ if __name__ == '__main__':
         with open(anno_file,'r') as f:
             annotations = f.read().splitlines()
             print('%d pics in total' % len(annotations))
-
             for annotation in annotations: 
                 annotation = annotation.strip().split(' ')
                 #image path

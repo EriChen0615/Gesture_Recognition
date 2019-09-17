@@ -60,7 +60,8 @@ def main():
     label_dir = '../ego_data/label/'
     img_base_dir = '../ego_data/JPG/'
     img_groups = np.array(['SingleBad', 'SingleGood', 'SingleOne', 'SingleTwo', 'SingleFour',
-             'SingleSix', 'SingleEight', 'SingleNine'])
+             'SingleSix', 'SingleEight', 'SingleNine', 'PairEight', 'PairNine', 'PairSix', 
+             'PairTen'])
     label_names = [img_group + '.txt' for img_group in img_groups]
     # print(label_names)
     test_num = 50
@@ -102,17 +103,30 @@ def main():
         for test_img in test_list:
             # print(test_img)
             # print(type(test_img))
-            test_writer.write(test_img + '\n')
-            test_img = test_img.strip().split(" ")
-            img = cv2.imread(os.path.join(img_base_dir, test_img[0]))
-            img = cv2.resize(img, (240, 180))
-            cv2.imwrite(os.path.join(test_dir, test_img[0]), img)
+            info = test_img.split(' ')
+            name = info[0]
+            # print(os.path.join(img_base_dir, name))
+            # print(os.path.exists(os.path.join(img_base_dir, name)))
+            if os.path.exists(os.path.join(img_base_dir, name)):
+                test_writer.write(test_img + '\n')
+                test_img = test_img.strip().split(" ")
+                img = cv2.imread(os.path.join(img_base_dir, test_img[0]))
+                img = cv2.resize(img, (240, 180))
+                cv2.imwrite(os.path.join(test_dir, test_img[0]), img)
+            else:
+                test_count -= 1
         for train_img in train_list:
-            train_writer.write(train_img + '\n')
-            train_img = train_img.strip().split(" ")
-            img = cv2.imread(os.path.join(img_base_dir, train_img[0]))
-            img = cv2.resize(img, (240, 180))
-            cv2.imwrite(os.path.join(train_dir, train_img[0]), img)
+            info = train_img.split(' ')
+            name = info[0]
+            if os.path.exists(os.path.join(img_base_dir, name)):
+                train_writer.write(train_img + '\n')
+                train_img = train_img.strip().split(" ")
+                img = cv2.imread(os.path.join(img_base_dir, train_img[0]))
+                img = cv2.resize(img, (240, 180))
+                cv2.imwrite(os.path.join(train_dir, train_img[0]), img)
+            else:
+                train_count -= 1
+        
         print('writing annotation files completed')
         print('-----------------------------------------------\n')
         train_writer.close()

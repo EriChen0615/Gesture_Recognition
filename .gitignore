@@ -10,8 +10,8 @@ Training_Data/
 =======
 Training_Data/
 ego_data/
-XW-Dataset
-
+XW-Dataset/
+hand_dataset/
 >>>>>>> 6849446e06fa3f2f527fe46cab31d05f8842aadf
 # C extensions
 *.so
