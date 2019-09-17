@@ -20,6 +20,7 @@ def get_lists(path=''):
         cv2.imshow('img',img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+
     return img_list, gt_list
 
 def IoU(box, bboxes):

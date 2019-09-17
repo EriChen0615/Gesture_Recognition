@@ -169,19 +169,38 @@ def mkdir(path):
         print(path + ' already exist')
         return False
 
-def evaluate(boxes_per_img, gt):
+def evaluate(box, gt, scale_factor=1):
 
-    sum_IoU = 0
-    sum_score = 0
-    for box_number, bbox in enumerate(boxes_per_img):
-        sum_IoU += bbox[4]*IoU(bbox[:-1], gt)
-        sum_score += bbox[4]
+    box_area = (box[2] - box[0] + 1) * (box[3] - box[1] + 1)
+    gt_area = (gt[2] - gt[0] + 1) * (gt[3] - gt[1] + 1)
 
-    if sum_score == 0:
-        return -1
-    else:
-        score = sum_IoU / sum_score
-    return score
+    # inter area
+    xx1 = np.maximum(box[0], gt[0])
+    yy1 = np.maximum(box[1], gt[1])
+    xx2 = np.minimum(box[2], gt[2])
+    yy2 = np.minimum(box[3], gt[3])
+    w = np.maximum(0, xx2 - xx1 + 1)
+    h = np.maximum(0, yy2 - yy1 + 1)
+
+    inter = w * h
+
+    # Centre of predicted bounding box
+    cbx = (box[0] + box[2])/ 2
+    cby = (box[1] + box[3])/ 2
+
+    # Centre of ground truth bounding box
+    cgx = (gt[0] + gt[2])/ 2
+    cgy = (gt[1] + gt[3]) / 2
+
+    # Deviation of centre
+    dx = abs(cbx - cgx)
+    dy = abs(cby - cgy)
+    deviation_square = (dx**2 + dy**2)
+
+    exp_index = deviation_square / box_area
+
+    PNet_index = (inter / gt_area) * (inter / box_area) * scale_factor / (np.exp(exp_index))
+    return PNet_index
 
 def get_lists(path=''):
     with open(os.path.join(path, 'imglist_with_gesture.txt')) as f:
@@ -287,20 +306,22 @@ def main(test_mode="ONet"):
     NM_set  = [] # Normal bounding boxes (IoU_lower_threshold < IoU < IoU_upper_threshold);
     FPR_set = [] # False Positive Rate (FP / total boxes);
     TPR_set = [] # False Positive Rate (TP / total boxes);
-    score_set = [] # Scores (sum(score*IoU) / sum(score)).
+    score_set = [] # Scores
 
     for count, gt in enumerate(gt_list):
         TP_img = [] # True  Positive bbox for each img;
         FP_img = [] # False Positive bbox for each img;
         NM_img = [] # Normal bbox for each img.
+        score_img = []
 
         # Evaluate scores per picture
-        score = evaluate(all_boxes[count], gt)
 
         # Draw boxes
         for box_number, bbox in enumerate(all_boxes[count]):
             # Evaluate box
             iou = IoU(bbox[:-1], gt)
+            score = evaluate(bbox[:-1], gt)
+            score_img.append(score)
             # print(box_number, iou)
             if iou > IoU_upper_threshold:
                 TP_img.append(bbox)
@@ -321,7 +342,7 @@ def main(test_mode="ONet"):
         TP_set.append(TP_img)
         FP_set.append(FP_img)
         NM_set.append(NM_img)
-        score_set.append(score)
+        score_set.append(sum(score_img)/len(score_img))
         if not TP_img:
             FN_img.append(count)
 

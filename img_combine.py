@@ -1,6 +1,7 @@
 from PIL import Image
 import os
 import fnmatch
+import sys
 
 def scan_file(file_dir = '', file_postfix = 'jpg'):
     '''
@@ -30,25 +31,42 @@ def mkdir(path):
         print(path + ' already exist')
         return False
 
-def main():
-    file_path_1 = "MTCNN_demo/PNet-Sep/ResultImage/Test/"
-    file_path_2 = "MTCNN_demo/PNet/ResultImage/Test/"
-    dst_path = "MTCNN_demo/Test_Two_img/"
+def main(mode):
+    file_path_1 = "MTCNN_demo/PNet/ResultImage/XW_Dataset/"
+    file_path_2 = "MTCNN_demo/RNet/ResultImage/XW_Dataset/"
+    file_path_3 = "MTCNN_demo/ONet/ResultImage/XW_Dataset/"
+    dst_path = "MTCNN_demo/Sep13_PRO/"
+    # print("=====please type in file path=====")
+    # file_path = []
+    # for i in range(mode):
+    #     print("suggested path:" + "MTCNN_demo/PNet/ResultImage/XW_Dataset/")
+    #     file_path.append = input("File path:")
+    # print("suggested dst_path: MTCNN_demo/Sep13_PRO/")
+    # dst_path = input("dst path:")
 
     mkdir(dst_path)
 
     file_count, file_list = scan_file(file_path_1, 'png')
 
     for img in file_list:
+
         img_path_1 = file_path_1 + img
         img_path_2 = file_path_2 + img
+        if mode == "3":
+            img_path_3 = file_path_3 + img
 
         im1 = Image.open(img_path_1)
         im2 = Image.open(img_path_2)
+        if mode == "3":
+            im3 = Image.open(img_path_3)
 
-        width, height = 240, 240
+        width, height = im1.size
 
-        result = Image.new(im1.mode, (width * 2, height))
+        if mode == "3":
+            result = Image.new(im1.mode, (width * 3, height))
+            result.paste(im3, box=(width * 2, 0))
+        else:
+            result = Image.new(im1.mode, (width * 2, height))
         result.paste(im2, box=(width, 0))
         result.paste(im1, box=(0, 0))
 
@@ -56,4 +74,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    combine = sys.argv[1]
+    assert combine == "2" or combine == "3", "Invalid input, please check your input."
+    main(combine)
