@@ -72,6 +72,7 @@ def read_multi_tfrecords(tfrecord_files, batch_sizes, net):
     print( rois.get_shape())
     gestures = tf.concat([pos_gesture,part_gesture,neg_gesture,gesture_gesture],0,name="concat/gesture")
     print('---------------------------------------------------------------')
+    print('我可真是个小机灵鬼')
     return images,labels,rois,gestures
     
 def read():

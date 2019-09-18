@@ -86,7 +86,7 @@ def random_flip_images(image_batch,label_batch, gesture_batch):
         #     gesture_[[0, 1]] = gesture_[[1, 0]]#left eye<->right eye
         #     gesture_[[3, 4]] = gesture_[[4, 3]]#left mouth<->right mouth        
         #     gesture_batch[i] = gesture_.ravel()
-        
+
     return image_batch, gesture_batch
 
 def image_color_distort(inputs):
@@ -203,9 +203,12 @@ def train(net_factory, prefix, end_epoch, base_dir,
         assert neg_batch_size != 0,"Batch Size Error "
         gesture_batch_size = int(np.ceil(config.BATCH_SIZE*gesture_radio))
         assert gesture_batch_size != 0,"Batch Size Error "
+        if (pos_batch_size+part_batch_size+neg_batch_size+gesture_batch_size)>config.BATCHSIZE:
+            gesture_batch_size = config.BATCHSIZE - pos_batch_size - part_batch_size - neg_batch_siz 
+        assert pos_batch_size + part_batch_size + neg_batch_size + gesture_batch_size == config.BATCHSIZE, "num exceeded batchsize"
         batch_sizes = [pos_batch_size,part_batch_size,neg_batch_size,gesture_batch_size]
         #print('batch_size is:', batch_sizes)
-        image_batch, label_batch, bbox_batch,gesture_batch = read_multi_tfrecords(dataset_dirs,batch_sizes, net)        
+        image_batch, label_batch, bbox_batch, gesture_batch = read_multi_tfrecords(dataset_dirs,batch_sizes, net)        
         
         # if we make sure that no need for multiple tfrecords we can remove the if-else statement
         # dataset_dir = os.path.join(base_dir,'train_%s_gesture.tfrecord_shuffle' % net)
@@ -307,8 +310,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
             print(bbox_batch_array[0])
             print(gesture_batch_array[0])
             '''
-            gesture_batch_array = tf.zeros((200,3), dtype = tf.float32)
-        
+            print(gesture_batch_array.shape)
             _,_,summary = sess.run([train_op, lr_op ,summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array,gesture_target:gesture_batch_array})
             # _,_,summary = sess.run([train_op, lr_op ,summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array})
 
