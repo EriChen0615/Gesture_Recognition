@@ -49,17 +49,17 @@ net=PNet
 # RNet data generation
 net=RNet
 cd prepare_ego_data
-echo 'running gen_data.py'
-python gen_data.py --test_mode PNet --anno_file $anno_name --im_dir ../$raw_img_dir --save_dir ../$output_dir/$net --epoch $pend_epoch --prefix ../$net_prefix/PNet
-echo 'running gen_gesture.py'
-python gen_gesture.py --net RNet --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
-echo 'running merge_gesture_and_data.py'
-python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
-echo 'running gen_tfrecord.py'
-python gen_tfrecord.py --net RNet --data_dir ../$output_dir/$net
-cd ..
+# echo 'running gen_data.py'
+# python gen_data.py --test_mode PNet --anno_file $anno_name --im_dir ../$raw_img_dir --save_dir ../$output_dir/$net --epoch $pend_epoch --prefix ../$net_prefix/PNet
+# echo 'running gen_gesture.py'
+# python gen_gesture.py --net RNet --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
+# echo 'running merge_gesture_and_data.py'
+# python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
+# echo 'running gen_tfrecord.py'
+# python gen_tfrecord.py --net RNet --data_dir ../$output_dir/$net
+# cd ..
 
-echo 'RNet data generation completes!'
+# echo 'RNet data generation completes!'
 
 
 RNet training
