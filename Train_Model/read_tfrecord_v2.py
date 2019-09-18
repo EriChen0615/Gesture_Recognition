@@ -48,6 +48,8 @@ def read_single_tfrecord(tfrecord_file, batch_size, net):
     return image, label, roi,gesture
 
 def read_multi_tfrecords(tfrecord_files, batch_sizes, net):
+    print('---------------------------------------------------------------')
+    print('here start reading tfrecords: ')
     pos_dir,part_dir,neg_dir, gesture_dir = tfrecord_files
     pos_batch_size,part_batch_size,neg_batch_size,gesture_batch_size = batch_sizes
     #assert net=='RNet' or net=='ONet', "only for RNet and ONet"
@@ -69,6 +71,7 @@ def read_multi_tfrecords(tfrecord_files, batch_sizes, net):
     rois = tf.concat([pos_roi,part_roi,neg_roi,gesture_roi],0,name="concat/roi")
     print( rois.get_shape())
     gestures = tf.concat([pos_gesture,part_gesture,neg_gesture,gesture_gesture],0,name="concat/gesture")
+    print('---------------------------------------------------------------')
     return images,labels,rois,gestures
     
 def read():
