@@ -193,7 +193,6 @@ def train(net_factory, prefix, end_epoch, base_dir,
         part_dir = os.path.join(base_dir,'train_%s_part_gesture.tfrecord_shuffle' % net)
         neg_dir = os.path.join(base_dir,'train_%s_neg_gesture.tfrecord_shuffle' % net)
         #gesture_dir = os.path.join(base_dir,'gesture_gesture.tfrecord_shuffle')
-        #gesture_dir = os.path.join(base_dir,'gesture_gesture.tfrecord_shuffle')
         dataset_dirs = [pos_dir,part_dir,neg_dir,gesture_dir]
         pos_radio = 1.0/6;part_radio = 1.0/6;gesture_radio=1.0/6;neg_radio=3.0/6
         pos_batch_size = int(np.ceil(config.BATCH_SIZE*pos_radio))
@@ -530,7 +529,7 @@ def test(net_factory, prefix, base_dir, display=100, batchsize = 1):
         
 
     except tf.errors.OutOfRangeError:
-        print("Finished!( � �つロ乾杯")
+        print("Finished!( ��つロ乾�)
     finally:
         coord.request_stop()
         writer.close()
