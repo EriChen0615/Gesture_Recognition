@@ -48,7 +48,7 @@ def read_single_tfrecord(tfrecord_file, batch_size, net):
     return image, label, roi,gesture
 
 def read_multi_tfrecords(tfrecord_files, batch_sizes, net):
-    pos_dir,part_dir,neg_dir,gesture_dir = tfrecord_files
+    pos_dir,part_dir,neg_dir, gesture_dir = tfrecord_files
     pos_batch_size,part_batch_size,neg_batch_size,gesture_batch_size = batch_sizes
     #assert net=='RNet' or net=='ONet', "only for RNet and ONet"
     pos_image,pos_label,pos_roi,pos_gesture = read_single_tfrecord(pos_dir, pos_batch_size, net)

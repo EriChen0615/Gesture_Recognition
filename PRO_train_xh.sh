@@ -21,7 +21,7 @@ source ~/anaconda3/etc/profile.d/conda.sh
 conda activate $env_name
 
 # # PNet data generation
-# net=PNet
+net=PNet
 # cd prepare_ego_data
 # echo 'Running PNet_gen_data.py'
 # python PNet_gen_data.py --im_dir ../$raw_img_dir  --save_dir ../$output_dir/$net
@@ -60,6 +60,7 @@ python gen_tfrecord.py --net RNet --data_dir ../$output_dir/$net
 cd ..
 
 echo 'RNet data generation completes!'
+
 
 RNet training
 cd Train_Model
