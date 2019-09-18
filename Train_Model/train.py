@@ -307,7 +307,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
             print(bbox_batch_array[0])
             print(gesture_batch_array[0])
             '''
-            print(gesture_batch_array.shape)
+            gesture_batch_array = tf.zeros((200,3), dtype = tf.float32)
         
             _,_,summary = sess.run([train_op, lr_op ,summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array,gesture_target:gesture_batch_array})
             # _,_,summary = sess.run([train_op, lr_op ,summary_op], feed_dict={input_image: image_batch_array, label: label_batch_array, bbox_target: bbox_batch_array})
