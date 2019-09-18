@@ -114,8 +114,8 @@ def multi_run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
     dataset = get_dataset(dataset_dir, net=net)
     # filenames = dataset['filename']
     if shuffling:
-        for tf_filename in tf_file_list:
-            tf_filename = tf_filename + '_shuffle'
+        for idx in range(len(tf_file_list)):
+            tf_file_list[idx] = tf_file_list[idx] + '_shuffle'
         #random.seed(12345454)
         random.shuffle(dataset)
     # Process dataset files.
@@ -123,28 +123,27 @@ def multi_run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
 
     #print('lalala')
 
-    tfrecord_pos_writer = tf.python_io.TFRecordWriter(tf_filename_pos)
-    tfrecord_neg_writer = tf.python_io.TFRecordWriter(tf_filename_neg)
-    tfrecord_part_writer = tf.python_io.TFRecordWriter(tf_filename_part)
-    tfrecord_writer = None
+    for idx,tf_filename in enumerate(tf_file_list):
+        with tf.python_io.TFRecordWriter(tf_filename) as tfrecord_writer:
+            for i, image_example in enumerate(dataset):
+                if idx == 0:
+                    if image_example['label'] != 1:
+                        continue
+                elif idx == 1:
+                    if image_example['label'] != 0:
+                        continue
+                elif idx == 2:
+                    if image_example['label'] != -1:
+                        continue
 
-    for i, image_example in enumerate(dataset):
-
-        if image_example['label'] == 1:
-            tfrecord_writer = tfrecord_pos_writer
-        elif image_example['label'] == 0:
-            tfrecord_writer = tfrecord_neg_writer
-        elif image_example['label'] == -1:
-            tfrecord_writer = tfrecord_part_writer
-
-        if (i+1) % 100 == 0:
-            sys.stdout.write('\r>> %d/%d images has been converted' % (i+1, len(dataset)))
-            #sys.stdout.write('\r>> Converting image %d/%d' % (i + 1, len(dataset)))
-        sys.stdout.flush()
-        filename = image_example['filename']
-        if filename[0]!='.':
-            filename = os.path.join('..',filename)
-        _add_to_tfrecord(filename, image_example, tfrecord_writer)
+                if (i+1) % 100 == 0:
+                    sys.stdout.write('\r>> %d/%d images has been converted' % (i+1, len(dataset)))
+                    #sys.stdout.write('\r>> Converting image %d/%d' % (i + 1, len(dataset)))
+                sys.stdout.flush()
+                filename = image_example['filename']
+                if filename[0]!='.':
+                    filename = os.path.join('..',filename)
+                _add_to_tfrecord(filename, image_example, tfrecord_writer)
     # Finally, write the labels file:
     # labels_to_class_names = dict(zip(range(len(_CLASS_NAMES)), _CLASS_NAMES))
     # dataset_utils.write_label_file(labels_to_class_names, dataset_dir)

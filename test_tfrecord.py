@@ -74,8 +74,8 @@ def read_multi_tfrecords(tfrecord_files, batch_sizes, net):
 def read():
     BATCH_SIZE = 64
     net = 'RNet'
-    dataset_dir = "Dataset/Training/no_LM24/imglists/RNet"
-    gesture_dir = os.path.join(dataset_dir,'train_RNet_gesture.tfrecord_shuffle')
+    dataset_dir = "Training_Data/rnet-12/imglists"
+    gesture_dir = os.path.join(dataset_dir,'train_RNet_pos_gesture.tfrecord_shuffle')
     images, labels, rois,gestures  = read_single_tfrecord(gesture_dir, BATCH_SIZE, net)
     
     '''
