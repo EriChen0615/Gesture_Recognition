@@ -129,12 +129,12 @@ def multi_run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
     tfrecord_writer = None
 
     for i, image_example in enumerate(dataset):
-        
-        if image_example['label'] = 1:
+
+        if image_example['label'] == 1:
             tfrecord_writer = tfrecord_pos_writer
-        elif image_example['label'] = 0:
+        elif image_example['label'] == 0:
             tfrecord_writer = tfrecord_neg_writer
-        elif image_example['label'] = -1:
+        elif image_example['label'] == -1:
             tfrecord_writer = tfrecord_part_writer
 
         if (i+1) % 100 == 0:
@@ -222,4 +222,7 @@ if __name__ == '__main__':
     dir = args.data_dir
     net = args.net
     output_directory = os.path.join(dir,'imglists')
-    run(dir, net, output_directory, shuffling=True)
+    if net == 'PNet':
+        run(dir, net, output_directory, shuffling=True)
+    else:
+        multi_run(dir, net, output_directory, shuffling=True)
