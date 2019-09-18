@@ -1,7 +1,7 @@
 #!/bin/bash
 
 env_name=tf-gpu
-model_name=MTCNN-18Sept-original
+model_name=MTCNN-18Sept-multitfrecords
 output_dir=ego_data/Training
 net_prefix=Model/$model_name
 
