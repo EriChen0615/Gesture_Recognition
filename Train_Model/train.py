@@ -531,7 +531,7 @@ def test(net_factory, prefix, base_dir, display=100, batchsize = 1):
         
 
     except tf.errors.OutOfRangeError:
-        print("Finished!( ï¿ï¿½ã¤ãƒ­ä¹¾æ)
+        print("Finished!")
     finally:
         coord.request_stop()
         writer.close()
