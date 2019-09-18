@@ -187,9 +187,9 @@ def demo(test_mode="ONet"):
     # The model path, should be the same in the checkpoint file
     model_path = ['Model/MTCNN-13Sep/PNet/PNet-30', 'Model/MTCNN-13Sep/RNet/RNet-22', 'Model/MTCNN-13Sep/ONet/ONet-22']
     # The sub-folder in the folder Testing_Demo_Data
-    TestImage_subfolder = "ego"
+    TestImage_subfolder = "time"
     # Test image postfix
-    Image_postfix = 'jpg'
+    Image_postfix = 'png'
 
     TestImage_path = "Testing_Demo_Data/{}/".format(TestImage_subfolder)
     TestResult_path = "MTCNN_demo/{}/ResultImage/{}/".format(test_mode, TestImage_subfolder)

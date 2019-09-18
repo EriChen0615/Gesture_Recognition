@@ -32,10 +32,10 @@ def mkdir(path):
         return False
 
 def main(mode):
-    file_path_1 = "MTCNN_demo/PNet/ResultImage/XW_Dataset/"
-    file_path_2 = "MTCNN_demo/RNet/ResultImage/XW_Dataset/"
-    file_path_3 = "MTCNN_demo/ONet/ResultImage/XW_Dataset/"
-    dst_path = "MTCNN_demo/Sep13_PRO/"
+    file_path_1 = "MTCNN_demo/PNet/ResultImage/time/"
+    file_path_2 = "MTCNN_demo/RNet/ResultImage/time/"
+    file_path_3 = "MTCNN_demo/ONet/ResultImage/time/"
+    dst_path = "MTCNN_demo/time/"
     # print("=====please type in file path=====")
     # file_path = []
     # for i in range(mode):

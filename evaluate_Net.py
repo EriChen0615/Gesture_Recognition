@@ -263,7 +263,7 @@ def main(test_mode="ONet"):
     batch_size = [2048, 64, 16]
 
     # The model path, should be the same in the checkpoint file
-    model_path = ['Model/PNet/PNet-30', 'Model/RNet/RNet-500', 'Model/ONet/ONet-116']
+    model_path = ['Model/MTCNN-13Sep/PNet/PNet-30', 'Model/MTCNN-13Sep/RNet/RNet-22', 'Model/MTCNN-13Sep/ONet/ONet-22']
     # Test image path
     path = 'XW-Dataset/Training'
 
@@ -298,84 +298,114 @@ def main(test_mode="ONet"):
     test_data = TestLoader(img_list)
 
     # Get boxes and landmarks
-    all_boxes, landmarks = mtcnn_detector.detect_face(test_data)
+    all_boxes, _ = mtcnn_detector.detect_face(test_data)
 
-    FP_set  = [] # False Positive (False Alarm - IoU < IoU_lower_threshold);
-    FN_img  = [] # False Negative (Detection Failure - if there is no bbox whose IoU > IoU_upper_threshold);
-    TP_set  = [] # True  Positive (Correct Detection - IoU > IoU_upper_threshold);
-    NM_set  = [] # Normal bounding boxes (IoU_lower_threshold < IoU < IoU_upper_threshold);
-    FPR_set = [] # False Positive Rate (FP / total boxes);
-    TPR_set = [] # False Positive Rate (TP / total boxes);
-    score_set = [] # Scores
+    version1 = False
+    if (version1):
+        FP_set  = [] # False Positive (False Alarm - IoU < IoU_lower_threshold);
+        FN_img  = [] # False Negative (Detection Failure - if there is no bbox whose IoU > IoU_upper_threshold);
+        TP_set  = [] # True  Positive (Correct Detection - IoU > IoU_upper_threshold);
+        NM_set  = [] # Normal bounding boxes (IoU_lower_threshold < IoU < IoU_upper_threshold);
+        FPR_set = [] # False Positive Rate (FP / total boxes);
+        TPR_set = [] # False Positive Rate (TP / total boxes);
+        score_set = [] # Scores
 
-    for count, gt in enumerate(gt_list):
-        TP_img = [] # True  Positive bbox for each img;
-        FP_img = [] # False Positive bbox for each img;
-        NM_img = [] # Normal bbox for each img.
-        score_img = []
+        for count, gt in enumerate(gt_list):
+            TP_img = [] # True  Positive bbox for each img;
+            FP_img = [] # False Positive bbox for each img;
+            NM_img = [] # Normal bbox for each img.
+            score_img = []
 
-        # Evaluate scores per picture
+            # Evaluate scores per picture
 
-        # Draw boxes
-        for box_number, bbox in enumerate(all_boxes[count]):
-            # Evaluate box
-            iou = IoU(bbox[:-1], gt)
-            score = evaluate(bbox[:-1], gt)
-            score_img.append(score)
-            # print(box_number, iou)
-            if iou > IoU_upper_threshold:
-                TP_img.append(bbox)
-            elif iou < IoU_lower_threshold:
-                FP_img.append(bbox)
+            # Draw boxes
+            for box_number, bbox in enumerate(all_boxes[count]):
+                # Evaluate box
+                iou = IoU(bbox[:-1], gt)
+                score = evaluate(bbox[:-1], gt)
+                score_img.append(score)
+                # print(box_number, iou)
+                if iou > IoU_upper_threshold:
+                    TP_img.append(bbox)
+                elif iou < IoU_lower_threshold:
+                    FP_img.append(bbox)
+                else:
+                    NM_img.append(bbox)
+
+                # Skip the landmarks if it is PNet mode
+                if test_mode == "PNet":
+                    continue
+
+            if len(all_boxes[count])!=0:
+                FPR = len(FP_img)/len(all_boxes[count])
+                FPR_set.append(FPR)
+                TPR = len(TP_img)/len(all_boxes[count])
+                TPR_set.append(TPR)
+            TP_set.append(TP_img)
+            FP_set.append(FP_img)
+            NM_set.append(NM_img)
+            score_set.append(sum(score_img)/len(score_img))
+            if not TP_img:
+                FN_img.append(count)
+
+
+
+        # print result
+        print('=================== Result =====================\n')
+
+        print(" Testing samples: {};\n Testing Model: {};\n Testing Net: {}.\n".format(len(img_list), model_path, test_mode))
+
+        print("1. Max FPR: {}, Min FPR: {}, Average FPR: {}".
+              format(round(max(FPR_set), 4), round(min(FPR_set), 4), round(sum(FPR_set) / len(FPR_set), 4)))
+        print("   FPR(False Positive Rate) refers to the ratio of # mistakenly marked\n   bounding boxes and # total boxes for each image.\n   IoU < {}\n".format(IoU_lower_threshold))
+
+        print("2. Max TPR: {}, Min TPR: {}, Average TPR: {}".
+              format(round(max(TPR_set), 4), round(min(TPR_set), 4), round(sum(TPR_set) / len(TPR_set), 4)))
+        print("   TPR(True Positive Rate) refers to the ratio of # successfully marked\n   bounding boxes and # total boxes for each image.\n   IoU > {}\n".format(IoU_upper_threshold))
+
+        print("3. Max score: {}, Min score: {}, Average score: {}".
+              format(round(max(score_set),4), round(min(score_set),4), round(sum(score_set)/len(score_set),4)))
+        print(
+            "   Scores are calculated following sum(score*IoU)/sum(score) for each image.\n")
+
+        # print(FN_img)
+        print("4. False Negative Rate: {}".format(round(len(FN_img)/len(img_list), 4)))
+        print("   False Negative Rate refers to the ratio of # images which never have\n   positive boxes and # total images for the whole testing set.\n")
+
+        print("Images whose indices are in the following list do not have positive bounding boxes:")
+        print(FN_img)
+
+    version2 = True
+    if (version2):
+        TP_set = []
+        FN_set = [] # True  Positive (Correct Detection - IoU > IoU_upper_threshold);
+
+        for count, gt in enumerate(gt_list):
+
+            # Evaluate scores per picture
+            TP_img = []
+            # Draw boxes
+            for box_number, bbox in enumerate(all_boxes[count]):
+                # Evaluate box
+                iou = IoU(bbox[:-1], gt)
+
+                # print(box_number, iou)
+                if iou > IoU_upper_threshold:
+                    TP_img.append(bbox)
+
+            if not TP_img:
+                FN_set.append(count)
             else:
-                NM_img.append(bbox)
+                TP_set.append(count)
 
-            # Skip the landmarks if it is PNet mode
-            if test_mode == "PNet":
-                continue
+        # print result
+        print('=================== Result =====================\n')
 
-        if len(all_boxes[count])!=0:
-            FPR = len(FP_img)/len(all_boxes[count])
-            FPR_set.append(FPR)
-            TPR = len(TP_img)/len(all_boxes[count])
-            TPR_set.append(TPR)
-        TP_set.append(TP_img)
-        FP_set.append(FP_img)
-        NM_set.append(NM_img)
-        score_set.append(sum(score_img)/len(score_img))
-        if not TP_img:
-            FN_img.append(count)
-
-
-
-    # print result
-    print('=================== Result =====================\n')
-
-    print(" Testing samples: {};\n Testing Model: {};\n Testing Net: {}.\n".format(len(img_list), model_path, test_mode))
-
-    print("1. Max FPR: {}, Min FPR: {}, Average FPR: {}".
-          format(round(max(FPR_set), 4), round(min(FPR_set), 4), round(sum(FPR_set) / len(FPR_set), 4)))
-    print("   FPR(False Positive Rate) refers to the ratio of # mistakenly marked\n   bounding boxes and # total boxes for each image.\n   IoU < {}\n".format(IoU_lower_threshold))
-
-    print("2. Max TPR: {}, Min TPR: {}, Average TPR: {}".
-          format(round(max(TPR_set), 4), round(min(TPR_set), 4), round(sum(TPR_set) / len(TPR_set), 4)))
-    print("   TPR(True Positive Rate) refers to the ratio of # successfully marked\n   bounding boxes and # total boxes for each image.\n   IoU > {}\n".format(IoU_upper_threshold))
-
-    print("3. Max score: {}, Min score: {}, Average score: {}".
-          format(round(max(score_set),4), round(min(score_set),4), round(sum(score_set)/len(score_set),4)))
-    print(
-        "   Scores are calculated following sum(score*IoU)/sum(score) for each image.\n")
-
-    # print(FN_img)
-    print("4. False Negative Rate: {}".format(round(len(FN_img)/len(img_list), 4)))
-    print("   False Negative Rate refers to the ratio of # images which never have\n   positive boxes and # total images for the whole testing set.\n")
-
-    print("Images whose indices are in the following list do not have positive bounding boxes:")
-    print(FN_img)
+        print(" TP {1} out of {0}, TPR={3},\n FN {2} out of {0}, FNR={4}\n".format(len(gt_list), len(TP_set), len(FN_set), round((len(TP_set)/len(gt_list)),4),round((len(FN_set)/len(gt_list)),4)))
 
 if __name__ == '__main__':
     test_mode = sys.argv[1]
     assert test_mode == "PNet" or test_mode == "RNet" or test_mode == "ONet", "Invalid test mode, please check your input."
-    path = 'Dataset/Training'
-    img_list, gt_list = get_lists(path)
+    # path = 'Dataset/Training'
+    # img_list, gt_list = get_lists(path)
     main(test_mode)
