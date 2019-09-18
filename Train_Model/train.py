@@ -20,7 +20,7 @@ from tensorflow.contrib import slim
 
 import random
 import cv2
-
+LR_FACTOR = 0.5
 
 def train_model(base_lr, loss, data_num):
     """
@@ -31,7 +31,7 @@ def train_model(base_lr, loss, data_num):
     :return:
     train_op, lr_op
     """
-    lr_factor = 0.5 #changed to 0.5 for pnet and rnet training 
+    lr_factor = LR_FACTOR #changed to 0.5 for pnet and rnet training 
     global_step = tf.Variable(0, trainable=False)
     #LR_EPOCH [8,14]
     #boundaried [num_of_batch,num_of_batch,num_of_batch]
@@ -265,6 +265,8 @@ def train(net_factory, prefix, end_epoch, base_dir,
 
     time = 'train-{}-{date:%Y-%m-%d_%H:%M:%S}'.format(net, date=datetime.now() )
     print("-------------------------------------------------------------\n")
+    print("the configuration is as follows:")
+    print("base_lr: {}  lr_factor: {}  end_epoch: {}".format(base_dir, LR_FACTOR, end_epoch))
     print("the sub dir's name is: ", time)
     print("-------------------------------------------------------------\n")
     logs_dir = "../logs/%s/" %(net)
