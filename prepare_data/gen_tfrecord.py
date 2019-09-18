@@ -44,7 +44,11 @@ def _get_output_filename(output_dir, name, net):
     #st = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     #return '%s/%s_%s_%s.tfrecord' % (output_dir, name, net, st)
     return '%s/train_%s_gesture.tfrecord' % (output_dir,net)
-    
+
+def _get_multi_output_filename(output_dir, name, net, cate):
+    #st = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    #return '%s/%s_%s_%s.tfrecord' % (output_dir, name, net, st)
+    return '%s/train_%s_%s_gesture.tfrecord' % (output_dir,net,cate)
 
 def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
     
@@ -86,6 +90,66 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
     # labels_to_class_names = dict(zip(range(len(_CLASS_NAMES)), _CLASS_NAMES))
     # dataset_utils.write_label_file(labels_to_class_names, dataset_dir)
     print('\nFinished converting the MTCNN dataset!')
+
+def multi_run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
+    
+    """Runs the conversion operation.
+
+    Args:
+      dataset_dir: The dataset directory where the dataset is stored.
+      output_dir: Output directory.
+    """
+    
+    #tfrecord name 
+    tf_filename_pos = _get_multi_output_filename(output_dir, name, net,'pos')
+    tf_filename_neg = _get_multi_output_filename(output_dir, name, net,'neg')
+    tf_filename_part = _get_multi_output_filename(output_dir, name, net, 'part')
+    tf_file_list = [tf_filename_pos,tf_filename_neg, tf_filename_part]
+
+    for tf_filename in tf_file_list:
+        if tf.gfile.Exists(tf_filename):
+            print('Dataset files already exist. Exiting without re-creating them.')
+            return
+        # GET Dataset, and shuffling.
+    dataset = get_dataset(dataset_dir, net=net)
+    # filenames = dataset['filename']
+    if shuffling:
+        for idx in range(len(tf_file_list)):
+            tf_file_list[idx] = tf_file_list[idx] + '_shuffle'
+        #random.seed(12345454)
+        random.shuffle(dataset)
+    # Process dataset files.
+    # write the data to tfrecord
+
+    #print('lalala')
+
+    for idx,tf_filename in enumerate(tf_file_list):
+        with tf.python_io.TFRecordWriter(tf_filename) as tfrecord_writer:
+            for i, image_example in enumerate(dataset):
+                if idx == 0:
+                    if image_example['label'] != 1:
+                        continue
+                elif idx == 1:
+                    if image_example['label'] != 0:
+                        continue
+                elif idx == 2:
+                    if image_example['label'] != -1:
+                        continue
+
+                if (i+1) % 100 == 0:
+                    sys.stdout.write('\r>> %d/%d images has been converted' % (i+1, len(dataset)))
+                    #sys.stdout.write('\r>> Converting image %d/%d' % (i + 1, len(dataset)))
+                sys.stdout.flush()
+                filename = image_example['filename']
+                if filename[0]!='.':
+                    filename = os.path.join('..',filename)
+                _add_to_tfrecord(filename, image_example, tfrecord_writer)
+    # Finally, write the labels file:
+    # labels_to_class_names = dict(zip(range(len(_CLASS_NAMES)), _CLASS_NAMES))
+    # dataset_utils.write_label_file(labels_to_class_names, dataset_dir)
+    print('\nFinished converting the MTCNN dataset!')
+
+
 
 
 def get_dataset(dir, net='PNet'):
@@ -157,4 +221,7 @@ if __name__ == '__main__':
     dir = args.data_dir
     net = args.net
     output_directory = os.path.join(dir,'imglists')
-    run(dir, net, output_directory, shuffling=True)
+    if net == 'PNet':
+        run(dir, net, output_directory, shuffling=True)
+    else:
+        multi_run(dir, net, output_directory, shuffling=True)
