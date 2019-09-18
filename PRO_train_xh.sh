@@ -22,19 +22,19 @@ conda activate $env_name
 
 # PNet data generation
 net=PNet
-# cd prepare_ego_data
-# echo 'Running PNet_gen_data.py'
-# python PNet_gen_data.py --im_dir ../$raw_img_dir  --save_dir ../$output_dir/$net
-# echo 'Handling data to training'
-# python handle_data_to_training.py 
-# echo 'Running gen_gesture'
-# python gen_gesture.py --net PNet --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
-# echo 'Merging training data'
-# python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
-# echo 'Generating tfrecord'
-# python gen_tfrecord.py --net PNet --data_dir ../$output_dir/$net
-# cd ..
-# echo 'PNet data generation completes!'
+cd prepare_ego_data
+echo 'Running PNet_gen_data.py'
+python PNet_gen_data.py --im_dir ../$raw_img_dir  --save_dir ../$output_dir/$net
+echo 'Handling data to training'
+python handle_data_to_training.py 
+echo 'Running gen_gesture'
+python gen_gesture.py --net PNet --im_dir ../$raw_img_dir --anno_file $anno_name --save_dir ../$output_dir/$net
+echo 'Merging training data'
+python merge_gesture_and_data.py --net $net --base_dir ../$output_dir/$net
+echo 'Generating tfrecord'
+python gen_tfrecord.py --net PNet --data_dir ../$output_dir/$net
+cd ..
+echo 'PNet data generation completes!'
 
 # PNet training
 
