@@ -203,9 +203,9 @@ def train(net_factory, prefix, end_epoch, base_dir,
         assert neg_batch_size != 0,"Batch Size Error "
         gesture_batch_size = int(np.ceil(config.BATCH_SIZE*gesture_radio))
         assert gesture_batch_size != 0,"Batch Size Error "
-        if (pos_batch_size+part_batch_size+neg_batch_size+gesture_batch_size)>config.BATCHSIZE:
-            gesture_batch_size = config.BATCHSIZE - pos_batch_size - part_batch_size - neg_batch_siz 
-        assert pos_batch_size + part_batch_size + neg_batch_size + gesture_batch_size == config.BATCHSIZE, "num exceeded batchsize"
+        if (pos_batch_size+part_batch_size+neg_batch_size+gesture_batch_size)>config.BATCH_SIZE:
+            gesture_batch_size = config.BATCHSIZE - pos_batch_size - part_batch_size - neg_batch_size 
+        assert pos_batch_size + part_batch_size + neg_batch_size + gesture_batch_size == config.BATCH_SIZE, "num exceeded batchsize"
         batch_sizes = [pos_batch_size,part_batch_size,neg_batch_size,gesture_batch_size]
         #print('batch_size is:', batch_sizes)
         image_batch, label_batch, bbox_batch, gesture_batch = read_multi_tfrecords(dataset_dirs,batch_sizes, net)        
