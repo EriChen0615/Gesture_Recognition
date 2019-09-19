@@ -200,7 +200,8 @@ def train(net_factory, prefix, end_epoch, base_dir,
         assert pos_batch_size != 0,"Batch Size Error "
         part_batch_size = int(np.ceil(config.BATCH_SIZE*part_radio))
         assert part_batch_size != 0,"Batch Size Error "
-        neg_batch_size = int(np.ceil(config.BATCH_SIZE*neg_radio))
+        # neg_batch_size = int(np.ceil(config.BATCH_SIZE*neg_radio))
+        neg_batch_size = 1
         assert neg_batch_size != 0,"Batch Size Error "
         gesture_batch_size = int(np.ceil(config.BATCH_SIZE*gesture_radio))
         # assert gesture_batch_size != 0,"Batch Size Error "
