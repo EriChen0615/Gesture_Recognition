@@ -63,11 +63,11 @@ net=RNet
 
 
 # RNet training
-cd Train_Model
-python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $r_base_lr --end_epoch $rend_epoch
-cd ..
+# cd Train_Model
+# python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $r_base_lr --end_epoch $rend_epoch
+# cd ..
 
-echo 'RNet training completes'
+# echo 'RNet training completes'
 
 # ONet data generation
 net=ONet
