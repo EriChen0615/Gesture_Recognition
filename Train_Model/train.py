@@ -195,13 +195,12 @@ def train(net_factory, prefix, end_epoch, base_dir,
         gesture_dir = os.path.join(base_dir,'train_%s_gesture.tfrecord_shuffle' % net)
         dataset_dirs = [pos_dir,part_dir,neg_dir,gesture_dir]
         # pos_radio = 1.0/6;part_radio = 1.0/6;gesture_radio=1.0/6;neg_radio=3.0/6
-        pos_radio = 100.0/200;part_radio = 99.0/200;gesture_radio=0.0;neg_radio= 1.0/200
+        pos_radio = 100.0/200;part_radio = 99.0/200;gesture_radio=0.0;neg_radio= 20.0/200
         pos_batch_size = int(np.ceil(config.BATCH_SIZE*pos_radio))
         assert pos_batch_size != 0,"Batch Size Error "
         part_batch_size = int(np.ceil(config.BATCH_SIZE*part_radio))
         assert part_batch_size != 0,"Batch Size Error "
-        # neg_batch_size = int(np.ceil(config.BATCH_SIZE*neg_radio))
-        neg_batch_size = 1
+        neg_batch_size = int(np.ceil(config.BATCH_SIZE*neg_radio))
         assert neg_batch_size != 0,"Batch Size Error "
         gesture_batch_size = int(np.ceil(config.BATCH_SIZE*gesture_radio))
         # assert gesture_batch_size != 0,"Batch Size Error "
