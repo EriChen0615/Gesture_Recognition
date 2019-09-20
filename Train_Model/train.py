@@ -181,7 +181,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     print("--------------------------------------------------------")
 
     #PNet use this method to get data
-    if net == 'PNet':
+    if net == 'PNet' or net == 'ONet':
         #dataset_dir = os.path.join(base_dir,'train_%s_ALL.tfrecord_shuffle' % net)
         dataset_dir = os.path.join(base_dir,'train_%s_gesture.tfrecord_shuffle' % net)
         print('dataset dir is:',dataset_dir)

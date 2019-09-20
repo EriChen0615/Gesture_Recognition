@@ -1,8 +1,8 @@
 #!/bin/bash
 
 env_name=tf-gpu
-model_name=MTCNN-18Sept-multitfrecords
-output_dir=ego_data/Training
+model_name=MTCNN-20Sept-ONet_aug
+output_dir=Training_Data/ego_data
 net_prefix=Model/$model_name
 
 raw_img_dir=ego_data/Training
@@ -85,9 +85,9 @@ cd ..
 echo 'ONet data generation completes'
 
 # ONet training
-cd Train_Model
-python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $o_base_lr --end_epoch $oend_epoch
-cd ..
+# cd Train_Model
+# python train_net.py --net $net --model_name $model_name --tfrecord_dir ../$output_dir/$net/$tfrecord_dir --base_lr $o_base_lr --end_epoch $oend_epoch
+# cd ..
 
 echo 'ONet training completes'
 
