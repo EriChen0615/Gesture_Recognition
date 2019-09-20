@@ -111,7 +111,7 @@ def save_hard_example(net, data,save_path):
                         #random crop
                         crop_box = np.array([nx, ny, nx + size, ny + size])
                         #calculate iou
-                        Iou = IoU(crop_box, boxes)
+                        Iou = IoU(crop_box, gts)
 
                         #crop a part from inital image
                         cropped_im = img[ny : ny + size, nx : nx + size, :]
@@ -193,6 +193,7 @@ def t_net(prefix, epoch,
     data = load_annotation(os.path.join(basedir,filename)) # modified version of load annotation
     # print('to see if load_annotation works fine: ')
     # print('data:',data)
+    '''
     mtcnn_detector = MtcnnDetector(detectors=detectors, min_face_size=min_face_size,
                                    stride=stride, threshold=thresh, slide_window=slide_window)
     #print("==================================")
@@ -214,15 +215,15 @@ def t_net(prefix, epoch,
     elif test_mode == "RNet":
         save_net = "ONet"
     #save detect result
+    '''
     save_path = data_dir
     print ('save_path is :')
     print(save_path)
-    if not os.path.exists(save_path):
-        os.mkdir(save_path)
-
-    save_file = os.path.join(save_path, "detections.pkl")
-    with open(save_file, 'wb') as f:
-        pickle.dump(detections, f,1)
+    # if not os.path.exists(save_path):
+    #     os.mkdir(save_path)
+    # save_file = os.path.join(save_path, "detections.pkl")
+    # with open(save_file, 'wb') as f:
+    #     pickle.dump(detections, f,1)
     print("%s testing finished, start OHEM" % image_size)
     save_hard_example(image_size, data, save_path)
 
