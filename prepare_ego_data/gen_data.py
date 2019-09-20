@@ -114,7 +114,7 @@ def save_hard_example(net, data,save_path):
                         Iou = IoU(crop_box, gts)
 
                         #crop a part from inital image
-                        cropped_im = img[ny : ny + size, nx : nx + size, :]
+                        cropped_im = img[crop_box[1] : crop_box[3], crop_box[0] : crop_box[2], :]
                         #resize the cropped image to size 12*12
                         resized_im = cv2.resize(cropped_im, (48, 48), interpolation=cv2.INTER_LINEAR)
 
