@@ -17,6 +17,9 @@ from Detector.fcn_detector import FcnDetector
 from Detector.MtcnnDetector import MtcnnDetector
 from utils import *
 from data_utils import *
+import numpy.random as npr
+import os.path
+
 #net : 24(RNet)/48(ONet)
 #data: dict()
 
