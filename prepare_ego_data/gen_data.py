@@ -99,21 +99,21 @@ def save_hard_example(net, data,save_path):
 
                 if image_size==48: # augment ONet negative samples by 50 times
                     while neg_num < 50:
-                    #neg_num's size [40,min(width, height) / 2],min_size:40
-                    # size is a random number between 12 and min(width,height)
-                    size = npr.randint(48, min(width, height) / 2)
-                    #top_left coordinate
-                    nx = npr.randint(0, width - size)
-                    ny = npr.randint(0, height - size)
-                    #random crop
-                    crop_box = np.array([nx, ny, nx + size, ny + size])
-                    #calculate iou
-                    Iou = IoU(crop_box, boxes)
+                        #neg_num's size [40,min(width, height) / 2],min_size:40
+                        # size is a random number between 12 and min(width,height)
+                        size = npr.randint(48, min(width, height) / 2)
+                        #top_left coordinate
+                        nx = npr.randint(0, width - size)
+                        ny = npr.randint(0, height - size)
+                        #random crop
+                        crop_box = np.array([nx, ny, nx + size, ny + size])
+                        #calculate iou
+                        Iou = IoU(crop_box, boxes)
 
-                    #crop a part from inital image
-                    cropped_im = img[ny : ny + size, nx : nx + size, :]
-                    #resize the cropped image to size 12*12
-                    resized_im = cv2.resize(cropped_im, (12, 12), interpolation=cv2.INTER_LINEAR)
+                        #crop a part from inital image
+                        cropped_im = img[ny : ny + size, nx : nx + size, :]
+                        #resize the cropped image to size 12*12
+                        resized_im = cv2.resize(cropped_im, (12, 12), interpolation=cv2.INTER_LINEAR)
 
                     if np.max(Iou) < 0.3:
                         # Iou with all gts must below 0.3
