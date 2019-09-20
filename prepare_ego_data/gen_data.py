@@ -111,14 +111,14 @@ def save_hard_example(net, data,save_path):
                         #random crop
                         crop_box = np.array([max(x_left+size,0), max(0,y_top+size), x_right+size, y_bottom+size])
                         #calculate iou
-                        Iou = IoU(crop_box, gts)
+                        _Iou = IoU(crop_box, gts)
                         print(neg_num)
                         #crop a part from inital image
                         cropped_im = img[crop_box[1] : crop_box[3], crop_box[0] : crop_box[2], :]
                         #resize the cropped image to size 12*12
                         resized_im = cv2.resize(cropped_im, (48, 48), interpolation=cv2.INTER_LINEAR)
 
-                    if np.max(Iou) < 0.3:
+                    if np.max(_Iou) < 0.3:
                         # Iou with all gts must below 0.3
                         save_file = os.path.join(neg_save_dir, "%s.jpg"%n_idx)
                         neg_file.write(save_file + ' 0\n')
