@@ -100,8 +100,8 @@ def save_hard_example(net, data,save_path):
                 n_idx += 1
                 neg_num += 1
 
-                if image_size==48: # augment ONet negative samples by 50 times
-                    while neg_num < 50:
+                if image_size==48: # augment ONet negative samples by 10 times
+                    while neg_num < 10:
                         #neg_num's size [40,min(width, height) / 2],min_size:40
                         # size is a random number between 12 and min(width,height)
                         size = npr.randint(-min(width,height)/5, min(width, height) /5)
@@ -112,7 +112,7 @@ def save_hard_example(net, data,save_path):
                         crop_box = np.array([max(x_left+size,0), max(0,y_top+size), x_right+size, y_bottom+size])
                         #calculate iou
                         Iou = IoU(crop_box, gts)
-                        print(Iou)
+                        print(neg_num)
                         #crop a part from inital image
                         cropped_im = img[crop_box[1] : crop_box[3], crop_box[0] : crop_box[2], :]
                         #resize the cropped image to size 12*12
