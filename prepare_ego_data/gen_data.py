@@ -104,12 +104,12 @@ def save_hard_example(net, data,save_path):
                     while neg_num < 50:
                         #neg_num's size [40,min(width, height) / 2],min_size:40
                         # size is a random number between 12 and min(width,height)
-                        size = npr.randint(-min(width,height), min(width, height) / 2)
+                        size = npr.randint(-min(width,height)/2, min(width, height) / 2)
                         #top_left coordinate
                         #nx = npr.randint(0, width - size)
                         #ny = npr.randint(0, height - size)
                         #random crop
-                        crop_box = np.array([max(x_left+size,0), max(0,y_top+size), min(x_right+size), min(y_bottom+size)])
+                        crop_box = np.array([max(x_left+size,0), max(0,y_top+size), x_right+size, y_bottom+size])
                         #calculate iou
                         Iou = IoU(crop_box, gts)
 
