@@ -111,7 +111,7 @@ def save_hard_example(net, data,save_path):
                         #random crop
                         crop_box = np.array([nx, ny, nx + size, ny + size])
                         #calculate iou
-                        Iou = IoU(crop_box, boxes)
+                        Iou = IoU(crop_box, gts)
 
                         #crop a part from inital image
                         cropped_im = img[ny : ny + size, nx : nx + size, :]
