@@ -10,7 +10,7 @@ fist_7.jpg 37 90 134 186
 fist_8.jpg 37 90 134 186
 fist_9.jpg 37 90 134 186
 fist_10.jpg 70 38 162 138
-fist_11.jpg 70 38 162 138
+fist_11.jpg 70 38 162 138 
 fist_12.jpg 70 38 162 138
 fist_13.jpg 70 38 162 138
 fist_14.jpg 70 38 162 138

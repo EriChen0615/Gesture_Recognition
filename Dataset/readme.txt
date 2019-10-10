@@ -6,8 +6,8 @@ The file contains information about the dataset in the following manner
 
 current categories are:
 one
-two
 fist
+two
 
 The images are located in their respective directory. Names are formatted as <gesture>_<number>
 
